@@ -1,0 +1,164 @@
+.awesome-font, label
+{
+
+}
+
+a.add_style {
+
+	color:#003d4c;
+	text-underline-position: below;
+	text-decoration: underline;
+
+}
+a.add_style :hover {
+	color: #367889;
+    text-decoration: none;
+}
+/* td.style_table.sorting_1 {
+	font-weight: bold;
+    text-align: center;
+    color: #FFFFFF;
+    background: #536C9A;
+} */
+a.style_a {
+	color: #003d4c;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.table-bordered td.style_table {
+	font-weight: bold;
+    text-align: center;
+    color: #FFFFFF;
+    background: #536C9A;
+}
+.js-cookie-consent{
+    position: absolute;
+    top: 0px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+    background-color: #38c172;
+    border-color: #fffacc;
+    border: solid 1px;
+  }
+
+.listAlphabet{
+    padding-right:10px;
+}
+
+/*CSS Form Interaction*/
+ .legend {
+    color: #e32;
+    font-size: 160%;
+    font-weight: bold;
+}
+
+.footer {
+    height: 150px;
+    background-color: cornflowerblue;
+}
+
+#footerDiv{
+    padding-top: 50px;
+}
+/*
+.force {background:#FF0000;}
+.moyenne {background:#FFCC33;}
+.faible {background:#EEE8AA;}
+.aucune {background:#CCFF99;}
+.inconnue {background:#FFCCFF;}
+*/
+.force {background: red;}
+.forceP {background: red;opacity:0.4;}
+.moyenne {background:orange;}
+.moyenneP{background: orange;opacity:0.4;}
+.faible {background: yellow;}
+.faibleP {background: yellow;opacity:0.4;}
+.aucune {background: green;}
+.aucuneP {background: green;opacity:0.4;}
+.inconnue {background:purple;}
+.inconnueP{background: purple;opacity:0.4;}
+.invalidColor {background: #ffc107;}
+
+.active-char
+{
+    color: green;
+    border-bottom: 1px solid green;
+    transform: scale(1.5);
+}
+
+
+/* register form style*/
+
+#register label
+{
+    color: green;
+    font-weight: bold;
+}
+.link:hover
+{
+    color: green;
+}
+#register .card
+{
+    width: 100%;
+}
+
+#register input
+{
+    margin-bottom: 0.5rem;
+}
+#register .register
+{
+    width: 40%;
+}
+
+#register input, #register button
+{
+    border: 0;
+    border-bottom: 1px solid green;
+}
+
+#register .info
+{
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+#register .m-footer
+{
+}
+
+
+#register .scroll
+{
+    overflow-y: scroll;
+    height: 25rem;
+    text-align: left;
+}
+.img-fluid.d-block.mx-auto.mx-md-0.hedrine_logo {
+    width: 42%;
+    float: right;
+}
+
+
+#layout .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+#layout .sidenav a.nav-link
+{
+    font-weight: bold;
+    color: white;
+}
+#layout a.nav-link:hover
+{
+    transition: all 0.5s;
+}
+#layout a.nav-link:hover
+{
+    color: black;
+    font-weight: bolder;
+}

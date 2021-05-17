@@ -1,0 +1,106 @@
+a.nav-link.active {
+    background-color: green;
+}
+/*
+.force {background:#FF0000;}
+.moyenne {background:#FFCC33;}
+.faible {background:#EEE8AA;}
+.aucune {background:#CCFF99;}
+.inconnue {background:#FFCCFF;}
+*/
+.force {background: red;}
+.forceP {background: red;opacity:0.4;}
+.moyenne {background:orange;}
+.moyenneP{background: orange;opacity:0.4;}
+.faible {background: yellow;}
+.faibleP {background: yellow;opacity:0.4;}
+.aucune {background: green;}
+.aucuneP {background: green;opacity:0.4;}
+.inconnue {background:purple;}
+.important { background:#FEBFD2;}
+/*
+new style is added for the filter search ...
+*/
+.listAlphabet
+{
+    color: black;
+    font-weight: 600;
+    transition: all 0.5s;
+}
+.disabled-char
+{
+    opacity: 20%;
+    cursor: not-allowed;
+    color: black;
+    font-weight: bold;
+}
+
+.listAlphabet:hover
+{
+    color: green;
+    font-weight: bold;
+    transform: scale(1.5);
+}
+
+.all
+{
+    margin-right: 2rem;
+}
+
+.active-char
+{
+    color: green;
+    font-weight: bold;
+    border-bottom: 1px solid green;
+    transform: scale(1.5);
+}
+
+.accept i
+{
+    font-size: 20px;
+}
+
+#Mymodal
+{
+    width: 35%;
+    margin: 0 auto;
+}
+
+#Mymodal textarea, #Mymodal button
+{
+    border: 0;
+    border-bottom: 1px solid green;
+
+}
+#Mymodal .modal-header
+{
+    background-color: green;
+}
+
+#Mymodal h4
+{
+    font-family: 'Berkshire Swash', cursive;
+}
+
+#new-x-target
+{
+    width: 70%;
+    margin: auto;
+}
+
+#new-x-target label
+{
+    color: green;
+}
+
+#new-x-target select, #new-x-target textarea
+{
+    border: 0;
+    border-bottom: 1px solid green;
+    height: 4rem;
+}
+
+nav.sidebar-nav ul li a
+{
+    height: 4rem;
+}
