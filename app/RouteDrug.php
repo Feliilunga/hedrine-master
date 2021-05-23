@@ -19,8 +19,8 @@ class RouteDrug extends Model
         return $this->belongsTo(Drug::class,'drug_id');
     }
 
-    public function d_interaction (){
+    public function dinteractions (){
 
-        return $this->hasMany(RouteDrug::class,'route_drug_id');
+        return $this->hasMany(Dinteraction::class,'route_drug_id');
     }
 }

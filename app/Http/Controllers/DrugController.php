@@ -76,7 +76,7 @@ class DrugController extends Controller
     public function filterByChar($char)
     {
         // var to know if we want to display filtered by first letter datas
-        $drugAll =  Drug::with('atcLevel4sDrugs.atcLevel4s.atc_level3.atc_level2.atc_level1')->where('name', 'LIKE', $char . '%')->where('validated', 1)->orderBy('name')->get();
+        $drugAll =  Drug::with('atcLevel4sDrugs.atc_Level4.atc_level3.atc_level2.atc_level1')->where('name', 'LIKE', $char . '%')->where('validated', 1)->orderBy('name')->get();
         //this one used to add class on active char clicked
         //$drugCharClicked = Drug::where('name', 'LIKE', $char . '%')->get();
         //dd($drugCharClicked);
@@ -213,7 +213,7 @@ class DrugController extends Controller
 
     public function details($id)
     {
-        $drug = Drug::with('dinteractions.drugs', 'dinteractions.effects', 'dinteractions.targets')->findOrFail($id);
+        $drug = Drug::with('dinteractions.routesDrugs', 'dinteractions.effects', 'dinteractions.targets')->findOrFail($id);
 
         //dd($drug);
         return view("drugs/details", compact('drug'));

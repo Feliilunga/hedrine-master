@@ -12,10 +12,10 @@ class DrugFamilyDrug extends Model
     ];
 
     public function drugsFamilies(){
-        return $this->belongTo(DrugFamily::class,'drug_family_id');
+        return $this->belongsTo(DrugFamily::class,'drug_family_id');
     }
    
     public function drugs(){
-        return $this->belongTo(Drug::class,'drug_id');
+        return $this->belongsTo(Drug::class,'drug_id');
     }
 }

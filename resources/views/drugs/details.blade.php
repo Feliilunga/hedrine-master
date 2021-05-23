@@ -4,6 +4,9 @@
 <div class="container">
     @php
         $dciCurrent = 1;
+        $routeInteraction = array() ;
+        $val = 0;
+
     @endphp
     @foreach ($drugs as $drug)
 
@@ -31,30 +34,69 @@
 
         <dl class="row">
             <dt class="col-sm-2">Voie</dt>
-            <dd class="col-sm-3"> {{ $drug->routes->name }}</dd>
+           
+            <dd class="col-sm-3"> 
+            <select name="voie" id="voie" onchange = "laFonction()" >
+                <option value = 0>Veuillez choisir une voie</option>
+                @foreach($drug->routesDrugs as $pivotRoute)
+                    @php
+                    $route = $pivotRoute->routes;
+                    @endphp
+                    <option value = "{{ $pivotRoute->id }}">
+                    {{ $route->name }}
+                    
+                    </option>
+                    @endforeach
+            </select> </dd>
         </dl>
+
+        <script>
+            $id = 0;
+            function laFonction(){
+                $id = document.getElementById('voie').value;
+                console.log($id);
+
+            }
+        </script>    
+
+        @php
+       // dd($route);
+       @endphp
         <dl class="row" style="background: #f4f4f4">
             <dt class="col-sm-2">Famille</dt>
 
             <dd class="col-sm-8"> <strong>
                 <!-- Author: Mohammed A.
                     Verifier si la dci contient une atc de niv 4 si oui on affiche la famille sinon on dit pas encore de famille -->
-                @if( $drug->atc_level4_id !== 0)
-                {{ $drug->atc_level4->atc_level3->atc_level2->atc_level1->code }} - {{ $drug->atc_level4->atc_level3->atc_level2->atc_level1->name }}-->
+                @php
+                    $pivotAtc = $drug->atcLevel4sDrugs;
+                     //dd($pivotAtc);
+                @endphp
+                @foreach($pivotAtc as $pAtc)
+                @if( $pAtc->atc_level4_id !== 0)
+                {{ $pAtc->atc_level4->atc_level3->atc_level2->atc_level1->code }} -> {{ $pAtc->atc_level4->atc_level3->atc_level2->atc_level1->name }} -
                 @else
                 Pas encore de famille
                 @endif
+                @endforeach
             </strong></dd>
         </dl>
         <dl class="row">
             <dt class="col-sm-2">ATC de niveau 4</dt>
 
-            <dd class="col-sm-8">
-                @if( $drug->atc_level4_id !== 0)
-                {{ $drug->atc_level4->code }} - {{ $drug->atc_level4->name }}
-                @else
-            Pas d'ATC
-            @endif
+            <dd class="col-sm-8"> <strong>
+                @php
+                    $pivotAtc = $drug->atcLevel4sDrugs;
+                    //dd($pivotAtc);
+                @endphp
+                @foreach($pivotAtc as $piAtc)
+                    @if( $piAtc->atc_level4_id !== 0)
+                        {{ $piAtc->atc_level4->code }} -> {{ $piAtc->atc_level4->name }} -
+                    @else
+                        Pas d'ATC
+                    @endif
+                @endforeach
+        </strong>
         </dd>
         </dl>
         <div class="row">
@@ -135,8 +177,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($drug->dinteractions->sortByDesc('name') as $dinteraction)
-                        <tr>
+                        @php
+                            $drugInteraction = $drug->routesDrugs;
+                            //dd($drugInteraction);
+                            $lesId;
+                           
+                        @endphp
+                        @foreach($drugInteraction as $piRoute)
+                        @foreach ($piRoute->dinteractions->sortByDesc('name') as $dinteraction)  
+                        @php
+                           // dd($dinteraction);
+                           $lesId = $dinteraction->route_drug_id;
+                           //dd($lesId);
+                        @endphp
+                       
+                                           
+                        <tr id="mecaaa{{$lesId}}">
                             <th scope="row">
                                 @if(isset($dinteraction->targets->name))
                                 {{$dinteraction->targets->name}}
@@ -211,8 +267,10 @@
                             </td>
                             @endif
                         </tr>
-
+                        </div> 
                         @endforeach
+                        @endforeach
+                        
                     </tbody>
                 </table>
             </div>
@@ -223,9 +281,10 @@
     @endphp
     @endforeach
 </div>
-	@endsection
 
-	@section('dashboard-js')
+@endsection
+
+@section('dashboard-js')
 	<script>
 		$(function() {
 
@@ -242,5 +301,19 @@
 				}
 			});
 		});
+
+        // $("#voie").change(function() {
+        // console.log("changement");
+        $("[id^=mecaaa]").hide();
+        $ids=$id;
+        $('#voie').on('change', function() {
+            $("[id^=mecaaa]").hide();
+            //$('#mecaaa'+$id).show(); 
+            $("[id^=mecaaa"+$id+"]").show();
+            //console.log($idPivotRoute);
+        });
+        
+
 	</script>
-	@endsection
+@endsection
+

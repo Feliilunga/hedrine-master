@@ -22,7 +22,7 @@ class DrugFamily extends Model
 
     public function drugFamiliesDrugs (){
 
-        return $this->hasMany(DrugFamilyDrug::class,'drug_family_id','id');
+        return $this->hasMany(DrugFamilyDrug::class,'drug_family_id');
     }
 
 }

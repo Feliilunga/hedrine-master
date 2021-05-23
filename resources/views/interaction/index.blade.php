@@ -756,10 +756,12 @@
                         defautChoice +
                         "</option>";
                     $.each(data, function(i, atc) {
+                        console.log(atc);
+                        $pivotDrug = atc.drugs;
                         drugAtcOptions += "<option value='" +
                             atc.id +
                             "'>" +
-                            atc.code + " - " + atc.name +
+                            atc.drug_code + " - " + $pivotDrug.name +
                             "</option>";
                     });
                     $('#drug-atc-select-dci').html(drugAtcOptions);

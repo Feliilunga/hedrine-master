@@ -8,6 +8,7 @@ use App\TargetType;
 use App\Herb;
 use App\Drug;
 use App\Dinteraction;
+use App\AtcLevel4Drug;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -31,6 +32,7 @@ class TargetController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         // $targets = Target::all();
@@ -227,7 +229,7 @@ class TargetController extends Controller
                             ->join('hinteractions', 'hinteractions.id', '=', 'hinteraction_has_references.hinteraction_id')
                             ->join('dinteractions', 'dinteractions.id', '=', 'dinteraction_has_references.dinteraction_id')
                             ->where('hinteractions.herb_id', $nbrPlantes[$i-1])
-                            ->where('dinteractions.drug_id', $nbrDrugs[$j-1])
+                            ->where('dinteractions.route_drug_id', $nbrDrugs[$j-1])
                             ->select('hinteractions.id as hId', 'dinteractions.id as dId', 'references.*')
                             ->get();
 
@@ -243,11 +245,14 @@ class TargetController extends Controller
 
                             ->select('deffects.name as deffect', 'heffects.name as heffect', 'hinteractions.id as hId', 'dinteractions.id as dId', 'hinteractions.notes as hNotes', 'dinteractions.notes as dNotes', 'targets.name as targetName', 'hforce.name as hForce', 'hforce.color as hColor', 'dforce.name as dForce', 'dforce.color as dColor')
                             ->where('hinteractions.herb_id', $nbrPlantes[$i-1])
-                            ->where('dinteractions.drug_id', $nbrDrugs[$j-1])
+                            ->where('dinteractions.route_drug_id', $nbrDrugs[$j-1])
                             ->orderBy('hinteractions.force_id', 'ASC')
                             ->get();
 
-                        ${"drug$j"} =  DB::table('drugs')->where('id', $nbrDrugs[$j-1])->pluck('name');
+                        
+                        $idDrug = DB::table('route_drugs')->where('id', $nbrDrugs[$j-1])->pluck('drug_id');
+                        $retour['idDrug'] = $idDrug;    
+                        ${"drug$j"} =  DB::table('drugs')->where('id', $idDrug)->pluck('name');
                         $retour['drug'.$j] = ${"drug$j"};
                         $retour['result'.$i.$j] = ${"result$i$j"};
                         $retour['references'.$i.$j] = ${"references$i$j"};
@@ -304,6 +309,7 @@ class TargetController extends Controller
                 $retour['mode_interaction'] = "multiDrugs";
                 $test = Dinteraction::all();
                 $retour['test'] = $test; 
+
                 //Evenor S. pour chaque drug faire une requete sql pour avoir les interactions avec une plante
                 for ($i=1; $i < $compteurDrugs; $i++) {
 
@@ -382,10 +388,14 @@ class TargetController extends Controller
             $tabId = [];
             $compteurDrugs = 1;
             $compteurPlantes = 1;
-            $nbrDrugs = DB::table('drugs')->where('atc_level4_id', $request->atcId1)->get(['id', 'name', 'atc_level4_id']);
+            $nbrDrugs = AtcLevel4Drug::with('drugs')->where('atc_level4_id', $request->atcId1)->get(['id', 'atc_level4_id', 'drug_id']);
+            ;
             $retour['nbrDrugs'] = $nbrDrugs;
             $nbrDrug = array($nbrDrugs);
-            
+            $atcDrugs = DB::table('atc_level4_drugs')->where('atc_level4_id', $request->atcId1)->get(['id', 'atc_level4_id', 'drug_id']);
+            $atcDrug = array($atcDrugs);
+            $retour['atcDrug'] = $atcDrug;
+            // return response()->json($atcDrug, 200);
 
             if($request->atcSelectedIds[0]=="all"){
                 $compteurDrugs =count($nbrDrugs) + 1;
@@ -443,14 +453,15 @@ class TargetController extends Controller
                         ->join('dinteraction_has_references', 'references.id', '=', 'dinteraction_has_references.reference_id')
                         
                         ->join('dinteractions', 'dinteractions.id', '=', 'dinteraction_has_references.dinteraction_id')
+                        ->leftJoin('route_drugs as rdrug', 'rdrug.id', '=', 'dinteractions.route_drug_id')
                         //->where('hinteractions.herb_id', $request->herbId1)
                         // ->where('dinteractions.drug_id', $request->atcSelectedIds[$i-1])
-                        ->where('dinteractions.drug_id', $nbrDrug[0][$i-1]->id)
-                    
+                        // ->where('dinteractions.drug_id', $nbrDrug[0][$i-1]->id)
+                        ->where('dinteractions.route_drug_id', $atcDrug[0][$i-1]->id)
                         ->select(//'hinteractions.id as hId',
                             'dinteractions.id as dId',
                             //'hinteractions.herb_id as herb_Id',
-                            'dinteractions.drug_id as drug_Id',
+                            'rdrug.drug_id as drug_Id',
                             'references.*'
                         )
                         ->orderBy('references.year', 'DESC')
@@ -460,18 +471,19 @@ class TargetController extends Controller
                     ${"result$i"} = DB::table('targets')
                         ->join('hinteractions', 'targets.id', '=', 'hinteractions.target_id')
                         ->join('dinteractions', 'targets.id', '=', 'dinteractions.target_id')
-                        ->join('drugs', 'drugs.id', '=', 'dinteractions.drug_id')
+                        ->join('route_drugs', 'route_drugs.id', '=', 'dinteractions.route_drug_id')
                         ->join('dinteraction_has_effects', 'dinteractions.id', '=', 'dinteraction_has_effects.dinteraction_id')
                         ->join('effects as deffects', 'deffects.id', '=', 'dinteraction_has_effects.effect_id')
                         ->join('hinteraction_has_effects', 'hinteractions.id', '=', 'hinteraction_has_effects.hinteraction_id')
                         ->join('effects as heffects', 'heffects.id', '=', 'hinteraction_has_effects.effect_id')
                         ->leftJoin('forces as hforce', 'hforce.id', '=', 'hinteractions.force_id')
                         ->leftJoin('forces as dforce', 'dforce.id', '=', 'dinteractions.force_id')
+                        ->leftJoin('drugs as drogue', 'drogue.id', '=', 'route_drugs.drug_id')
                         ->select(
                             'hinteractions.id as hId',
                             'dinteractions.id as dId',
                             'hinteractions.herb_id as herb_Id',
-                            'dinteractions.drug_id as drug_Id',
+                            'route_drugs.drug_id as drug_Id',
                             'hinteractions.notes as hNotes',
                             'dinteractions.notes as dNotes',
                             'targets.name as targetName',
@@ -484,12 +496,12 @@ class TargetController extends Controller
                         )
                         ->where('hinteractions.herb_id', $request->herbId1)
                         // ->where('drugs.id', $request->atcSelectedIds[$i-1])
-                        ->where('drugs.id', $nbrDrug[0][$i-1]->id)
+                        ->where('dinteractions.route_drug_id', $atcDrug[0][$i-1]->id)
                         ->orderBy('hinteractions.force_id', 'ASC')
                         ->get();
 
 
-                    ${"drug$i"} =  DB::table('drugs')->where('id', $nbrDrug[0][$i-1]->id)->pluck('name');
+                    ${"drug$i"} =  DB::table('drugs')->where('id', $nbrDrug[0][$i-1]->drug_id)->pluck('name');
                     $retour['drug'.$i] = ${"drug$i"};
                     $retour['result'.$i] = ${"result$i"};
                     ${"herb"} =  DB::table('herbs')->where('id', $nbrPlantes[0])->pluck('name');
@@ -502,8 +514,8 @@ class TargetController extends Controller
                 $retour['atc'] = $atc;
                 $herb = DB::table('herbs')->where('id', $request->herbId1)->pluck('name');
                 $retour['herb'] = $herb;
-                $drugs_list = DB::table('drugs')->where('atc_level4_id', $request->atcId1)->get(['id', 'name', 'atc_level4_id']);
-                $retour['drugs_list'] = $drugs_list;
+                // $drugs_list = DB::table('drugs')->join('atc_level4_drugs', 'drugs.id', '=', 'atc_level4_drugs.drug_id')->where('atc_level4_drugs.id', $request->atcId1)->get(['drugs.id', 'drugs.name', 'atc_level4_drugs.id']);
+                // $retour['drugs_list'] = $drugs_list;
                 $retour['atcId1'] = $request->atcId1;
                 $retour['atcSelectedIds'] = $request->atcSelectedIds;
             }
@@ -520,29 +532,30 @@ class TargetController extends Controller
                             ->join('dinteractions', 'dinteractions.id', '=', 'dinteraction_has_references.dinteraction_id')
                             ->where('hinteractions.herb_id', $nbrPlantes[$i-1])
                             // ->where('dinteractions.drug_id', $request->atcSelectedIds[$j-1])
-                            ->where('dinteractions.drug_id', $nbrDrug[0][$j-1]->id)
+                            ->where('dinteractions.route_drug_id', $atcDrug[0][$j-1]->id)
                             ->select('hinteractions.id as hId', 'dinteractions.id as dId', 'references.*')
                             ->get();
 
                         ${"result$i$j"} = DB::table('targets')
                             ->join('hinteractions', 'targets.id', '=', 'hinteractions.target_id')
                             ->join('dinteractions', 'targets.id', '=', 'dinteractions.target_id')
-                            ->join('drugs', 'drugs.id', '=', 'dinteractions.drug_id')
+                            ->join('route_drugs', 'route_drugs.id', '=', 'dinteractions.route_drug_id')
                             ->join('dinteraction_has_effects', 'dinteractions.id', '=', 'dinteraction_has_effects.dinteraction_id')
                             ->join('effects as deffects', 'deffects.id', '=', 'dinteraction_has_effects.effect_id')
                             ->join('hinteraction_has_effects', 'hinteractions.id', '=', 'hinteraction_has_effects.hinteraction_id')
                             ->join('effects as heffects', 'heffects.id', '=', 'hinteraction_has_effects.effect_id')
                             ->leftJoin('forces as hforce', 'hforce.id', '=', 'hinteractions.force_id')
                             ->leftJoin('forces as dforce', 'dforce.id', '=', 'dinteractions.force_id')
+                            ->leftJoin('drugs as drogue', 'drogue.id', '=', 'route_drugs.drug_id')
 
                             ->select('deffects.name as deffect', 'heffects.name as heffect', 'hinteractions.id as hId', 'dinteractions.id as dId', 'hinteractions.notes as hNotes', 'dinteractions.notes as dNotes', 'targets.name as targetName', 'hforce.name as hForce', 'hforce.color as hColor', 'dforce.name as dForce', 'dforce.color as dColor')
                             ->where('hinteractions.herb_id', $nbrPlantes[$i-1])
                             // ->where('drugs.id', $request->atcSelectedIds[$j-1])
-                            ->where('drugs.id', $nbrDrug[0][$j-1]->id)
+                            ->where('dinteractions.route_drug_id', $atcDrug[0][$j-1]->id)
                             ->orderBy('hinteractions.force_id', 'ASC')
                             ->get();
 
-                        ${"drug$j"} =  DB::table('drugs')->where('id', $nbrDrug[0][$j-1]->id)->pluck('name');
+                        ${"drug$j"} =  DB::table('drugs')->where('id', $nbrDrug[0][$j-1]->drug_id)->pluck('name');
                         $retour['drug'.$j] = ${"drug$j"};
                         $retour['result'.$i.$j] = ${"result$i$j"};
                         $retour['references'.$i.$j] = ${"references$i$j"};
@@ -563,7 +576,7 @@ class TargetController extends Controller
                         ->join('dinteractions', 'dinteractions.id', '=', 'dinteraction_has_references.dinteraction_id')
                         ->where('hinteractions.herb_id', $nbrPlantes[$i-1])
                         // ->where('dinteractions.drug_id',  $request->atcSelectedIds[0])
-                        ->where('dinteractions.drug_id', $nbrDrug[0][0]->id)
+                        ->where('dinteractions.route_drug_id', $atcDrug[0][0]->id)
                         ->select('hinteractions.id as hId', 'dinteractions.id as dId', 'references.*')
                         ->get();
 
@@ -571,18 +584,19 @@ class TargetController extends Controller
                     ${"result$i"} = DB::table('targets')
                         ->join('hinteractions', 'targets.id', '=', 'hinteractions.target_id')
                         ->join('dinteractions', 'targets.id', '=', 'dinteractions.target_id')
-                        ->join('drugs', 'drugs.id', '=', 'dinteractions.drug_id')
+                        ->join('route_drugs', 'route_drugs.id', '=', 'dinteractions.route_drug_id')
                         ->join('dinteraction_has_effects', 'dinteractions.id', '=', 'dinteraction_has_effects.dinteraction_id')
                         ->join('effects as deffects', 'deffects.id', '=', 'dinteraction_has_effects.effect_id')
                         ->join('hinteraction_has_effects', 'hinteractions.id', '=', 'hinteraction_has_effects.hinteraction_id')
                         ->join('effects as heffects', 'heffects.id', '=', 'hinteraction_has_effects.effect_id')
                         ->leftJoin('forces as hforce', 'hforce.id', '=', 'hinteractions.force_id')
                         ->leftJoin('forces as dforce', 'dforce.id', '=', 'dinteractions.force_id')
+                        ->leftJoin('drugs as drogue', 'drogue.id', '=', 'route_drugs.drug_id')
 
                         ->select('deffects.name as deffect', 'heffects.name as heffect','hinteractions.id as hId', 'dinteractions.id as dId', 'hinteractions.notes as hNotes', 'dinteractions.notes as dNotes', 'targets.name as targetName', 'hforce.name as hForce', 'hforce.color as hColor', 'dforce.name as dForce', 'dforce.color as dColor')
                         ->where('hinteractions.herb_id', $nbrPlantes[$i-1])
                         // ->where('drugs.id', $request->atcSelectedIds[0])
-                        ->where('drugs.id', $request->atcSelectedIds[0])
+                        ->where('dinteractions.route_drug_id', $atcDrug[0][0]->id)
                         ->orderBy('hinteractions.force_id', 'ASC')
                         ->get();
 
@@ -593,7 +607,7 @@ class TargetController extends Controller
                     $retour['references'.$i] = ${"references$i"};
                     
                 }
-                $drug = DB::table('drugs')->where('id',  $request->atcSelectedIds[0])->pluck('name');
+                $drug = DB::table('drugs')->where('id', $atcDrug[0][0]->drug_id)->pluck('name');
                 $retour['drug'] = $drug;
 
             }

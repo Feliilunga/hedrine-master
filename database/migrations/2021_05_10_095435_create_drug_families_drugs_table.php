@@ -13,7 +13,7 @@ class CreateDrugFamiliesDrugsTable extends Migration
      */
     public function up()
     {
-        Schema::create('drug_families_drugs', function (Blueprint $table) {
+        Schema::create('drug_family_drugs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('drug_family_id')->unsigned();
             $table->unsignedBigInteger('drug_id')->unsigned();

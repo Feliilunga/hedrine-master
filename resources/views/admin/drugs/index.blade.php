@@ -35,7 +35,7 @@
     $(document).ready(function() {
 
         $('#example2').DataTable({
-//Mohammed : correction de la recheche et changement d 'id pour le tableau
+            //Mohammed : correction de la recheche et changement d 'id pour le tableau
             ajax: {
                 url: '{{ url("/allDrugs") }}',
                 type: 'GET',
@@ -69,18 +69,65 @@
                     data: "name",
                     name: 'name',
                     render: function(data, type, row) {
-                        return "<a href='drug/details_drug/" + row.id + "'>" + row.name + '(' + row.routes.name + ')' + "</a>"
+                        return "<a href='drug/details_drug/" + row.id + "'>" + row.name + "</a>"
                     }
                 },
                 {
-                    data: "atc_level4.atc_level3.atc_level2.atc_level1.name",
-                    name: 'atc_level4.atc_level3.atc_level2.atc_level1.name',
-                    defaultContent: ""
+                    data: "atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1.name",
+                    name: 'atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1.name',
+                    //defaultContent: ""
+                    
+                    render: function(data, type, row) {
+                        
+                        // console.log(row);
+                        var fami;
+                        var fami3;
+                        var fam = row.atc_level4s_drugs;
+                        if(fam){
+                            // console.log('test');
+                            for(let i=0; i<fam.length; i++){
+                                var fami = fam[i].atc_level4;
+                                    //console.log(fami);
+                                    if(fami){
+                                        var fami1 = fami.atc_level3;
+                                        if(fami1){    
+                                            var fami2 = fami1.atc_level2;
+                                            if(fami2){
+                                                var fami3 = fami2.atc_level1;
+                                                //console.log(fami3);
+                                                //console.log(fami);
+                                                    // for(let j=0; j<fami.length; j++){
+                                                if(fami3){
+                                                    return  fami3.name;
+                                                    console.log(fami3);
+                     
+                                                }
+                                            }    
+                                        }    
+                                    }
+                                        
+                            }
+                        }    
+                        //console.log(fami3);
+                     
+                    } 
                 },
                 {
                     data: "code",
                     name: 'code',
-                    defaultContent: ""
+                    //defaultContent: ""
+                    render: function(data, type, row) {
+                        var atc = row.atc_level4s_drugs;
+                        console.log(atc);
+                        if(atc){
+                            for(let i=0; i<atc.length; i++){
+                                return atc[i].drug_code;
+                                //console.log('test');
+                            }
+                        }
+
+                    }
+
                 },
                 {
                     data: "user.name",

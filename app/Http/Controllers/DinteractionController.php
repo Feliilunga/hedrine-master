@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\AtcLevel2;
 use App\AtcLevel3;
 use App\AtcLevel4;
+use App\AtcLevel4Drug;
 use App\Atc;
 use App\Dinteraction;
 use App\Drug;
@@ -100,7 +101,7 @@ class DinteractionController extends Controller
     {
         //echo $request->family;
         if ($request->atc_level == 5){
-            $singleDrugFamily = Drug::where('atc_level4_id', $request->id)->orderBy('code')->get();
+            $singleDrugFamily = AtcLevel4Drug::with('drugs')->where('atc_level4_id', $request->id)->orderBy('drug_code')->get();
         }
         else if ($request->atc_level == 4){
             $singleDrugFamily = AtcLevel4::where('atc_level3_id', $request->id)->orderBy('code')->get();

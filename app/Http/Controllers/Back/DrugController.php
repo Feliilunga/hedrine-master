@@ -9,6 +9,7 @@ use App\Route;
 use App\Target;
 use App\AtcLevel4;
 use App\DrugFamily;
+use App\DrugFamilyDrug;
 use App\TemporaryData;
 use Illuminate\Http\Request;
 use App\Http\Requests\DrugRequest;
@@ -137,7 +138,7 @@ class DrugController extends Controller
     {
 
         if ($request->ajax()) {
-            $query = Drug::with('atc_level4.atc_level3.atc_level2.atc_level1', 'routes', 'user')->select('drugs.*');
+            $query = Drug::with('atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1', 'routesDrugs.routes', 'drugFamiliesDrugs.drugsFamilies','user')->select('drugs.*');
 
             return DataTables::eloquent($query)->toJson();
         }
@@ -228,13 +229,13 @@ class DrugController extends Controller
     {
 
         if($type == "showAll"){
-            $drugs = Drug::with('atc_level4.atc_level3.atc_level2.atc_level1', 'dinteractions.drugs', 'dinteractions.effects', 'dinteractions.targets')->where('atc_level4_id',$id)->get();
+            $drugs = Drug::with('atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1', 'routesDrugsdinteractions', 'routesDrugs.dinteractions.effects', 'routesDrugs.dinteractions.targets')->where('atc_level4_id',$id)->get();
       //   dd($drugs,$id,"if");
             return view("drugs/details", compact('drugs', 'type'));
         }
         else {
 
-            $drug = Drug::with('atc_level4.atc_level3.atc_level2.atc_level1', 'dinteractions.drugs', 'dinteractions.effects', 'dinteractions.targets')->findOrFail($id);
+            $drug = Drug::with('atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1', 'routesDrugs.dinteractions', 'routesDrugs.dinteractions.effects', 'routesDrugs.dinteractions.targets')->findOrFail($id);
          // dd($drug->atc_level4_id,$id,"else");
             $drugs[0] = $drug;
             return view("drugs/details", compact('drugs', 'type'));
