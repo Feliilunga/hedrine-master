@@ -26,7 +26,7 @@ class Drug extends Model
 
     public function drugs()
     {
-        return $this->belongsTo(Drug::class,'drug_id');
+        return $this->belongsTo(Drug::class,'id');
 
     }
     

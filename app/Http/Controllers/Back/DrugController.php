@@ -8,6 +8,8 @@ use App\User;
 use App\Route;
 use App\Target;
 use App\AtcLevel4;
+use App\RouteDrug;
+use App\AtcLevel4Drug;
 use App\DrugFamily;
 use App\DrugFamilyDrug;
 use App\TemporaryData;
@@ -56,8 +58,10 @@ class DrugController extends Controller
         $routes = Route::all();
         $targets = Target::all();
         $atc4All = AtcLevel4::all();
+        $atcPiv = AtcLevel4Drug::all();
+        $routePiv = RouteDrug::all();
 
-        return view('admin.drugs.form_add_drug', compact('routes', 'targets', 'atc4All'));
+        return view('admin.drugs.form_add_drug', compact('routes', 'targets', 'atc4All', 'routePiv'));
     }
 
     /**
@@ -68,30 +72,56 @@ class DrugController extends Controller
      */
     public function store(DrugRequest $request)
     {
+        $cpt = $request->leCpt;
+        $cptR = $request->cptRoute;
+        if ($cpt == null) {
+            $cpt = 0;
+        }
+        else{
+            $cpt = $request->leCpt;
+        }
+
+        if ($cptR == null) {
+            $cptR = 0;
+        }
+        else{
+            $cptR = $request->cptRoute;
+        }
 
         $drug = new Drug;
-
-        $drug->user_id = Auth::user()->id;
         $drug->name = $request->name;
+        $drug->user_id = Auth::user()->id;
         //$drug->drug_families_id = $request->drug_families_id;
-        $drug->drug_families_id = 1;
-        $drug->route_id = $request->route_id;
-
-
-
-        $drug->atc_level4_id = $request->atc_level4_id;
-        $drug->code = $request->code;
+        // $teest = SELECT MAX(id) AS max_id, TesChamps FROM sorties
+        $atcPivot; $atcPivot0; $atcPivot1; $atcPivot2; $atcPivot3; $atcPivot4; $atcPivot5; $atcPivot6;
+       
 
         //$drug->atc_id = $request->atc_id;
-        $drug->atc_id = 1;
-
 
         if (Auth::user()->role_id <= 2) {
             $request->validated
                 ? $drug->validated = 1
                 : $drug->validated = 0;
             $drug->save();
-            $drug->targets()->sync($request->targets, false);
+            $lastId = $drug->id;
+            for ($i=0; $i<$cpt+1; $i++) {
+                if (isset($request->{'atc_level4_id'.$i})) {
+                    ${"atcPivot".$i} = new AtcLevel4Drug;
+                    ${"atcPivot".$i}->atc_level4_id = $request->{'atc_level4_id'.$i};
+                    ${"atcPivot".$i}->drug_id = $lastId;
+                    ${"atcPivot".$i}->drug_code = $request->{'code'.$i};
+                    ${"atcPivot".$i}->save();
+                }
+            }
+            for ($i=0; $i<$cptR+1; $i++) {
+                if (isset($request->{'route_id'.$i})) {
+                    ${"routePivot".$i} = new RouteDrug;
+                    ${"routePivot".$i}->route_id = $request->{'route_id'.$i};
+                    ${"routePivot".$i}->drug_id = $lastId;
+                    ${"routePivot".$i}->save();
+                }
+            }
+            // $drug->targets()->sync($request->targets, false);
             if ($drug->validated == 1) {
                 Alert::success('Ok !', 'La DCI a été validé');
             }
@@ -102,7 +132,25 @@ class DrugController extends Controller
         else{
             $drug->validated = 0;
             $drug->save();
-            $drug->targets()->sync($request->targets, false);
+            $lastId = $drug->id;
+            for ($i=0; $i<$cpt+1; $i++) {
+                if ($request->{'atc_level4_id'.$i} !== null) {
+                    ${"atcPivot".$i} = new AtcLevel4Drug;
+                    ${"atcPivot".$i}->atc_level4_id = $request->{'atc_level4_id'.$i};
+                    ${"atcPivot".$i}->drug_id = $lastId;
+                    ${"atcPivot".$i}->drug_code = $request->{'code'.$i};
+                    ${"atcPivot".$i}->save();
+                }
+            }
+            for ($i=0; $i<$cptR+1; $i++) {
+                if ($request->{'route_id'.$i} !== null) {
+                    ${"routePivot".$i} = new RouteDrug;
+                    ${"routePivot".$i}->route_id = $request->{'route_id'.$i};
+                    ${"routePivot".$i}->drug_id = $lastId;
+                    ${"routePivot".$i}->save();
+                }
+            }
+            // $drug->targets()->sync($request->targets, false);
             Alert::success('Ok !', 'Merci, la DCI devra être validé par un admin');
         }
 
@@ -131,7 +179,9 @@ class DrugController extends Controller
     {
         $routes = Route::all();
         $atc4All = AtcLevel4::all();
-        return view('admin.drugs.form_add_drug', ['drug' => $drug], compact('routes', 'atc4All'));
+        $atcPiv = AtcLevel4Drug::all();
+        $routePiv = RouteDrug::all();
+        return view('admin.drugs.form_add_drug', ['drug' => $drug], compact('routes', 'atc4All', 'atcPiv', 'routePiv'));
     }
 
     public function getAllDrogs(Request $request)
@@ -154,14 +204,33 @@ class DrugController extends Controller
      */
     public function update(Request $request, Drug $drug)
     {
-        $drug->name = $request->name;
-        //$drug->drug_families_id = $request->drug_families_id;
-        //$drug->atc_id = $request->atc_id;
-        $drug->route_id = $request->route_id;
-        $drug->code = $request->code;
-        //Mohammed de l'update pour atc_id il fallait mettre atc_level4_id
-        $drug->atc_level4_id = $request->atc_level4_id;
+        $cpt = $request->leCpt;
+        $cptR = $request->cptRoute;
+        if ($cpt == null) {
+            $cpt = 0;
+            //dd('jsuis la');
+        }
+        else{
+            $cpt = $request->leCpt;
+        }
 
+        if ($cptR == null) {
+            $cptR = 1;
+        }
+        else{
+            $cptR = $request->cptRoute;
+        }
+
+        $cpt2 = $cpt;
+        $cptR2 = $cptR;
+        
+        //dd($cptR);
+
+        $drug->name = $request->name;
+       
+        $actTable=$drug->atcLevel4sDrugs;
+        //dd($test);
+        
         if (Auth::user()->role_id > 2) {
             $fields = $drug->getDirty();
 
@@ -181,8 +250,46 @@ class DrugController extends Controller
             }
 
             Alert::success('Ok !', 'Votre modification est en attente de validation par un Administrateur ou un Publisher');
-        } else {
+        } 
+        else {
             $drug->save();
+            $lastId = $drug->id;
+
+            for ($i=0; $i<$cpt+1; $i++) {
+                if ($request->{'atc_level4_id'.$i} !== null) {
+                    if (isset($drug->atcLevel4sDrugs[$i])) {
+                        ${"atcPivot".$i} = $drug->atcLevel4sDrugs[$i];
+                        ${"atcPivot".$i}->atc_level4_id = $request->{'atc_level4_id'.$i};
+                        ${"atcPivot".$i}->drug_id = $lastId;
+                        ${"atcPivot".$i}->drug_code = $request->{'code'.$i};
+                        ${"atcPivot".$i}->save();
+                    }
+                    else{
+                        ${"atcPivot".$i} = new AtcLevel4Drug;
+                        ${"atcPivot".$i}->atc_level4_id = $request->{'atc_level4_id'.$i};
+                        ${"atcPivot".$i}->drug_id = $lastId;
+                        ${"atcPivot".$i}->drug_code = $request->{'code'.$i};
+                        ${"atcPivot".$i}->save();
+                    }
+                }
+            }
+
+            for ($i=0; $i<$cptR; $i++) {
+                if ($request->{'route_id'.$i} !== null) {
+                    if (isset($drug->routesDrugs[$i])) {
+                        ${"routePivot".$i} = $drug->routesDrugs[$i];
+                        ${"routePivot".$i}->route_id = $request->{'route_id'.$i};
+                        ${"routePivot".$i}->drug_id = $lastId;
+                        ${"routePivot".$i}->save();
+                    }
+                    else{
+                        ${"routePivot".$i} = new RouteDrug;
+                        ${"routePivot".$i}->route_id = $request->{'route_id'.$i};
+                        ${"routePivot".$i}->drug_id = $lastId;
+                        ${"routePivot".$i}->save();
+                    }
+                }
+            }
 
             Alert::success('Ok !', 'Votre DCI a été mise à jour avec succès');
         }
