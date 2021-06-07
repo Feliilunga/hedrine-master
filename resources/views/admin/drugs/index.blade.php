@@ -97,7 +97,7 @@
                                                 //console.log(fami3);
                                                 //console.log(fami);
                                                     // for(let j=0; j<fami.length; j++){
-                                                if(fami3){
+                                                if(fami3.name){
                                                     return  fami3.name;
                                                     // console.log(fami3);
                      

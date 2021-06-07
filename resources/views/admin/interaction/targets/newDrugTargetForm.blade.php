@@ -35,8 +35,10 @@
                                             <label for="drug">Drugs : <i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
                                             <select class="form-control" name="drug" required id="forms" >
                                                 <option>== Choix ==</option>
-                                                @foreach ($drugs as $drug)
-                                                    <option value="{{ $drug->id }}">{{ $drug->name }}</option>
+                                                
+                                                @foreach ($routesDrugs as $routeDrug)
+                                                
+                                                    <option value="{{ $routeDrug->id }}">{{ $routeDrug->drugs->name }} ({{$routeDrug->routes->name}})</option>
                                                 @endforeach
                                             </select>
                                         </div>

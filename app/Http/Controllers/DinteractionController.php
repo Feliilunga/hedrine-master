@@ -8,6 +8,7 @@ use App\AtcLevel4;
 use App\AtcLevel4Drug;
 use App\Atc;
 use App\Dinteraction;
+use App\RouteDrug;
 use App\Drug;
 use App\Effect;
 use App\Force;
@@ -48,13 +49,17 @@ class DinteractionController extends Controller
     public function create()
     {
         $drugs = Drug::orderBy('name', 'desc')->get();
+        $routesDrugs = RouteDrug::with('drugs')
+        ->join('drugs', 'route_drugs.drug_id', '=', 'drugs.id')
+        ->select('route_drugs.*', 'drugs.name')
+        ->orderBy('drugs.name')-> get();
         $targets = Target::orderBy('name', 'desc')->get();
         $effects = Effect::orderBy('name', 'desc')->get();
         $force = Force::orderBy('name', 'desc')->get();
         $references = Reference::orderBy('title', 'desc')->get();
         //dd($references);
 
-        return view('admin.interaction.targets.newDrugTargetForm', compact('drugs', 'targets', 'effects', 'force', 'references'));
+        return view('admin.interaction.targets.newDrugTargetForm', compact('drugs', 'targets', 'effects', 'force', 'references', 'routesDrugs'));
     }
 
     /**
@@ -67,33 +72,57 @@ class DinteractionController extends Controller
     {
         //
         //dd(Auth::user()->role_id);
-        $effects = $request->effects;
-        $references = $request->references;
-        $now = \Carbon\Carbon::now();
+        $dinteract = Dinteraction::orderBy('id')->get();
 
-        $dinteraction = new Dinteraction;
-        $dinteraction->user_id = Auth::user()->id;
-        $dinteraction->drug_id = $request->drug;
-        $dinteraction->target_id = $request->target;
-        $dinteraction->force_id = $request->force;
-        $dinteraction->notes = $request->note;
-        if (Auth::user()->role_id == 1) {
-            $dinteraction->validated = 1;
-        }
-        $dinteraction->save();
+        foreach ($dinteract as $dinter) {
+            if ($dinter->route_drug_id == $request->drug && $dinter->target_id == $request->target) {
+                // dd($dinter);
+                // Alert::error('Erreur !', 'Une interraction simmilaire existe déjà.');
+                
+                swal({
+                    title: "Are you sure?",
+                    text: "Il existe déjà une dinteraction similaire",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: "Yes, ajouter!",
+                    closeOnConfirm: false
+                  },
+                  function(){
+                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                  });
+                // return redirect()->route('newDrugTarget');
+                
+            }
+        }    
+                dd('test again');
+                $effects = $request->effects;
+                $references = $request->references;
+                $now = \Carbon\Carbon::now();
 
-        $dinteraction->effects()->sync($effects, false);
-        $dinteraction->references()->sync($references, false);
-        if (Auth::user()->role_id == 1) {
-            Alert::success('Ok,', 'Votre Dinteraction a été ajoutée avec succès !');
-        }
-        else {
-            Alert::success('Ok,', 'Votre Dinteraction doit être validée par un admin');
-        }
+                $dinteraction = new Dinteraction;
+                $dinteraction->user_id = Auth::user()->id;
+                $dinteraction->route_drug_id = $request->drug;
+                $dinteraction->target_id = $request->target;
+                $dinteraction->force_id = $request->force;
+                $dinteraction->notes = $request->note;
+                if (Auth::user()->role_id == 1) {
+                    $dinteraction->validated = 1;
+                }
+                $dinteraction->save();
+
+                $dinteraction->effects()->sync($effects, false);
+                $dinteraction->references()->sync($references, false);
+                if (Auth::user()->role_id == 1) {
+                    Alert::success('Ok,', 'Votre Dinteraction a été ajoutée avec succès !');
+                } else {
+                    Alert::success('Ok,', 'Votre Dinteraction doit être validée par un admin');
+                }
+
+                return redirect()->route('dinteraction.index');
+            
         
-
-        return redirect()->route('dinteraction.index');
-    }
+    }       
 
     // get the drug family from request api ajax
 

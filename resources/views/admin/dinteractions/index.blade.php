@@ -23,7 +23,7 @@
 				@foreach ($dinteractionsWithRelations as $dinteraction)
 				<tr class="text-center">
 
-					<td>{{$dinteraction->drugs->name}}</td>
+					<td>{{$dinteraction->routesDrugs->drugs->name}} ({{$dinteraction->routesDrugs->routes->name}})</td>
 					<td>{{optional($dinteraction->targets)->name }}</td>
 					<td>{{$dinteraction->notes }}</td>
 					<td>{{optional($dinteraction->user)->name }}</td>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Back;
 
 use App\Drug;
+use App\RouteDrug;
 use App\User;
 use App\Force;
 use App\Effect;
@@ -45,7 +46,7 @@ class DinteractionController extends Controller
     public function index()
     {
         //$dinteractions = Dinteraction::all();
-        $dinteractionsWithRelations = Dinteraction::with('drugs', 'targets', 'user')->where('validated',1)->get();
+        $dinteractionsWithRelations = Dinteraction::with('routesDrugs', 'drugs', 'targets', 'user')->where('validated',1)->get();
         return view('admin.dinteractions.index', compact('dinteractionsWithRelations'));
     }
 
@@ -115,8 +116,12 @@ class DinteractionController extends Controller
         $forces = Force::orderBy('name', 'ASC')->get();
         $effects = Effect::orderBy('name', 'ASC')->get();
         $dinteractions = Dinteraction::all();
+        $routesDrugs = RouteDrug::with('drugs')
+        ->join('drugs', 'route_drugs.drug_id', '=', 'drugs.id')
+        ->select('route_drugs.*', 'drugs.name')
+        ->orderBy('drugs.name')-> get();
         // dd($dinteractions);
-        return view('admin.dinteractions.form_add_dinteraction', ['dinteraction' => $dinteraction], compact('dinteractions', 'effects', 'forces', 'references'));
+        return view('admin.dinteractions.form_add_dinteraction', ['dinteraction' => $dinteraction], compact('dinteractions', 'effects', 'forces', 'references', 'routesDrugs'));
     }
 
     /**
@@ -166,7 +171,7 @@ class DinteractionController extends Controller
                     $dinteraction2->update([
                         'force_id' => $request->force_id,
                         'target_id' => $request->target_id,
-                        'drug_id' => $request->drug_id,
+                        'route_drug_id' => $request->route_drug_id,
                         'notes' => $request->notes,
                         'target_id' => $request->target_id
                     ]);
@@ -185,7 +190,7 @@ class DinteractionController extends Controller
                  $dinteraction2->update([
                      'force_id' => $request->force_id,
                      'target_id' => $request->target_id,
-                     'drug_id' => $request->drug_id,
+                     'route_drug_id' => $request->route_drug_id,
                      'notes' => $request->notes,
                      'target_id' => $request->target_id
                  ]);
@@ -213,7 +218,7 @@ class DinteractionController extends Controller
             //Editor
             else if (Auth::user()->role_id == 3) {
 
-                $original = ["drug_id" => $dinteraction->drug_id,
+                $original = ["route_drug_id" => $dinteraction->route_drug_id,
                     "target_id" => $dinteraction->target_id,
                     //"effects" => $hinteraction->effects,
                     "force_id" => $dinteraction->force_id,
@@ -221,7 +226,7 @@ class DinteractionController extends Controller
                     //"references" => $hinteraction->references];
                 ];
 
-                $new = ["drug_id" => $request->drug_id,
+                $new = ["route_drug_id" => $request->route_drug_id,
                     "target_id" => $request->target_id,
                     //"effects" => $request->effects,
                     "force_id" => $request->force_id,

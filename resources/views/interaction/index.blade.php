@@ -134,7 +134,7 @@
         </form>
     </div>
 
-    <div  class="container">
+    <div  class="container" style="margin-bottom:100px">
     <div class="" id="chart"></div>
     </div>
 <br/>

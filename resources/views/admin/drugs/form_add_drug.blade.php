@@ -23,7 +23,7 @@
 				</div>
 
 				@endif
-				<div class="row">
+				<div class="row" id='row'>
 					<div class="col-md-8 offset-md-2 ">
 						<!-- general form elements -->
 						<div class="card card-success">
@@ -79,7 +79,7 @@
 
 										<div class="form-group" >
 											<label for="atc_level4_id">1. ATC</label>
-											<select name="atc_level4_id0" class="form-control" id="select">
+											<select name="atc_level4_id0" class="form-control" id="select0">
 													<option value="" selected="selected">Veuillez indiquer un atc pour le DCI </option>
 													@foreach ($atc4All as $atc_level)
 														<option value="{{$atc_level->id}}">{{$atc_level->code}}: {{$atc_level->name}} </option>
@@ -108,7 +108,9 @@
 											
 											$lesRoutes = $drug->routesDrugs;
 											$lesAtc = $drug->atcLevel4sDrugs;
-											//dd($atcPiv);
+                                            foreach ($lesRoutes as $rr) {
+                                               // dd($rr);
+                                            }
 											
 										@endphp
 										@foreach($lesRoutes as $laRoute)	
@@ -122,16 +124,18 @@
 												</select>
 											</div>
 											<!-- <button id="removeRoute{{$b}}" type="button" class="btn btn-outline-success float-right">Supprimer Routes {{$r}}</button> -->
-	
 
+											<!-- Ajout des interactions uniquements dans le cas d'un edit. Chaque interactions pourra être modifié  Félicien -->
 											<div class="form-group" id="divInteraction{{$b}}">
 												<label for="target">{{$r}}. Modifier l'interaction  : </label>
 												<br/>
 													@if($laRoute->dinteractions->count() > 0 )
 														@foreach ($laRoute->dinteractions as $dinteraction)
-
+															@php
+															//dd($dinteraction->targets->name);
+															@endphp
 															<a  id="interactionUpdates" class="btn btn-outline-success text align-self-center p-2" href="{{ route('dinteraction.edit', $dinteraction->id) }}" role="button">
-																{{$dinteraction->targets->name}}</a>&nbsp; &nbsp;
+																{{$dinteraction->targets['name']}}</a>&nbsp; &nbsp;
 
 
 														@endforeach
@@ -191,15 +195,8 @@
 									<br>
 									
 
-                                    <!-- ajout de des target dInteraction qui rediregerons vers le formulaire pour les modifier-->
+                                  
                                     <div class="form-group">
-                                    <!--Mohammed A. ajout de des target dInteraction qui rediregerons vers le formulaire pour les modifier
-                                      ajout d'un if eles pour diferencier la creation de la modfication
-                                      2 eme ajout de if else pour verifier si il y a une  intearaction ou pas
-                                    -->
-
-                                   
-									
 
 									
 
@@ -246,6 +243,7 @@ $leCpt=11;
 
 @section('dashboard-js')
 <script>
+$(document).ready(function(){
 // Félicien ajoute un select à chaque fois qu'on appuie sur le bouton ajout atc
 $i=0;
 $leCpt = 0;
@@ -270,7 +268,7 @@ $("#btnAtcAdd").click(function() {
 	$('#atcSelect').append('@if(Route::currentRouteName() === "drug.create")' +
 								'<div class="form-group" id="divAtc' + $i + '">' +
 									'<label for="atc_level4_id">' + $p + '. ATC</label>' +
-									'<select name="atc_level4_id' + $i + '" class="form-control" id="select">' +
+									'<select name="atc_level4_id' + $i + '" class="form-control" id="select' + $i +'">' +
                                             '@if(Route::currentRouteName() === "drug.create")' +
                                             '<option value="" selected="selected">Veuillez indiquer un atc pour le DCI </option>' +
                                             '@foreach ($atc4All as $atc_level)' +
@@ -325,9 +323,10 @@ $("#btnAtcAdd").click(function() {
 															'<input type="hidden" name = "leCpt" id= "leCpt" value= "' + $leCpt +'">'+
 															'@else' +
 															'<input type="hidden" name = "leCpt" id= "leCpt" value= "' + $nbre +'">'+
-															'@endif');
-															
-					});
+														'@endif');
+
+		
+});
 					
 $m=1;
 $g=0;					
@@ -372,14 +371,15 @@ $('#compteurRoute').html('@if(Route::currentRouteName() === "drug.create")' +
 
 });
 
-for($l=0; $l<6; $l++){
-	$("#removeRoute" + $l).click(function(){
-		$("#divRoute" + $l).remove();
-		$("#divRoute0").remove();
-		console.log("remove" + $l);
+// for($l=0; $l<6; $l++){
+// 	$("#removeRoute" + $l).click(function(){
+// 		$("#divRoute" + $l).remove();
+// 		$("#divRoute0").remove();
+// 		console.log("remove" + $l);
 
-	});
-}
+// 	});
+// }
+
 
 $("#removeRoute0").click(function(){
 		$("#divRoute0").remove();
@@ -433,6 +433,7 @@ $("#removeAtc0").click(function(){
 $("#removeAtc1").click(function(){
 		$("#divAtc1").remove();
 		$("#divCode1").remove();
+			
 		console.log("remove0");
 });
 $("#removeAtc2").click(function(){
@@ -455,7 +456,7 @@ $("#removeAtc4").click(function(){
 
 $("#removeAtc5").click(function(){
 		$("#divAtc5").remove();
-		//$("#divCode5").remove();
+		$("#divCode5").remove();
 		console.log("remove5");
 });
 
@@ -474,6 +475,7 @@ $("#removeAtc7").click(function(){
 $("#removeAtc8").click(function(){
 		$("#divAtc8").remove();
 		$("#divCode8").remove();
+		
 		console.log("remove8");
 });
 
@@ -495,6 +497,106 @@ $("#removeAtc11").click(function(){
 		console.log("remove11");
 });
 
+$('#select0').change(function(){
+	$selectText = $('#select0 option:selected').text();
+	 $newText = $selectText.substr(0, 5);
+	$('#code0').val($newText);
+	console.log($newText);
+
+});
+
+$('#select1').change(function(){
+	$selectText = $('#select1 option:selected').text();
+	 $newText = $selectText.substr(0, 5);
+	$('#code1').val($newText);
+	console.log($newText);
+
+});
+
+$('#select2').change(function(){
+	$selectText = $('#select2 option:selected').text();
+	 $newText = $selectText.substr(0, 5);
+	$('#code2').val($newText);
+	console.log($newText);
+
+});
+
+$('#select3').change(function(){
+	$selectText = $('#select3 option:selected').text();
+	 $newText = $selectText.substr(0, 5);
+	$('#code3').val($newText);
+	console.log($newText);
+
+});
+
+
+$('#select4').change(function(){
+	$selectText = $('#select4 option:selected').text();
+	 $newText = $selectText.substr(0, 5);
+	$('#code4').val($newText);
+	console.log($newText);
+
+});
+
+
+$('#select5').change(function(){
+	$selectText = $('#select5 option:selected').text();
+	 $newText = $selectText.substr(0, 5);
+	$('#code5').val($newText);
+	console.log($newText);
+
+});
+
+$('#select6').change(function(){
+	$selectText = $('#select6 option:selected').text();
+	 $newText = $selectText.substr(0, 5);
+	$('#code6').val($newText);
+	console.log($newText);
+
+});
+
+
+$('#select7').change(function(){
+	$selectText = $('#select7 option:selected').text();
+	 $newText = $selectText.substr(0, 5);
+	$('#code7').val($newText);
+	console.log($newText);
+
+});
+
+$('#select8').change(function(){
+	$selectText = $('#select8 option:selected').text();
+	 $newText = $selectText.substr(0, 5);
+	$('#code8').val($newText);
+	console.log($newText);
+
+});
+
+$('#select9').change(function(){
+	$selectText = $('#select9 option:selected').text();
+	 $newText = $selectText.substr(0, 5);
+	$('#code9').val($newText);
+	console.log($newText);
+
+});
+
+$('#select10').change(function(){
+	$selectText = $('#select10 option:selected').text();
+	 $newText = $selectText.substr(0, 5);
+	$('#code10').val($newText);
+	console.log($newText);
+
+});
+
+// $(document).ready(function() { /// Wait till page is loaded
+//    $('#btnAtcAdd').click(function(){
+//       $('#row').load('form_add_drug.blade.php #row', function() {
+//            /// can add another function here
+//       });
+//    });
+// });
+
+});
 </script>
 
 @endsection

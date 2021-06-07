@@ -149,9 +149,9 @@ $(document).ready(function () {
                         $("#chart").append("<div class='alert alert-danger' role='alert'>Un DCI ou une plante n'a pas été sélectionné dans une liste déroulante ci-dessus, ce qui ne permet pas d'afficher le graphique.  Veuillez svp compléter toutes les listes de choix. </div>");
                     } else {
                         var screenWidth = $(window).width(),
-                            mobileScreen = (screenWidth > 400 ? false : true);
+                            mobileScreen = (screenWidth > 500 ? false : true);
 
-                        var margin = { left: 40, top: 10, right: 50, bottom: 10 },
+                        var margin = { left: 40, top: -20, right: 50, bottom: -20 },
                             width = Math.min(screenWidth, 1100) - margin.left - margin.right,
                             height = (mobileScreen ? 300 : Math.min(screenWidth, 800) * 5 / 6) - margin.top - margin.bottom;
 
@@ -199,10 +199,12 @@ $(document).ready(function () {
                           ];*/
                         var herbNames = [];
                         var drugNames = [];
+                        var drugNameRoutes = [];
                         if ((oneHerb1 != null && oneDrug1 != null) && (oneHerb1 != 0 && oneDrug1 != 0) || oneHerb1 !=0) {
                             let countPlantes = [];
                             let countDrugs = [];
-
+                            // Félicien recupère le nom des routes
+                            let countRoutes = [];
                             for (let i = 1; i < data.compteurPlantes; i++) {
                                 // if (data.compteurPlantes == 2 && data.compteurPlantes == data.compteurDrugs && i == 1) {//azeddine//bug
                                 //   countPlantes[i] = "herb"
@@ -218,10 +220,11 @@ $(document).ready(function () {
                             
                             for (let j = 1; j < data.compteurDrugs; j++) {
                         
-
-                                countDrugs[j] = "drug" + j;
+                                countRoutes[j] = "nomRoute" + j;
+                                countDrugs[j] = "drugRoute" + j;
                             }
-                            countDrugs.push("drug");
+                            countDrugs.push("drugRoute");
+                            countRoutes.push("nomRoute")
 
                             $.each(data, function (data_key, data_value) {
                                 //if(data_key == "herb"+i){
@@ -231,7 +234,10 @@ $(document).ready(function () {
                                 if (countDrugs.includes(data_key)) {
                                     drugNames[data_key] = data[data_key];
                                 }
-
+                                if (countRoutes.includes(data_key)) {
+                                    drugNameRoutes[data_key] = data[data_key];
+                                }
+                                console.log(drugNameRoutes);
                             });
                         }
                         /*= ["Millepertuis", "Pomelo", "Ail", "testPlante", "", "5-Fluorouracile",
@@ -250,9 +256,15 @@ $(document).ready(function () {
                         //  console.log(drugNames);
                         for (const key2 in drugNames) {
                             if (drugNames[key2] !== undefined && drugNames[key2][0] !== undefined) {
-                                Names.push(drugNames[key2][0]);
+                                Names.push(drugNames[key2]);
                             }
                         }
+
+                        // for (const key4 in drugNameRoutes) {
+                        //     if (drugNameRoutes[key4] !== undefined && drugNameRoutes[key4][0] !== undefined) {
+                        //         Names.push(drugNameRoutes[key4][0]);
+                        //     }
+                        // }
                         Names.push("");
 
 
@@ -486,6 +498,7 @@ $(document).ready(function () {
                         g.append("text")
                             .each(function (d) { d.angle = ((d.startAngle + d.endAngle) / 2) + offset; })
                             .attr("dy", ".55em")
+                            .attr("style","margin-bottom:50px")
                             .attr("class", "titles")
                             .attr("text-anchor", function (d) { return d.angle > Math.PI ? "end" : null; })
                             .attr("transform", function (d, i) {
@@ -1097,6 +1110,8 @@ $(document).ready(function () {
                         let casEtudes = '';
                         var herbNames = [];
                         var drugNames = [];
+                        //  Table qui va stocker les noms des routes pour les drugs Félicien
+                        var drugNameRoutes = [];
                         var idTest = -1;
                         var conditionResult = "";
                         console.log("mon test 3");
@@ -1108,11 +1123,13 @@ $(document).ready(function () {
                             //Evenor S. on récupère les nom des plantes séléctionnées
                             let countPlantes = [];
                             let countDrugs = [];
+                            let countRoutes = [];
                             for (let i = 1; i < data.compteurPlantes; i++) {
                                 countPlantes[i] = "herb" + i;
                             }
                             for (let j = 1; j < data.compteurDrugs; j++) {
                                 countDrugs[j] = "drug" + j;
+                                countRoutes[j] = "nomRoute" + j;
                             }
                             $.each(data, function (data_key, data_value) {
                                 //if(data_key == "herb"+i){
@@ -1122,6 +1139,10 @@ $(document).ready(function () {
                                 if (countDrugs.includes(data_key)) {
                                     drugNames[data_key] = data[data_key];
                                 }
+                                if (countRoutes.includes(data_key)) {
+                                    drugNameRoutes[data_key] = data[data_key];
+                                }
+
 
                             });
                             compteurMulti = data.compteurPlantes;
@@ -1131,7 +1152,7 @@ $(document).ready(function () {
                             //console.log("search pour plusieurs plantes");
                             var drugName = data.drug[0];
                             console.log("nom druuuug test " + drugName);
-
+                            var drugNameRoute = data.nomRoute[0];
                             //Evenor S. on récupère les nom des plantes séléctionnées
                             var herbNames = [];
                             $.each(data, function (data_key, data_value) {
@@ -1155,6 +1176,11 @@ $(document).ready(function () {
 
                                         drugNames[i] = data[data_key];
                                         console.log(drugNames[i]);
+                                    }
+                                    // Félicien récupère les noms des routes
+                                    if (data_key == "nomRoute" + i) {
+
+                                        drugNameRoutes[i] = data[data_key];
                                     }
                                 }
                             });
@@ -1201,7 +1227,7 @@ $(document).ready(function () {
                                                                                 "<th>" + herbNames["herb" + currentPhase] + "</th>" +
                                                                                 "<th></th>" +
                                                                                 "<th></th>" +
-                                                                                "<th>" + drugNames["drug" + currentDrug] + "</th>";
+                                                                                "<th>" + drugNames["drug" + currentDrug] + " (" + drugNameRoutes["nomRoute" + currentDrug] + ")</th>";
                                                                         }
 
                                                                         //Evenor S. variable pour empecher le doublon d'entête avant de changer de plante/dci
@@ -1216,7 +1242,7 @@ $(document).ready(function () {
                                                                             "<th></th>" +
                                                                             "<th ></th>" +
                                                                             "<th ></th>" +
-                                                                            "<th>" + drugNames["drug" + currentDrug] + "</th>" +
+                                                                            "<th>" + drugNames["drug" + currentDrug] + " (" + drugNameRoutes["nomRoute" + currentDrug] + ")</th>" +
                                                                             "<th></th>" +
                                                                             "<th></th>" +
                                                                             "</tr>";
@@ -1413,14 +1439,14 @@ $(document).ready(function () {
                                                                             "<th>" + herbNames[currentPhase] + "</th>" +
                                                                             "<th ></th>" +
                                                                             "<th ></th>" +
-                                                                            "<th>" + drugName + "</th>";
+                                                                            "<th>" + drugName + " (" + drugNameRoute + ")</th>";
                                                                     }
                                                                     else {
                                                                         casEtudes += "<tr>" +
                                                                             "<th>" + herbName + "</th>" +
                                                                             "<th ></th>" +
                                                                             "<th ></th>" +
-                                                                            "<th>" + drugNames[currentPhase] + "</th>";
+                                                                            "<th>" + drugNames[currentPhase] + " (" + drugNameRoutes[currentPhase] + ")</th>";
                                                                     }
                                                                     //Evenor S. variable pour empecher le doublon d'entête avant de changer de plante/dci
                                                                     nouvelle_phase_etude_clinique = false;
@@ -1435,7 +1461,7 @@ $(document).ready(function () {
                                                                         "<th></th>" +
                                                                         "<th ></th>" +
                                                                         "<th ></th>" +
-                                                                        "<th>" + drugName + "</th>" +
+                                                                        "<th>" + drugName + " (" + drugNameRoute + ")</th>" +
                                                                         "<th></th>" +
                                                                         "</tr>";
                                                                 }
@@ -1445,7 +1471,7 @@ $(document).ready(function () {
                                                                         "<th></th>" +
                                                                         "<th ></th>" +
                                                                         "<th></th>" +
-                                                                        "<th>" + drugNames[currentPhase] + "</th>" +
+                                                                        "<th>" + drugNames[currentPhase] + " (" + drugNameRoutes[ currentPhase] + ")</th>" +
                                                                         "<th></th>" +
                                                                         "</tr>";
                                                                 }

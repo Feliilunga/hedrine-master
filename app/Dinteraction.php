@@ -34,6 +34,11 @@ class Dinteraction extends Model
         return $this->belongsTo(Force::class,'force_id');
     }
 
+    public function drugs()
+    {
+        return $this->belongsTo(Drug::class);
+    }
+
     public function references()
     {
         return $this->belongsToMany(Reference::class, 'dinteraction_has_references')->withTimestamps();

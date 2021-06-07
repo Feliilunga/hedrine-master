@@ -252,6 +252,9 @@ class TargetController extends Controller
                         
                         $idDrug = DB::table('route_drugs')->where('id', $nbrDrugs[$j-1])->pluck('drug_id');
                         $retour['idDrug'] = $idDrug;    
+                        ${"nomRoute$j"} = DB::table('route_drugs')->join('routes', 'route_drugs.route_id', '=', 'routes.id')
+                        ->where('route_drugs.id', $nbrDrugs[$j-1])->pluck('routes.name');
+                        $retour['nomRoute'.$j] = ${"nomRoute$j"};
                         ${"drug$j"} =  DB::table('drugs')->where('id', $idDrug)->pluck('name');
                         $retour['drug'.$j] = ${"drug$j"};
                         $retour['result'.$i.$j] = ${"result$i$j"};
@@ -301,6 +304,9 @@ class TargetController extends Controller
                 }
                 $idDrug = DB::table('route_drugs')->where('id', $request->drugId1)->pluck('drug_id');
                 $retour['idDrug'] = $idDrug;
+                ${"nomRoute"} = DB::table('route_drugs')->join('routes', 'route_drugs.route_id', '=', 'routes.id')
+                ->where('route_drugs.id', $request->drugId1)->pluck('routes.name');
+                $retour['nomRoute'] = ${"nomRoute"};
                 $drug = DB::table('drugs')->where('id', $idDrug)->pluck('name');
                 $retour['drug'] = $drug;
 
@@ -365,10 +371,15 @@ class TargetController extends Controller
                         ->orderBy('hinteractions.force_id', 'ASC')
                         ->get();
 
-                    $idDrug = DB::table('route_drugs')->where('id', $request->drugId1)->pluck('drug_id');
-                    $retour['idDrug'] = $idDrug;
-                    ${"drug$i"} =  DB::table('drugs')->where('id', $idDrug)->pluck('name');
+                    ${"idDrug$i"} = DB::table('route_drugs')->where('id', $nbrDrugs[$i-1])->pluck('drug_id');
+                    $retour['idDrug'] = ${"idDrug$i"};
+                    ${"drug$i"} =  DB::table('drugs')->where('id', ${"idDrug$i"})->pluck('name');
                     $retour['drug'.$i] = ${"drug$i"};
+                    ${"nomRoute$i"} = DB::table('route_drugs')->join('routes', 'route_drugs.route_id', '=', 'routes.id')
+                    ->where('route_drugs.id', $nbrDrugs[$i-1])->pluck('routes.name');
+                    $retour['nomRoute'.$i] = ${"nomRoute$i"};
+                    ${"drugRoute$i"} = ${"drug$i"}[0]." (". ${"nomRoute$i"}[0].")";
+                    $retour["drugRoute".$i] = ${"drugRoute$i"};
                     $retour['result'.$i] = ${"result$i"};
                     $retour['references'.$i] = ${"references$i"};
                 }
@@ -503,6 +514,9 @@ class TargetController extends Controller
 
                     ${"drug$i"} =  DB::table('drugs')->where('id', $nbrDrug[0][$i-1]->drug_id)->pluck('name');
                     $retour['drug'.$i] = ${"drug$i"};
+                    ${"nomRoute$i"} = DB::table('route_drugs')->join('routes', 'route_drugs.route_id', '=', 'routes.id')
+                    ->where('route_drugs.id', $atcDrug[0][$i-1]->id)->pluck('routes.name');
+                    $retour['nomRoute'.$i] = ${"nomRoute$i"};
                     $retour['result'.$i] = ${"result$i"};
                     ${"herb"} =  DB::table('herbs')->where('id', $nbrPlantes[0])->pluck('name');
                     // $retour['herb7'] = ${"herb"};
@@ -557,6 +571,9 @@ class TargetController extends Controller
 
                         ${"drug$j"} =  DB::table('drugs')->where('id', $nbrDrug[0][$j-1]->drug_id)->pluck('name');
                         $retour['drug'.$j] = ${"drug$j"};
+                        ${"nomRoute$j"} = DB::table('route_drugs')->join('routes', 'route_drugs.route_id', '=', 'routes.id')
+                        ->where('route_drugs.id', $atcDrug[0][$j-1]->id)->pluck('routes.name');
+                        $retour['nomRoute'.$j] = ${"nomRoute$j"};
                         $retour['result'.$i.$j] = ${"result$i$j"};
                         $retour['references'.$i.$j] = ${"references$i$j"};
                     }
@@ -609,6 +626,9 @@ class TargetController extends Controller
                 }
                 $drug = DB::table('drugs')->where('id', $atcDrug[0][0]->drug_id)->pluck('name');
                 $retour['drug'] = $drug;
+                ${"nomRoute"} = DB::table('route_drugs')->join('routes', 'route_drugs.route_id', '=', 'routes.id')
+                ->where('route_drugs.id', $atcDrug[0][0]->id)->pluck('routes.name');
+                $retour['nomRoute'] = ${"nomRoute"};
 
             }
 

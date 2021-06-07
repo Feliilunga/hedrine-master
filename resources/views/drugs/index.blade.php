@@ -194,7 +194,6 @@ Recherche DCI
                 "info": true,
                 "autoWidth": false,
                 "responsive": true,
-
                 "language":
                 {
                     "url": '//cdn.datatables.net/plug-ins/1.10.20/i18n/French.json'
@@ -218,6 +217,7 @@ Recherche DCI
         var i;
 
         for (i = 0; i < toggler.length; i++) {
+            console.log(toggler);
             toggler[i].addEventListener("click", function() {
                 this.parentElement.querySelector(".nested").classList.toggle("active");
                 this.classList.toggle("caret-down");

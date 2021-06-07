@@ -84,19 +84,52 @@
         <dl class="row">
             <dt class="col-sm-2">ATC de niveau 4</dt>
 
-            <dd class="col-sm-8"> <strong>
+            <dd class="col-sm-8">
                 @php
                     $pivotAtc = $drug->atcLevel4sDrugs;
                     //dd($pivotAtc);
+                    $k=1;
                 @endphp
-                @foreach($pivotAtc as $piAtc)
-                    @if( $piAtc->atc_level4_id !== 0)
-                        {{ $piAtc->atc_level4->code }} -> {{ $piAtc->atc_level4->name }} -
-                    @else
-                        Pas d'ATC
-                    @endif
-                @endforeach
-        </strong>
+                <div id="buttonAtc">
+                <button class="btn btn-outline-success" id="atcAfficher">Afficher les ATC</button>
+                <button class="btn btn-outline-success" id="atcMasquer" style="display: none;">Masquer les ATC</button><br>
+                </div>
+                <div class="card-body" id="atc-list-search">
+                <div>
+                    <ul id="atc-dynamic-tree" style="display: none;">
+                        @foreach($pivotAtc as $piAtc)
+                            @if( $piAtc->atc_level4_id !== 0)
+                                <li id="atc4{{$k}}"><span class="btn btn-outline-success">{{ $piAtc->atc_level4->code }} - {{ $piAtc->atc_level4->name }}</span>
+                                    <ul class="nested"><br>
+                                        <li  id="atc3{{$k}}"><span class="btn btn-outline-success">
+                                            {{ $piAtc->atc_level4->atc_level3->code }} - {{ $piAtc->atc_level4->atc_level3->name }}
+                                            </span>
+                                            <ul class="nested"><br>
+                                                <li id="atc2{{$k}}"><span class="btn btn-outline-success" >
+                                                    {{ $piAtc->atc_level4->atc_level3->atc_level2->code }} - {{ $piAtc->atc_level4->atc_level3->atc_level2->name }}
+                                                    </span>
+                                                    <ul class="nested">
+                                                        <li id="atc1{{$k}}">
+                                                            <span class="btn btn-outline-success" >
+                                                            {{ $piAtc->atc_level4->atc_level3->atc_level2->atc_level1->code }} - {{ $piAtc->atc_level4->atc_level3->atc_level2->atc_level1->name }}
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </li>    
+                                            </ul>
+                                        </li>
+                                    </ul>    
+                                </li>    
+                            @php
+                                $k++;
+                            @endphp
+                            @else
+                                Pas d'ATC
+                            @endif
+                        @endforeach
+                    </ul>
+                </div>
+                </div>
         </dd>
         </dl>
         <div class="row">
@@ -166,7 +199,24 @@
 
             <div class="card-body table-responsive" style="background-color: #fff">
                 <table id="dataTable_details" class="display responsive  table table-striped " width="100%">
+                @php
+                    $drugInteraction = $drug->routesDrugs;
+                    $tabPRoute =  $drug->routesDrugs;
+                    //dd($tabPRoute);
+                    $lesId;
+                           
+                @endphp    
+                @foreach($tabPRoute as $tRoute)
+                @php
+                   
+                    //dd($tRoute->routes);
+                           
+                @endphp  
                     <thead>
+                         
+                        <tr style="background-color:#226AB2">
+                        <th>{{$tRoute->routes->name}} </th>
+                        </tr>
                         <tr>
                             <th></th>
                             <th>Effets</th>
@@ -177,14 +227,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @php
-                            $drugInteraction = $drug->routesDrugs;
-                            //dd($drugInteraction);
-                            $lesId;
-                           
-                        @endphp
-                        @foreach($drugInteraction as $piRoute)
-                        @foreach ($piRoute->dinteractions->sortByDesc('name') as $dinteraction)  
+                        @foreach ($tRoute->dinteractions->sortByDesc('name') as $dinteraction)  
                         @php
                            // dd($dinteraction);
                            $lesId = $dinteraction->route_drug_id;
@@ -269,9 +312,9 @@
                         </tr>
                         </div> 
                         @endforeach
-                        @endforeach
                         
                     </tbody>
+                    @endforeach
                 </table>
             </div>
         </div>
@@ -290,8 +333,10 @@
 
 			$('#dataTable_details').DataTable({
 				"paging": false,
+                "processing": true,
 				"lengthChange": true,
 				"searching": true,
+                "deferRender": 15,
 				"ordering": true,
 				"info": false,
 				"autoWidth": true,
@@ -304,15 +349,58 @@
 
         // $("#voie").change(function() {
         // console.log("changement");
-        $("[id^=mecaaa]").hide();
+        $("[id^=mecaaa]").show();
         $ids=$id;
         $('#voie').on('change', function() {
+            if($('#voie').val() == 0){
+                $("[id^=mecaaa]").show();
+            }
+            else{
             $("[id^=mecaaa]").hide();
             //$('#mecaaa'+$id).show(); 
             $("[id^=mecaaa"+$id+"]").show();
             //console.log($idPivotRoute);
+            }
         });
-        
+
+    $i=1;
+    $cpt = {{$k}};
+
+    $('#atcAfficher').on('click', function() {
+        $("[id^=atc-dynamic-tree]").show();
+        $('#atcAfficher').hide();
+        $('#atcMasquer').show();
+        $('[id^=atc3]').hide();
+        $('[id^=atc2]').hide();
+        $('[id^=atc1]').hide();
+    });
+
+    $('#atcMasquer').on('click', function() {
+        $("[id^=atc-dynamic-tree]").hide();
+        $('#atcAfficher').show();
+        $('#atcMasquer').hide();
+    });
+
+    var toggler = $("[id^=atc4]");
+        var t;
+
+        for (t = 0; t < toggler.length; t++) {
+            console.log(toggler);
+            toggler[t].addEventListener("click", function() {
+                this.parentElement.querySelector("[id^=atc3]").classList.toggle("active");
+                this.classList.toggle("[id^=atc4]-down");
+            });
+        }
+
+    //console.log($cpt);
+ 
+    
+    // $('#atc41').on('click', function() {
+    //         $('#atc31').show();   
+    // });
+
+
+    
 
 	</script>
 @endsection

@@ -9,6 +9,7 @@ use App\Route;
 use App\Target;
 use App\AtcLevel4;
 use App\RouteDrug;
+use App\Dinteraction;
 use App\AtcLevel4Drug;
 use App\DrugFamily;
 use App\DrugFamilyDrug;
@@ -72,6 +73,7 @@ class DrugController extends Controller
      */
     public function store(DrugRequest $request)
     {
+        // On récupère un compteur placer dans le formulaire pour connaitre le nombre d'ajout a effectué Félicien
         $cpt = $request->leCpt;
         $cptR = $request->cptRoute;
         if ($cpt == null) {
@@ -181,14 +183,15 @@ class DrugController extends Controller
         $atc4All = AtcLevel4::all();
         $atcPiv = AtcLevel4Drug::all();
         $routePiv = RouteDrug::all();
-        return view('admin.drugs.form_add_drug', ['drug' => $drug], compact('routes', 'atc4All', 'atcPiv', 'routePiv'));
+        $dinteract = Dinteraction::all();
+        return view('admin.drugs.form_add_drug', ['drug' => $drug], compact('routes', 'atc4All', 'atcPiv', 'routePiv', 'dinteract'));
     }
 
     public function getAllDrogs(Request $request)
     {
 
         if ($request->ajax()) {
-            $query = Drug::with('atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1', 'routesDrugs.routes', 'drugFamiliesDrugs.drugsFamilies','user')->select('drugs.*');
+            $query = Drug::with('atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1', 'routesDrugs.routes', 'user')->select('drugs.*');
 
             return DataTables::eloquent($query)->toJson();
         }
@@ -336,13 +339,13 @@ class DrugController extends Controller
     {
 
         if($type == "showAll"){
-            $drugs = Drug::with('atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1', 'routesDrugsdinteractions', 'routesDrugs.dinteractions.effects', 'routesDrugs.dinteractions.targets')->where('atc_level4_id',$id)->get();
+            $drugs = Drug::with('atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1', 'routesDrugsdinteractions', 'routesDrugs.dinteractions.effects', 'routesDrugs.dinteractions.targets', 'routesDrugs.routes')->where('atc_level4_id',$id)->get();
       //   dd($drugs,$id,"if");
             return view("drugs/details", compact('drugs', 'type'));
         }
         else {
 
-            $drug = Drug::with('atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1', 'routesDrugs.dinteractions', 'routesDrugs.dinteractions.effects', 'routesDrugs.dinteractions.targets')->findOrFail($id);
+            $drug = Drug::with('atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1', 'routesDrugs.dinteractions', 'routesDrugs.dinteractions.effects', 'routesDrugs.dinteractions.targets', 'routesDrugs.routes')->findOrFail($id);
          // dd($drug->atc_level4_id,$id,"else");
             $drugs[0] = $drug;
             return view("drugs/details", compact('drugs', 'type'));

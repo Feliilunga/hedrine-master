@@ -35,11 +35,11 @@
 										<div class="form-group">
 											@isset($dinteraction) @method('PUT') @endisset
 											@csrf
-											<label for="drug_id">Drug Name</label>
-												<select name="drug_id" class="form-control">
+											<label for="route_drug_id">Drug Name</label>
+												<select name="route_drug_id" class="form-control">
 													<option></option>
-													@foreach ($drugs as $drug)
-														<option value="{{$drug->id}}" @if($dinteraction->drug_id == $drug->id) selected @endif>{{$drug->name}}</option>
+													@foreach ($routesDrugs as $routeDrug)
+														<option value="{{$routeDrug->id}}" @if($dinteraction->route_drug_id == $routeDrug->id) selected @endif>{{ $routeDrug->drugs->name }} ({{$routeDrug->routes->name}})</option>
 													@endforeach
 												</select>
 										</div>
@@ -103,7 +103,7 @@
 												<a class="btn btn-light" href="{{ route('dinteraction.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des Interactions DCI</a>
                                                 <br/>
                                                 <!--Mohammed A. Ajout d'un lien pour revernir à la page précédente Detail de la DCI  -->
-                                                <a class="btn btn-light" href="{{route('drugs.details',$dinteraction->drug_id)}}" role="button"><i class="fas fa-arrow-left"></i> Retour aux details de la DCI</a>
+                                                <a class="btn btn-light" href="{{route('drugs.details',$dinteraction->routesDrugs->drug_id)}}" role="button"><i class="fas fa-arrow-left"></i> Retour aux details de la DCI</a>
 												<button type="submit" class="btn btn-outline-success float-right"><i class="fas fa-location-arrow"></i>
 													Sauvegarder
 												</button>
