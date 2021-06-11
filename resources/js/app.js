@@ -3,6 +3,8 @@ require('jquery');
 
 import Vue from 'vue'
 import CharsFilter from './components/CharsComponent'
+import swal from 'sweetalert2';
+window.Swal = swal;
 
 //console.log(CharsFilter);
 

@@ -57,9 +57,10 @@ class DinteractionController extends Controller
         $effects = Effect::orderBy('name', 'desc')->get();
         $force = Force::orderBy('name', 'desc')->get();
         $references = Reference::orderBy('title', 'desc')->get();
+        $leDinteraction = Dinteraction::orderBy('id')->get();
         //dd($references);
 
-        return view('admin.interaction.targets.newDrugTargetForm', compact('drugs', 'targets', 'effects', 'force', 'references', 'routesDrugs'));
+        return view('admin.interaction.targets.newDrugTargetForm', compact('drugs', 'targets', 'effects', 'force', 'references', 'routesDrugs', 'leDinteraction'));
     }
 
     /**
@@ -72,30 +73,35 @@ class DinteractionController extends Controller
     {
         //
         //dd(Auth::user()->role_id);
-        $dinteract = Dinteraction::orderBy('id')->get();
+        // $dinteract = Dinteraction::orderBy('id')->get();
 
-        foreach ($dinteract as $dinter) {
-            if ($dinter->route_drug_id == $request->drug && $dinter->target_id == $request->target) {
-                // dd($dinter);
-                // Alert::error('Erreur !', 'Une interraction simmilaire existe déjà.');
+        // foreach ($dinteract as $dinter) {
+        //     if ($dinter->route_drug_id == $request->drug && $dinter->target_id == $request->target) {
+            //     // dd($dinter);
+            //     // Alert::error('Erreur !', 'Une interraction simmilaire existe déjà.');
+            //     $alert = echo "<script>confirm('Il existe déjà une dinteraction similaire, Voulez-vous continuer?')</script>";
+            //     // $alert = Alert::warning('Are you sure?', 'Il existe déjà une dinteraction similaire, Voulez-vous continuer?');
+            //     // ->showCancelButton('Cancel', '#aaa')->persistent("Close this");
                 
-                swal({
-                    title: "Are you sure?",
-                    text: "Il existe déjà une dinteraction similaire",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonClass: "btn-danger",
-                    confirmButtonText: "Yes, ajouter!",
-                    closeOnConfirm: false
-                  },
-                  function(){
-                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                  });
-                // return redirect()->route('newDrugTarget');
-                
-            }
-        }    
-                dd('test again');
+            //     // return redirect()->route('newDrugTarget');
+            //     // // dd($alerte);
+            //     if ($alert) {
+            //         // alert()->warning($request->session()->get('warning'));
+                    
+            //         return redirect()->route('dinteraction.index');
+            //     }
+            //     else{
+            //         dd('no');
+            //         return redirect()->route('dinteraction.index');
+            //     }    
+                   
+            // }    
+                //     dd('test');
+            
+           
+        
+        // }    
+                // dd('test again');
                 $effects = $request->effects;
                 $references = $request->references;
                 $now = \Carbon\Carbon::now();

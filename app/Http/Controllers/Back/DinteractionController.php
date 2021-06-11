@@ -120,6 +120,7 @@ class DinteractionController extends Controller
         ->join('drugs', 'route_drugs.drug_id', '=', 'drugs.id')
         ->select('route_drugs.*', 'drugs.name')
         ->orderBy('drugs.name')-> get();
+        
         // dd($dinteractions);
         return view('admin.dinteractions.form_add_dinteraction', ['dinteraction' => $dinteraction], compact('dinteractions', 'effects', 'forces', 'references', 'routesDrugs'));
     }

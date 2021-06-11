@@ -29,7 +29,7 @@
 								</div>
 								<!-- /.card-header -->
 								<!-- form start -->
-								<form class=" justify-content-center" role="form" method="POST" action="@isset($dinteraction) {{ route('dinteraction.update', $dinteraction->id) }} @else {{
+								<form class=" justify-content-center" role="form" method="POST"  onsubmit="return leSubmit();" action="@isset($dinteraction) {{ route('dinteraction.update', $dinteraction->id) }} @else {{
 								route('dinteraction.store')}} @endisset">
 									<div class="card-body">
 										<div class="form-group">
@@ -118,4 +118,29 @@
 			</section>
 		</div>
     </div>
+@endsection
+
+@section('dashboard-js')
+<script >
+
+$dintera = <?php echo json_encode($dinteractions); ?>;
+
+console.log($dintera);
+
+
+function leSubmit() {
+    $i=0;
+    while( $i<$dintera.length) {
+        if($("[name='route_drug_id']").val() == $dintera[$i].route_drug_id && $("[name='target_id']").val() == $dintera[$i].target_id){
+            return confirm('Il existe déjà une une dinteraction similaire. Voulez vous quand même l\'ajouter?');
+            $i=$dintera.length;
+        }    
+        $i++;
+    }
+  
+}
+
+
+
+</script>
 @endsection

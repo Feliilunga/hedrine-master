@@ -24,7 +24,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form class=" justify-content-center" role="form" method="POST" action="{{route('newDrugTarget.store')}}">
+                                <form class=" justify-content-center" role="form" method="POST"  onsubmit="return leSubmit();" action="{{route('newDrugTarget.store')}}">
                                     <div class="card-body">
                                         <div class="alert alert-light alert-dismissible fade show text-danger">
                                             <strong><i class="fa fa-info-circle info text-danger" id="required-msg"></i></strong> Champs obligatoires!
@@ -33,7 +33,7 @@
                                         @csrf
                                         <div class="form-group">
                                             <label for="drug">Drugs : <i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
-                                            <select class="form-control" name="drug" required id="forms" >
+                                            <select class="form-control" id = "drug" name="drug" required id="forms" >
                                                 <option>== Choix ==</option>
                                                 
                                                 @foreach ($routesDrugs as $routeDrug)
@@ -44,7 +44,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="target">Targets : <i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
-                                            <select class="form-control" name="target" required id="forms" >
+                                            <select class="form-control" id="target" name="target" required id="forms" >
                                                 <option>== Choix ==</option>
                                                 @foreach ($targets as $target)
                                                     <option value="{{ $target->id }}">{{ $target->name }}</option>
@@ -88,12 +88,14 @@
                                                 <textarea name="note" class="w-100" required  placeholder="Note ..."></textarea>
                                             </div>
                                         </div>
+                                        
+
                                         <!-- /.card-body -->
                                         <div class="card-footer">
                                             <div class="control-group">
                                                 <div class="controls">
                                                     <a class="btn btn-light" href="{{ route('target.index') }}" role="button"><i class="fas fa-arrow-left"></i> Retour à la liste des targets</a>
-                                                    <button type="submit" class="btn btn-outline-success float-right"><i class="fas fa-check-circle"></i>
+                                                    <button class="btn btn-outline-success float-right" id="ajoutButton"><i class="fas fa-check-circle"></i>
                                                         Ajouter
                                                     </button>
                                                 </div>
@@ -112,3 +114,31 @@
 
 @endsection
 
+@section('dashboard-js')
+<script >
+
+$dintera = <?php echo json_encode($leDinteraction); ?>;
+
+$test = $("[name='drug']").val();
+
+$('#test').click(function(){
+    console.log($("[name='drug']").val());
+});
+
+
+function leSubmit() {
+    $i=0;
+    while( $i<$dintera.length) {
+        if($("[name='drug']").val() == $dintera[$i].route_drug_id && $("[name='target']").val() == $dintera[$i].target_id){
+            return confirm('Il existe déjà une une dinteraction similaire. Voulez vous quand même l\'ajouter?');
+            $i=$dintera.length;
+        }    
+        $i++;
+    }
+  
+}
+
+
+
+</script>
+@endsection
