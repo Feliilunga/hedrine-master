@@ -138,7 +138,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row mb-0" id="rgpdId">
                             <div class="col-md-1! offset-md-1">
                                 <blockquote class="" style="max-width: 91%">
                                     <i class="fa fa-info-circle info text-danger" id="required-msg"></i>
@@ -201,19 +201,35 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                        <div class="form-group row mb-0" >
+                            <div class="col-md-6 offset-md-4" id='btnRegister'>
                                 <button type="submit" id="registerBtn" class="btn btn-outline-success register">
                                     {{ __('Register') }}
                                 </button>
                             </div>
                         </div>
 
-                    </form>
+                    </form><br>
+                    <button class="btn btn-outline-success register" onclick= >Suivant
+                    </button>
                 </div>
             </div>
         </div>
     </div>
     </div>
 </div>
+
+<script >
+
+console.log('test');
+
+document.getElementById('rgpdId').style.display ='none';
+document.getElementById('test').style.display ='none';
+document.getElementById('btnRegister').style.display ='none';
+
+</script>
 @endsection
+
+
+
+
