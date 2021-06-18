@@ -146,6 +146,13 @@ class AppServiceProvider extends ServiceProvider
             $view->with('validatedDrug',Drug::where('validated',1)->orderBy('name')->get());
         });
 
+        view()->composer([
+            'dashboard.layout'
+        ], function ($view) {
+            $noValidModifDrugs = DB::table('temporary_data')->where('type_table', 'drugs')->count();
+            $view->with('noValidModifDrugs', $noValidModifDrugs);
+        });
+
         /*-------------------- Herbs ---------------------- */
 
         View::composer([
@@ -265,6 +272,14 @@ class AppServiceProvider extends ServiceProvider
         ], function ($view) {
             $view->with('noValidDinteractions',Dinteraction::where('validated', '<=', 0)->get());
         });
+        view()->composer([
+            'dashboard.layout'
+        ], function ($view) {
+            $noValidModifDinteractions = DB::table('temporary_data')->where('type_table', 'dinteractions')->count();
+            $view->with('noValidModifDinteractions', $noValidModifDinteractions);
+        });
+
+       
 
 
         /*-------------------- Dashboard ---------------------- */

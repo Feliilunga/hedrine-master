@@ -112,6 +112,7 @@ class DrugController extends Controller
                     ${"atcPivot".$i}->atc_level4_id = $request->{'atc_level4_id'.$i};
                     ${"atcPivot".$i}->drug_id = $lastId;
                     ${"atcPivot".$i}->drug_code = $request->{'code'.$i};
+                    ${"atcPivot".$i}->validated = 1;
                     ${"atcPivot".$i}->save();
                 }
             }
@@ -120,6 +121,7 @@ class DrugController extends Controller
                     ${"routePivot".$i} = new RouteDrug;
                     ${"routePivot".$i}->route_id = $request->{'route_id'.$i};
                     ${"routePivot".$i}->drug_id = $lastId;
+                    ${"routePivot".$i}->validated = 1;
                     ${"routePivot".$i}->save();
                 }
             }

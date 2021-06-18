@@ -8,7 +8,7 @@ class AtcLevel4Drug extends Model
 {
     //table intermédiaire
     protected $fillable = [
-        'atc_level4_id','drug_id', 'drug_code'
+        'atc_level4_id','drug_id', 'drug_code', 'validated'
     ];
 
     public function atc_level4 () {

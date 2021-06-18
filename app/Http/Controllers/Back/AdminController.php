@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
 
-use App\{Herb, Drug, Target, Dinteraction, Hinteraction, Reference, TemporaryData};
+use App\{Herb, Drug, Target, Dinteraction, Hinteraction, Reference, TemporaryData, AtcLevel4Drug, RouteDrug};
 use App\Mail\{
     DinteractionTargetToUpdate,
     HinteractionTargetToUpdate,
@@ -124,7 +124,7 @@ class AdminController extends Controller
         } else {
 
             DB::table('drugs')->where('id', $request->id)->update(['name' => $request->name, 'drug_families_id' => $request->familly, 'route_id' => $request->route, 'atc_id' => $request->atc, 'validated' => 1]);
-
+            
             /**
             DB::table('drugs')->where('validated', '!=', 1)->where('id', $request->id)
                 ->update([
@@ -216,7 +216,7 @@ class AdminController extends Controller
         $herb->verified_by = Auth::user()->firstname . Auth::user()->name;
         $herb->save();
 
-        Alert::success("La nouvelle plante " . $herb->name . " a été approuvé");
+        Alert::success("La nouvelle plante " . $herb->name . " a été approuvée");
         return redirect()->back();
     }
 
@@ -239,7 +239,7 @@ class AdminController extends Controller
 
         $tmp->delete();
 
-        Alert::success("La modification a été validé");
+        Alert::success("La modification a été validée");
         return redirect()->back();
     }
 
@@ -281,7 +281,7 @@ class AdminController extends Controller
         $dinteractions->validated = 1;
         $dinteractions->save();
 
-        Alert::success("La dinteraction " . $dinteractions->name . " a été validé");
+        Alert::success("La dinteraction " . $dinteractions->name . " a été validée");
         return redirect()->back();
     }
     /**
@@ -314,18 +314,30 @@ class AdminController extends Controller
         $hinteraction->validated = 1;
         $hinteraction->save();
 
-        Alert::success("La hinteraction " . $hinteraction->name . " a été validé");
+        Alert::success("La hinteraction " . $hinteraction->name . " a été validée");
         return redirect()->back();
     }
 
     public function approve_drug(int $id)
     {
         $drug = Drug::findOrFail($id);
+        
+        $routePiv = RouteDrug::where('drug_id', $drug->id)->get();
+        $atcPiv = AtcLevel4Drug::where('drug_id', $drug->id)->get();
+        //il faut aussi passer le validated des table pivot à 1 pour l'afficher dans lors de la création des dinteractions Félicien
+        foreach ($routePiv as $rPiv) {
+            $rPiv->validated = 1;
+            $rPiv->save();
+        }
+        foreach ($atcPiv as $atcP) {
+            $atcP->validated = 1;
+            $atcP->save();
+        }
 
         $drug->validated = 1;
         $drug->save();
 
-        Alert::success("La DCI " . $drug->name . " a été validé");
+        Alert::success("La DCI " . $drug->name . " a été validée");
         return redirect()->back();
     }
 
@@ -347,7 +359,7 @@ class AdminController extends Controller
         $reference->validated = 1;
         $reference->save();
 
-        Alert::success("La référence " . $reference->name . " a été validé");
+        Alert::success("La référence " . $reference->name . " a été validée");
         return redirect()->back();
     }
 
@@ -379,11 +391,12 @@ class AdminController extends Controller
     public function refuse_drug(Request $request)
     {
         $id = $request->id;
+       
         //$msg = $request->msg;
 
         if ($request->temporary) {
             DB::table('temporary_data')->where('type_table', 'drugs')->where('id', '=', $id)->delete();
-            Alert::success('OK !', 'La modification a bien été refusé');
+            Alert::success('OK !', 'La modification a bien été refusée');
         } else {
             //sending an email
             //event(new HerbRefuseEvent($user, $email, $msg));
@@ -391,7 +404,9 @@ class AdminController extends Controller
             //$mail = $drug->user->email;
             //Mail::to($mail)->send(new DrugRefused($drug->user, $msg));
             DB::table('drugs')->where('id', $id)->delete();
-
+            DB::table('route_drugs')->where('drug_id', $id)->delete();
+            DB::table('atc_level4_drugs')->where('drug_id', $id)->delete();
+            
             Alert::success('OK !', 'La DCI a bien été refusé');
         }
 
@@ -418,7 +433,7 @@ class AdminController extends Controller
             DB::table('dinteractions')->where('id', $id)->delete();
         }
 
-        Alert::success('OK !', 'Le dinteraction Target a bien été refusé');
+        Alert::success('OK !', 'Le dinteraction Target a bien été refusée');
 
         return response()->json(['id' => $id]);
     }
@@ -492,7 +507,7 @@ class AdminController extends Controller
             DB::table('references')->where('id', $id)->delete();
         }
 
-        Alert::success('OK !', 'La Reference a bien été refusé !');
+        Alert::success('OK !', 'La Reference a bien été refusée !');
 
         return response()->json(['id' => $id]);
     }

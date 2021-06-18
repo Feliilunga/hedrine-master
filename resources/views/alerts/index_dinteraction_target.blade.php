@@ -27,7 +27,8 @@
                             @foreach($noValidDinteractionTargets as $key=> $target)
                                 <tr class={{$target->validated == -1? "text-info text-bolder":"text-dark"}}>
                                     <td>{{$target->id}}</td>
-                                    <td>{{ optional($target->drugs)->name }}</td>
+                                    
+                                    <td>{{ optional($target->routesDrugs->drugs)->name }}</td>
                                     <td>{{ optional($target->targets)->name }}</td>
                                     <td>{{$target->notes}}</td>
                                     <td>{{$target->user->name.' '.$target->user->firstname}}</td>
@@ -40,9 +41,10 @@
                                         <a class="btn btn-outline-danger btn-sm refuse-modal" href="#" role="button" data-id="{{ $target->id }}" data-user={{$target->user->id}} data-toggle="tooltip" title="Refuser la dinteraction">
                                             <i class="fas fa-thumbs-down"></i>
                                         </a>
-                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-outline-secondary btn-sm edit-modal" role="button" data-id="{{ $target->id }}" data-drugname="{{$target->drugs->name}}" data-targetname="{{optional($target->targets)->name}}" data-notes="{{ $target->notes }}" data-toggle="tooltip" title="Editeur rapide">
+                                        <!-- <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-outline-secondary btn-sm edit-modal" role="button" data-id="{{ $target->id }}" data-drugname="{{$target->routesDrugs->drugs->name}}" data-targetname="{{optional($target->targets)->name}}" data-notes="{{ $target->notes }}" data-toggle="tooltip" title="Editeur rapide">
                                             <i class="fas fa-edit"></i>
-                                        </button>
+                                        </button> -->
+                                        <a class="btn btn-outline-success text align-self-center p-2" href="{{ route('dinteraction.edit',$target->id) }}" role="button">Edit</a>
                                         {{-- <a class="btn btn-outline-info btn-sm modify-modal" href="#" role="button"  data-id="{{ $target->id }}" data-user={{$target->user->id}} data-toggle="tooltip" title="Modifier la dinteraction">
                                             <i class="fas fa-paper-plane"></i>
                                         </a> --}}
@@ -73,25 +75,36 @@
                                 <tr class={{$target->validated == -1? "text-info text-bolder":"text-dark"}}>
                                     <td>{{$target->type_id}}</td>
                                     <td>{{$target->type_field}}</td>
-                                    @if($target->type_field === "target_forms")
+                                    @php
+                                        //dd($target->type_field);
+                                    @endphp
+                                    @if($target->type_field === "target_id")
                                         @php
-                                            $targetForm = \Illuminate\Support\Facades\DB::table('targets')->where('id', $target->type_id)->get();
+                                            $targetForm = \Illuminate\Support\Facades\DB::table('targets')->where('id', $target->original_value)->get();
+                                            $noValidtargetsModified = \Illuminate\Support\Facades\DB::table('targets')->where('id', $target->new_value)->get();
+                                            $tabTarget = \Illuminate\Support\Facades\DB::table('targets')->where('validated', '>', 0)->get();
+                                            //dd($noValidtargetsModified);
+                                            
                                         @endphp
                                         <td>
-                                            just for test
-                                            {{--<select class="form-control targetForm selectpicker" id="temporary-forms" multiple disabled>
-                                                @foreach($targetForm->target_forms as $form)
+                                            
+                                            <select class="form-control targetForm selectpicker" id="temporary-forms" multiple disabled>
+                                                @foreach($targetForm as $form)
                                                     <option style="color:black" selected>{{ $form->name }}</option>
                                                 @endforeach
-                                            </select>--}}
+                                            </select>
                                         </td>
                                         <td>
-                                            just for test
-                                            {{--<select class="form-control targetForm selectpicker" id="temporary-forms" multiple disabled>
-                                                @foreach($noValidtargetsModified->target_forms_temporary as $form)
-                                                    <option style="color:black" selected>{{ $form->name }}</option>
+                                            
+                                            <select class="form-control targetForm selectpicker" id="temporary-target">
+                                                @foreach($tabTarget as $targ)
+                                                    @foreach($noValidtargetsModified as $form)
+                                                        <option style="color:black" value="{{$targ->id}} " @if($targ->id === $form->id) selected @endif>{{ $targ->name }}</option>
+                                                    @endforeach
                                                 @endforeach
-                                            </select>--}}
+                                            </select>                                        
+                                                
+                                            
                                         </td>
                                     @else
                                         <td>{{$target->original_value}}</td>
@@ -107,7 +120,7 @@
                                         <a class="btn btn-outline-danger btn-sm refuse-modal" href="#" role="button" data-id="{{ $target->id }}" data-temporary="temporary" data-user={{$target->author_id}} data-toggle="tooltip" title="Refuser la plante">
                                             <i class="fas fa-thumbs-down"></i>
                                         </a>
-                                        <button {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-outline-secondary btn-sm edit-modal-temporary" role="button" data-temporary="temporary" data-id="{{ $target->id }}" data-title="{{$target->type_field}}" data-original="{{$target->original_value}}" data-new="{{$target->new_value}}" data-toggle="tooltip" title="editeur rapide">
+                                        <button id='editBtn' {{\Illuminate\Support\Facades\Auth::user()->role_id > 2? "disabled" : ""}} class="btn btn-outline-secondary btn-sm edit-modal-temporary" role="button" data-temporary="temporary" data-id="{{ $target->id }}" data-title="{{$target->type_field}}" data-original="{{$target->original_value}}" data-new=  data-toggle="tooltip" title="editeur rapide">
                                             <i class="fas fa-edit"></i>
                                         </button>
                                         {{-- <a class="btn btn-outline-info btn-sm modify-modal" href="#" role="button" data-id="{{ $target->id }}" data-temporary="temporary" data-user={{$target->author_id}} data-toggle="tooltip" title="Modifier la plante">
@@ -124,6 +137,28 @@
         </div>
     </div>
 @endsection
+
+@section('dashboard-js')
+<Script> 
+    $targetVal = $("#temporary-target").val();
+    $('#temporary-target').change(function(){                                        
+        $targetVal = $("#temporary-target").val();
+        console.log($targetVal);
+    });
+   
+    $('#editBtn').click(function(){
+        $('#editBtn').data('new', $("#temporary-target").val());
+    });
+    
+
+</script>
+
+@php
+
+@endphp
+
+@endsection
+
  {{--['url' => route('admin.refuse')]['url' => route('admin.modifs')]--}}
 
 

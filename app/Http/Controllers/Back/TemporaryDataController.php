@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Back;
 
 use App\Herb;
 use App\Drug;
+use App\AtcLevel4Drug;
+use App\RouteDrug;
 use App\Target;
 use App\Hinteraction;
 use App\Dinteraction;
@@ -35,11 +37,14 @@ class TemporaryDataController extends Controller
 
     public function index_drugs()
     {
-        $noValidDrugs = Drug::with('atc_level4.atc_level3.atc_level2.atc_level1', 'user')->where('validated', '<=', 0)->orderBy('created_at', 'desc')->paginate(5);
+        $noValidDrugs = Drug::with('atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1', 'user', 'routesDrugs.routes')->where('validated', '<=', 0)->orderBy('created_at', 'desc')->paginate(5);
+        $noValidAtc = AtcLevel4Drug::with('atc_level4')->where('validated', '<=', 0)->orderBy('created_at', 'desc');
+        $noValidRoute = RouteDrug::with('routes')->where('validated', '<=', 0)->orderBy('created_at', 'desc');
         $noValidDrugsModified = TemporaryData::where('type_table', 'drugs')->where('modified', 1)->orderBy('created_at', 'desc')->paginate(10);
         //dd($noValidDrugs[0]->atc_level4->atc_level3->atc_level2->atc_level1);
-        return view('alerts.index_drug', compact('noValidDrugs', 'noValidDrugsModified'));
+        return view('alerts.index_drug', compact('noValidDrugs', 'noValidDrugsModified','noValidAtc', 'noValidRoute'));
     }
+    
     public function index_targets()
     {
         $noValidTargeted = Target::where('validated', '<=', 0)->orderBy('created_at', 'desc')->paginate(5);
@@ -58,7 +63,7 @@ class TemporaryDataController extends Controller
 
     public function index_dinteraction_targets()
     {
-        $noValidDinteractionTargets = Dinteraction::with('targets', 'user', 'drugs')->where('validated', '<=', 0)->orderBy('created_at', 'desc')->paginate(5);
+        $noValidDinteractionTargets = Dinteraction::with('targets', 'user', 'drugs', 'routesDrugs')->where('validated', '<=', 0)->orderBy('created_at', 'desc')->paginate(5);
         $noValidDinteractionTargetsModified = TemporaryData::where('type_table', 'dinteractions')->where('modified', 1)->orderBy('created_at', 'desc')->paginate(10);
 
         return view('alerts.index_dinteraction_target', compact('noValidDinteractionTargets', 'noValidDinteractionTargetsModified'));

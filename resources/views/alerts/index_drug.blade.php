@@ -28,7 +28,11 @@
                     <tr class={{$drug->validated == -1? "text-info text-bolder":"text-dark"}}>
                         <td>{{$drug->id}}</td>
                         <td>{{$drug->name}}</td>
-                        <td>{{ optional($drug->atc_level4->atc_level3->atc_level2->atc_level1)->code}}  - {{ optional($drug->atc_level4->atc_level3->atc_level2->atc_level1)->name }}</td>
+                        <td>
+                        @foreach($drug->atcLevel4sDrugs as $lAtc)
+                        {{ optional($lAtc->atc_level4->atc_level3->atc_level2->atc_level1)->code}}  - {{ optional($lAtc->atc_level4->atc_level3->atc_level2->atc_level1)->name }}
+                        @endforeach
+                        </td>
                         <td>{{$drug->user->name.' '.$drug->user->firstname}}</td>
                         <td>{{Carbon\Carbon::parse($drug->updated_at)->diffForHumans()}}</td>
                         <td class="">
@@ -39,9 +43,9 @@
                             <a class="btn btn-outline-danger btn-sm refuse-modal" href="#" role="button" data-id="{{ $drug->id }}" data-user="{{$drug->user->id}}" data-toggle="tooltip" title="Refuser la plante">
                                 <i class="fas fa-thumbs-down"></i>
                             </a>
-                            <button class="btn btn-outline-secondary btn-sm edit-modal-drugs" role="button" data-id="{{ $drug->id }}" data-name="{{$drug->name}}" data-familly="{{$drug->drug_families_id}}" data-route="{{$drug->route_id}}" data-atc="{{$drug->atc_id}}" data-toggle="tooltip" title="editeur rapide">
-                                <i class="fas fa-edit"></i>
-                            </button>
+                            <a class='btn btn-outline-success text align-self-center p-2' role='button' href='drug/edit/{{$drug->id}}'>edit</a>
+                               
+                           
                             {{-- <a class="btn btn-outline-info btn-sm modify-modal" href="#" role="button" data-id="{{ $drug->id }}" data-user="{{$drug->user->id}}" data-toggle="tooltip" title="Modifier la plante">
                                 <i class="fas fa-paper-plane"></i>
                             </a> --}}

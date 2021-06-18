@@ -48,8 +48,8 @@ class DinteractionController extends Controller
      */
     public function create()
     {
-        $drugs = Drug::orderBy('name', 'desc')->get();
-        $routesDrugs = RouteDrug::with('drugs')
+        $drugs = Drug::orderBy('name', 'desc')->where('validated', 1)->get();
+        $routesDrugs = RouteDrug::with('drugs')->where('route_drugs.validated', '>', 0)
         ->join('drugs', 'route_drugs.drug_id', '=', 'drugs.id')
         ->select('route_drugs.*', 'drugs.name')
         ->orderBy('drugs.name')-> get();

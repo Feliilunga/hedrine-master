@@ -21,6 +21,7 @@ class CreateAtcLevel4sDrugsTable extends Migration
 
             $table->foreign('atc_level4_id')->references('id')->on('atc_level4s')->onDelete('cascade');
             $table->foreign('drug_id')->references('id')->on('drugs')->onDelete('cascade');
+            $table->boolean('validated')->default(false);
             $table->timestamps();
         });
     }

@@ -20,9 +20,13 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($dinteractionsWithRelations as $dinteraction)
+				
+				@foreach($dinteractionsWithRelations as $dinteraction)
+				@php
+					//dd($dinteraction->routesDrugs->drugs->name);
+				@endphp
 				<tr class="text-center">
-
+					
 					<td>{{$dinteraction->routesDrugs->drugs->name}} ({{$dinteraction->routesDrugs->routes->name}})</td>
 					<td>{{optional($dinteraction->targets)->name }}</td>
 					<td>{{$dinteraction->notes }}</td>

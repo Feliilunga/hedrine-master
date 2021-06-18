@@ -47,9 +47,9 @@
                 <h4 class="card-header bg-success awesome-font">{{ __('Register') }}</h4>
 
                 <div class="card-body">
-                    <div class="alert alert-info alert-dismissible fade show text-danger">
-                        <strong><i class="fa fa-info-circle info text-danger" id="required-msg"></i></strong> Champs obligatoires!
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <div class="alert alert-info fade show text-danger">
+                        <strong><i class="fa fa-info-circle info text-danger" id="required-msg"></i></strong> Les champs sont  requis 
+                        {{-- <button type="button" class="close" data-dismiss="alert">&times;</button> --}}
                     </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -93,7 +93,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="tel1" class="col-md-4 col-form-label text-md-right">{{ __('tel1') }}</label>
+                            <label for="tel1" class="col-md-4 col-form-label text-md-right">{{ __('Téléphone: ') }}</label>
 
                             <div class="col-md-6">
                                 <input id="tel1" type="text" class="form-control @error('tel1') is-invalid @enderror" name="tel1" value="{{ old('tel1') }}"  autocomplete="tel1" autofocus>
@@ -108,10 +108,12 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}<i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,11}">
+                                <span id="emailerrorspan" class="text-danger"><span>  {{--ne sera utile que si l'email ne passera pas MA validation --}}
+
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        {{-- <strong>{{ $message }}</strong> --}}
+                                        <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -135,17 +137,28 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <span id="passwordserrorspan" class="text-danger"><span>  {{--ne sera utile que si les mdp ne passeront pas MA validation --}}
+                                
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0" id="rgpdId">
-                            <div class="col-md-1! offset-md-1">
-                                <blockquote class="" style="max-width: 91%">
-                                    <i class="fa fa-info-circle info text-danger" id="required-msg"></i>
-                                    ATTENTION :
-                                    « L'Université libre de Bruxelles traite vos données afin de permettre votre inscription sur ce site. Pour en savoir plus sur la manière dont vos données personnelles sont traitées et conservées ainsi que pour vérifier vos droits, <b>veuillez lire les conditions RGPD et les accepter en cochant la petite case que vous trouverez dans la popup qui s'ouvrira</b> (sans quoi vous ne pourrez pas vous enregistrer). 
-                                    Veuillez cliquer <button type="button" class="btn btn-outline-light text-dark awesome-font" data-toggle="modal" data-target="#exampleModal">ici. </button>»
-                                </blockquote>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-1! m-5 p-2 shadow bginfo">
+                                <div class="m-2">
+                                    
+                                    <strong class="fs-6 text"> 
+                                            <p class="text-decoration-underline fw-bold">
+                                                <i class="fa fa-info-circle info text-danger" id="required-msg"></i>
+                                                ATTENTION :
+                                            </p> 
+                                        &laquo; 
+                                        L'Université libre de Bruxelles traite vos données afin de permettre votre inscription sur ce site. Pour en savoir plus sur la manière dont vos données personnelles sont traitées et conservées ainsi que pour vérifier vos droits, <b>veuillez lire les conditions RGPD et les accepter en cochant la petite case que vous trouverez dans la popup qui s'ouvrira</b> (sans quoi vous ne pourrez pas vous enregistrer). 
+                                        &raquo;
+                                    </strong>
+                                    <br/>
+                                        <button OnClick="return false;" data-toggle="modal" data-target="#exampleModal" class="d-block my-4 p-2 rounded mx-auto bg-success text-light" id="rgpdbtn">Voir les conditions RGPD</button>
+                                    {{-- Veuillez cliquer <a class="text-primary text-underline" data-toggle="modal" data-target="#exampleModal">ici</a>. --}}
+                                </div>
                             </div>
                             <div class="col-md-6 offset-md-4">
                                 <!-- Modal -->
@@ -154,7 +167,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header bg-light">
                                                 <h3 class="modal-title" id="exampleModalLabel">
-                                                    <img src="{{ asset('images/hedrine6b.png') }}" class="img-fluid" alt="Responsive image">
+                                                    <img src="{{ asset('images/hedrine6b.png') }}" class="img-fluid" alt="Hedrine - logo">
                                                 </h3>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
@@ -163,15 +176,18 @@
                                             <div class="modal-body scroll text-dark">
                                                 <h4 class="text-success text-center">RGPD : Hedrine</h4>
                                                 <hr>
-                                                <strong class="text-info"><i class="fa fa-info-circle"></i>Veuillez faire défiler vers le bas afin de lire attentivement et pour cocher la case d'acceptation des conditions mentionnées dans cette fenêtre :</strong>
+                                                <strong class="text-info"><i class="fa fa-info-circle"></i> Veuillez faire défiler vers le bas afin de lire attentivement et pour cocher la case d'acceptation des conditions mentionnées dans cette fenêtre :</strong>
                                                 <hr>
                                                 @include('auth.terms')
                                                 <hr>
-                                                <div class="condtions">
+                                                <div class="condtions bginfo shadow">
                                                     <!-- Button trigger modal -->
                                                     <label for="check-me" id="checkboxContent">
-                                                        => <input type="checkbox" name="RGPD" id="check-me" class="@error('RGPD') is-invalid @enderror" required value="1"> <= En cochant cette case, j’accepte la politique de confidentialité de ce site et je donne mon accord pour le traitement de mes données en vue de la bonne utilisaiton de ce site.
-                                                    </label>
+                                                            <p class="text-center m-1">&rarr; <input type="checkbox" name="RGPD" id="check-me" class="@error('RGPD') is-invalid @enderror" required value="1"> &larr; </p>
+                                                            <p class="text-center m-1">
+                                                                En cochant cette case, j’accepte la politique de confidentialité de ce site et je donne mon accord pour le traitement de mes données en vue de la bonne utilisaiton de ce site.
+                                                            </p>
+                                                        </label>
                                                     @error('RGPD')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -181,17 +197,17 @@
                                                 </div>
                                             </div>
                                             <div class="modal-footer m-footer bg-light">
-                                                <input type="button" class="btn btn-outline-danger" data-dismiss="modal" required value="Je refuse">
+                                                <input type="button" class="btn btn-outline-danger" data-dismiss="modal" value="Je refuse">
                                                 <i class="far fa-smile-wink"></i>
-                                                <input type="button" class="btn btn-outline-success" data-dismiss="modal" required value="J'accepte" id="accept">
+                                                <input type="button" class="btn btn-outline-success" data-dismiss="modal" value="J'accepte" id="accept" disabled>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group row mb-0" id="test">
-                            <div class="col-md-6 offset-md-3">
+                        <div class="form-group row" id="test"> <!-- id test? //dteu -->
+                            <div class="col-10 col-sm-12 mx-auto d-flex justify-content-center">
                                 <small> </small>
                                 {!! NoCaptcha::display() !!}
                                 @if ($errors->has('g-recaptcha-response'))
@@ -201,35 +217,19 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group row mb-0" >
-                            <div class="col-md-6 offset-md-4" id='btnRegister'>
+                        <div class="form-group row">
+                            <div class="col-md-6 mx-auto text-center my-4">
                                 <button type="submit" id="registerBtn" class="btn btn-outline-success register">
                                     {{ __('Register') }}
                                 </button>
                             </div>
                         </div>
 
-                    </form><br>
-                    <button class="btn btn-outline-success register" onclick= >Suivant
-                    </button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
     </div>
 </div>
-
-<script >
-
-console.log('test');
-
-document.getElementById('rgpdId').style.display ='none';
-document.getElementById('test').style.display ='none';
-document.getElementById('btnRegister').style.display ='none';
-
-</script>
 @endsection
-
-
-
-

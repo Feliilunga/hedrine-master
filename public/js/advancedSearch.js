@@ -215,8 +215,7 @@ $(document).ready(function () {
                             }
                             countPlantes.push("herb");
 
-                            //  console.log(countDrugs);
-                            //  console.log(countPlantes);
+                            
                             
                             for (let j = 1; j < data.compteurDrugs; j++) {
                         
@@ -237,11 +236,14 @@ $(document).ready(function () {
                                 if (countRoutes.includes(data_key)) {
                                     drugNameRoutes[data_key] = data[data_key];
                                 }
-                                console.log(drugNameRoutes);
+                                // console.log(drugNameRoutes);
                             });
                         }
                         /*= ["Millepertuis", "Pomelo", "Ail", "testPlante", "", "5-Fluorouracile",
                        "Oxaliplatine", "Irinotécan", "testDci", ""];*/
+                        console.log(drugName);
+                        console.log(herbName);
+                        console.log(drugNameRoute);
                         var Names = [];
 
 

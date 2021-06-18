@@ -20,6 +20,7 @@ class CreateRoutesDrugsTable extends Migration
 
             $table->foreign('route_id')->references('id')->on('routes')->onDelete('cascade');
             $table->foreign('drug_id')->references('id')->on('drugs')->onDelete('cascade');
+            $table->boolean('validated')->default(false);
             $table->timestamps();
         });
     }

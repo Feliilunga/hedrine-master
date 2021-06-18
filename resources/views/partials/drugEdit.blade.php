@@ -12,6 +12,12 @@
                     @method('PUT')
                     @csrf
 
+                    @php
+                        //foreach($noValidDrugs as $dr){
+                        //dd($noValidDrugs); -->
+                        //}
+                    @endphp
+
                     <div class=" form-group">
                         <div class="form-group">
                             <input hidden type="text" style="border: 0;border-bottom: 1px solid gray" class="form-control" name="fid" id="fid">
@@ -22,11 +28,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="herb_form">Famille</label>
-
-                        <select class="form-control herbForm selectpicker" id="familly" name="families[]">
-                            @foreach ($drug_families as $form)
-                            <option style="color:black" value="{{$form->id}}">{{ $form->name }}</option>
+                        <label for="herb_form">ATC</label>
+            
+                        <select class="form-control id="familly" name="families[]">
+                            @foreach ($noValidAtc as $form)
+                            <option style="color:black" value="{{$form->atc_level4->id}}">{{ $form->atc_level4->code }} - {{ $form->atc_level4->name }}</option>
                             @endforeach
                         </select>
                     </div>

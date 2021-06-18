@@ -162,7 +162,12 @@
                         <a href="{{ route('admin.drugs') }}" class="dropdown-item">
                             <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> {{ $noValidDrugs->count() }}
                             new Drugs
+                        </a>
 
+                        <div class="dropdown-divider"></div>
+                        <a href="{{ route('admin.drugs') }}" class="dropdown-item">
+                        <i class="fas fa-capsules mr-2" style="color:#7d041e"></i> {{$noValidModifDrugs}}
+                            new modification Drug
                         </a>
 
                         <div class="dropdown-divider"></div>
@@ -183,8 +188,12 @@
                         <a href="{{ route('admin.dinteractiontarget') }}" class="dropdown-item">
                             <i class="fas fa-sync  mr-1" style="color:red"></i> {{$noValidDinteractions->count()}}
                             new Dinteraction Target
-
-
+                        </a>
+                        
+                        <div class="dropdown-divider"></div>
+                        <a href="{{ route('admin.dinteractiontarget') }}" class="dropdown-item">
+                            <i class="fas fa-sync  mr-1" style="color:red"></i> {{$noValidModifDinteractions}}
+                            new modification Dinteraction Target
                         </a>
 
                         <div class="dropdown-divider"></div>

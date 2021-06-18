@@ -46,7 +46,7 @@ class DinteractionController extends Controller
     public function index()
     {
         //$dinteractions = Dinteraction::all();
-        $dinteractionsWithRelations = Dinteraction::with('routesDrugs', 'drugs', 'targets', 'user')->where('validated',1)->get();
+        $dinteractionsWithRelations = Dinteraction::with('routesDrugs.drugs', 'routesDrugs.routes','drugs', 'targets', 'user')->where('validated',1)->get();
         return view('admin.dinteractions.index', compact('dinteractionsWithRelations'));
     }
 

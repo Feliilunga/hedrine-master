@@ -70,7 +70,9 @@
                     name: 'name',
                     render: function(data, type, row) {
                         return "<a href='drug/details_drug/" + row.id + "'>" + row.name + "</a>"
+                        
                     }
+                    
                 },
                 {
                     data: "atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1.name",
@@ -79,14 +81,19 @@
                     
                     render: function(data, type, row) {
                         
-                        // console.log(row);
+                         
                         var fami;
                         var fami3;
                         var fam = row.atc_level4s_drugs;
+                       
+                        
+                        console.log(fam);
+                        
                         if(fam){
                             // console.log('test');
                             for(let i=0; i<fam.length; i++){
-                                var fami = fam[i].atc_level4;
+                                
+                                    var fami = fam[i].atc_level4;
                                     //console.log(fami);
                                     if(fami){
                                         var fami1 = fami.atc_level3;
@@ -105,7 +112,10 @@
                                             }    
                                         }    
                                     }
-                                        
+                                
+                                
+                                
+                                   
                             }
                         }    
                         //console.log(fami3);
@@ -118,7 +128,7 @@
                     //defaultContent: ""
                     render: function(data, type, row) {
                         var atc = row.atc_level4s_drugs;
-                        console.log(atc);
+                        //console.log(atc);
                         if(atc){
                             for(let i=0; i<atc.length; i++){
                                 return atc[i].drug_code;
@@ -133,7 +143,7 @@
                     data: "user.name",
                     name: 'user.name',
                     defaultContent: ""
-                },
+                }, 
                 {
                     data: "action",
                     name: 'action',
@@ -142,7 +152,7 @@
                         return "<a class='btn btn-outline-success text align-self-center p-2' role='button' href='drug/edit/" + row.id + "'>" + 'edit' + "</a>"
                         "@endif"
                     }
-                },
+                }
 
 
             ]

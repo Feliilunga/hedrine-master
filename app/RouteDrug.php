@@ -8,7 +8,7 @@ class RouteDrug extends Model
 {
      //table intermédiaire
      protected $fillable = [
-        'id, route_id','drug_id'
+        'id, route_id','drug_id', 'validated'
     ];
 
     public function routes(){

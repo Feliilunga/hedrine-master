@@ -336,6 +336,7 @@ $m++;
 $g++;
 $rout++;
 $v++;
+$(document).ready(function () {
 $('#addRoute').append('@if(Route::currentRouteName() === "drug.create")' +
 							'<div class="form-group" id="divRoute' + $g + '">'+
 								'<label for="route_id">' + $m +'. Route</label>'+
@@ -596,6 +597,7 @@ $('#select10').change(function(){
 //    });
 // });
 
+});
 });
 </script>
 

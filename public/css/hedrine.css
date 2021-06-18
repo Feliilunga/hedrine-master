@@ -32,7 +32,7 @@ a.style_a {
     background: #536C9A;
 }
 .js-cookie-consent{
-    position: absolute;
+    position: fixed; 
     top: 0px;
     padding: 10px;
     text-align: center;
@@ -162,3 +162,15 @@ a.style_a {
     color: black;
     font-weight: bolder;
 }
+
+
+/* dawiteu */
+
+.bginfo{
+    width:100%; 
+    background-color:rgb(243, 243, 243); 
+    border-radius:10px;
+}
+
+
+/* end dawiteu */
