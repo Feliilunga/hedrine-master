@@ -18,5 +18,14 @@ class RouteSeeder extends Seeder
         Route::create([
             'name' => 'per os',
         ]);
+        Route::create([
+            'name' => 'locale',
+        ]);
+        Route::create([
+            'name' => 'voie rectale',
+        ]);
+        Route::create([
+            'name' => 'inhalée',
+        ]);
     }
 }

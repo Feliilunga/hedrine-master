@@ -194,7 +194,12 @@ class DrugController extends Controller
 
         if ($request->ajax()) {
             $query = Drug::with('atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1', 'routesDrugs.routes', 'user')->select('drugs.*');
-
+            // $query = Drug::where('drugs.validated', '>', 0)->join('atc_level4_drugs', 'drugs.id', '=', 'atc_level4_drugs.drug_id')
+            // ->join('atc_level4s', 'atc_level4_drugs.atc_level4_id', '=', 'atc_level4s.id')
+            // ->join('atc_level3s', 'atc_level4s.atc_level3_id', '=', 'atc_level3s.id')
+            // ->join('atc_level2s', 'atc_level3s.atc_level2_id', '=', 'atc_level2s.id')
+            // ->join('atc_level1s', 'atc_level2s.atc_level1_id', '=', 'atc_level1s.id')
+            // ->select('drugs.id', 'drugs.name', 'atc_level4_drugs.drug_code', 'atc_level1s.name');
             return DataTables::eloquent($query)->toJson();
         }
         return view('errors.layout');

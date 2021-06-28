@@ -98,6 +98,8 @@
                                                     <button class="btn btn-outline-success float-right" id="ajoutButton"><i class="fas fa-check-circle"></i>
                                                         Ajouter
                                                     </button>
+                                                    <img src="{{asset('images/ajax-loader.gif') }}" id="gif" style="display: block; margin: 0 auto; width: 60px;">
+
                                                 </div>
                                             </div>
                                         </div>
@@ -116,6 +118,11 @@
 
 @section('dashboard-js')
 <script >
+
+$('#gif').hide();
+		$('#ajoutButton').click(function(){
+        	$('#gif').show();
+		});
 
 $dintera = <?php echo json_encode($leDinteraction); ?>;
 

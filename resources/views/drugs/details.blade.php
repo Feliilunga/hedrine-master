@@ -209,13 +209,13 @@
                 @foreach($tabPRoute as $tRoute)
                 @php
                    
-                    //dd($tRoute->routes);
+                    $lesIds = $tRoute->id;
                            
                 @endphp  
                     <thead>
                          
                         <tr style="background-color:#226AB2">
-                        <th>{{$tRoute->routes->name}} </th>
+                        <th id= "mecaaa{{$lesIds}}">{{$tRoute->routes->name}} </th>
                         </tr>
                         <tr>
                             <th></th>

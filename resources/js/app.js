@@ -3,8 +3,7 @@ require('jquery');
 
 import Vue from 'vue'
 import CharsFilter from './components/CharsComponent'
-import swal from 'sweetalert2';
-window.Swal = swal;
+
 
 //console.log(CharsFilter);
 
@@ -55,11 +54,11 @@ function checkEmail(email) {
   function checkpasss(pass1, pass2) {
     return pass2 == pass1;
   }
-  
+ 
   $(function () {
     $("input[name=email]").on("change", function () {
       var val = $("input[name=email]").val();
-  
+     
       if (!checkEmail(val)) {
         $("input[name=email]").css({
           backgroundColor: "#FF8888"
@@ -72,7 +71,11 @@ function checkEmail(email) {
         });
         $("span#emailerrorspan").html("");
       }
+
+      
+
     });
+
     $("input#password").on("change", function () {// ici, par la suite, nous testerons si il a 8 chars, une majuscule, 2 chiffres différents divisible par 5, un nom de président américain et un . 
     });
     $("input#password-confirm").on("change", function () {

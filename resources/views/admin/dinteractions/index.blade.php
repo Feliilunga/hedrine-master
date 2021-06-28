@@ -3,9 +3,10 @@
 @section('content_dashboard')
 <div class="row justify-content-end" style="padding-bottom: 0.75rem">
 
-    <a class="btn btn-light" href="{{ route('newDrugTarget') }}" role="button">Créer une nouvelle Dinteraction Target</a>
+    <a id="createD" class="btn btn-light" href="{{ route('newDrugTarget') }}" role="button">Créer une nouvelle Dinteraction Target</a>
 
 </div>
+
 <div class="col-12">
 	<div class="card-body " style="background-color: #fff">
 		<table id="example1" class="table table-striped table-sm">
@@ -18,6 +19,7 @@
 					<th> Editor </th>
 					<th> Actions</th>
 				</tr>
+				<img src="{{asset('images/ajax-loader.gif') }}" id="gif" style="display: block; margin: 0 auto; width: 80px;">
 			</thead>
 			<tbody>
 				
@@ -29,7 +31,7 @@
 					
 					<td>{{$dinteraction->routesDrugs->drugs->name}} ({{$dinteraction->routesDrugs->routes->name}})</td>
 					<td>{{optional($dinteraction->targets)->name }}</td>
-					<td>{{$dinteraction->notes }}</td>
+					<td>{{ nl2br($dinteraction->notes) }}</td>
 					<td>{{optional($dinteraction->user)->name }}</td>
 					<td style="width: 10rem">
 						<div class="btn-group float-right">&nbsp; &nbsp; &nbsp;
@@ -47,6 +49,11 @@
 @section('dashboard-js')
 
 	<script>
+		$('#gif').hide();
+		$('#createD').click(function(){
+        	$('#gif').show();
+		});
+
 		$(function () {
 
 		$('#example1').DataTable({

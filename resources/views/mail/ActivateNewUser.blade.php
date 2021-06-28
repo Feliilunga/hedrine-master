@@ -44,7 +44,7 @@
                                 <td class="content-cell" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; max-width: 100vw; padding: 32px;">
                                     <h1 style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: green; font-size: 18px; font-weight: bold; margin-top: 0; text-align: left;">Bonjour !</h1>
                                     <b style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; font-size: 16px; line-height: 1.5em; margin-top: 0; text-align: left;">Un nouvel utilisateur sur la site de hedrine, </b>
-                                    <strong>l'utilisateur attends d'activer son compte</strong>
+                                    <strong>l'utilisateur attend d'activer son compte</strong>
                                     <hr>
                                     <h3 style="color: green"></h3>
                                     <ul>

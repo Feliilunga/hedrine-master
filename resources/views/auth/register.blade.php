@@ -48,11 +48,11 @@
 
                 <div class="card-body">
                     <div class="alert alert-info fade show text-danger">
-                        <strong><i class="fa fa-info-circle info text-danger" id="required-msg"></i></strong> Les champs sont  requis 
+                        <strong><i class="fa fa-info-circle info text-danger" id="required-msg"></i></strong> Champs requis 
                         {{-- <button type="button" class="close" data-dismiss="alert">&times;</button> --}}
                     </div>
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+                    <form method="GET" action="{{ route('register') }}">
+                       
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}<i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
@@ -93,7 +93,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="tel1" class="col-md-4 col-form-label text-md-right">{{ __('Téléphone: ') }}</label>
+                            <label for="tel1" class="col-md-4 col-form-label text-md-right">{{ __('Téléphone: ') }}<i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
 
                             <div class="col-md-6">
                                 <input id="tel1" type="text" class="form-control @error('tel1') is-invalid @enderror" name="tel1" value="{{ old('tel1') }}"  autocomplete="tel1" autofocus>
@@ -109,15 +109,17 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,11}">
+                                <span id="doubleMail" class="text-danger"></span>
                                 <span id="emailerrorspan" class="text-danger"><span>  {{--ne sera utile que si l'email ne passera pas MA validation --}}
-
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                
                             </div>
                         </div>
+                        
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}<i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
@@ -141,6 +143,7 @@
                                 
                             </div>
                         </div>
+                        
 
                         <div class="form-group row mb-0">
                             <div class="col-md-1! m-5 p-2 shadow bginfo">
@@ -149,10 +152,10 @@
                                     <strong class="fs-6 text"> 
                                             <p class="text-decoration-underline fw-bold">
                                                 <i class="fa fa-info-circle info text-danger" id="required-msg"></i>
-                                                ATTENTION :
+                                                IMPORTANT : R.G.P.D. 
                                             </p> 
                                         &laquo; 
-                                        L'Université libre de Bruxelles traite vos données afin de permettre votre inscription sur ce site. Pour en savoir plus sur la manière dont vos données personnelles sont traitées et conservées ainsi que pour vérifier vos droits, <b>veuillez lire les conditions RGPD et les accepter en cochant la petite case que vous trouverez dans la popup qui s'ouvrira</b> (sans quoi vous ne pourrez pas vous enregistrer). 
+                                        L'Université libre de Bruxelles traite vos données afin de permettre votre inscription sur ce site. Pour en savoir plus sur la manière dont vos données personnelles sont traitées et conservées ainsi que pour vérifier vos droits, <b>veuillez lire les conditions RGPD <b>et les accepter en cochant la petite case que vous trouverez dans la popup qui s'ouvrira</b> (sans quoi vous ne pourrez pas vous enregistrer). 
                                         &raquo;
                                     </strong>
                                     <br/>
@@ -185,7 +188,7 @@
                                                     <label for="check-me" id="checkboxContent">
                                                             <p class="text-center m-1">&rarr; <input type="checkbox" name="RGPD" id="check-me" class="@error('RGPD') is-invalid @enderror" required value="1"> &larr; </p>
                                                             <p class="text-center m-1">
-                                                                En cochant cette case, j’accepte la politique de confidentialité de ce site et je donne mon accord pour le traitement de mes données en vue de la bonne utilisaiton de ce site.
+                                                                En cochant la case ci-dessus, j’accepte la politique de confidentialité de ce site et je donne mon accord pour le traitement de mes données en vue de la bonne utilisaiton de ce site.
                                                             </p>
                                                         </label>
                                                     @error('RGPD')
@@ -232,4 +235,8 @@
     </div>
     </div>
 </div>
+
+
 @endsection
+
+

@@ -53076,14 +53076,14 @@ $(function () {
       $("input#accept").css({
         backgroundColor: "#9CE197"
       });
-      $("#rgpdbtn").html("Voir les conditions RGPD <i class='fa fa-check'></i>");
+      $("#rgpdbtn").html("Conditions RGPD acceptées <i class='fa fa-check'></i>");
       $("#rgpdbtn").removeClass("bg-danger").addClass("bg-success");
     } else {
       $("input#accept").prop("disabled", true);
       $("input#accept").css({
         backgroundColor: "initial"
       });
-      $("#rgpdbtn").html("Voir les conditions RGPD <i class='fa fa-times'></i>");
+      $("#rgpdbtn").html("Conditions RGPD refusées (impossible de créer un compte) <i class='fa fa-times'></i>");
       $("#rgpdbtn").removeClass("bg-success").addClass("bg-danger");
     }
   });

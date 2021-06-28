@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use illuminate\http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -53,6 +54,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'firstname' => ['required', 'string', 'max:255'],
+            'tel1' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'g-recaptcha-response' => 'required|captcha'
@@ -76,5 +78,29 @@ class RegisterController extends Controller
             'tel1' => $data['tel1'],
             'RGPD' => $data['RGPD']
         ]);
+    }
+
+    protected function showRegistrationForm(){
+        $users = DB::table('users')->get();
+
+
+        return view("auth/register", compact('users'));
+    }
+    // Verification si il existe déjà un mail dans la DB lors de l'inscription
+    public function verifyMail(Request $request){
+        dd($request);
+        // $userMail = $_GET['userMail'];
+        
+        // $result = DB::table('users')->where('email',  $userMail)->select('email');
+        // dd($result);
+        // if ($result == null) {
+        //     echo 1;
+        // }
+        // else
+        // {
+        //     echo 0;
+        // }
+
+       
     }
 }

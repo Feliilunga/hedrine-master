@@ -414,8 +414,8 @@ Route::get('herb-list', 'HerbController@herbsList');
 //this guy is about one to one search ...
 Route::get('oneHerb-oneDrug/results', 'TargetController@oneToOne');
 
-
-
+// checkMail.js
+Route::get('mailCheck-Up/results', 'Auth\RegisterController@verifyMail');
 
 //UserPorofile
 Route::prefix('utilisateur')->middleware('user')->group(function () {

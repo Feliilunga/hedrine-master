@@ -13,6 +13,7 @@
     <!-- Scripts -->
 
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/checkMail.js') }}"></script>
 
 
     <!-- Fonts -->
@@ -65,7 +66,16 @@
     </div>
     {!! NoCaptcha::renderJs() !!}
     <script src="{{ asset('/adminlte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+       
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+    
+    </script>
 
     @yield('tooltip')
 </body>

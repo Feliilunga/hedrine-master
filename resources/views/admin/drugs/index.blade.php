@@ -42,6 +42,7 @@
                 data: function(data) {
                     data.params = {
                         sac: "helo"
+                        
                     }
                 }
             },
@@ -64,7 +65,7 @@
             searching: true,
             scrollCollapse: true,
             columns: [
-
+                
                 {
                     data: "name",
                     name: 'name',
@@ -73,21 +74,22 @@
                         
                     }
                     
+                    
                 },
                 {
-                    data: "atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1.name",
-                    name: 'atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1.name',
+                    data: '["atc_level4_drugs[1]"]',
+                    name: 'atc_level4_drugs.id',
                     //defaultContent: ""
                     
                     render: function(data, type, row) {
                         
-                         
+                        // console.log(data);
                         var fami;
                         var fami3;
                         var fam = row.atc_level4s_drugs;
                        
                         
-                        console.log(fam);
+                       console.log(data);
                         
                         if(fam){
                             // console.log('test');
