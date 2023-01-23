@@ -125,8 +125,20 @@ class HinteractionController extends Controller
 
             //for Admin or publisher
             if (Auth::user()->role_id <= 2) {
+                //dteu $message: comme nous avons plusieurs IFs imbriqués, le message sera conditionnel 
+                //(Afin que les admins ou publish soient au courant que le target n'est pas validé). (Avec un message pas défaut); 
+                $message = 'Votre Hinteraction a été mise à jour avec succès.';
                 $hinteraction->update($request->all());
-                Alert::success('Ok !', 'Votre Interaction Plante a été mise à jour avec succès');
+                if($request->validated != null){
+                    if($request->validated == 1){
+                        $hinteraction->validated = 1;
+                    }
+                }else{
+                    $hinteraction->validated = 0;
+                    $message = $message . " Votre Interaction Plante doit être validé par un admin ou un publisher ";
+                }
+                $hinteraction->save();
+                Alert::success('Ok !', $message);
             }
             //Editor
             else if (Auth::user()->role_id == 3) {

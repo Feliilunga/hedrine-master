@@ -71,9 +71,20 @@ class ReferenceController extends Controller
             $reference->url = $request->url;
             //for Admin or publisher
             if (Auth::user()->role_id <= 2) {
-                $reference->validated = 1;
+                //$reference->validated = 1;
+                //dteu $message: comme nous avons plusieurs IFs imbriqués, le message sera conditionnel 
+                //(Afin que les admins ou publish soient au courant que la reference n'est pas validé). (Avec un message pas défaut); 
+                $message = "Nouvelle référence ajoutée avec succès."; 
+                if($request->validated != null){
+                    if($request->validated == 1){
+                        $reference->validated = 1;
+                    }
+                }else{
+                    $reference->validated = 0; 
+                    $message = $message . " Elle doit être validé par un admin ou un publisher.";
+                }
                 $reference->save();
-                Alert::success('Ok !', 'Nouvelle référence ajoutée avec succès');
+                Alert::success('Ok !', $message);
             }
             //Editor
             else if (Auth::user()->role_id == 3) {
@@ -162,8 +173,23 @@ class ReferenceController extends Controller
 
             //for Admin or publisher
             if (Auth::user()->role_id <= 2) {
+                //dteu $message: comme nous avons plusieurs IFs imbriqués, le message sera conditionnel 
+                //(Afin que les admins ou publish soient au courant que le target n'est pas validé). (Avec un message pas défaut); 
+                $message = 'Votre référence a été mise à jour avec succès.';
                 $reference->update($request->all());
-                Alert::success('Ok !', 'Votre référence a été mise à jour avec succès');
+                if($request->validated != null){
+                    if($request->validated == 1){
+                        $reference->validated = 1;
+                    }else if($request->validated == 0){
+                        $reference->validated = 0;
+                        $message = $message . " Elle est en attente de validation par un Administrateur ou un Publisher.";
+                    }
+                }else{
+                    $reference->validated = 0;
+                    $message = $message . " Elle est en attente de validation par un Administrateur ou un Publisher.";
+                }
+                $reference->save();
+                Alert::success('Ok !', $message);
             }
             //Editor
             else if (Auth::user()->role_id == 3) {

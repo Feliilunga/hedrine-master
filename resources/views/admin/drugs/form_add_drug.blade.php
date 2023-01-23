@@ -100,8 +100,9 @@
 											<div>
 												<button id="btnAtcAdd" type="button" class="btn btn-outline-success float-left">Ajouter ATC</button>
 										</div>	
-
-									@else									
+										
+									@else		
+																	
 										<!-- Dans le cas d'un formulaire edit pour chaque route qui existe, afficher. Félicien -->
 										@php
 											$roPivot = $drug->routesDrugs;
@@ -201,16 +202,19 @@
 									
 
                                     @if(\Illuminate\Support\Facades\Auth::user()->role_id <=2)
-                                        <div class="form-group form-check form-check-inline">
-                                            <input type="checkbox" class="form-check-input" name="validated" value="1" checked="checked">
-                                            <label class="form-check-label"> Validé ? </label>
-                                        </div>
-                                    @else
-                                        <div class="form-group form-check form-check-inline">
-                                            <input type="hidden" class="form-check-input" name="validated" value="0">
-                                            <!-- <label class="form-check-label"> Validé ? </label> -->
-                                        </div>
+										@if(Route::currentRouteName() === 'drug.create')
+											<div class="form-group form-check form-check-inline">
+												<input type="checkbox" class="form-check-input" name="validated" value="1" checked="checked"> {{--  --}}
+												<label class="form-check-label"> Validé ? </label>
+											</div>
+										@else
+											<div class="form-group form-check form-check-inline">
+												{{-- <input type="hidden" class="form-check-input" name="validated" value="0"> --}}
+												<!-- <label class="form-check-label"> Validé ? </label> -->
+												<label for="validated"> <input type="checkbox" class="form-check-input" name="validated" value="{{ $drug->validated == 1 ? 1 : 0 }}" {{ $drug->validated == 1 ? 'checked' : '' }}> Valider</label>
+											</div>
 								    @endif
+								@endif
 						</div>
 					</div>
 					<!-- /.card-body -->

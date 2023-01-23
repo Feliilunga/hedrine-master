@@ -62,6 +62,23 @@
 											@endif
 										</select>
 									</div>
+									{{-- dteu ++ Validé ? pour les targets ;; --}}
+									<div class="form-group">
+										@if(\Illuminate\Support\Facades\Auth::user()->role_id <=2)
+											@if(Route::currentRouteName() === 'target.create')
+												<div class="form-group form-check form-check-inline">
+													<input type="checkbox" class="form-check-input" name="validated" value="1" checked="checked"> {{--  --}}
+													<label class="form-check-label"> Validé ? </label>
+												</div>
+											@else
+												<div class="form-group form-check form-check-inline">
+													{{-- <input type="hidden" class="form-check-input" name="validated" value="0"> --}}
+													<!-- <label class="form-check-label"> Validé ? </label> -->
+													<label for="validated"> <input type="checkbox" class="form-check-input" name="validated" value="{{ $target->validated == 1 ? 1 : 0 }}" {{ $target->validated == 1 ? 'checked' : '' }}> Valider 1</label>
+												</div>
+											@endif
+										@endif
+									</div>
 								</div>
 									<!-- /.card-body -->
 								<div class="card-footer">

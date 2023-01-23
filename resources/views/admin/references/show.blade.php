@@ -11,7 +11,7 @@
             <dd class="col-sm-3"> <h2 style="color: #2c6877;font-size:1.7em;">{{ $interaction->herbs->name }}</h2></dd>
         @else
             <dt class="col-sm-2" ><h2 style="color: #2c6877;font-size:1.7em;">DCI</h2></dt>
-            <dd class="col-sm-3"> <h2 style="color: #2c6877;font-size:1.7em;">{{ $interaction->drugs->name }}</h2></dd>
+            <dd class="col-sm-3"> <h2 style="color: #2c6877;font-size:1.7em;">{{ $interaction->routesDrugs->drugs->name }}</h2></dd>
         @endif
 	</dl>
 	<dl class="row" style="background: #f4f4f4">
@@ -122,7 +122,7 @@
 
                                 <tr>
                                     <th scope="row">
-                                        {{ $interLinked->drugs->name }}
+                                        {{ $interLinked->routesDrugs->drugs->name }}
                                     </th>
                                     <td>{{ optional($interLinked->targets)->name }}</td>
                                     {{-- <td >effet</td> --}}

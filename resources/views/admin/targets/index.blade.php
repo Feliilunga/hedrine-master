@@ -25,7 +25,7 @@
 				@foreach ($targetsWithRelations as $target)
 				<tr class="text-center">
 					<td>
-						<a href="" class="add_style"><strong>{{$target->name}}</strong></a>
+						<a href="{{route('targets.details', $target->id)}}" class="add_style"><strong>{{$target->name}}</strong></a>
 					</td>
 					<td>
 						{{$target->long_name}}

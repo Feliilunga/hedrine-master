@@ -44,7 +44,7 @@
 					@foreach ($target->dinteractions as $dinteraction)
 						<tr>
 							<th scope="row">
-								{{$dinteraction->drugs->name}}
+								{{$dinteraction->routesDrugs->drugs->name}}
 								<h6>({{$dinteraction->targets->targetype->name}})</h6>
 							</th>
                             <td>
@@ -56,7 +56,7 @@
                             <td>
                                 {{$dinteraction->notes}} <br> <br> <br>
                                 @foreach($dinteraction->references as $reference)
-                                    <a href="">{{$reference->year}} , {{$reference->edition}};</a>
+                                    <a href="{{$reference->url}} ">{{$reference->year}} , {{$reference->edition}};</a>
                                     <a href=" {{$reference->url}} ">
                                         <i class="fas fa-globe-europe"></i>
                                     </a><br>

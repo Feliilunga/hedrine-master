@@ -835,7 +835,7 @@ Target::create( [
         'name'=>'Case report (Ginkgo+efavirenz)',
         'long_name'=>'Case report (Ginkgo+efavirenz)',
         'target_type_id'=>1,
-        'notes'=>'Il y a un seul cas où la charge virale a diminué et les concentrations d\'éfavirenz ont augmenté chez un patient prenant du ginkgo biloba. Un homme séropositif a connu une diminution de plus de 50% des niveaux d\'efavirenz au cours de 14 mois tout en prenant du Ginkgo Biloba. Le mécanisme d\'interaction n\'est pas clair.\r\n',
+        'notes'=>'Il y a un seul cas où la charge virale a diminué et les concentrations d\'éfavirenz ont augmenté chez un patient prenant du ginkgo biloba. Un homme séropositif a connu une diminution de plus de 50% des niveaux d\'efavirenz au cours de 14 mois tout en prenant du Ginkgo Biloba. Le mécanisme d\'interaction n\'est pas clair.  ',
         'user_id'=>2,
         'validated'=>1
         ] );
@@ -967,7 +967,7 @@ Target::create( [
     'name'=>'Case report (millepertuis + ciclosporine)',
     'long_name'=>'Case report (millepertuis + ciclosporine)',
     'target_type_id'=>1,
-    'notes'=>'Les concentrations plasmatiques en ciclosporine étaient largement infra-thérapeutiques. \r\nDiminution des concentrations plasmatiques de ciclosporine en dessous des valeurs thérapeutiques avec un début de rejet et nécessité d\'augmenter les doses d\'immunosuppresseurs. Retour à la normale après arrêt du millepertuis. \r\nActivation par l\'hyperforine du PXR (Pregnane X Receptor) = induction du CYP 3A4 et de la glycoprotéine P. \r\nAlscher décrit le cas d\'un patient de 57ans, greffe rénale. Concentrations en ciclosporine stable durant deux ans. Puis déclin soudain de la concentration, malgré l\'augmentation de posologie. Consommation de millepertuis associé à plusieurs plantes. 5 jours après l\'arrêt, augmentation des taux de ciclosporine. \r\nFugh-Berman (2001) évoque 7 case report.\r\n15 cas rapportés dans les articles suivants : Ahmed, 2001 ; Alscher, 2003 ; Barone, 2000 ; Barone, 2001 ; Breidenbach, Lancet. 2000 ; Breidenbach, Transplantation. 2000 ; Karliova, 2000 ; Mai, 2000 ; Mandelbaum, 2000 ; Moschella, 2001 ; Ruschitzka, 2000.',
+    'notes'=>'Les concentrations plasmatiques en ciclosporine étaient largement infra-thérapeutiques.   Diminution des concentrations plasmatiques de ciclosporine en dessous des valeurs thérapeutiques avec un début de rejet et nécessité d\'augmenter les doses d\'immunosuppresseurs. Retour à la normale après arrêt du millepertuis.   Activation par l\'hyperforine du PXR (Pregnane X Receptor) = induction du CYP 3A4 et de la glycoprotéine P.   Alscher décrit le cas d\'un patient de 57ans, greffe rénale. Concentrations en ciclosporine stable durant deux ans. Puis déclin soudain de la concentration, malgré l\'augmentation de posologie. Consommation de millepertuis associé à plusieurs plantes. 5 jours après l\'arrêt, augmentation des taux de ciclosporine.   Fugh-Berman (2001) évoque 7 case report.  15 cas rapportés dans les articles suivants : Ahmed, 2001 ; Alscher, 2003 ; Barone, 2000 ; Barone, 2001 ; Breidenbach, Lancet. 2000 ; Breidenbach, Transplantation. 2000 ; Karliova, 2000 ; Mai, 2000 ; Mandelbaum, 2000 ; Moschella, 2001 ; Ruschitzka, 2000.',
     'user_id'=>2,
     'validated'=>1
     ] );
@@ -1015,7 +1015,7 @@ Target::create( [
     'name'=>'Etude in vitro (Ginkgo + acide mycophénolique)',
     'long_name'=>'Etude in vitro (Ginkgo + acide mycophénolique)',
     'target_type_id'=>2,
-    'notes'=>'Etude in vitro sur des microsomes humains d\'origine intestinale et hépatique pour étudier l\'effet d\'une poudre de Ginkgo sur la glucuronidation de l\'acide mycophénolique.\r\nLes résultats ont montré une inhibition de la glucuronidation de l\'acide mycophénolique par le Ginkgo.\r\nLes composés responsables seraient la quercétine et le kaempferol.\r\nIl y a un risque d\'augmentation de la concentration en acide mycophénolique et donc risque supérieur d\'effets indésirables.',
+    'notes'=>'Etude in vitro sur des microsomes humains d\'origine intestinale et hépatique pour étudier l\'effet d\'une poudre de Ginkgo sur la glucuronidation de l\'acide mycophénolique.  Les résultats ont montré une inhibition de la glucuronidation de l\'acide mycophénolique par le Ginkgo.  Les composés responsables seraient la quercétine et le kaempferol.  Il y a un risque d\'augmentation de la concentration en acide mycophénolique et donc risque supérieur d\'effets indésirables.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1051,7 +1051,7 @@ Target::create( [
     'name'=>'Etude clinique (schisandra+tacrolimus)',
     'long_name'=>'Etude sur volontaires sains (schisandra+tacrolimus)',
     'target_type_id'=>4,
-    'notes'=>'Etude sur 12 volontaires sains.\r\nIls ont reçu une dose unique de 2mg de tacrolimus à J1 et suite à cette injection, des prélèvements sanguins ont été réalisés de manière très rapprochée.\r\nPuis, ils ont reçu un extrait de Schisandra, 2 fois par jour pendant 13 jours (J2 à J14).\r\nA J15, on leur a administré du tacrolimus (2mg) et du schisandra.\r\nLes résultats de l\'étude ont montré une augmentation des AUC et Cmax de tacrolimus.\r\nDes effets indésirables sont également apparu chez quelques volontaires.\r\nLe mécanisme semble passer par une inhibition du CYP3A4 et de la P-gp.\r\nArticle à visée économique.',
+    'notes'=>'Etude sur 12 volontaires sains.  Ils ont reçu une dose unique de 2mg de tacrolimus à J1 et suite à cette injection, des prélèvements sanguins ont été réalisés de manière très rapprochée.  Puis, ils ont reçu un extrait de Schisandra, 2 fois par jour pendant 13 jours (J2 à J14).  A J15, on leur a administré du tacrolimus (2mg) et du schisandra.  Les résultats de l\'étude ont montré une augmentation des AUC et Cmax de tacrolimus.  Des effets indésirables sont également apparu chez quelques volontaires.  Le mécanisme semble passer par une inhibition du CYP3A4 et de la P-gp.  Article à visée économique.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1075,7 +1075,7 @@ Target::create( [
     'name'=>'Case report (camomille allemande+ciclosporine)',
     'long_name'=>'Case report (camomille allemande+ciclosporine)',
     'target_type_id'=>1,
-    'notes'=>'3 cas rapportés dont notamment :\r\n1 patient de 37 ans, greffé rénale, sous azathioprine et ciclosporine. Il a consommé de la camomille et il a fallu baisser les doses de ciclosporine. A l\'arrêt, il a fallu réaugmenter les doses.\r\n1 patiente de 33 ans, greffée rénale, sous ciclosporine et mycophénolate. Les taux de ciclosporine ont augmenté alors que la patiente consommait de la camomille. A l\'arrêt, baisse des taux de ciclosporine.\r\nCela majore les effets indésirables.',
+    'notes'=>'3 cas rapportés dont notamment :  1 patient de 37 ans, greffé rénale, sous azathioprine et ciclosporine. Il a consommé de la camomille et il a fallu baisser les doses de ciclosporine. A l\'arrêt, il a fallu réaugmenter les doses.  1 patiente de 33 ans, greffée rénale, sous ciclosporine et mycophénolate. Les taux de ciclosporine ont augmenté alors que la patiente consommait de la camomille. A l\'arrêt, baisse des taux de ciclosporine.  Cela majore les effets indésirables.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1087,7 +1087,7 @@ Target::create( [
     'name'=>'Etude clinique (ail+saquinavir)',
     'long_name'=>'Etude clinique sur 10 volontaires sains (ail+saquinavir)',
     'target_type_id'=>4,
-    'notes'=>'Étude sur 10 volontaires sains sur l\'effet de la prise d\'ail sur une longue période les concentrations plasmatiques du saquinavir. Diminution des concentrations plasmatiques du saquinavir.\r\nDiminution des concentrations et de l\'exposition au  saquinavir administré par voie orale après traitement avec des capsules d\'ail pendant 20 jours chez des volontaires sains. Induction probable des CYP 3A4 intestinaux.',
+    'notes'=>'Étude sur 10 volontaires sains sur l\'effet de la prise d\'ail sur une longue période les concentrations plasmatiques du saquinavir. Diminution des concentrations plasmatiques du saquinavir.  Diminution des concentrations et de l\'exposition au  saquinavir administré par voie orale après traitement avec des capsules d\'ail pendant 20 jours chez des volontaires sains. Induction probable des CYP 3A4 intestinaux.',
     'user_id'=>2,
     'validated'=>1
     ] );
@@ -1111,7 +1111,7 @@ Target::create( [
     'name'=>'Etude clinique (Ail + warfarine)',
     'long_name'=>'Etude prospective longitudinale (Ail + warfarine)',
     'target_type_id'=>4,
-    'notes'=>'Etude prospective longitudinale déterminant le risque de saignements et de modification de l\'INR par les MCA sur 171 adultes recevant de la warfarine. Pas\r\nd\'augmentation significative du nombre de saignements ni de l\'INR par la\r\nconsommation d\'ail',
+    'notes'=>'Etude prospective longitudinale déterminant le risque de saignements et de modification de l\'INR par les MCA sur 171 adultes recevant de la warfarine. Pas  d\'augmentation significative du nombre de saignements ni de l\'INR par la  consommation d\'ail',
     'user_id'=>3,
     'validated'=>1
     ] );
@@ -1123,7 +1123,7 @@ Target::create( [
     'name'=>'Etude clinique (Ail + warfarine)',
     'long_name'=>'Etude randomisée en double aveugle sur 48 sujets sains (Ail + warfarine)',
     'target_type_id'=>4,
-    'notes'=>'Etude randomisée en double aveugle sur 48 sujets sains. Pas d\'augmentation du\r\nrisque hémorragique après consommation d\'ail',
+    'notes'=>'Etude randomisée en double aveugle sur 48 sujets sains. Pas d\'augmentation du  risque hémorragique après consommation d\'ail',
     'user_id'=>3,
     'validated'=>1
     ] );
@@ -1159,7 +1159,7 @@ Target::create( [
     'name'=>'Etude clinique (Millepertuis+midazolam)',
     'long_name'=>'Etude clinique (Millepertuis+midazolam)',
     'target_type_id'=>4,
-    'notes'=>'Etude chez 42 sujets sains.\r\nLe millepertuis entraîne une induction du CYP3A4 notamment.\r\nCette induction varie entre les différents produits à base de millepertuis et notamment en fonction de la quantité en hyperforine.\r\nUtilisation du Midazolam, comme substrat du CYP3A4.',
+    'notes'=>'Etude chez 42 sujets sains.  Le millepertuis entraîne une induction du CYP3A4 notamment.  Cette induction varie entre les différents produits à base de millepertuis et notamment en fonction de la quantité en hyperforine.  Utilisation du Midazolam, comme substrat du CYP3A4.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1171,7 +1171,7 @@ Target::create( [
     'name'=>'Etude clinique (millepertuis+ciclosporine)',
     'long_name'=>'Etude clinique chez patients greffés (millepertuis+ciclosporine)',
     'target_type_id'=>4,
-    'notes'=>'Etude clinique chez 11 patients greffés.\r\nIls ont reçu 400mg de millepertuis pendant 14 jours.\r\nBaisse rapide et significative de la concentration en ciclosporine chez tous les patients greffés.\r\nNécessité d\'adapter les posologies.\r\nCela peut également modifier le profil toxicologique de la ciclosporine et de ses métabolites.\r\nL\'interaction passe par une induction du CYP3A4 et de la Pgp.',
+    'notes'=>'Etude clinique chez 11 patients greffés.  Ils ont reçu 400mg de millepertuis pendant 14 jours.  Baisse rapide et significative de la concentration en ciclosporine chez tous les patients greffés.  Nécessité d\'adapter les posologies.  Cela peut également modifier le profil toxicologique de la ciclosporine et de ses métabolites.  L\'interaction passe par une induction du CYP3A4 et de la Pgp.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1183,7 +1183,7 @@ Target::create( [
     'name'=>'Case report (Benoîte+ciclosporine)',
     'long_name'=>'Case report (Benoîte+ciclosporine)',
     'target_type_id'=>1,
-    'notes'=>'Cas rapporté d\'un patient de 54 ans, greffé rénale, dont la consommation de benoîte a entraîné une élévation des taux de ciclosporine chez une patiente traitée par ciclosporine pour une greffe rénale.\r\nRetour à la normale à l\'arrêt de la Benoîte.',
+    'notes'=>'Cas rapporté d\'un patient de 54 ans, greffé rénale, dont la consommation de benoîte a entraîné une élévation des taux de ciclosporine chez une patiente traitée par ciclosporine pour une greffe rénale.  Retour à la normale à l\'arrêt de la Benoîte.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1195,7 +1195,7 @@ Target::create( [
     'name'=>'Case report (Levure de riz rouge+ciclosporine)',
     'long_name'=>'Case report (Levure de riz rouge+ciclosporine)',
     'target_type_id'=>1,
-    'notes'=>'Prasad décrit le cas d\'une patiente de 28 ans, transplantée d\'un rein.\r\nElle a développé une rhabdomyolyse sous ciclosporine (+prednisone et azathioprine) et elle consommait également un produit contenant de la levure de riz rouge.\r\nUne augmentation des CPK a été mise en évidence.\r\nLe mécanisme passe par une compétition au niveau des CYP3A4 hépatiques entre la ciclosporine et la levure de riz rouge.',
+    'notes'=>'Prasad décrit le cas d\'une patiente de 28 ans, transplantée d\'un rein.  Elle a développé une rhabdomyolyse sous ciclosporine (+prednisone et azathioprine) et elle consommait également un produit contenant de la levure de riz rouge.  Une augmentation des CPK a été mise en évidence.  Le mécanisme passe par une compétition au niveau des CYP3A4 hépatiques entre la ciclosporine et la levure de riz rouge.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1207,7 +1207,7 @@ Target::create( [
     'name'=>'Etude sur modèle murin (Quercétine+rutine+Ciclosporine)',
     'long_name'=>'Etude sur modèle murin (Quercétine+rutine+Ciclosporine)',
     'target_type_id'=>6,
-    'notes'=>'Etude sur des rats.\r\nEffets de la quercétine et de la rutine sur la pharmacocinétique de la Ciclosporine.\r\nLa rutine est le composé O-glycosidé de la quercétine.\r\nProbable induction de la Pgp et du CYP3A4.',
+    'notes'=>'Etude sur des rats.  Effets de la quercétine et de la rutine sur la pharmacocinétique de la Ciclosporine.  La rutine est le composé O-glycosidé de la quercétine.  Probable induction de la Pgp et du CYP3A4.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1217,7 +1217,7 @@ Target::create( [
         'name'=>'Etude sur animaux (Ginkgo+Sophora du Japon+Ciclosporine)',
         'long_name'=>'Etude sur animaux (Ginkgo+Sophora du Japon+Ciclosporine)',
         'target_type_id'=>6,
-        'notes'=>'Etude chez des porcs et des rats.\r\nDiminution significative de l\'AUC de la ciclosporine A.\r\nInteraction via l\'action de la quercétine sur la Pgp et CYP3A4. ',
+        'notes'=>'Etude chez des porcs et des rats.  Diminution significative de l\'AUC de la ciclosporine A.  Interaction via l\'action de la quercétine sur la Pgp et CYP3A4. ',
         'user_id'=>8,
         'validated'=>1
         ] );
@@ -1229,7 +1229,7 @@ Target::create( [
         'name'=>'Etude sur modèle murin (Menthe officinale+ciclosporine)',
         'long_name'=>'Etude sur modèle murin (Menthe officinale+ciclosporine)',
         'target_type_id'=>6,
-        'notes'=>'Etude sur des rats.\r\nEtude réalisée plus dans un but économique, pour diminuer les doses de ciclosporine.',
+        'notes'=>'Etude sur des rats.  Etude réalisée plus dans un but économique, pour diminuer les doses de ciclosporine.',
         'user_id'=>8,
         'validated'=>1
         ] );
@@ -1241,7 +1241,7 @@ Target::create( [
         'name'=>'Etude clinique (Berbérine+ciclosporine)',
         'long_name'=>'Etude clinique (Berbérine+ciclosporine)',
         'target_type_id'=>4,
-        'notes'=>'Etude chez 12 volontaires sains pour étudier l\'effet de l\'Hydraste du Canada sur la pharmacocinétique de la ciclosporine.\r\n2 groupes réalisés :\r\nUn premier recevait 0,3g de berbérine 2 fois par jour pendant 10 jours et 6mg/kg de ciclosporine.\r\nUn deuxième recevait 3mg/kg de ciclosporine, suivi d\'une dose unique de 0,3g de berbérine.\r\nLa berbérine semble augmenter la biodisponibilité de la ciclosporine, via une probable inhibition du CYP3A4.\r\nLa berbérine est notamment présente dans la chélidoine, la fumeterre, l\'huanglian, l\'hydrastis ou le pavot de californie.',
+        'notes'=>'Etude chez 12 volontaires sains pour étudier l\'effet de l\'Hydraste du Canada sur la pharmacocinétique de la ciclosporine.  2 groupes réalisés :  Un premier recevait 0,3g de berbérine 2 fois par jour pendant 10 jours et 6mg/kg de ciclosporine.  Un deuxième recevait 3mg/kg de ciclosporine, suivi d\'une dose unique de 0,3g de berbérine.  La berbérine semble augmenter la biodisponibilité de la ciclosporine, via une probable inhibition du CYP3A4.  La berbérine est notamment présente dans la chélidoine, la fumeterre, l\'huanglian, l\'hydrastis ou le pavot de californie.',
         'user_id'=>8,
         'validated'=>1
         ] );
@@ -1253,7 +1253,7 @@ Target::create( [
         'name'=>'Etude clinique (Huanglian+Ciclosporine)',
         'long_name'=>'Etude clinique (Huanglian+Ciclosporine)',
         'target_type_id'=>4,
-        'notes'=>'Etude clinique randomisée et contrôlée sur 104 patients greffés.\r\n2 groupes :\r\nUn premier a reçu de la ciclosporine (dosage variable selon les patients) et 0,2g de berbérine trois fois par jour pendant 3 mois.\r\nLe deuxième a reçu que la ciclosporine.\r\nLa berbérine entraîne une augmentation des concentrations en ciclosprorine.\r\nEtude plus dans un but économique, pour diminuer les doses de ciclosporine.',
+        'notes'=>'Etude clinique randomisée et contrôlée sur 104 patients greffés.  2 groupes :  Un premier a reçu de la ciclosporine (dosage variable selon les patients) et 0,2g de berbérine trois fois par jour pendant 3 mois.  Le deuxième a reçu que la ciclosporine.  La berbérine entraîne une augmentation des concentrations en ciclosprorine.  Etude plus dans un but économique, pour diminuer les doses de ciclosporine.',
         'user_id'=>8,
         'validated'=>1
         ] );
@@ -1277,7 +1277,7 @@ Target::create( [
         'name'=>'Etude clinique (Gingko + midazolam)',
         'long_name'=>'Etude sur 14 sujets sains (Gingko + midazolam)',
         'target_type_id'=>4,
-        'notes'=>'Etude sur 14 sujets sains. Utilisation du midazolam comme substrat témoin de l\'activité du CYP3A. Diminution de l\'AUC et de la Cmax du midazolam lorsqu\'il est associé au ginkgo.\r\nDiminution de 34% de l\'exposition (AUC) au midazolam (voie orale) chez le volontaire sain par induction des CYP 3A4 intestinaux',
+        'notes'=>'Etude sur 14 sujets sains. Utilisation du midazolam comme substrat témoin de l\'activité du CYP3A. Diminution de l\'AUC et de la Cmax du midazolam lorsqu\'il est associé au ginkgo.  Diminution de 34% de l\'exposition (AUC) au midazolam (voie orale) chez le volontaire sain par induction des CYP 3A4 intestinaux',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1289,7 +1289,7 @@ Target::create( [
         'name'=>'Etude clinique (Gingko + oméprazole)',
         'long_name'=>'Etude sur 18 volontaires sains (Gingko + oméprazole)',
         'target_type_id'=>4,
-        'notes'=>'Etude sur 18 volontaires sains recevant 2x70mg 2 fois/jour durant 12 jours de ginkgo sous forme de comprimé d\'extrait de feuille (titré à 16,04mg de glycosides de flavanols et 4,77mg de lactones terpéniques). Diminution de l\'AUC de l\'oméprazole et augmentation de son métabolite actif après ajout de ginkgo.Induction de CYPC19.\r\nDeux autres études sur 18 sujets recevant respectivement 12Omg 2 fois/jour durant 8 jours et 240mg 1 fois/jour durant 8 jours de ginkgo biloba (comprimé EGb 761). Dans les 2 études aucun effet sur la pharmacocinétique de l\'oméprazole. Aucun effet sur CYP2C19.',
+        'notes'=>'Etude sur 18 volontaires sains recevant 2x70mg 2 fois/jour durant 12 jours de ginkgo sous forme de comprimé d\'extrait de feuille (titré à 16,04mg de glycosides de flavanols et 4,77mg de lactones terpéniques). Diminution de l\'AUC de l\'oméprazole et augmentation de son métabolite actif après ajout de ginkgo.Induction de CYPC19.  Deux autres études sur 18 sujets recevant respectivement 12Omg 2 fois/jour durant 8 jours et 240mg 1 fois/jour durant 8 jours de ginkgo biloba (comprimé EGb 761). Dans les 2 études aucun effet sur la pharmacocinétique de l\'oméprazole. Aucun effet sur CYP2C19.',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1301,7 +1301,7 @@ Target::create( [
         'name'=>'Case report  (Gingko + phénotoïne)',
         'long_name'=>'1 rapport de cas de crise convulsive (Gingko + phénotoïne)',
         'target_type_id'=>1,
-        'notes'=>'1 rapport de cas de crise convulsive chez un patient consommant du valproate + phenytoïne + ginkgo. On note un taux subthérapeutique des l\'antiépileptiques\r\nPrécaution d\'emploi des extraits de ginkgo avec les molécules à marge thérapeutique étroite',
+        'notes'=>'1 rapport de cas de crise convulsive chez un patient consommant du valproate + phenytoïne + ginkgo. On note un taux subthérapeutique des l\'antiépileptiques  Précaution d\'emploi des extraits de ginkgo avec les molécules à marge thérapeutique étroite',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1337,7 +1337,7 @@ Target::create( [
         'name'=>'Case report  (Gingko + acide valproïque)',
         'long_name'=>'1 rapport de cas de crise épileptique (Gingko + acide valproïque)',
         'target_type_id'=>1,
-        'notes'=>'1 rapport de cas de crise épileptique chez un patient consommant du valproate de Na + ginkgo biloba. On note un taux subthérapeutique de l\'antiépileptique\r\nPrécaution d\'emploi des extraits de ginkgo avec les molécules à marge thérapeutique étroite',
+        'notes'=>'1 rapport de cas de crise épileptique chez un patient consommant du valproate de Na + ginkgo biloba. On note un taux subthérapeutique de l\'antiépileptique  Précaution d\'emploi des extraits de ginkgo avec les molécules à marge thérapeutique étroite',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1373,7 +1373,7 @@ Target::create( [
         'name'=>'Case report  (Millepertuis + buspirone)',
         'long_name'=>'1 rapport de cas de syndrome sérotoninergique (Millepertuis + buspirone)',
         'target_type_id'=>1,
-        'notes'=>'1 rapport de cas de syndrome sérotoninergique après combinaison de buspirone et de millepertuis chez une femme de 27 ans présentant des symptômes d\'anxiété généralisée. Les symptômes ont diminués à l\'arrêt du millepertuis et la diminution des doses de\r\nbuspirone',
+        'notes'=>'1 rapport de cas de syndrome sérotoninergique après combinaison de buspirone et de millepertuis chez une femme de 27 ans présentant des symptômes d\'anxiété généralisée. Les symptômes ont diminués à l\'arrêt du millepertuis et la diminution des doses de  buspirone',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1409,7 +1409,7 @@ Target::create( [
         'name'=>'Etude clinique   (Millepertuis + digoxine)',
         'long_name'=>'Etude randomisée sur 9 volontaires sains (Millepertuis + digoxine)',
         'target_type_id'=>4,
-        'notes'=>'Etude randomisée sur 9 volontaires sains recevant un extrait standardisé de millepertuis(300mg 3 fois par jour) contenant 3% d\'hyperforine. Diminution significative de l\'AUC et de la Cmax de la\r\ndigoxine.',
+        'notes'=>'Etude randomisée sur 9 volontaires sains recevant un extrait standardisé de millepertuis(300mg 3 fois par jour) contenant 3% d\'hyperforine. Diminution significative de l\'AUC et de la Cmax de la  digoxine.',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1421,7 +1421,7 @@ Target::create( [
         'name'=>'Etude clinique   (Millepertuis + digoxine)',
         'long_name'=>'Etude randomisée en groupes parallèles (Millepertuis + digoxine)',
         'target_type_id'=>4,
-        'notes'=>'Etude randomisée en groupes parallèles versus placebo sur 96 sujets sains recevant de la digoxine et un extrait de millepertuis, de formulation et de dosage différents, pendant 14 jours. L\'effet dépend de la composition de l\'extrait et du dosage en hyperforine.\r\nAucune modification PK si l\'extrait ne contient pas d\'hyperforine. Plus l\'extrait est dosé en hyperforine, plus les paramètres PK de la\r\ndigoxine sont fortement modifiés (diminution de l\'AUC, de la Cmax et de la Cmin)',
+        'notes'=>'Etude randomisée en groupes parallèles versus placebo sur 96 sujets sains recevant de la digoxine et un extrait de millepertuis, de formulation et de dosage différents, pendant 14 jours. L\'effet dépend de la composition de l\'extrait et du dosage en hyperforine.  Aucune modification PK si l\'extrait ne contient pas d\'hyperforine. Plus l\'extrait est dosé en hyperforine, plus les paramètres PK de la  digoxine sont fortement modifiés (diminution de l\'AUC, de la Cmax et de la Cmin)',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1481,7 +1481,7 @@ Target::create( [
         'name'=>'Etude clinique (Millepertuis + indinavir)',
         'long_name'=>'Etude sur 8 volontaires sains (Millepertuis + indinavir)',
         'target_type_id'=>4,
-        'notes'=>'Etude sur 8 volontaires sains recevant de l\'indinavir (4 doses à 800mg) suivies de 14 jours de millepertuis (300mg 3 fois par jour)\r\nDiminution de l\'AUC et des concentrations plasmatiques d\'indinavir',
+        'notes'=>'Etude sur 8 volontaires sains recevant de l\'indinavir (4 doses à 800mg) suivies de 14 jours de millepertuis (300mg 3 fois par jour)  Diminution de l\'AUC et des concentrations plasmatiques d\'indinavir',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1493,7 +1493,7 @@ Target::create( [
         'name'=>'Etude clinique (Millepertuis + irinotécan)',
         'long_name'=>'Etude randomisée en cross over sur 5 patients (Millepertuis + irinotécan)',
         'target_type_id'=>4,
-        'notes'=>'Etude randomisée en cross over sur 5 patients traités par irinotécan (350mg/m2 toutes les 3 semaines) avec ou non du millepertuis Diminution des concentrations plasmatiques du métabolite actif de l\'irinotécan (SN-38) chez les patients recevant du millepertuis\r\nPossible diminution de l\'effet de l\'irinotécan. Eviter l\'association',
+        'notes'=>'Etude randomisée en cross over sur 5 patients traités par irinotécan (350mg/m2 toutes les 3 semaines) avec ou non du millepertuis Diminution des concentrations plasmatiques du métabolite actif de l\'irinotécan (SN-38) chez les patients recevant du millepertuis  Possible diminution de l\'effet de l\'irinotécan. Eviter l\'association',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1553,7 +1553,7 @@ Target::create( [
         'name'=>'Etude clinique    (Millepertuis + tacrolimus)',
         'long_name'=>'Etude sur 10 sujets sains (Millepertuis + tacrolimus)',
         'target_type_id'=>4,
-        'notes'=>'Etude sur 10 sujets sains recevant une dose unique de tacrolimus (0,1 mg/kg) avant et au cours d\'un traitement de 18 jours de millepertuis (300mg 3 fois par jour)\r\nDiminution significative de l\'AUC du tacrolimus',
+        'notes'=>'Etude sur 10 sujets sains recevant une dose unique de tacrolimus (0,1 mg/kg) avant et au cours d\'un traitement de 18 jours de millepertuis (300mg 3 fois par jour)  Diminution significative de l\'AUC du tacrolimus',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1577,7 +1577,7 @@ Target::create( [
         'name'=>'Etude clinique (Millepertuis + voriconazole)',
         'long_name'=>'Etude sur 17 volontaires sains (Millepertuis + voriconazole)',
         'target_type_id'=>4,
-        'notes'=>'Etude sur 17 volontaires sains recevant 15 jours de millepertuis (300mg 3 fois par jour) et une dose unique de voriconazole\r\n(400mg) à J1 et J15. Pas d\'effet sur le voriconazole administré à J1 mais diminution significative de l\'AUC et augmentation de la clairance du voriconazole administré à J15',
+        'notes'=>'Etude sur 17 volontaires sains recevant 15 jours de millepertuis (300mg 3 fois par jour) et une dose unique de voriconazole  (400mg) à J1 et J15. Pas d\'effet sur le voriconazole administré à J1 mais diminution significative de l\'AUC et augmentation de la clairance du voriconazole administré à J15',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1589,7 +1589,7 @@ Target::create( [
         'name'=>'Etude clinique (soja natto + acenocoumarol)',
         'long_name'=>'Etude sur 12 volontaires sains stables (soja natto + acenocoumarol)',
         'target_type_id'=>4,
-        'notes'=>'Etude sur 12 volontaires sains stables sous acenocoumarol. Diminution de l\'INR moyen 24heures après la consommation\r\nde soja fermenté (repas unique contenant 100g de soja fermenté). Effet cliniquement important chez 6 des 12 patients',
+        'notes'=>'Etude sur 12 volontaires sains stables sous acenocoumarol. Diminution de l\'INR moyen 24heures après la consommation  de soja fermenté (repas unique contenant 100g de soja fermenté). Effet cliniquement important chez 6 des 12 patients',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1613,7 +1613,7 @@ Target::create( [
         'name'=>'Cas report (soja lait + levothyroxine)',
         'long_name'=>'Cas d\'échec thérapeutique (soja lait + levothyroxine)',
         'target_type_id'=>1,
-        'notes'=>'1 rapport de cas d\'échec thérapeutique de levothyroxine aux doses usuelles chez un nouveau né souffrant d\'hypothyroïdisme\r\nprimaire et nourri au lait de soja. Réussite du traitement après remplacement par du lait de soja par du lait de vache',
+        'notes'=>'1 rapport de cas d\'échec thérapeutique de levothyroxine aux doses usuelles chez un nouveau né souffrant d\'hypothyroïdisme  primaire et nourri au lait de soja. Réussite du traitement après remplacement par du lait de soja par du lait de vache',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1625,7 +1625,7 @@ Target::create( [
         'name'=>'Etude clinique (soja daidzéine + théophylline)',
         'long_name'=>'Etude contre placebo sur 20 patients (soja daidzéine + théophylline)',
         'target_type_id'=>4,
-        'notes'=>'Étude contre placebo sur 20 patients non fumeurs. Un pré traitement par Daidzéine augmente l\'AUC, les taux maximum et la 1/2 vie d\'élimination de la théophylline de façon significative\r\nMieux vaut ne pas associer le soja à la théophylline, médicament à marge thérapeutique étroite',
+        'notes'=>'Étude contre placebo sur 20 patients non fumeurs. Un pré traitement par Daidzéine augmente l\'AUC, les taux maximum et la 1/2 vie d\'élimination de la théophylline de façon significative  Mieux vaut ne pas associer le soja à la théophylline, médicament à marge thérapeutique étroite',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1637,7 +1637,7 @@ Target::create( [
         'name'=>'Case report  (Soja lait + warfarine)',
         'long_name'=>'Cas de diminution d\'INR chez un patient stable (Soja lait + warfarine)',
         'target_type_id'=>1,
-        'notes'=>'1 rapport de cas de diminution d\'INR chez un patient stable sous warfarine après consommation quotidienne de lait de soja\r\npendant 4 semaines',
+        'notes'=>'1 rapport de cas de diminution d\'INR chez un patient stable sous warfarine après consommation quotidienne de lait de soja  pendant 4 semaines',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1669,7 +1669,7 @@ Target::create( [
                 'name'=>'Etude clinique (Thé vert + fer)',
                 'long_name'=>'Etude sur 10 femmes (Thé vert + fer)',
                 'target_type_id'=>4,
-                'notes'=>'10 femmes ont consommé, pendant 4 jours consécutifs, deux repas identiques marqués au fer radioactif, l\'un enrichi en\r\nextrait phénolique de thé vert (contenant 37mg de catéchines), l\'autre sans cet extrait. Au terme de cette étude, il a été montré une diminution significative de l\'absorption du fer par l\'extrait de thé vert',
+                'notes'=>'10 femmes ont consommé, pendant 4 jours consécutifs, deux repas identiques marqués au fer radioactif, l\'un enrichi en  extrait phénolique de thé vert (contenant 37mg de catéchines), l\'autre sans cet extrait. Au terme de cette étude, il a été montré une diminution significative de l\'absorption du fer par l\'extrait de thé vert',
                 'user_id'=>3,
                 'validated'=>1
                 ] );
@@ -1693,7 +1693,7 @@ Target::create( [
     'name'=>'Etude clinique (Thé noir + fer)',
     'long_name'=>'Etude clinique (Thé noir + fer)',
     'target_type_id'=>4,
-    'notes'=>'Etude clinique. 150mL de thé noir diminue l\'absorption de fer radio marqué présent dans un repas de 59% chez 10 femmes souffrant d\'anémie ferriprive et de 49% chez 10 sujets contrôles sans anémie. La diminution d\'absorption a été\r\naugmentée à 66% dans les deux groupes après l\'augmentation de la quantité de thé à 300mL',
+    'notes'=>'Etude clinique. 150mL de thé noir diminue l\'absorption de fer radio marqué présent dans un repas de 59% chez 10 femmes souffrant d\'anémie ferriprive et de 49% chez 10 sujets contrôles sans anémie. La diminution d\'absorption a été  augmentée à 66% dans les deux groupes après l\'augmentation de la quantité de thé à 300mL',
     'user_id'=>3,
     'validated'=>1
     ] );
@@ -1729,7 +1729,7 @@ Target::create( [
     'name'=>'Case report (Sauge chinoise + Warfarine)',
     'long_name'=>'Case report (Sauge chinoise + Warfarine)',
     'target_type_id'=>1,
-    'notes'=>'Cas d\'un homme de 62 ans avec remplacement d\'une valve mitrale.\r\nPatient aussi traité par Digoxine, Furosémide, Captopril.\r\nINR augmenté.\r\nLe mécanisme probable d\'interaction est certainement dû aux coumarines présentes dans la sauge.',
+    'notes'=>'Cas d\'un homme de 62 ans avec remplacement d\'une valve mitrale.  Patient aussi traité par Digoxine, Furosémide, Captopril.  INR augmenté.  Le mécanisme probable d\'interaction est certainement dû aux coumarines présentes dans la sauge.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1741,7 +1741,7 @@ Target::create( [
     'name'=>'Case report (Luzerne/actée+azathioprine/ciclosporine)',
     'long_name'=>'Case report (Luzerne+azathioprine/ciclosporine)',
     'target_type_id'=>1,
-    'notes'=>'Un patient greffé du rein greffe stable prenant l\'azathioprine 50 mg par jour et la ciclosporine 75 mg deux fois par jour a commencé à consommer un complément alimentaire à base de luzerne et d\'actée à grappes sur avis médical pour de graves symptômes de la ménopause. Son taux de créatinine sérique est passé de entre environ 97 et 124 micromoles / l jusqu\'à 168 micromol / L après 4 semaines, et à 256 micromol / L après 6 semaines sans modifier les doses de ciclosporine. La biopsie a révélé rejet aigu sévère avec une vascularite et elle a été traitée avec des corticostéroïdes et anti-immunoglobuline de lymphocytes T avec amélioration partielle\r\nla fonction rénale',
+    'notes'=>'Un patient greffé du rein greffe stable prenant l\'azathioprine 50 mg par jour et la ciclosporine 75 mg deux fois par jour a commencé à consommer un complément alimentaire à base de luzerne et d\'actée à grappes sur avis médical pour de graves symptômes de la ménopause. Son taux de créatinine sérique est passé de entre environ 97 et 124 micromoles / l jusqu\'à 168 micromol / L après 4 semaines, et à 256 micromol / L après 6 semaines sans modifier les doses de ciclosporine. La biopsie a révélé rejet aigu sévère avec une vascularite et elle a été traitée avec des corticostéroïdes et anti-immunoglobuline de lymphocytes T avec amélioration partielle  la fonction rénale',
     'user_id'=>2,
     'validated'=>1
     ] );
@@ -1753,7 +1753,7 @@ Target::create( [
     'name'=>'Etude clinique (Ginseng asiatique + warfarine)',
     'long_name'=>'Etude clinique (Ginseng asiatique + warfarine)',
     'target_type_id'=>4,
-    'notes'=>'Deux cas isolés de réduction de l\'effet anticoagulant de la warfarine et de diminution de l\'INR par le ginseng, mais pas d\'interaction significative démontrée a ce jour. \r\nEtude randomisée croisée en 3 étapes sur 12 sujets sains recevant pendant 14 jours du ginseng et une dose unique de warfarine. Pas de modification des paramètres PK ni des paramètres PD.',
+    'notes'=>'Deux cas isolés de réduction de l\'effet anticoagulant de la warfarine et de diminution de l\'INR par le ginseng, mais pas d\'interaction significative démontrée a ce jour.   Etude randomisée croisée en 3 étapes sur 12 sujets sains recevant pendant 14 jours du ginseng et une dose unique de warfarine. Pas de modification des paramètres PK ni des paramètres PD.',
     'user_id'=>3,
     'validated'=>1
     ] );
@@ -1765,7 +1765,7 @@ Target::create( [
     'name'=>'Case report d\'hémorragie intracérébrale (Ginkgo + warfarine)',
     'long_name'=>'Case report d\'hémorragie intracérébrale (Ginkgo + warfarine)',
     'target_type_id'=>1,
-    'notes'=>'Case report d\'hémorragie intracérébrale. Deux essais randomisés en double aveugle ont montré que le ginkgo n\'affectait pas le PK et la PD de la warfarine, et n\'ont mis en évidence aucune modification de l\'INR et ses effets cliniques.\r\nIn vitro, le ginkgolide B inhibe le facteur d\'activation plaquettaire par déplacement de son site de liaison sur le récepteur ?',
+    'notes'=>'Case report d\'hémorragie intracérébrale. Deux essais randomisés en double aveugle ont montré que le ginkgo n\'affectait pas le PK et la PD de la warfarine, et n\'ont mis en évidence aucune modification de l\'INR et ses effets cliniques.  In vitro, le ginkgolide B inhibe le facteur d\'activation plaquettaire par déplacement de son site de liaison sur le récepteur ?',
     'user_id'=>3,
     'validated'=>1
     ] );
@@ -1777,7 +1777,7 @@ Target::create( [
     'name'=>'Etude clinique (Ginkgo + oméprazole)',
     'long_name'=>'Etude clinique (Ginkgo + oméprazole)',
     'target_type_id'=>4,
-    'notes'=>'Etude clinique sur 18 sujets sains de génotype 2C19. Administration d\'une dose unique de 40mg d\'oméprazole suivie de 2x70mg de ginkgo pendant 12 jours.\r\nDiminution des concentrations plasmatiques d\'oméprazole et augmentation de celles de son métabolite 5-hydroxyoméprazole.\r\nInduction de l\'hydroxylation de l\'oméprazole dépendant du CYP 2C19.',
+    'notes'=>'Etude clinique sur 18 sujets sains de génotype 2C19. Administration d\'une dose unique de 40mg d\'oméprazole suivie de 2x70mg de ginkgo pendant 12 jours.  Diminution des concentrations plasmatiques d\'oméprazole et augmentation de celles de son métabolite 5-hydroxyoméprazole.  Induction de l\'hydroxylation de l\'oméprazole dépendant du CYP 2C19.',
     'user_id'=>3,
     'validated'=>1
     ] );
@@ -1801,7 +1801,7 @@ Target::create( [
     'name'=>'Etude clinique (Canneberge + Warfarine)',
     'long_name'=>'Etude clinique (Canneberge + Warfarine)',
     'target_type_id'=>4,
-    'notes'=>'Essai randomisé en double aveugle sur 12 volontaires sains (de génotype CYP 2C9 et VKORC1). Dose unique de 25mg de warfarine seule ou après 15 jours de cranberry.\r\nAvec le cranberry, augmentation de l\'AUC(INR-temps) de 30%.\r\nPas de modification de la pharmacocinétique de la warfarine S ou R, ni de modification de la liaison aux protéines plasmatiques. Interaction dépendant du génotype VKORC1?',
+    'notes'=>'Essai randomisé en double aveugle sur 12 volontaires sains (de génotype CYP 2C9 et VKORC1). Dose unique de 25mg de warfarine seule ou après 15 jours de cranberry.  Avec le cranberry, augmentation de l\'AUC(INR-temps) de 30%.  Pas de modification de la pharmacocinétique de la warfarine S ou R, ni de modification de la liaison aux protéines plasmatiques. Interaction dépendant du génotype VKORC1?',
     'user_id'=>3,
     'validated'=>1
     ] );
@@ -1813,7 +1813,7 @@ Target::create( [
     'name'=>'Etude clinique (Echinacée + midazolam)',
     'long_name'=>'Etude clinique (Echinacée + midazolam)',
     'target_type_id'=>4,
-    'notes'=>'Etude sur 12 volontaires sains. Administration de midazolam par voie orale et voie IV avant et après 8 jours d\'échinacée (400mg 4 fois /jour).\r\nDiminution de l\'aire sous la courbe du midazolam de 23%. Augmentation de la clairance systémique de 34% mais pas de modification de la clairance orale.\r\nL\'inhibition des CYP 3A4 intestinaux par l\'echinacea et l\'induction des CYP 3A4 hépatiques est le mécanisme probable',
+    'notes'=>'Etude sur 12 volontaires sains. Administration de midazolam par voie orale et voie IV avant et après 8 jours d\'échinacée (400mg 4 fois /jour).  Diminution de l\'aire sous la courbe du midazolam de 23%. Augmentation de la clairance systémique de 34% mais pas de modification de la clairance orale.  L\'inhibition des CYP 3A4 intestinaux par l\'echinacea et l\'induction des CYP 3A4 hépatiques est le mécanisme probable',
     'user_id'=>3,
     'validated'=>1
     ] );
@@ -1825,7 +1825,7 @@ Target::create( [
     'name'=>'Etude clinique (pomélo+sildénafil)',
     'long_name'=>'Etude sur volontaires sains (pomélo+sildénafil)',
     'target_type_id'=>4,
-    'notes'=>'Etude clinique randomisé sur 24 sujets sains.\r\nAugmentation significative des concentrations en sildénafil si prise concomitante de pomélo.',
+    'notes'=>'Etude clinique randomisé sur 24 sujets sains.  Augmentation significative des concentrations en sildénafil si prise concomitante de pomélo.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1837,7 +1837,7 @@ Target::create( [
     'name'=>'Etude clinique (pomélo+ciclosporine)',
     'long_name'=>'Etude clinique (pomélo+ciclosporine)',
     'target_type_id'=>4,
-    'notes'=>'Etude clinique sur 18 volontaires sains.\r\nAdministration de ciclosporine (5mg/kg) avec 240mL de du jus de pomélo (avec ou sans furanocoumarines) ou jus d\'orange.\r\nL\'interaction se fait via les furanocoumarines.\r\nL\'AUC de la ciclosporine était augmentée si il y avait co-administration de pomélo (avec furanocoumarines).',
+    'notes'=>'Etude clinique sur 18 volontaires sains.  Administration de ciclosporine (5mg/kg) avec 240mL de du jus de pomélo (avec ou sans furanocoumarines) ou jus d\'orange.  L\'interaction se fait via les furanocoumarines.  L\'AUC de la ciclosporine était augmentée si il y avait co-administration de pomélo (avec furanocoumarines).',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1849,7 +1849,7 @@ Target::create( [
     'name'=>'Etude clinique (pamplemousse+canneberge+ciclosporine)',
     'long_name'=>'Etude sur volontaires sains (pamplemousse+canneberge+ciclosporine)',
     'target_type_id'=>4,
-    'notes'=>'Etude clinique randomisé chez des volontaires sains.\r\nAugmentation significative de l\'AUC de la ciclosporine avec le pamplemousse.\r\nAucun effet de la canneberge sur la concentration en ciclosporine.',
+    'notes'=>'Etude clinique randomisé chez des volontaires sains.  Augmentation significative de l\'AUC de la ciclosporine avec le pamplemousse.  Aucun effet de la canneberge sur la concentration en ciclosporine.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1861,7 +1861,7 @@ Target::create( [
     'name'=>'Etude clinique (millepertuis + tacrolimus + acide mycophénolique)',
     'long_name'=>'Etude clinique chez patients greffés (millepertuis + tacrolimus + acide mycophénolique)',
     'target_type_id'=>4,
-    'notes'=>'Etude sur 10 transplantés rénaux recevant 600mg de millepertuis pendant 14 jours parallèlement à leur traitement habituel (tacrolimus et mycophénolate mofénil). \r\nDiminution de l\'ordre de 58% des concentrations plasmatiques de tacrolimus (ASC, Cmax et Cmin) avec risque de rejet. \r\nNécessité de doubler la posologie de tacrolimus. \r\nRetour aux concentrations plasmatiques normales 2 semaines après arrêt du millepertuis et aux posologies initiales 4 semaines après. \r\nA EVITER EN AUTOMEDICATION ou monitoring thérapeutique strict. \r\nL\'interaction passe par une induction du CYP 3A4 et de la glycoprotéine P.\r\nAucun effet sur l\'acide mycophénolique.',
+    'notes'=>'Etude sur 10 transplantés rénaux recevant 600mg de millepertuis pendant 14 jours parallèlement à leur traitement habituel (tacrolimus et mycophénolate mofénil).   Diminution de l\'ordre de 58% des concentrations plasmatiques de tacrolimus (ASC, Cmax et Cmin) avec risque de rejet.   Nécessité de doubler la posologie de tacrolimus.   Retour aux concentrations plasmatiques normales 2 semaines après arrêt du millepertuis et aux posologies initiales 4 semaines après.   A EVITER EN AUTOMEDICATION ou monitoring thérapeutique strict.   L\'interaction passe par une induction du CYP 3A4 et de la glycoprotéine P.  Aucun effet sur l\'acide mycophénolique.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1873,7 +1873,7 @@ Target::create( [
     'name'=>'Case report (pamplemousse+tacrolimus)',
     'long_name'=>'Case report (pamplemousse+tacrolimus)',
     'target_type_id'=>1,
-    'notes'=>'Cas rapporté d\'une patiente de 44 ans, ayant subie une transplantation rénale.\r\nLa patiente était traitée par tacrolimus, méthylprednisolone, famotidine et cotrimoxazole.\r\nPendant les 3 premiers mois après la transplantation, les taux de tacrolimus étaient stables.\r\nBrutalement, les taux ont augmenté.\r\nCette augmentation a été associée à une prise de pamplemousse, 100g de pamplemousse avant la prise de tacrolimus la veille du dosage.',
+    'notes'=>'Cas rapporté d\'une patiente de 44 ans, ayant subie une transplantation rénale.  La patiente était traitée par tacrolimus, méthylprednisolone, famotidine et cotrimoxazole.  Pendant les 3 premiers mois après la transplantation, les taux de tacrolimus étaient stables.  Brutalement, les taux ont augmenté.  Cette augmentation a été associée à une prise de pamplemousse, 100g de pamplemousse avant la prise de tacrolimus la veille du dosage.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1885,7 +1885,7 @@ Target::create( [
     'name'=>'Etude sur modèle murin (curcuma+gingembre+pamplemousse+tacrolimus)',
     'long_name'=>'Etude sur modèle murin (curcuma+gingembre+pamplemousse+tacrolimus)',
     'target_type_id'=>6,
-    'notes'=>'Etude chez le rat.\r\nAdministration de tacrolimus à la dose de 0,6mg/kg avec soit du pamplemousse, soit du gingembre, soit du curcuma, soit tout seul.\r\nTaux de tacrolimus significativement plus élevés si administration concomitante de pamplemousse, gingembre et curcuma.',
+    'notes'=>'Etude chez le rat.  Administration de tacrolimus à la dose de 0,6mg/kg avec soit du pamplemousse, soit du gingembre, soit du curcuma, soit tout seul.  Taux de tacrolimus significativement plus élevés si administration concomitante de pamplemousse, gingembre et curcuma.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1897,7 +1897,7 @@ Target::create( [
     'name'=>'Case report (pomélo+tacrolimus)',
     'long_name'=>'Case report (pomélo+tacrolimus)',
     'target_type_id'=>1,
-    'notes'=>'Cas d\'une patiente de 28 ans, greffée du foie.\r\nElle était traitée par tacrolimus, mycophénolate et corticoïdes.\r\n4 ans après la greffe, les enzymes hépatiques ont augmenté et le rejet aigu a été confirmé par une biopsie.\r\nLa patiente est sortie de l\'hôpital avec une dose de 6mg/j de tacrolimus mais les dosages n\'étaient toujours pas dans la zone thérapeutique.\r\nIls ont donc décidé d\'utilisé du pomélo (250mL) comme situation d\'urgence pour augmenter les concentrations en tacrolimus.',
+    'notes'=>'Cas d\'une patiente de 28 ans, greffée du foie.  Elle était traitée par tacrolimus, mycophénolate et corticoïdes.  4 ans après la greffe, les enzymes hépatiques ont augmenté et le rejet aigu a été confirmé par une biopsie.  La patiente est sortie de l\'hôpital avec une dose de 6mg/j de tacrolimus mais les dosages n\'étaient toujours pas dans la zone thérapeutique.  Ils ont donc décidé d\'utilisé du pomélo (250mL) comme situation d\'urgence pour augmenter les concentrations en tacrolimus.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1909,7 +1909,7 @@ Target::create( [
     'name'=>'Case report 2 (pomélo+tacrolimus)',
     'long_name'=>'Case report 2 (pomélo+tacrolimus)',
     'target_type_id'=>1,
-    'notes'=>'Patient de 52 ans, greffé hépatique.\r\n4 mois post-transplantation, signes de surdosage en tacrolimus.\r\nConsommation considérable de confiture d\'orange qui contenait du pomélo.',
+    'notes'=>'Patient de 52 ans, greffé hépatique.  4 mois post-transplantation, signes de surdosage en tacrolimus.  Consommation considérable de confiture d\'orange qui contenait du pomélo.',
     'user_id'=>8,
     'validated'=>1
     ] );
@@ -1921,7 +1921,7 @@ Target::create( [
     'name'=>'Etude clinique (Ail + saquanivir)',
     'long_name'=>'Etude logitudinale sur 9 volontaires sains (Ail + saquanivir)',
     'target_type_id'=>4,
-    'notes'=>'Etude longitudinale sur 9 volontaires sains recevant 10 doses de 1200mg de saquinivir de J1 à J4 et de l\'ail 2 fois par jour de J5 à J24\r\nRéductions des taux sanguins du  saquinivir, avec pour conséquence une diminution possible de son efficacité (diminution de l\'aire sous la courbe du saquinivir de 51% de la Cmin de 49% et de la Cmax de 54%\r\nEtude avec le produit \"GarliPure Maximum Allicine Formula (Natrol)\" qui contient de l\'allicine, un composé instable qui se transforme en polysulfides qui induisent la production du cytochrome P450\r\nLe produit \"Kyolic Aged Garlic Extract (Wakunaga)\" est dépourvu d\'allicine et n\'induit pas le cytochrome P450',
+    'notes'=>'Etude longitudinale sur 9 volontaires sains recevant 10 doses de 1200mg de saquinivir de J1 à J4 et de l\'ail 2 fois par jour de J5 à J24  Réductions des taux sanguins du  saquinivir, avec pour conséquence une diminution possible de son efficacité (diminution de l\'aire sous la courbe du saquinivir de 51% de la Cmin de 49% et de la Cmax de 54%  Etude avec le produit \"GarliPure Maximum Allicine Formula (Natrol)\" qui contient de l\'allicine, un composé instable qui se transforme en polysulfides qui induisent la production du cytochrome P450  Le produit \"Kyolic Aged Garlic Extract (Wakunaga)\" est dépourvu d\'allicine et n\'induit pas le cytochrome P450',
     'user_id'=>3,
     'validated'=>1
     ] );
@@ -1933,7 +1933,7 @@ Target::create( [
     'name'=>'Case report (Ail + warfarine)',
     'long_name'=>'Case report (Ail + warfarine)',
     'target_type_id'=>1,
-    'notes'=>'Case report : hématome épidural spontané sous 2g/jour d\'ail pendant une période indéterminée\r\nD\'autres épisodes de saignements liés à la consommation d\'ail ont été décrits sans que des cas d\'interaction ail-warfarine n\'aient été précisément rapportés\r\nIn vitro, diminution de la synthèse de thromboxane qui entraine une diminution de l\'agrégation plaquettaire?',
+    'notes'=>'Case report : hématome épidural spontané sous 2g/jour d\'ail pendant une période indéterminée  D\'autres épisodes de saignements liés à la consommation d\'ail ont été décrits sans que des cas d\'interaction ail-warfarine n\'aient été précisément rapportés  In vitro, diminution de la synthèse de thromboxane qui entraine une diminution de l\'agrégation plaquettaire?',
     'user_id'=>3,
     'validated'=>1
     ] );
@@ -1947,7 +1947,7 @@ Target::create( [
         'name'=>'Case report (Angélique de chine - racine + Warfarine)',
         'long_name'=>'Case report (Angélique de chine - racine + Warfarine)',
         'target_type_id'=>1,
-        'notes'=>'Case report : Augmentation de plus de 2 fois le taux de prothrombine et de l\'INR lors d\'une utilisation concomitante (5mg de warfarine depuis 2 ans, 565mg de racine 1 à 2 fois/jour depuis 4 semaines): augmentation résolue après arrêt de la racine de dong quai.\r\nPrésence de dérivés coumariniques dans la racine.\r\nInhibition de l\'activation de l\'agrégation plaquettaire?\r\n\r\n',
+        'notes'=>'Case report : Augmentation de plus de 2 fois le taux de prothrombine et de l\'INR lors d\'une utilisation concomitante (5mg de warfarine depuis 2 ans, 565mg de racine 1 à 2 fois/jour depuis 4 semaines): augmentation résolue après arrêt de la racine de dong quai.  Présence de dérivés coumariniques dans la racine.  Inhibition de l\'activation de l\'agrégation plaquettaire?    ',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1959,7 +1959,7 @@ Target::create( [
         'name'=>'Etude clinique (Aubépine + digoxine)',
         'long_name'=>'Etude randomisé en double aveugle (Aubépine + digoxine)',
         'target_type_id'=>4,
-        'notes'=>'Possibilité d\'augmenter leur activité mais un essai randomisé en double aveugle sur 8 volontaires sains (0,25mg de digoxine seule sur 10 jours et 0,25 mg de digoxine + 2x450mg d\'aubépine sur 21 jours) n\'a montré aucune modification significative de tous le paramètres pharmacocinétiques mesurés\r\nActivité inotrope positive des flavonoïdes?\r\nAction de ces composés sur la glycoprotéïnes P?',
+        'notes'=>'Possibilité d\'augmenter leur activité mais un essai randomisé en double aveugle sur 8 volontaires sains (0,25mg de digoxine seule sur 10 jours et 0,25 mg de digoxine + 2x450mg d\'aubépine sur 21 jours) n\'a montré aucune modification significative de tous le paramètres pharmacocinétiques mesurés  Activité inotrope positive des flavonoïdes?  Action de ces composés sur la glycoprotéïnes P?',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1971,7 +1971,7 @@ Target::create( [
         'name'=>'Case report : augmentation de l\'INR (Camomille + warfarine)',
         'long_name'=>'Case report d\'augmentation de l\'INR (Camomille + warfarine)',
         'target_type_id'=>1,
-        'notes'=>'Case report : augmentation de l\'INR avec pour conséquence une hémorragie sous warfarine associé à la consommation de camomille\r\nPrésence de dérivés coumariniques dans les feuilles',
+        'notes'=>'Case report : augmentation de l\'INR avec pour conséquence une hémorragie sous warfarine associé à la consommation de camomille  Présence de dérivés coumariniques dans les feuilles',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -1983,7 +1983,7 @@ Target::create( [
         'name'=>'Case report d\'augmentation d\'INR (Cranberry + warfarine)',
         'long_name'=>'Case report d\'augmentation d\'INR (Cranberry + warfarine)',
         'target_type_id'=>1,
-        'notes'=>'Case report d\'augmentation de l\'INR et saignements\r\nEtude randomisée et croisée sur 10 volontaires sains (200ml de jus de cranberry ou eau pendant 10 jours de R-S warfarine à J5) : légère diminution de l\'aire sous la courbe de la S warfarine sans modification de l\'effet anticoagulant\r\nMécanisme pharmacocinétique (CYPP4502C9) improbable -> mécanisme pharmacocinétique?',
+        'notes'=>'Case report d\'augmentation de l\'INR et saignements  Etude randomisée et croisée sur 10 volontaires sains (200ml de jus de cranberry ou eau pendant 10 jours de R-S warfarine à J5) : légère diminution de l\'aire sous la courbe de la S warfarine sans modification de l\'effet anticoagulant  Mécanisme pharmacocinétique (CYPP4502C9) improbable -> mécanisme pharmacocinétique?',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -2007,7 +2007,7 @@ Target::create( [
         'name'=>'Etude clinique (Ginseng américain + warfarine)',
         'long_name'=>'Etude randomisée en double aveugle (Ginseng américain + warfarine)',
         'target_type_id'=>4,
-        'notes'=>'Etude randomisée en double aveugle, contre placebo, sur 20 volontaires sains pendant 4 semaines, recevant 5mg de warfarine pendant 3 jours et 2g de ginseng pendant 3 semaines.\r\nDiminution significative de l\'INR (AUC et Cmax) en présence de ginseng.\r\nInduction du CYP 2C9.',
+        'notes'=>'Etude randomisée en double aveugle, contre placebo, sur 20 volontaires sains pendant 4 semaines, recevant 5mg de warfarine pendant 3 jours et 2g de ginseng pendant 3 semaines.  Diminution significative de l\'INR (AUC et Cmax) en présence de ginseng.  Induction du CYP 2C9.',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -2031,7 +2031,7 @@ Target::create( [
         'name'=>'Case report (Kava + alprazolam)',
         'long_name'=>'Case report (Kava + alprazolam)',
         'target_type_id'=>1,
-        'notes'=>'Case report de léthargie avec désorientation.\r\nIn vitro, action des pyrones de la racine de kava sur le récepteur des benzodiazépines.',
+        'notes'=>'Case report de léthargie avec désorientation.  In vitro, action des pyrones de la racine de kava sur le récepteur des benzodiazépines.',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -2043,7 +2043,7 @@ Target::create( [
         'name'=>'Etude clinique (Millepertuis + alprazolam)',
         'long_name'=>'Etude clinique (Millepertuis + alprazolam)',
         'target_type_id'=>4,
-        'notes'=>'Etude clinique sur 12 volontaires sains recevant 2mg d\'alprazolam avant et après administration de millepertuis (900mg par jour) pendant 14 jours.\r\nDiminution par 2 de l\'ASC de l\'aloprazolam et augmentation par 2 de sa clairance. Diminution probable de l\'efficacité clinique avec nécessité d\'augmenter les doses d\'aloprazolam.\r\nInduction du CYP 3A4.\r\n',
+        'notes'=>'Etude clinique sur 12 volontaires sains recevant 2mg d\'alprazolam avant et après administration de millepertuis (900mg par jour) pendant 14 jours.  Diminution par 2 de l\'ASC de l\'aloprazolam et augmentation par 2 de sa clairance. Diminution probable de l\'efficacité clinique avec nécessité d\'augmenter les doses d\'aloprazolam.  Induction du CYP 3A4.  ',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -2055,7 +2055,7 @@ Target::create( [
         'name'=>'Case report (Millepertuis + amiodarone)',
         'long_name'=>'Case report (Millepertuis + amiodarone)',
         'target_type_id'=>1,
-        'notes'=>'Possibilité d\'altération de la pharmacocinétique.\r\nInduction du CYP 3A4 et de la glycoprotéine P.',
+        'notes'=>'Possibilité d\'altération de la pharmacocinétique.  Induction du CYP 3A4 et de la glycoprotéine P.',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -2067,7 +2067,7 @@ Target::create( [
         'name'=>'Etude clinique (Millepertuis + amitriptyline)',
         'long_name'=>'Etude clinique (Millepertuis + amitriptyline)',
         'target_type_id'=>4,
-        'notes'=>'Etude sur 12 patients recevant 150mg d\'amitriptyline et 900mg par jour de millepertuis pendant 15 jours.\r\nDiminution significative des concentrations plasmatiques d\'amitriptyline et de ses métabolites actifs avec réduction possible de l\'efficacité de l\'antidépresseur.\r\nInduction des enzymes du cytochrome P450 (principalement CYP 3A4) et/ou de la glycoprotéine P.',
+        'notes'=>'Etude sur 12 patients recevant 150mg d\'amitriptyline et 900mg par jour de millepertuis pendant 15 jours.  Diminution significative des concentrations plasmatiques d\'amitriptyline et de ses métabolites actifs avec réduction possible de l\'efficacité de l\'antidépresseur.  Induction des enzymes du cytochrome P450 (principalement CYP 3A4) et/ou de la glycoprotéine P.',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -2079,7 +2079,7 @@ Target::create( [
         'name'=>'Etude clinique (Millepertuis + atorvastatine)',
         'long_name'=>'Etude sur 16 patients (Millepertuis + atorvastatine)',
         'target_type_id'=>4,
-        'notes'=>'Essai contrôlé, randomisé avec permutation, sur 16 patients traités par atorvastatine depuis au moins 3 mois (10-40mg/jour) et par millepertuis (600mg/jour pendant 1 mois).\r\nAugmentation significative des taux sanguins de LDL et du cholestérol total, sans modification des taux HDL et de triglicérides.\r\nInduction du CPY 3A4 et de glycoprotéine P.\r\n ',
+        'notes'=>'Essai contrôlé, randomisé avec permutation, sur 16 patients traités par atorvastatine depuis au moins 3 mois (10-40mg/jour) et par millepertuis (600mg/jour pendant 1 mois).  Augmentation significative des taux sanguins de LDL et du cholestérol total, sans modification des taux HDL et de triglicérides.  Induction du CPY 3A4 et de glycoprotéine P.   ',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -2091,7 +2091,7 @@ Target::create( [
         'name'=>'Etude clinique (Millepertuis + digoxine)',
         'long_name'=>'Etude randomisé en groupes parallèles (Millepertuis + digoxine)',
         'target_type_id'=>4,
-        'notes'=>'Etude randomisée en groupes parallèles versus placebo en simple aveugle sur 25 sujets recevant 0,25mg de digoxine pendant 5 jours.\r\nAprès 10 jours de traitement par millepertuis (900mg/jour) diminution de l\'ASC de la digoxine de 25%. Par rapport au groupe placebo, diminution de la concentration résiduelle et de la Cmax de 33% et 26% respectivement.\r\nPossible induction de la glycoprotéine P.',
+        'notes'=>'Etude randomisée en groupes parallèles versus placebo en simple aveugle sur 25 sujets recevant 0,25mg de digoxine pendant 5 jours.  Après 10 jours de traitement par millepertuis (900mg/jour) diminution de l\'ASC de la digoxine de 25%. Par rapport au groupe placebo, diminution de la concentration résiduelle et de la Cmax de 33% et 26% respectivement.  Possible induction de la glycoprotéine P.',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -2103,7 +2103,7 @@ Target::create( [
         'name'=>'Etude clinique (Millerpertuis + digoxine)',
         'long_name'=>'Etude randomisée en groupes parallèles (Millerpertuis + digoxine)',
         'target_type_id'=>4,
-        'notes'=>'Etude randomisée en groupes parallèles versus placebo sur 96 sujets sains recevant de la digoxine et un extrait de millepertuis parmi 10 testés, de formulation et de dosage différents, pendant 14 jours.\r\nL\'effet dépend de la composition de l\'extrait et du dosage en hyperforine. Aucune modification PK si l\'extrait ne contient pas d\'hyperforine. Plus l\'extrait est dosé en hyperforine, plus les paramètres PK de la digoxine sont fortement modifiés (diminution de l\'ASC, de la Cmax et de Cmin).\r\nPossible induction de la glycoprotéine P.\r\n',
+        'notes'=>'Etude randomisée en groupes parallèles versus placebo sur 96 sujets sains recevant de la digoxine et un extrait de millepertuis parmi 10 testés, de formulation et de dosage différents, pendant 14 jours.  L\'effet dépend de la composition de l\'extrait et du dosage en hyperforine. Aucune modification PK si l\'extrait ne contient pas d\'hyperforine. Plus l\'extrait est dosé en hyperforine, plus les paramètres PK de la digoxine sont fortement modifiés (diminution de l\'ASC, de la Cmax et de Cmin).  Possible induction de la glycoprotéine P.  ',
         'user_id'=>3,
         'validated'=>1
         ] );
@@ -2129,7 +2129,7 @@ Target::create( [
             'name'=>'Case report (Millepertuis + doxorubicine)',
             'long_name'=>'Case report (Millepertuis + doxorubicine)',
             'target_type_id'=>1,
-            'notes'=>'Altération possible de la pharmacocinétique.\r\nInduction du CYP 3A4 et de glycoprotéine P.',
+            'notes'=>'Altération possible de la pharmacocinétique.  Induction du CYP 3A4 et de glycoprotéine P.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2141,7 +2141,7 @@ Target::create( [
             'name'=>'Case report (Millepertuis + étoposide)',
             'long_name'=>'Case report (Millepertuis + étoposide)',
             'target_type_id'=>1,
-            'notes'=>'Altération possible de la pharmacocinétique.\r\nInduction du CYP 3A4 et de glycoprotéine P.',
+            'notes'=>'Altération possible de la pharmacocinétique.  Induction du CYP 3A4 et de glycoprotéine P.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2153,7 +2153,7 @@ Target::create( [
             'name'=>'Etude clinique (Millepertuis + féxofénadine)',
             'long_name'=>'Etude clinique (Millepertuis + féxofénadine)',
             'target_type_id'=>4,
-            'notes'=>'Etude sur 12 volontaires sains recevant 60mg de féxofénadine puis une dose unique de 900mg de millepertuis puis une dose continue pendant 15 jours.\r\nAprès la dose unique , augmentation significative de la Cmax de 45% et diminution significative de la clairance de la féxofénadine de 20%. La prise durable de millepertuis inverse ces effets.\r\nInhibition puis induction de la glycoprotéine P ?',
+            'notes'=>'Etude sur 12 volontaires sains recevant 60mg de féxofénadine puis une dose unique de 900mg de millepertuis puis une dose continue pendant 15 jours.  Après la dose unique , augmentation significative de la Cmax de 45% et diminution significative de la clairance de la féxofénadine de 20%. La prise durable de millepertuis inverse ces effets.  Inhibition puis induction de la glycoprotéine P ?',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2165,7 +2165,7 @@ Target::create( [
             'name'=>'Etude clinique (Millepertuis + imatinib)',
             'long_name'=>'Etude clinique (Millepertuis + imatinib)',
             'target_type_id'=>4,
-            'notes'=>'Diminution de l\'aire sous la courbe de l\'imatinib de 30% et augmentation de sa clairance de 43%\r\nEtude en cross over sur 10 volontaires sains recevant des doses uniques d\'imatinib (400mg) avant et après 15 jours de millepertuis (900mg). Réduction de 32% de ASC de l\'imatinib, de 29% de sa Cmax et de 21% de sa demi-vie.\r\nDiminution possible de l\'efficacité clinique de l\'imatinib.\r\nInduction du CYP 3A4.',
+            'notes'=>'Diminution de l\'aire sous la courbe de l\'imatinib de 30% et augmentation de sa clairance de 43%  Etude en cross over sur 10 volontaires sains recevant des doses uniques d\'imatinib (400mg) avant et après 15 jours de millepertuis (900mg). Réduction de 32% de ASC de l\'imatinib, de 29% de sa Cmax et de 21% de sa demi-vie.  Diminution possible de l\'efficacité clinique de l\'imatinib.  Induction du CYP 3A4.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2177,7 +2177,7 @@ Target::create( [
             'name'=>'Etude clinique (Millepertuis + indinavir)',
             'long_name'=>'Etude clinique (Millepertuis + indinavir)',
             'target_type_id'=>4,
-            'notes'=>'Etude sur 12 volontaires sains recevant 400mg d\'indinavir à J1 et 900mg de millepertuis de J4 à J17. \r\nEtude sur 8 volontaires sains recevant 4 doses de 800mg d\'indinavir suivies de 14 jours avec 900mg de millepertuis.\r\nDiminution de l\'aire sous la courbe de 57% et des concentrations plasmatiques d\'indinavir.\r\nActivation du PXR (Pregane X Receptor) = induction de CYP 3A4 et de la glycoprotéine P.',
+            'notes'=>'Etude sur 12 volontaires sains recevant 400mg d\'indinavir à J1 et 900mg de millepertuis de J4 à J17.   Etude sur 8 volontaires sains recevant 4 doses de 800mg d\'indinavir suivies de 14 jours avec 900mg de millepertuis.  Diminution de l\'aire sous la courbe de 57% et des concentrations plasmatiques d\'indinavir.  Activation du PXR (Pregane X Receptor) = induction de CYP 3A4 et de la glycoprotéine P.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2189,7 +2189,7 @@ Target::create( [
             'name'=>'Case report (Millepertuis + sertraline)',
             'long_name'=>'Case report (Millepertuis + sertraline)',
             'target_type_id'=>1,
-            'notes'=>'5 cas rapportés avec symptômes tels que diarrhées, sueurs, myalgies, myoclonies, troubles neuropsychiques faisant penser à un syndrome sérotoninergique avec les inhibiteurs de la sérotonine.\r\nExcès de sérotonine.',
+            'notes'=>'5 cas rapportés avec symptômes tels que diarrhées, sueurs, myalgies, myoclonies, troubles neuropsychiques faisant penser à un syndrome sérotoninergique avec les inhibiteurs de la sérotonine.  Excès de sérotonine.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2201,7 +2201,7 @@ Target::create( [
             'name'=>'Case report (Millepertuis + néfazodone)',
             'long_name'=>'Case report (Millepertuis + néfazodone)',
             'target_type_id'=>1,
-            'notes'=>'5 cas rapportés avec symptômes tels que diarrhées, sueurs, myalgies, myoclonies, troubles neuropsychiques faisant penser à un syndrome sérotoninergique avec les inhibiteurs de la sérotonine.\r\nExcès de sérotonine.',
+            'notes'=>'5 cas rapportés avec symptômes tels que diarrhées, sueurs, myalgies, myoclonies, troubles neuropsychiques faisant penser à un syndrome sérotoninergique avec les inhibiteurs de la sérotonine.  Excès de sérotonine.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2213,7 +2213,7 @@ Target::create( [
             'name'=>'Etude clinique (Millepertuis + irinotécan)',
             'long_name'=>'Etude clinique (Millepertuis + irinotécan)',
             'target_type_id'=>4,
-            'notes'=>'Etude randomisée en cross over sur 5 patients traités par irinotécan (350mg/m3 toutes les semaines). Diminution des concentrations plasmatiques du métabolites SN-38 (diminution de l\'ASC de 42%) et possible diminution de l\'efficacité de l\'irinotécan.\r\nDiminution de la toxicité hématologique lors de l\'association : au Nadir, diminution des leucocytes et des PNN de 56% et 63% sans millepertuis versus 8,6% et 4,3% avec. A EVITER;\r\nAltération de la glucoronidation du métabolite SN-38 et de l\'accumulation intracellulaire de l\'irinotécan et du SN-38?',
+            'notes'=>'Etude randomisée en cross over sur 5 patients traités par irinotécan (350mg/m3 toutes les semaines). Diminution des concentrations plasmatiques du métabolites SN-38 (diminution de l\'ASC de 42%) et possible diminution de l\'efficacité de l\'irinotécan.  Diminution de la toxicité hématologique lors de l\'association : au Nadir, diminution des leucocytes et des PNN de 56% et 63% sans millepertuis versus 8,6% et 4,3% avec. A EVITER;  Altération de la glucoronidation du métabolite SN-38 et de l\'accumulation intracellulaire de l\'irinotécan et du SN-38?',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2237,7 +2237,7 @@ Target::create( [
             'name'=>'Etude in vitro (pamplemousse+tacrolimus)',
             'long_name'=>'Etude in vitro (pamplemousse+tacrolimus)',
             'target_type_id'=>2,
-            'notes'=>'Etude sur des microsomes humains d\'origine hépatique.\r\nL\'interaction du pamplemousse sur le CYP3A4 a été évaluée en suivant la formation de la 6beta-hydroxytestostérone à partir de la testostérone dans des microsomes humains d\'origine hépatique.\r\nLa métabolisation du tacrolimus a aussi été étudié.\r\nEtude également de l\'effet du pamplemousse sur le devenir du tacrolimus in vitro.\r\nL\'interaction semble passé par une inhibition du CYP3A4 par le pamplemousse.',
+            'notes'=>'Etude sur des microsomes humains d\'origine hépatique.  L\'interaction du pamplemousse sur le CYP3A4 a été évaluée en suivant la formation de la 6beta-hydroxytestostérone à partir de la testostérone dans des microsomes humains d\'origine hépatique.  La métabolisation du tacrolimus a aussi été étudié.  Etude également de l\'effet du pamplemousse sur le devenir du tacrolimus in vitro.  L\'interaction semble passé par une inhibition du CYP3A4 par le pamplemousse.',
             'user_id'=>8,
             'validated'=>1
             ] );
@@ -2249,7 +2249,7 @@ Target::create( [
             'name'=>'Etude clinique (pomélo+tacrolimus)',
             'long_name'=>'Etude in vivo chez des patients transplantés (pomélo+tacrolimus)',
             'target_type_id'=>4,
-            'notes'=>'Etude prospective chez 30 patients greffés hépatique (1 mois post-transplantation).\r\n3 groupes ont été fait :\r\n- 1 qui recevait seulement les immunosuppresseurs comme traitement\r\n- 1 qui recevait les immunosuppresseurs et du jus de pomélo dilué\r\n- 1 qui recevait les immunosuppresseurs et du jus de pomélo pur\r\nLes concentrations ont augmenté de manière significative dans le groupe C.\r\nL\'augmentation n\'était pas significative dans le groupe B.\r\nLes concentrations étaient stables dans le groupe A.\r\nL\'interaction passe par une inhibition du CYP3A4 via les furanocoumarines et notamment la dihydroxybergamottine.\r\nL\'étude était plus à visée économique, pour diminuer les doses de tacrolimus et ainsi faire des économies.',
+            'notes'=>'Etude prospective chez 30 patients greffés hépatique (1 mois post-transplantation).  3 groupes ont été fait :  - 1 qui recevait seulement les immunosuppresseurs comme traitement  - 1 qui recevait les immunosuppresseurs et du jus de pomélo dilué  - 1 qui recevait les immunosuppresseurs et du jus de pomélo pur  Les concentrations ont augmenté de manière significative dans le groupe C.  L\'augmentation n\'était pas significative dans le groupe B.  Les concentrations étaient stables dans le groupe A.  L\'interaction passe par une inhibition du CYP3A4 via les furanocoumarines et notamment la dihydroxybergamottine.  L\'étude était plus à visée économique, pour diminuer les doses de tacrolimus et ainsi faire des économies.',
             'user_id'=>8,
             'validated'=>1
             ] );
@@ -2261,7 +2261,7 @@ Target::create( [
             'name'=>'Case report (Millepertuis + nelfinavir)',
             'long_name'=>'Case report (Millepertuis + nelfinavir)',
             'target_type_id'=>1,
-            'notes'=>'Altération possible de la pharmacocinétique.\r\nInduction du CYP 3A4 et de la glycoprotéine P.',
+            'notes'=>'Altération possible de la pharmacocinétique.  Induction du CYP 3A4 et de la glycoprotéine P.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2273,7 +2273,7 @@ Target::create( [
             'name'=>'Etude clinique (Millepertuis + névirapine)',
             'long_name'=>'Etude clinique (Millepertuis + névirapine)',
             'target_type_id'=>4,
-            'notes'=>'Analyse de valeurs de concentrations plasmatiques de néviparine chez 5 patients séropositifs traités par cet INNTI depuis plus d\'un an et qui utilisent le millepertuis depuis plusieurs mois. Comparaison avec les valeurs précédant la prise de millepertuis.\r\nAugmentation de la clairance orale de névirapine de 35% avec le millepertuis et diminution de l\'efficacité du traitement.',
+            'notes'=>'Analyse de valeurs de concentrations plasmatiques de néviparine chez 5 patients séropositifs traités par cet INNTI depuis plus d\'un an et qui utilisent le millepertuis depuis plusieurs mois. Comparaison avec les valeurs précédant la prise de millepertuis.  Augmentation de la clairance orale de névirapine de 35% avec le millepertuis et diminution de l\'efficacité du traitement.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2285,7 +2285,7 @@ Target::create( [
             'name'=>'Etude clinique (Millepertuis + oméprazole)',
             'long_name'=>'Etude clinique (Millepertuis + oméprazole)',
             'target_type_id'=>4,
-            'notes'=>'Etude sur 12 adultes de génotype 2C19 recevant 900mg de millepertuis ou un placebo pendant 14 jours puis une dose unique de 20mg d\'oméprazole.\r\nDiminution des concentrations plasmatiques d\'oméprazole et augmentation de celles de ses métabolites (oméprazole sulfone et 5 hydroxyoméprazole).\r\nInduction de la sulfoxydation catalysée par le CYP 3A4 et de l\'hydroxylation dépendant du CYP 2C19 de l\'oméprazole.',
+            'notes'=>'Etude sur 12 adultes de génotype 2C19 recevant 900mg de millepertuis ou un placebo pendant 14 jours puis une dose unique de 20mg d\'oméprazole.  Diminution des concentrations plasmatiques d\'oméprazole et augmentation de celles de ses métabolites (oméprazole sulfone et 5 hydroxyoméprazole).  Induction de la sulfoxydation catalysée par le CYP 3A4 et de l\'hydroxylation dépendant du CYP 2C19 de l\'oméprazole.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2297,7 +2297,7 @@ Target::create( [
             'name'=>'Case report (Millepertuis + paclitaxel)',
             'long_name'=>'Case report (Millepertuis + paclitaxel)',
             'target_type_id'=>1,
-            'notes'=>'Altération possible de la pharmacocinétique.\r\nInduction du CYP 3A4 et de glycoprotéine P.',
+            'notes'=>'Altération possible de la pharmacocinétique.  Induction du CYP 3A4 et de glycoprotéine P.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2309,7 +2309,7 @@ Target::create( [
             'name'=>'Case report (Millepertuis + ritonavir)',
             'long_name'=>'Case report (Millepertuis + ritonavir)',
             'target_type_id'=>1,
-            'notes'=>'Altération possible de la pharmacocinétique.\r\nInduction du CYP 3A4 et de la glycoprotéine P.',
+            'notes'=>'Altération possible de la pharmacocinétique.  Induction du CYP 3A4 et de la glycoprotéine P.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2321,7 +2321,7 @@ Target::create( [
             'name'=>'Case report (Millepertuis + saquinavir)',
             'long_name'=>'Case report (Millepertuis + saquinavir)',
             'target_type_id'=>1,
-            'notes'=>'Altération possible de la pharmacocinétique.\r\nInduction du CYP 3A4 et de la glycoprotéine P.',
+            'notes'=>'Altération possible de la pharmacocinétique.  Induction du CYP 3A4 et de la glycoprotéine P.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2333,7 +2333,7 @@ Target::create( [
             'name'=>'Etude clinique (Millepertuis + simvastatine)',
             'long_name'=>'Etude clinique (Millepertuis + simvastatine)',
             'target_type_id'=>4,
-            'notes'=>'Etude randimisée, croisée en double aveugle contre placebo sur 16 volontaires sains (8 jours pour chaque statine). Dose unique de 10mg de sanvastatine et de 20mg de pravastatine puis 900mg de millepertuis pendant 14 jours.\r\nDiminution des concentrations de simvastatine sans diminution de celles de la pravastatine.\r\nInduction de CYP 3A4 (paroi intestinale et foie).',
+            'notes'=>'Etude randimisée, croisée en double aveugle contre placebo sur 16 volontaires sains (8 jours pour chaque statine). Dose unique de 10mg de sanvastatine et de 20mg de pravastatine puis 900mg de millepertuis pendant 14 jours.  Diminution des concentrations de simvastatine sans diminution de celles de la pravastatine.  Induction de CYP 3A4 (paroi intestinale et foie).',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2345,7 +2345,7 @@ Target::create( [
             'name'=>'Etude clinique (Millepertuis + pravastatine)',
             'long_name'=>'Etude clinique (Millepertuis + pravastatine)',
             'target_type_id'=>4,
-            'notes'=>'Etude randimisée, croisée en double aveugle contre placebo sur 16 volontaires sains (8 jours pour chaque statine). Dose unique de 10mg de sanvastatine et de 20mg de pravastatine puis 900mg de millepertuis pendant 14 jours.\r\nDiminution des concentrations de simvastatine sans diminution de celles de la pravastatine.\r\nInduction de CYP 3A4 (paroi intestinale et foie).',
+            'notes'=>'Etude randimisée, croisée en double aveugle contre placebo sur 16 volontaires sains (8 jours pour chaque statine). Dose unique de 10mg de sanvastatine et de 20mg de pravastatine puis 900mg de millepertuis pendant 14 jours.  Diminution des concentrations de simvastatine sans diminution de celles de la pravastatine.  Induction de CYP 3A4 (paroi intestinale et foie).',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2357,7 +2357,7 @@ Target::create( [
             'name'=>'Case report (Millepertuis + sirolimus)',
             'long_name'=>'Case report (Millepertuis + sirolimus)',
             'target_type_id'=>1,
-            'notes'=>'Altération possible de la pharmacocinétique.\r\nInduction du CYP 3A4 et de la glycoprotéine P',
+            'notes'=>'Altération possible de la pharmacocinétique.  Induction du CYP 3A4 et de la glycoprotéine P',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2369,7 +2369,7 @@ Target::create( [
             'name'=>'Etude clinique (Millepertuis + tacrolimus)',
             'long_name'=>'Etude clinique (Millepertuis + tacrolimus)',
             'target_type_id'=>4,
-            'notes'=>'Etude sur 10 sujets sains. Dose unique de tacrolimus (0,1mg/kg) avant et au cours de 18 jours de millepertuis (900mg par jour).\r\nDiminution significative de 40% de l\'aire sous la courbe du tacrolimus.\r\nInduction du CYP 3A4 et de la glycoprotéine P',
+            'notes'=>'Etude sur 10 sujets sains. Dose unique de tacrolimus (0,1mg/kg) avant et au cours de 18 jours de millepertuis (900mg par jour).  Diminution significative de 40% de l\'aire sous la courbe du tacrolimus.  Induction du CYP 3A4 et de la glycoprotéine P',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2381,7 +2381,7 @@ Target::create( [
             'name'=>'Case report (Millepertuis + théophylline)',
             'long_name'=>'Case report (Millepertuis + théophylline)',
             'target_type_id'=>1,
-            'notes'=>'1 cas d\'interaction avec diminution des taux sanguins de théophylline et nécessité d\'augmenter les doses.\r\nInduction CYP 1A2 ?',
+            'notes'=>'1 cas d\'interaction avec diminution des taux sanguins de théophylline et nécessité d\'augmenter les doses.  Induction CYP 1A2 ?',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2393,7 +2393,7 @@ Target::create( [
             'name'=>'Case report (Millepertuis + venlafaxine)',
             'long_name'=>'Case report (Millepertuis + venlafaxine)',
             'target_type_id'=>1,
-            'notes'=>'1 cas d\'interaction notifié au CRPV avec diagnostique d\'un syndrome sérotoninergique (sensation de malaise avec angoisse, hyper sudation, frissons et  tachycardie).\r\nRégression des symptômes présentés 3 jours après arrêt du millepertuis sans modification de la posologie de l\'antidépresseur.\r\nExcès de sérotonine.',
+            'notes'=>'1 cas d\'interaction notifié au CRPV avec diagnostique d\'un syndrome sérotoninergique (sensation de malaise avec angoisse, hyper sudation, frissons et  tachycardie).  Régression des symptômes présentés 3 jours après arrêt du millepertuis sans modification de la posologie de l\'antidépresseur.  Excès de sérotonine.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2405,7 +2405,7 @@ Target::create( [
             'name'=>'Etude clinique (Millepertuis + vérapamil)',
             'long_name'=>'Etude clinique (Millepertuis + vérapamil)',
             'target_type_id'=>4,
-            'notes'=>'Etude sur 8 volontaires sains recevant du vérapamil en perfusion avant et après 14 jours de millepertuis.\r\nDiminution de la biodisponibilité du vérapamil (énantiomères R et S) (diminution de l\'ASC et de la Cmax de l\'ordre de 80%) après des administrations répétées de millepertuis.\r\nInduction du métabolisme par le CYP 3A4, principalement intestinal.',
+            'notes'=>'Etude sur 8 volontaires sains recevant du vérapamil en perfusion avant et après 14 jours de millepertuis.  Diminution de la biodisponibilité du vérapamil (énantiomères R et S) (diminution de l\'ASC et de la Cmax de l\'ordre de 80%) après des administrations répétées de millepertuis.  Induction du métabolisme par le CYP 3A4, principalement intestinal.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2417,7 +2417,7 @@ Target::create( [
             'name'=>'Case report (Millepertuis + vinblastine)',
             'long_name'=>'Case report (Millepertuis + vinblastine)',
             'target_type_id'=>1,
-            'notes'=>'Altération possible de la pharmacocinétique.\r\nInduction de CYP 3A4 et de la glycoprotéine P.',
+            'notes'=>'Altération possible de la pharmacocinétique.  Induction de CYP 3A4 et de la glycoprotéine P.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2429,7 +2429,7 @@ Target::create( [
             'name'=>'Etude clinique (Millepertuis + warfarine)',
             'long_name'=>'Etude clinique (Millepertuis + warfarine)',
             'target_type_id'=>4,
-            'notes'=>'Etude randomisée croisée en 3 étapes sur 12 sujets sains recevant pendant 21 jours du millepertuis et une dose unique de 25 mg de warfarine.\r\nAugmentation de la clairance de la warfarine, diminution possible de son effet pharmacologique sans modification de l\'INR.',
+            'notes'=>'Etude randomisée croisée en 3 étapes sur 12 sujets sains recevant pendant 21 jours du millepertuis et une dose unique de 25 mg de warfarine.  Augmentation de la clairance de la warfarine, diminution possible de son effet pharmacologique sans modification de l\'INR.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2441,7 +2441,7 @@ Target::create( [
             'name'=>'Etude clinique (Pomélo + acébutolol)',
             'long_name'=>'Etude clinique (Pomélo + acébutolol)',
             'target_type_id'=>4,
-            'notes'=>'Etude randomisée croisée sur 10 sujets sains recevant 200ml de jus de pomélo ou de l\'eau 3 fois par jour pendant 4 jours et 400mg d\'acébutolol à J3. \r\nDiminution modeste des concentrations plasmatiques d\'acébutolol et de son métabolite de diacétolol sans modification des paramètres hémodynamiques.\r\nInterférence dans l\'absorption gastrointestinale.',
+            'notes'=>'Etude randomisée croisée sur 10 sujets sains recevant 200ml de jus de pomélo ou de l\'eau 3 fois par jour pendant 4 jours et 400mg d\'acébutolol à J3.   Diminution modeste des concentrations plasmatiques d\'acébutolol et de son métabolite de diacétolol sans modification des paramètres hémodynamiques.  Interférence dans l\'absorption gastrointestinale.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2453,7 +2453,7 @@ Target::create( [
             'name'=>'Etude clinique (Pomélo + amlodipine)',
             'long_name'=>'Etude clinique (Pomélo + amlodipine)',
             'target_type_id'=>4,
-            'notes'=>'Résultats contradictoires :\r\nEtude randomisée en cross over sur 12 volontaires sains (amlodipine 5mg, pomélo 250ml ou eau, doses uniques) : augmentation des concentrations plasmatiques d\'amlodipine (ASC et Cmax) sans réelle modification des paramètres hématodynamiques.\r\nEtude randomisée avec permutation contre placebo sur 20 volontaires sains recevant plusieurs doses d\'amlodipine 10mg  par voie orale ou IV après 9 jours de pomélo (ou eau) : pas d\'effets significatifs du jus de pomélo sur le PK ou la PD de l\'amlodipine.\r\nModulation de la glycoprotéine P.\r\nInhibition de transporteurs impliqués dans l\'absorption intestinale?',
+            'notes'=>'Résultats contradictoires :  Etude randomisée en cross over sur 12 volontaires sains (amlodipine 5mg, pomélo 250ml ou eau, doses uniques) : augmentation des concentrations plasmatiques d\'amlodipine (ASC et Cmax) sans réelle modification des paramètres hématodynamiques.  Etude randomisée avec permutation contre placebo sur 20 volontaires sains recevant plusieurs doses d\'amlodipine 10mg  par voie orale ou IV après 9 jours de pomélo (ou eau) : pas d\'effets significatifs du jus de pomélo sur le PK ou la PD de l\'amlodipine.  Modulation de la glycoprotéine P.  Inhibition de transporteurs impliqués dans l\'absorption intestinale?',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2465,7 +2465,7 @@ Target::create( [
             'name'=>'Etude clinique (pomélo + atorvastatine)',
             'long_name'=>'Etude clinique (pomélo + atorvastatine)',
             'target_type_id'=>4,
-            'notes'=>'2 essais randomisés en cross over et en 2 périodes (atorvastatine 10 et 40mg, pravastatine 10 et 40mg, doses uniques). Mêmes conclusions.\r\nAltérations significatives de la pharmacocinétique de l\'atorvastatine (augmentation des concentrations plasmatiques de la statine et de ses métabolites).\r\nPas d\'effet sur la pharmacocinétique de la pravastatine.\r\nInhibition de l\'activité du CYP 3A4 de l\'intestin.',
+            'notes'=>'2 essais randomisés en cross over et en 2 périodes (atorvastatine 10 et 40mg, pravastatine 10 et 40mg, doses uniques). Mêmes conclusions.  Altérations significatives de la pharmacocinétique de l\'atorvastatine (augmentation des concentrations plasmatiques de la statine et de ses métabolites).  Pas d\'effet sur la pharmacocinétique de la pravastatine.  Inhibition de l\'activité du CYP 3A4 de l\'intestin.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2477,7 +2477,7 @@ Target::create( [
             'name'=>'Etude clinique (pomélo + pravastatine)',
             'long_name'=>'Etude clinique (pomélo + pravastatine)',
             'target_type_id'=>4,
-            'notes'=>'2 essais randomisés en cross over et en 2 périodes (atorvastatine 10 et 40mg, pravastatine 10 et 40mg, doses uniques). Mêmes conclusions.\r\nAltérations significatives de la pharmacocinétique de l\'atorvastatine (augmentation des concentrations plasmatiques de la statine et de ses métabolites).\r\nPas d\'effet sur la pharmacocinétique de la pravastatine.\r\nInhibition de l\'activité du CYP 3A4 de l\'intestin.',
+            'notes'=>'2 essais randomisés en cross over et en 2 périodes (atorvastatine 10 et 40mg, pravastatine 10 et 40mg, doses uniques). Mêmes conclusions.  Altérations significatives de la pharmacocinétique de l\'atorvastatine (augmentation des concentrations plasmatiques de la statine et de ses métabolites).  Pas d\'effet sur la pharmacocinétique de la pravastatine.  Inhibition de l\'activité du CYP 3A4 de l\'intestin.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2489,7 +2489,7 @@ Target::create( [
             'name'=>'Etude clinique (Pomélo + céliprolol)',
             'long_name'=>'Etude clinique (Pomélo + céliprolol)',
             'target_type_id'=>4,
-            'notes'=>'Etude randomisée en 3 phases avec permutation sur 12 volontaires sains (2 jours de pomélo puis 100mg de céliprolol).\r\nDiminution marquée des concentrations plasmatiques de céliprolol (diminution de 90% de l\'ASC).\r\nFacteurs physicochimiques entrainant une réduction de l\'absorption du céliprolol?\r\nInhibition possible des transporteurs de l\'absorption de la paroi intestinale?',
+            'notes'=>'Etude randomisée en 3 phases avec permutation sur 12 volontaires sains (2 jours de pomélo puis 100mg de céliprolol).  Diminution marquée des concentrations plasmatiques de céliprolol (diminution de 90% de l\'ASC).  Facteurs physicochimiques entrainant une réduction de l\'absorption du céliprolol?  Inhibition possible des transporteurs de l\'absorption de la paroi intestinale?',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2501,7 +2501,7 @@ Target::create( [
             'name'=>'Etude clinique (Millepertuis + contraceptifs oraux)',
             'long_name'=>'Etude clinique (Millepertuis + contraceptifs oraux)',
             'target_type_id'=>4,
-            'notes'=>'Etude clinique sur 12-16 femmes (900mg/j pendant 56 jours). Augmentation de la noréthistérone, diminution de la t1/2 de l\'éthylestradiol. Concentration plasmatique et ovulation.\r\nPlusieurs cas de grossesses signalés.\r\nInduction de la CYP 3A4 et de la pgycoprotéine P.',
+            'notes'=>'Etude clinique sur 12-16 femmes (900mg/j pendant 56 jours). Augmentation de la noréthistérone, diminution de la t1/2 de l\'éthylestradiol. Concentration plasmatique et ovulation.  Plusieurs cas de grossesses signalés.  Induction de la CYP 3A4 et de la pgycoprotéine P.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2513,7 +2513,7 @@ Target::create( [
             'name'=>'Case report (Fucus + tiratricol)',
             'long_name'=>'Case report (Fucus + tiratricol)',
             'target_type_id'=>1,
-            'notes'=>'Possibilité de perturbation du traitement.\r\nTeneur en iode comprise entre 0,3% et 0,8%.',
+            'notes'=>'Possibilité de perturbation du traitement.  Teneur en iode comprise entre 0,3% et 0,8%.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2525,7 +2525,7 @@ Target::create( [
             'name'=>'Case report (Fucus + levothyroxine)',
             'long_name'=>'Case report (Fucus + levothyroxine)',
             'target_type_id'=>1,
-            'notes'=>'Possibilité de perturbation du traitement.\r\nTeneur en iode comprise entre 0,3% et 0,8%.',
+            'notes'=>'Possibilité de perturbation du traitement.  Teneur en iode comprise entre 0,3% et 0,8%.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2537,7 +2537,7 @@ Target::create( [
             'name'=>'Case report (Fucus + liothyronine)',
             'long_name'=>'Case report (Fucus + liothyronine)',
             'target_type_id'=>1,
-            'notes'=>'Possibilité de perturbation du traitement.\r\nTeneur en iode comprise entre 0,3% et 0,8%.',
+            'notes'=>'Possibilité de perturbation du traitement.  Teneur en iode comprise entre 0,3% et 0,8%.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2549,7 +2549,7 @@ Target::create( [
             'name'=>'Case report (Fucus + méthylthiouracile)',
             'long_name'=>'Case report (Fucus + méthylthiouracile)',
             'target_type_id'=>1,
-            'notes'=>'Possibilité de perturbation du traitement.\r\nTeneur en iode comprise entre 0,3% et 0,8%.',
+            'notes'=>'Possibilité de perturbation du traitement.  Teneur en iode comprise entre 0,3% et 0,8%.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2561,7 +2561,7 @@ Target::create( [
             'name'=>'Case report (Fucus + propylthiouracile)',
             'long_name'=>'Case report (Fucus + propylthiouracile)',
             'target_type_id'=>1,
-            'notes'=>'Possibilité de perturbation du traitement.\r\nTeneur en iode comprise entre 0,3% et 0.8%.',
+            'notes'=>'Possibilité de perturbation du traitement.  Teneur en iode comprise entre 0,3% et 0.8%.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2573,7 +2573,7 @@ Target::create( [
             'name'=>'Case report (Fucus + benzylthiouracile)',
             'long_name'=>'Case report (Fucus + benzylthiouracile)',
             'target_type_id'=>1,
-            'notes'=>'Possibilité de perturbation du traitement.\r\nTeneur en iode comprise entre 0,3% et 0.8%.',
+            'notes'=>'Possibilité de perturbation du traitement.  Teneur en iode comprise entre 0,3% et 0.8%.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2585,7 +2585,7 @@ Target::create( [
             'name'=>'Case report (Fucus + carbimazole)',
             'long_name'=>'Case report (Fucus + carbimazole)',
             'target_type_id'=>1,
-            'notes'=>'Possibilité de perturbation du traitement.\r\nTeneur en iode comprise entre 0,3% et 0.8%.',
+            'notes'=>'Possibilité de perturbation du traitement.  Teneur en iode comprise entre 0,3% et 0.8%.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2597,7 +2597,7 @@ Target::create( [
             'name'=>'Case report (Fucus + thiamazole)',
             'long_name'=>'Case report (Fucus + thiamazole)',
             'target_type_id'=>1,
-            'notes'=>'Possibilité de perturbation du traitement.\r\nTeneur en iode comprise entre 0,3% et 0.8%.',
+            'notes'=>'Possibilité de perturbation du traitement.  Teneur en iode comprise entre 0,3% et 0.8%.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2609,7 +2609,7 @@ Target::create( [
             'name'=>'Case report (Fucus + potassiumperchlorate)',
             'long_name'=>'Case report (Fucus + potassiumperchlorate)',
             'target_type_id'=>1,
-            'notes'=>'Possibilité de perturbation du traitement.\r\nTeneur en iode comprise entre 0,3% et 0.8%.',
+            'notes'=>'Possibilité de perturbation du traitement.  Teneur en iode comprise entre 0,3% et 0.8%.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2621,7 +2621,7 @@ Target::create( [
             'name'=>'Case report (Fucus + diiodothyrosine)',
             'long_name'=>'Case report (Fucus + diiodothyrosine)',
             'target_type_id'=>1,
-            'notes'=>'Possibilité de perturbation du traitement.\r\nTeneur en iode comprise entre 0,3% et 0,8%.',
+            'notes'=>'Possibilité de perturbation du traitement.  Teneur en iode comprise entre 0,3% et 0,8%.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2633,7 +2633,7 @@ Target::create( [
             'name'=>'Case report (Fucus + dibromotyrosine)',
             'long_name'=>'Case report (Fucus + dibromotyrosine)',
             'target_type_id'=>1,
-            'notes'=>'Possibilité de perturbation du traitement.\r\nTeneur en iode comprise entre 0,3% et 0,8%.',
+            'notes'=>'Possibilité de perturbation du traitement.  Teneur en iode comprise entre 0,3% et 0,8%.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2645,7 +2645,7 @@ Target::create( [
             'name'=>'Case report (Ispaghul + lithium)',
             'long_name'=>'Case report (Ispaghul + lithium)',
             'target_type_id'=>1,
-            'notes'=>'Abaissement du taux de lithium et diminution de l\'effet clinique.\r\nDiminution de l\'absorption intestinale.',
+            'notes'=>'Abaissement du taux de lithium et diminution de l\'effet clinique.  Diminution de l\'absorption intestinale.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2657,7 +2657,7 @@ Target::create( [
             'name'=>'Case report (Réglisse + warfarine)',
             'long_name'=>'Case report (Réglisse + warfarine)',
             'target_type_id'=>1,
-            'notes'=>'Augmentation de l\'effet anticoagulant d\'après des tests in vitro et in vivo, sans qu\'un effet cliniquement significatif ne semble pas avoir été mis en évidence à ce jour.\r\nInhibition de l\'agrégation des plaquettes par l\'isoliquiritigénine et inhibition de la prothrombine par la glycyrrhizine.',
+            'notes'=>'Augmentation de l\'effet anticoagulant d\'après des tests in vitro et in vivo, sans qu\'un effet cliniquement significatif ne semble pas avoir été mis en évidence à ce jour.  Inhibition de l\'agrégation des plaquettes par l\'isoliquiritigénine et inhibition de la prothrombine par la glycyrrhizine.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2693,7 +2693,7 @@ Target::create( [
             'name'=>'Case report (Sauge chinoise + warfarine)',
             'long_name'=>'Case report (Sauge chinoise + warfarine)',
             'target_type_id'=>1,
-            'notes'=>'Plusieurs cas rapportés d\'augmentation de l\'effet de la warfarine par la sauge chinoise (racine).\r\nPrésence de dérivés coumariniques dans la racine de la plante? ou interaction PK (augmentation ASC, Cmax) mise en évidence in vitro chez le rat?',
+            'notes'=>'Plusieurs cas rapportés d\'augmentation de l\'effet de la warfarine par la sauge chinoise (racine).  Présence de dérivés coumariniques dans la racine de la plante? ou interaction PK (augmentation ASC, Cmax) mise en évidence in vitro chez le rat?',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2705,7 +2705,7 @@ Target::create( [
             'name'=>'Case report (Soja + warfarine)',
             'long_name'=>'Case report (Soja + warfarine)',
             'target_type_id'=>1,
-            'notes'=>'Un cas de diminution de l\'INR sous warfarine après consommation de lait de soja.\r\nTeneur non négligeable en vitamine K.\r\nDiminution de la biodisponibilité de la warfarine via une action sur la glycoprotéine P?',
+            'notes'=>'Un cas de diminution de l\'INR sous warfarine après consommation de lait de soja.  Teneur non négligeable en vitamine K.  Diminution de la biodisponibilité de la warfarine via une action sur la glycoprotéine P?',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2717,7 +2717,7 @@ Target::create( [
             'name'=>'Case report (Thé vert + warfarine)',
             'long_name'=>'Case report (Thé vert + warfarine)',
             'target_type_id'=>1,
-            'notes'=>'Un cas de consommation excessive de thé vert (2,25 - 4,5 L/jour) associée à une inhibition d\'activité de la warfarine et une diminution de l\'INR.\r\nSource non négligeable de vitamine K.',
+            'notes'=>'Un cas de consommation excessive de thé vert (2,25 - 4,5 L/jour) associée à une inhibition d\'activité de la warfarine et une diminution de l\'INR.  Source non négligeable de vitamine K.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2729,7 +2729,7 @@ Target::create( [
             'name'=>'Case report (Thé vert + fer)',
             'long_name'=>'Case report (Thé vert + fer)',
             'target_type_id'=>1,
-            'notes'=>'Réduction de l\'absorption du fer (laisser un intervalle de 2h au moins entre les prises).\r\nLiaison au fer des tanins présents en quantité non négligeable dans le thé vert.',
+            'notes'=>'Réduction de l\'absorption du fer (laisser un intervalle de 2h au moins entre les prises).  Liaison au fer des tanins présents en quantité non négligeable dans le thé vert.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2741,7 +2741,7 @@ Target::create( [
             'name'=>'Case report (Pomélo + ciclosporine)',
             'long_name'=>'Case report (Pomélo + ciclosporine)',
             'target_type_id'=>1,
-            'notes'=>'Augmentation des concentrations plasmatiques de ciclosporine en présence de pomélo.\r\nInhibition de l\'activité du CYP 3A4 de l\'intestin principalement et un peu de celle du CYP 3A4 hépatique à des doses répétées de pomélo.',
+            'notes'=>'Augmentation des concentrations plasmatiques de ciclosporine en présence de pomélo.  Inhibition de l\'activité du CYP 3A4 de l\'intestin principalement et un peu de celle du CYP 3A4 hépatique à des doses répétées de pomélo.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2753,7 +2753,7 @@ Target::create( [
             'name'=>'Etude clinique (Pomélo + ciclosporine)',
             'long_name'=>'Etude clinique en cross over (Pomélo + ciclosporine)',
             'target_type_id'=>4,
-            'notes'=>'Etude en cross over et en 4 phases sur 10 sujets recevant du pomélo ou de l\'eau et de la ciclosporine par voie orale ou IV.\r\nAprès administration orale, augmentation significative de l\'ASC et de la Cmax de la ciclosporine. Pas d\'effet du pomélo sur la clairance systémique de la ciclosporine IV.\r\nEtude randomisée en cross over sur 8 transplantés rénaux traités par NEORAL et recevant jus de pomélo ou eau. Augmentation de la biodisponibilité de la ciclosporine (augmentation de l\'ASC de 38%).',
+            'notes'=>'Etude en cross over et en 4 phases sur 10 sujets recevant du pomélo ou de l\'eau et de la ciclosporine par voie orale ou IV.  Après administration orale, augmentation significative de l\'ASC et de la Cmax de la ciclosporine. Pas d\'effet du pomélo sur la clairance systémique de la ciclosporine IV.  Etude randomisée en cross over sur 8 transplantés rénaux traités par NEORAL et recevant jus de pomélo ou eau. Augmentation de la biodisponibilité de la ciclosporine (augmentation de l\'ASC de 38%).',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2765,7 +2765,7 @@ Target::create( [
             'name'=>'Etude clinique (Pomélo + diazépam)',
             'long_name'=>'Etude clinique (Pomélo + diazépam)',
             'target_type_id'=>4,
-            'notes'=>'Etude sur 8 volontaires sains. Diazépam (5mg) avec jus de pomélo ou eau.\r\nAugmentation de 3,2 fois de l\'ASC du diazépam, augmentation de 1,5 fois de sa Cmax, allongement de son t max.\r\nInhibition du CYP 3A4.',
+            'notes'=>'Etude sur 8 volontaires sains. Diazépam (5mg) avec jus de pomélo ou eau.  Augmentation de 3,2 fois de l\'ASC du diazépam, augmentation de 1,5 fois de sa Cmax, allongement de son t max.  Inhibition du CYP 3A4.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2777,7 +2777,7 @@ Target::create( [
             'name'=>'Etude clinique (Pomélo + diltiazem)',
             'long_name'=>'Etude clinique (Pomélo + diltiazem)',
             'target_type_id'=>4,
-            'notes'=>'Etude randomisée , ouverte et croisée sur 10 volontaires sains recevant une dose unique de 120mg de diltiazem et 250ml de jus de pomélo ou de l\'eau.\r\nAugmentation significative de l\'ASC du diltiazem avec une grande variabilité interindividuelle et sans modification des paramètres cliniques (tension artérielle et pouls) mesurés.\r\nInhibition du métabolisme intestinal par le CYP 3A4 et/ou de l\'efflux par la glycoprotéine P.',
+            'notes'=>'Etude randomisée , ouverte et croisée sur 10 volontaires sains recevant une dose unique de 120mg de diltiazem et 250ml de jus de pomélo ou de l\'eau.  Augmentation significative de l\'ASC du diltiazem avec une grande variabilité interindividuelle et sans modification des paramètres cliniques (tension artérielle et pouls) mesurés.  Inhibition du métabolisme intestinal par le CYP 3A4 et/ou de l\'efflux par la glycoprotéine P.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2789,7 +2789,7 @@ Target::create( [
             'name'=>'Etude clinique (Pomélo + étoposide)',
             'long_name'=>'Etude clinique (Pomélo + étoposide)',
             'target_type_id'=>4,
-            'notes'=>'Etude clinique randomisée en cross over chez 6 patients traités par 50mg d\'étoposide voie orale et jus de pomélo Tropicana. Diminution de la biodisponibilité systémique de l\'étoposide.\r\nLe pomélo a entrainé une diminution de 26% de son ASC. La biodisponibilité relative est passée de 73,2% (58,5% - 75,5%) sans pomélo à 52,4% (34,4% - 64,8%) avec pomélo.\r\nAltération du transport intestinal médié par la glycoprotéine P.',
+            'notes'=>'Etude clinique randomisée en cross over chez 6 patients traités par 50mg d\'étoposide voie orale et jus de pomélo Tropicana. Diminution de la biodisponibilité systémique de l\'étoposide.  Le pomélo a entrainé une diminution de 26% de son ASC. La biodisponibilité relative est passée de 73,2% (58,5% - 75,5%) sans pomélo à 52,4% (34,4% - 64,8%) avec pomélo.  Altération du transport intestinal médié par la glycoprotéine P.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2801,7 +2801,7 @@ Target::create( [
             'name'=>'Etude clinique (Pomélo + félodipine)',
             'long_name'=>'Etude clinique (Pomélo + félodipine)',
             'target_type_id'=>4,
-            'notes'=>'Etude sur 6 sujets. Félodipine 5mg avec pomélo ou eau.\r\nNette augmentation des concentrations plasmatiques de félodipine. Diminution de la pression artérielle diastolique et augmentation de la fréquence cardiaque.\r\nInhibition de l\'activité du CYP 3A4 de l\'intestin principalement et de celle du CYP 3A4 hépatique à des doses répétées de pomélo.',
+            'notes'=>'Etude sur 6 sujets. Félodipine 5mg avec pomélo ou eau.  Nette augmentation des concentrations plasmatiques de félodipine. Diminution de la pression artérielle diastolique et augmentation de la fréquence cardiaque.  Inhibition de l\'activité du CYP 3A4 de l\'intestin principalement et de celle du CYP 3A4 hépatique à des doses répétées de pomélo.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2813,7 +2813,7 @@ Target::create( [
             'name'=>'Etude clinique (Pomélo + fexofénadine)',
             'long_name'=>'Etude clinique (Pomélo + fexofénadine)',
             'target_type_id'=>4,
-            'notes'=>'Etude randomisée  en cross over et en 4 étapes sur 12 sujets sains. Fexofénadine (120mg) avec pomélo ou eau. \r\nDiminution significative de la biodisponibilité orale de la fexofénadine (diminution de l\'ASC de 58% et de la Cmax de 53% par rapport à l\'eau.\r\nInhibition probable de l\'absorption de la fexofénadine par le transporteur intestinal OATP-A.',
+            'notes'=>'Etude randomisée  en cross over et en 4 étapes sur 12 sujets sains. Fexofénadine (120mg) avec pomélo ou eau.   Diminution significative de la biodisponibilité orale de la fexofénadine (diminution de l\'ASC de 58% et de la Cmax de 53% par rapport à l\'eau.  Inhibition probable de l\'absorption de la fexofénadine par le transporteur intestinal OATP-A.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2825,7 +2825,7 @@ Target::create( [
             'name'=>'Etude clinique (Pomélo + midazolam)',
             'long_name'=>'Etude clinique en cross over (Pomélo + midazolam)',
             'target_type_id'=>4,
-            'notes'=>'Etude en cross over sur 8 sujets sains. Prétraitement par jus de pomélo ou eau et administration de midazolam par voie orale (15mg) ou IV (5mg).\r\nPas de modification de la PK ou de la PD du midazolam IV.\r\nAprès administration orale, augmentation de la biodisponibilité du midazolam avec augmentation de l\'ASC de 52% et de la Cmax de 56%.\r\nInhibition sélective du métabolisme préhépatique du midazolam.',
+            'notes'=>'Etude en cross over sur 8 sujets sains. Prétraitement par jus de pomélo ou eau et administration de midazolam par voie orale (15mg) ou IV (5mg).  Pas de modification de la PK ou de la PD du midazolam IV.  Après administration orale, augmentation de la biodisponibilité du midazolam avec augmentation de l\'ASC de 52% et de la Cmax de 56%.  Inhibition sélective du métabolisme préhépatique du midazolam.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2837,7 +2837,7 @@ Target::create( [
             'name'=>'Etude clinique (Pomélo + nifédipine)',
             'long_name'=>'Etude clinique (Pomélo + nifédipine)',
             'target_type_id'=>4,
-            'notes'=>'Etude sur 6 sujets (nifédipine 10mg avec pomélo ou eau).\r\nAugmentation des concentrations plasmatiques de nifédipine.\r\nInhibition de l\'activité du CYP 3A4 de l\'intestin principalement et de celle du CYP3A4 hépatique à des doses répétées de pomélo.',
+            'notes'=>'Etude sur 6 sujets (nifédipine 10mg avec pomélo ou eau).  Augmentation des concentrations plasmatiques de nifédipine.  Inhibition de l\'activité du CYP 3A4 de l\'intestin principalement et de celle du CYP3A4 hépatique à des doses répétées de pomélo.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2849,7 +2849,7 @@ Target::create( [
             'name'=>'Etude clinique (Pomélo + nitrendipine)',
             'long_name'=>'Etude clinique en cross over (Pomélo + nitrendipine)',
             'target_type_id'=>4,
-            'notes'=>'Etude en cross over contre placebo sur 9 volontaires sains.\r\nAugmentation significative de l\'ASC et de la Cmax de la nitrendipine sous pomélo, avec de grandes différences entre les sujets et sans affecter les paramètres hémodynamiques.\r\nInhibition du CYP 3A4.',
+            'notes'=>'Etude en cross over contre placebo sur 9 volontaires sains.  Augmentation significative de l\'ASC et de la Cmax de la nitrendipine sous pomélo, avec de grandes différences entre les sujets et sans affecter les paramètres hémodynamiques.  Inhibition du CYP 3A4.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2861,7 +2861,7 @@ Target::create( [
             'name'=>'Case report (Pomélo + saquinivir)',
             'long_name'=>'Case report (Pomélo + saquinivir)',
             'target_type_id'=>1,
-            'notes'=>'Augmentation de l\'aire sous la courbe du saquinivir de 150% par un verre de pomélo avec pour conséquence une augmentation de son efficacité mais effet variable selon les sujets.\r\nInhibition du CYP 3A4.',
+            'notes'=>'Augmentation de l\'aire sous la courbe du saquinivir de 150% par un verre de pomélo avec pour conséquence une augmentation de son efficacité mais effet variable selon les sujets.  Inhibition du CYP 3A4.',
             'user_id'=>3,
             'validated'=>1
             ] );
@@ -2871,7 +2871,7 @@ Target::create( [
                 'name'=>'Etude clinique (Pomélo + simvastatine)',
                 'long_name'=>'Etude clinique (Pomélo + simvastatine)',
                 'target_type_id'=>4,
-                'notes'=>'Etude randomisée en cross over sur 10 volontaires sains en deux phases. Jus de pomélo pendant 3 jours ou eau et dose unique de 60mg de simvastatine. Augmentation de l\'ASC de la simvastatine de 16 fois et de sa Cmax de 9 fois. Pour la simvastatine  sous forme d\'acide, augmentation de l\'ASC et de la Cmax d\'environ 7 fois.\r\nUne autre étude de méthodologie similaire aboutit aux mêmes résultats.\r\nInduction de l\'activité intestinale du CYP 3A4.',
+                'notes'=>'Etude randomisée en cross over sur 10 volontaires sains en deux phases. Jus de pomélo pendant 3 jours ou eau et dose unique de 60mg de simvastatine. Augmentation de l\'ASC de la simvastatine de 16 fois et de sa Cmax de 9 fois. Pour la simvastatine  sous forme d\'acide, augmentation de l\'ASC et de la Cmax d\'environ 7 fois.  Une autre étude de méthodologie similaire aboutit aux mêmes résultats.  Induction de l\'activité intestinale du CYP 3A4.',
                 'user_id'=>3,
                 'validated'=>1
                 ] );
@@ -2883,7 +2883,7 @@ Target::create( [
                 'name'=>'Etude clinique randomisée (Pomélo + triazolam)',
                 'long_name'=>'Etude clinique randomisée (Pomélo + triazolam)',
                 'target_type_id'=>1,
-                'notes'=>'Etude randomisée en cross over sur 10 sujets sains recevant une dose unique de triazolam (0,25mg) avec du jus de pomélo ou de l\'eau.\r\nAugmentation de l\'aire sous la courbe et de la Cmax du triazolam entrainant une somnolence accrue.\r\nInhibition du CYP 3A4.',
+                'notes'=>'Etude randomisée en cross over sur 10 sujets sains recevant une dose unique de triazolam (0,25mg) avec du jus de pomélo ou de l\'eau.  Augmentation de l\'aire sous la courbe et de la Cmax du triazolam entrainant une somnolence accrue.  Inhibition du CYP 3A4.',
                 'user_id'=>3,
                 'validated'=>1
                 ] );
@@ -2895,7 +2895,7 @@ Target::create( [
                 'name'=>'Etude clinique (Pomélo + vérapamil)',
                 'long_name'=>'Etude clinique (Pomélo + vérapamil)',
                 'target_type_id'=>4,
-                'notes'=>'Etude randomisée en cross over sur 9 volontaires sains en deux périodes de traitement. 200ml de jus de pomélo ou de jus d\'orange (contrôle) 2 fois par jour pendant 5 jours et 420mg de vérapamil pendant 3 jours.\r\nAugmentation significative de l\'ASC du S-vérapamil de 36% et de l\'ASC du R-vérapamil de 28% avec une grande variabilité interindividuelle. Pas de modification des paramètres cliniques (tension artérielle, pouls).\r\nInhibition du métabolisme du vérapamil par le CYP 3A4, principalement dans la paroi intestinale.',
+                'notes'=>'Etude randomisée en cross over sur 9 volontaires sains en deux périodes de traitement. 200ml de jus de pomélo ou de jus d\'orange (contrôle) 2 fois par jour pendant 5 jours et 420mg de vérapamil pendant 3 jours.  Augmentation significative de l\'ASC du S-vérapamil de 36% et de l\'ASC du R-vérapamil de 28% avec une grande variabilité interindividuelle. Pas de modification des paramètres cliniques (tension artérielle, pouls).  Inhibition du métabolisme du vérapamil par le CYP 3A4, principalement dans la paroi intestinale.',
                 'user_id'=>3,
                 'validated'=>1
                 ] );
@@ -2919,7 +2919,7 @@ Target::create( [
                 'name'=>'Etude clinique (Schisandra+Tacrolimus)',
                 'long_name'=>'Etude clinique (Schisandra+Tacrolimus)',
                 'target_type_id'=>4,
-                'notes'=>'Etude prospective chez 64 patients, transplantés rénaux.\r\n2 groupes ont été réalisés, chacun de 32 patients :\r\n- 1 premier recevant du Schisandra et leur traitement habituel par tacrolimus, acide mycophénolique et prednisone\r\n- 1 deuxième ne recevant que leur traitement par tacrolimus, acide mycophénolique et prednisone\r\nDes prises de sang (concentration en tacrolimus, évaluation fonctions rénale et hépatique) étaient faites régulièrement. L\'étude a duré 6 mois.\r\nLes concentrations en tacrolimus n\'étaient pas significativement différents au début de l\'étude.\r\nAprès 6 mois, pour le groupe prenant du Schisandra, les doses de tacrolimus ont été diminuées de 34% contre 14% sans Schisandra.\r\nL\'association de Schisandra et de tacrolimus entraîne une hausse de la concentration en Tacrolimus.\r\nIl y a donc un risque accru de toxicité mais cette étude avait aussi un but économique, permettant de diminuer les doses de Tacrolimus en l\'associant avec le Schisandra, réduisant ainsi les coûts.\r\nCela semble passer par une inhibition du CYP3A4 et de la Pgp, par les schisandrine A et B.',
+                'notes'=>'Etude prospective chez 64 patients, transplantés rénaux.  2 groupes ont été réalisés, chacun de 32 patients :  - 1 premier recevant du Schisandra et leur traitement habituel par tacrolimus, acide mycophénolique et prednisone  - 1 deuxième ne recevant que leur traitement par tacrolimus, acide mycophénolique et prednisone  Des prises de sang (concentration en tacrolimus, évaluation fonctions rénale et hépatique) étaient faites régulièrement. L\'étude a duré 6 mois.  Les concentrations en tacrolimus n\'étaient pas significativement différents au début de l\'étude.  Après 6 mois, pour le groupe prenant du Schisandra, les doses de tacrolimus ont été diminuées de 34% contre 14% sans Schisandra.  L\'association de Schisandra et de tacrolimus entraîne une hausse de la concentration en Tacrolimus.  Il y a donc un risque accru de toxicité mais cette étude avait aussi un but économique, permettant de diminuer les doses de Tacrolimus en l\'associant avec le Schisandra, réduisant ainsi les coûts.  Cela semble passer par une inhibition du CYP3A4 et de la Pgp, par les schisandrine A et B.',
                 'user_id'=>8,
                 'validated'=>1
                 ] );
@@ -2931,7 +2931,7 @@ Target::create( [
                 'name'=>'Etude sur modèle murin (Schisandra + Tacrolimus)',
                 'long_name'=>'Etude sur modèle murin (Schisandra + Tacrolimus)',
                 'target_type_id'=>6,
-                'notes'=>'Etude de l\'interaction entre le Schisandra et le Tacrolimus sur des rats.\r\nLes études pharmacocinétiques ont porté sur :\r\n- l\'effet de l\'administration d\'une dose unique de Schisandra sur la pharmacocinétique du tacrolimus\r\n- l\'effet de l\'administration de plusieurs doses de Schisandra sur la pharmacocinétique du tacrolimus\r\n- l\'effet de l\'administration de différentes doses de Schisandra sur la pharmacocinétique du tacrolimus\r\nLes résultats ont mis en évidence une élévation des concentrations en Tacrolimus.\r\nL\'interaction semble passer par une inhibition du CYP3A4 et de la P-gp, par la schisandrine A.\r\nD\'autres mécanismes pourraient être aussi en jeu.',
+                'notes'=>'Etude de l\'interaction entre le Schisandra et le Tacrolimus sur des rats.  Les études pharmacocinétiques ont porté sur :  - l\'effet de l\'administration d\'une dose unique de Schisandra sur la pharmacocinétique du tacrolimus  - l\'effet de l\'administration de plusieurs doses de Schisandra sur la pharmacocinétique du tacrolimus  - l\'effet de l\'administration de différentes doses de Schisandra sur la pharmacocinétique du tacrolimus  Les résultats ont mis en évidence une élévation des concentrations en Tacrolimus.  L\'interaction semble passer par une inhibition du CYP3A4 et de la P-gp, par la schisandrine A.  D\'autres mécanismes pourraient être aussi en jeu.',
                 'user_id'=>8,
                 'validated'=>1
                 ] );
@@ -3123,7 +3123,7 @@ Target::create( [
                     'name'=>'Case report (Pomélo + itraconazole)',
                     'long_name'=>'Case report (Pomélo + itraconazole)',
                     'target_type_id'=>1,
-                    'notes'=>'Pas d\'augmentation de l\'exposition au médicament par inhibition des CYP 3A4 intestinaux par le jus de pomélo chez le volontaire sain.\r\n(résultats controversés)',
+                    'notes'=>'Pas d\'augmentation de l\'exposition au médicament par inhibition des CYP 3A4 intestinaux par le jus de pomélo chez le volontaire sain.  (résultats controversés)',
                     'user_id'=>3,
                     'validated'=>1
                     ] );
@@ -3515,7 +3515,7 @@ Target::create( [
                     'name'=>'Case report (Angélique chinoise+warfarine)',
                     'long_name'=>'Case report (Angélique chinoise+warfarine)',
                     'target_type_id'=>1,
-                    'notes'=>'Cas d\'une patiente de 46 ans avec des antécédents d\'AVC, douleurs rhumatismales et de FA.\r\nLa patiente était traitée par Warfarine + digoxine + furosémide.\r\nOn a observé un taux de prothrombine et un INR multiplié par 2.',
+                    'notes'=>'Cas d\'une patiente de 46 ans avec des antécédents d\'AVC, douleurs rhumatismales et de FA.  La patiente était traitée par Warfarine + digoxine + furosémide.  On a observé un taux de prothrombine et un INR multiplié par 2.',
                     'user_id'=>8,
                     'validated'=>1
                     ] );
@@ -3527,7 +3527,7 @@ Target::create( [
                     'name'=>'Antifongique (Candida albicans)',
                     'long_name'=>'Antifongique (Candida albicans)',
                     'target_type_id'=>3,
-                    'notes'=>'Une synergie d\'action a été décrite entre plusieurs plantes et l\'amphotéricine B.\r\nLes plantes en question sont le thym et le curcuma.\r\nCette synergie a été mise en évidence in vitro sur du Candida albicans.\r\nCela permettrait peut-être de diminuer les doses d\'amphotéricine B en associant ces plantes et diminuer ainsi les EI.',
+                    'notes'=>'Une synergie d\'action a été décrite entre plusieurs plantes et l\'amphotéricine B.  Les plantes en question sont le thym et le curcuma.  Cette synergie a été mise en évidence in vitro sur du Candida albicans.  Cela permettrait peut-être de diminuer les doses d\'amphotéricine B en associant ces plantes et diminuer ainsi les EI.',
                     'user_id'=>8,
                     'validated'=>1
                     ] );
@@ -3539,7 +3539,7 @@ Target::create( [
                     'name'=>'Etude clinique (ail + alprazolam)',
                     'long_name'=>'Etude clinique (ail + alprazolam)',
                     'target_type_id'=>4,
-                    'notes'=>'Etude sur 14 sujets recevant 3x600mg (2 fois / jour) pendant 14 jours. Comprimé contenant 600 µg d\'allicine. Aucun effet sur la pharmacocinétique de l\'aloprazolam.\r\nPas d\'effet sur CYP3A4.',
+                    'notes'=>'Etude sur 14 sujets recevant 3x600mg (2 fois / jour) pendant 14 jours. Comprimé contenant 600 µg d\'allicine. Aucun effet sur la pharmacocinétique de l\'aloprazolam.  Pas d\'effet sur CYP3A4.',
                     'user_id'=>3,
                     'validated'=>1
                     ] );
@@ -3597,7 +3597,7 @@ Target::create( [
                         'name'=>'Etude clinique (Ail + docetaxel)',
                         'long_name'=>'Etude clinique (Ail + docetaxel)',
                         'target_type_id'=>4,
-                        'notes'=>'Etude clinique sur 10 sujets recevant 600mg 2fois /jour durant 12 jours (comprimés enrobés de 3600 microgrammes d\'allicine).\r\nAucun effet sur la pharmacocinétique du docetaxol et aucun effet sur CYP3A4.',
+                        'notes'=>'Etude clinique sur 10 sujets recevant 600mg 2fois /jour durant 12 jours (comprimés enrobés de 3600 microgrammes d\'allicine).  Aucun effet sur la pharmacocinétique du docetaxol et aucun effet sur CYP3A4.',
                         'user_id'=>3,
                         'validated'=>1
                         ] );
@@ -3609,7 +3609,7 @@ Target::create( [
                         'name'=>'Etude clinique (Ail + midazolam)',
                         'long_name'=>'Etude clinique (Ail + midazolam)',
                         'target_type_id'=>4,
-                        'notes'=>'Etude clinique randomisée sur 12 sujets recevant 500mg 2fois/jour durant 28 jours (huile d\'ail). \r\nAucun effet sur la pharmacocinétique du midazolam et aucun effet sur CYP3A4.',
+                        'notes'=>'Etude clinique randomisée sur 12 sujets recevant 500mg 2fois/jour durant 28 jours (huile d\'ail).   Aucun effet sur la pharmacocinétique du midazolam et aucun effet sur CYP3A4.',
                         'user_id'=>3,
                         'validated'=>1
                         ] );
@@ -3621,7 +3621,7 @@ Target::create( [
                         'name'=>'Etude clinique (Ail + ritonavir)',
                         'long_name'=>'Etude clinique (Ail + ritonavir)',
                         'target_type_id'=>4,
-                        'notes'=>'Etude clinique randomisée sur 10 sujet recevant 2x5mg 2fois/jour durant 4 jours (poudre d\'ail encapsulée).\r\nAucun effet sur la pharmacocinétique du ritonavir. Aucun effet sur CYP3A4.',
+                        'notes'=>'Etude clinique randomisée sur 10 sujet recevant 2x5mg 2fois/jour durant 4 jours (poudre d\'ail encapsulée).  Aucun effet sur la pharmacocinétique du ritonavir. Aucun effet sur CYP3A4.',
                         'user_id'=>3,
                         'validated'=>1
                         ] );
@@ -3633,7 +3633,7 @@ Target::create( [
                         'name'=>'Etude clinique (Ail + warfarine)',
                         'long_name'=>'Etude clinique 3 (Ail + warfarine)',
                         'target_type_id'=>4,
-                        'notes'=>'Etude clinique randomisée sur 12 sujets recevant 2x500mg 2fois/jour durant 14 jours (comprimé entérique d\'ail contenant 2000mg d\'ail frais qui correspond à 3.71mg d\'allicine).\r\nAucun effet sur la pharmacocinétiques de la S-warfarine et de la R-warfarine. Aucun effet sur CYP2C9.',
+                        'notes'=>'Etude clinique randomisée sur 12 sujets recevant 2x500mg 2fois/jour durant 14 jours (comprimé entérique d\'ail contenant 2000mg d\'ail frais qui correspond à 3.71mg d\'allicine).  Aucun effet sur la pharmacocinétiques de la S-warfarine et de la R-warfarine. Aucun effet sur CYP2C9.',
                         'user_id'=>3,
                         'validated'=>1
                         ] );
@@ -3645,7 +3645,7 @@ Target::create( [
                         'name'=>'Etude clinique (Echinacée + Caféine)',
                         'long_name'=>'Etude clinique (Echinacée + Caféine)',
                         'target_type_id'=>4,
-                        'notes'=>'Etude clinique sur 12 sujets recevant 40Omg (racine d\'echinacea purpurea) 4 fois/jour durant 8  jours. Réduction de 27% (p=0.49) de la clairance orale de la caféine. Inhibition du CYP1A2.\r\n',
+                        'notes'=>'Etude clinique sur 12 sujets recevant 40Omg (racine d\'echinacea purpurea) 4 fois/jour durant 8  jours. Réduction de 27% (p=0.49) de la clairance orale de la caféine. Inhibition du CYP1A2.  ',
                         'user_id'=>3,
                         'validated'=>1
                         ] );
@@ -3681,7 +3681,7 @@ Target::create( [
                         'name'=>'Etude clinique (Echinacée + débrisoquine)',
                         'long_name'=>'Etude clinique (Echinacée + débrisoquine)',
                         'target_type_id'=>4,
-                        'notes'=>'Etude clinique randomisée sur 12 sujets recevant 800mg d\'echinacea purpurea (non standardisé) 2fois/jour durant 28 jours. Aucun effet sur la pharmacocinétique de la débrisoquinone, aucun effet sur CYP2D6.\r\n',
+                        'notes'=>'Etude clinique randomisée sur 12 sujets recevant 800mg d\'echinacea purpurea (non standardisé) 2fois/jour durant 28 jours. Aucun effet sur la pharmacocinétique de la débrisoquinone, aucun effet sur CYP2D6.  ',
                         'user_id'=>3,
                         'validated'=>1
                         ] );
@@ -3825,7 +3825,7 @@ Target::create( [
                         'name'=>'Etude clinique (Ginkgo + caféine)',
                         'long_name'=>'Etude clinique (Ginkgo + caféine)',
                         'target_type_id'=>4,
-                        'notes'=>'Etude clinique sur 12 sujets recevant 60mg de Ginkgo 4fois/jour durant 28 jours (ginkgo biloba titré avec 24% en glucosides de flavonols et 6% en lactones terpéniques). Aucun effet sur la pharmacocinétique de la cafeine. Aucun effet sur CYP1A2.\r\nDeux autres études randomisées sur 18 sujets recevant respectivement 120mg et 240mg de ginkgo (comprimés EGB 761). Aucun effet sur la pharmacocinétique de la cafeine. Aucun effet sur CYP1A2',
+                        'notes'=>'Etude clinique sur 12 sujets recevant 60mg de Ginkgo 4fois/jour durant 28 jours (ginkgo biloba titré avec 24% en glucosides de flavonols et 6% en lactones terpéniques). Aucun effet sur la pharmacocinétique de la cafeine. Aucun effet sur CYP1A2.  Deux autres études randomisées sur 18 sujets recevant respectivement 120mg et 240mg de ginkgo (comprimés EGB 761). Aucun effet sur la pharmacocinétique de la cafeine. Aucun effet sur CYP1A2',
                         'user_id'=>3,
                         'validated'=>1
                         ] );
@@ -3837,7 +3837,7 @@ Target::create( [
                         'name'=>'Etude clinique (Ginkgo + chlorzoxazone)',
                         'long_name'=>'Etude clinique (Ginkgo + chlorzoxazone)',
                         'target_type_id'=>4,
-                        'notes'=>'Etude clinique randomisée sur 12 sujets recevant 60mg de Ginkgo 4 fois/jour durant 28 jours de ginkgo biloba (titré avec 24% en glucosides de flavonols et 6% en lactones terpéniques). Aucun effet sur la pharmacocinétique du chlorzoxazone. Aucun effet sur CYP2E1.\r\n',
+                        'notes'=>'Etude clinique randomisée sur 12 sujets recevant 60mg de Ginkgo 4 fois/jour durant 28 jours de ginkgo biloba (titré avec 24% en glucosides de flavonols et 6% en lactones terpéniques). Aucun effet sur la pharmacocinétique du chlorzoxazone. Aucun effet sur CYP2E1.  ',
                         'user_id'=>3,
                         'validated'=>1
                         ] );
@@ -3861,7 +3861,7 @@ Target::create( [
                         'name'=>'Etude clinique (Ginkgo + dextromethorphane)',
                         'long_name'=>'Etude clinique (Ginkgo + dextromethorphane)',
                         'target_type_id'=>4,
-                        'notes'=>'Trois études cliniques la première sur 12 sujets recevant 120 mg de ginkgo biloba (comprimés EGb 761) 2 fois/jour durant 14 jours. Deux autres groupes de 18 sujets recevant respectivement  120mg 2 fois/jour durant 8 jours et 240mg 1 fois /jour durant 10 jours de ginkgo biloba (comprimés EGb 761).\r\nPour les trois études aucun effet sur la pharmacocinétique du dextromethorphane. Aucun effet sur CYP2D6.',
+                        'notes'=>'Trois études cliniques la première sur 12 sujets recevant 120 mg de ginkgo biloba (comprimés EGb 761) 2 fois/jour durant 14 jours. Deux autres groupes de 18 sujets recevant respectivement  120mg 2 fois/jour durant 8 jours et 240mg 1 fois /jour durant 10 jours de ginkgo biloba (comprimés EGb 761).  Pour les trois études aucun effet sur la pharmacocinétique du dextromethorphane. Aucun effet sur CYP2D6.',
                         'user_id'=>3,
                         'validated'=>1
                         ] );
@@ -3945,7 +3945,7 @@ Target::create( [
                         'name'=>'Etude clinique (Ginkgo + tolbutamide)',
                         'long_name'=>'Etude clinique (Ginkgo + tolbutamide)',
                         'target_type_id'=>4,
-                        'notes'=>'Dans deux étude cliniques randomisées sur 18 sujets recevant respectivement 120mg 2 fois/jour durant 8 jours et 240mg 1 fois/jour durant 8 jours de ginkgo (comprimé EGb 761). Aucun effet sur la pharmacocinétique du tolbutamide. Aucun effet sur CYP2C9.\r\n',
+                        'notes'=>'Dans deux étude cliniques randomisées sur 18 sujets recevant respectivement 120mg 2 fois/jour durant 8 jours et 240mg 1 fois/jour durant 8 jours de ginkgo (comprimé EGb 761). Aucun effet sur la pharmacocinétique du tolbutamide. Aucun effet sur CYP2C9.  ',
                         'user_id'=>3,
                         'validated'=>1
                         ] );
@@ -3957,7 +3957,7 @@ Target::create( [
                         'name'=>'Etude clinique (Ginkgo + voriconazole)',
                         'long_name'=>'Etude clinique (Ginkgo + voriconazole)',
                         'target_type_id'=>4,
-                        'notes'=>'Etude clinique randomisée sur 14 sujets recevant 120mg 2 fois/jour durant 12 jours de ginkgo (capsules titrées d\'un minimum de 24% de glycosides de flavanols et 6% de lactones terpéniques). Aucun effet sur la pharmacocinétique du voriconazole. Aucun effet sur CYP3A4.\r\n',
+                        'notes'=>'Etude clinique randomisée sur 14 sujets recevant 120mg 2 fois/jour durant 12 jours de ginkgo (capsules titrées d\'un minimum de 24% de glycosides de flavanols et 6% de lactones terpéniques). Aucun effet sur la pharmacocinétique du voriconazole. Aucun effet sur CYP3A4.  ',
                         'user_id'=>3,
                         'validated'=>1
                         ] );
@@ -4041,7 +4041,7 @@ Target::create( [
                         'name'=>'Etude clinique (Canneberge + warfarine)',
                         'long_name'=>'Etude clinique (Canneberge + warfarine)',
                         'target_type_id'=>4,
-                        'notes'=>'Etude clinique randomisée en crossover sur 10 sujets recevant 200ml de canneberge (Concentré dilué à l\'eau 1:4 vol/vol) 3 fois/jour durant 10 jours. Aucun effet sur la pharmacocinétique et la pharmacodynamique du S- ou R- warfarine. Aucun effet sur CYP2C9.\r\n',
+                        'notes'=>'Etude clinique randomisée en crossover sur 10 sujets recevant 200ml de canneberge (Concentré dilué à l\'eau 1:4 vol/vol) 3 fois/jour durant 10 jours. Aucun effet sur la pharmacocinétique et la pharmacodynamique du S- ou R- warfarine. Aucun effet sur CYP2C9.  ',
                         'user_id'=>3,
                         'validated'=>1
                         ] );
@@ -5262,7 +5262,7 @@ Target::create( [
     'name'=>'Etude clinique (Millepertuis + talinolol)',
     'long_name'=>'Etude clinique (Millepertuis + talinolol)',
     'target_type_id'=>4,
-    'notes'=>'Etude clinique randomisée sur 9 sujets recevant 5Omg (oral) et 30mg (iv) de talinolol et 300mg 3 fois/jour de millepertuis (comprimé d\'extrait) durant 12 jours. Diminution de la bioviabilité et de l\'AUC du talinolol oral. Augmentation clearance non rénal du talinolol en iv.\r\nAugmentation de la MDR1, mRNA et P-gp de la muqueuse duodénale.',
+    'notes'=>'Etude clinique randomisée sur 9 sujets recevant 5Omg (oral) et 30mg (iv) de talinolol et 300mg 3 fois/jour de millepertuis (comprimé d\'extrait) durant 12 jours. Diminution de la bioviabilité et de l\'AUC du talinolol oral. Augmentation clearance non rénal du talinolol en iv.  Augmentation de la MDR1, mRNA et P-gp de la muqueuse duodénale.',
     'user_id'=>3,
     'validated'=>1
     ] );
@@ -5310,7 +5310,7 @@ Target::create( [
     'name'=>'Etude clinique (Caféine + Paracétamol)',
     'long_name'=>'Étude randomisée en double aveugle sur 9 volontaires sains (Caféine + paracétamol)',
     'target_type_id'=>4,
-    'notes'=>'Étude randomisée à double aveugle chez 9 volontaires sains. L\'interaction entre le paracétamol et la caféine a été caractérisée par une diminution des taux plasmatiques de paracétamol et par une plus petite surface de l\'aire sous la courbe du paracétamol. Ce qui indique l\'élimination rapide du médicament après une administration simultanée avec de la caféine.\r\n',
+    'notes'=>'Étude randomisée à double aveugle chez 9 volontaires sains. L\'interaction entre le paracétamol et la caféine a été caractérisée par une diminution des taux plasmatiques de paracétamol et par une plus petite surface de l\'aire sous la courbe du paracétamol. Ce qui indique l\'élimination rapide du médicament après une administration simultanée avec de la caféine.  ',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5322,7 +5322,7 @@ Target::create( [
     'name'=>'Etude clinique (Caféine + Paracétamol)',
     'long_name'=>'Étude randomisée en double aveugle sur 24 sujets (Caféine + Paracétamol)',
     'target_type_id'=>4,
-    'notes'=>'Étude randomisée en double aveugle chez 24 sujets. Avec administration par voie orale de 1000 mg de paracétamol, 130 mg de caféine, et une combinaison des deux, étude contrôlée contre placebo. \r\n130 mg de caféine a légèrement augmenté le taux d\'absorption d\'une dose de 1 g de paracétamol (sans modification de la biodisponibilité). Ils ont également noté des effets analgésiques accrus et prolongés.',
+    'notes'=>'Étude randomisée en double aveugle chez 24 sujets. Avec administration par voie orale de 1000 mg de paracétamol, 130 mg de caféine, et une combinaison des deux, étude contrôlée contre placebo.   130 mg de caféine a légèrement augmenté le taux d\'absorption d\'une dose de 1 g de paracétamol (sans modification de la biodisponibilité). Ils ont également noté des effets analgésiques accrus et prolongés.',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5346,7 +5346,7 @@ Target::create( [
     'name'=>'Etude clinique (Valériane + Paracétamol)',
     'long_name'=>'Étude sur 8 volontaires sains (Valériane + Paracétamol)',
     'target_type_id'=>4,
-    'notes'=>'Étude réalisée chez 8 volontaires sains. Les volontaires ont reçu le paracétamol de 500 mg seul et en association avec 500mg d\'extrait de valériane (pris au coucher). L\'administration de la valériane a augmenté l\'absorption du paracétamol de 30% (Cmax augmenté, Tmax diminué) sans modification de la demi-vie d\'élimination.\r\nLes résultats indiquent que la valériane est capable de modifier le taux d\'absorption du paracétamol. Cet effet est probablement dû à une augmentation de la motilité gastro-intestinale par l\'effet de la valériane sur le muscle lisse gastrique. Cependant, on ne peut pas prévoir des interactions significatives entre la valériane et les médicaments subissant glucuronidation par UGT 1A6/9.\r\n\r\n',
+    'notes'=>'Étude réalisée chez 8 volontaires sains. Les volontaires ont reçu le paracétamol de 500 mg seul et en association avec 500mg d\'extrait de valériane (pris au coucher). L\'administration de la valériane a augmenté l\'absorption du paracétamol de 30% (Cmax augmenté, Tmax diminué) sans modification de la demi-vie d\'élimination.  Les résultats indiquent que la valériane est capable de modifier le taux d\'absorption du paracétamol. Cet effet est probablement dû à une augmentation de la motilité gastro-intestinale par l\'effet de la valériane sur le muscle lisse gastrique. Cependant, on ne peut pas prévoir des interactions significatives entre la valériane et les médicaments subissant glucuronidation par UGT 1A6/9.    ',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5370,7 +5370,7 @@ Target::create( [
     'name'=>'Etude sur souris (Ginseng indien + Paracétamol)',
     'long_name'=>'Etude sur souris (Ginseng indien + Paracétamol)',
     'target_type_id'=>6,
-    'notes'=>'Chaque souris (pesant environ 25 g) a reçu 20 µl d\'extrait de Ginseng indien. L\'extrait a été analysé pour 11 autres médicaments :  carbamazépine, phénytoïne, phénobarbital, acide valproïque, procaïnamide, la N-acétyl procaïnamide, la théophylline, la gentamicine, la tobramycine, le paracétamol et l\'acide salicylique.\r\nAucune diminution apparente de la concentration du paracétamol.',
+    'notes'=>'Chaque souris (pesant environ 25 g) a reçu 20 µl d\'extrait de Ginseng indien. L\'extrait a été analysé pour 11 autres médicaments :  carbamazépine, phénytoïne, phénobarbital, acide valproïque, procaïnamide, la N-acétyl procaïnamide, la théophylline, la gentamicine, la tobramycine, le paracétamol et l\'acide salicylique.  Aucune diminution apparente de la concentration du paracétamol.',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5406,7 +5406,7 @@ Target::create( [
     'name'=>'Etude sur souris (Persil + Paracétamol)',
     'long_name'=>'Etude sur souris (Persil + Paracétamol)',
     'target_type_id'=>6,
-    'notes'=>'La souris reçoit de l\'extrait aqueux de persil (mélange persil/eau/huile d\'olive d\'un rapport de 4:3:3, la température du mélange n\'est pas précisée) 2 heures avant une dose unique de paracétamol 80 mg/kg.\r\nLe jus de persil, contenant du méthoxsalène, augmente et prolonge l\'action analgésique du paracétamol. Les auteurs suggèrent qu\'il est possible que l\'extrait de persil réduise le métabolisme du paracétamol par une diminution significative du cytochrome P450 hépatique par rapport au contrôle témoin.\r\n\r\n',
+    'notes'=>'La souris reçoit de l\'extrait aqueux de persil (mélange persil/eau/huile d\'olive d\'un rapport de 4:3:3, la température du mélange n\'est pas précisée) 2 heures avant une dose unique de paracétamol 80 mg/kg.  Le jus de persil, contenant du méthoxsalène, augmente et prolonge l\'action analgésique du paracétamol. Les auteurs suggèrent qu\'il est possible que l\'extrait de persil réduise le métabolisme du paracétamol par une diminution significative du cytochrome P450 hépatique par rapport au contrôle témoin.    ',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5418,7 +5418,7 @@ Target::create( [
     'name'=>'Etude sur souris (Houblon+ paracétamol)',
     'long_name'=>'Etude sur souris (Houblon+ paracétamol)',
     'target_type_id'=>6,
-    'notes'=>'Les souris ont reçu quatre doses i.p. d\'extrait alcoolique d\'houblon (10 mg/kg) 24, 16, 4 et 0,5 heures avant de recevoir du paracétamol (80mg/kg).\r\nLes résultats indiquent une interaction entre les extraits d\'houblon et le paracétamol. D\'après cette étude l\'houblon augmente l\'effet analgésique du paracétamol. \r\n\r\n',
+    'notes'=>'Les souris ont reçu quatre doses i.p. d\'extrait alcoolique d\'houblon (10 mg/kg) 24, 16, 4 et 0,5 heures avant de recevoir du paracétamol (80mg/kg).  Les résultats indiquent une interaction entre les extraits d\'houblon et le paracétamol. D\'après cette étude l\'houblon augmente l\'effet analgésique du paracétamol.     ',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5430,7 +5430,7 @@ Target::create( [
     'name'=>'Etude in vitro (Valériane + Paracétamol)',
     'long_name'=>'Etude in vitro (Valériane + Paracétamol)',
     'target_type_id'=>7,
-    'notes'=>'Évaluation des extraits au méthanol de deux préparations à base de plantes dans des microsomes hépatiques humains.  L\'acide valérénique (3.48mg dans 5 ml d\'extrait de valériane, est un constituant majeur de la valériane) a provoqué la réduction marquée des activités d\'UGT1A6/9. A également démontré des effets significatifs sur l\'inhibition de la glucuronidation de l\'acétaminophène, l\'œstradiol et la morphine.\r\nCes résultats suggèrent que les produits contenant de la valériane peuvent interférer avec la glucuronidation.\r\n\r\n',
+    'notes'=>'Évaluation des extraits au méthanol de deux préparations à base de plantes dans des microsomes hépatiques humains.  L\'acide valérénique (3.48mg dans 5 ml d\'extrait de valériane, est un constituant majeur de la valériane) a provoqué la réduction marquée des activités d\'UGT1A6/9. A également démontré des effets significatifs sur l\'inhibition de la glucuronidation de l\'acétaminophène, l\'œstradiol et la morphine.  Ces résultats suggèrent que les produits contenant de la valériane peuvent interférer avec la glucuronidation.    ',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5454,7 +5454,7 @@ Target::create( [
     'name'=>'Etude clinique (Curcuma/Pipérine + flurbiprofène)',
     'long_name'=>'Etude clinique chez 8 volontaires sains (Curcuma/Pipérine + flurbiprofène)',
     'target_type_id'=>4,
-    'notes'=>'Essai clinique randomisé réalisé sur 8 volontaires sains. Ils ont reçu l\'extrait standardisé ou le placebo avant l\'administration orale du midazolam (substrat sonde de CYP 3A4), flurbiprofène (substrat sonde de CYP2C9) ou du paracétamol (substrat sonde de UDP-glucuronosyltransférase (UGT)).\r\nLes résultats indiquent que l\'utilisation à court terme de cette préparation curcuminoïde (4g) + pipérine (24mg) est peu probable d\'aboutir à une interaction cliniquement significative impliquant CYP3A4, CYP2C9.\r\n\r\nAucune différence significative n\'a été observée dans le profil pharmacocinétique du flurbiprofène.',
+    'notes'=>'Essai clinique randomisé réalisé sur 8 volontaires sains. Ils ont reçu l\'extrait standardisé ou le placebo avant l\'administration orale du midazolam (substrat sonde de CYP 3A4), flurbiprofène (substrat sonde de CYP2C9) ou du paracétamol (substrat sonde de UDP-glucuronosyltransférase (UGT)).  Les résultats indiquent que l\'utilisation à court terme de cette préparation curcuminoïde (4g) + pipérine (24mg) est peu probable d\'aboutir à une interaction cliniquement significative impliquant CYP3A4, CYP2C9.    Aucune différence significative n\'a été observée dans le profil pharmacocinétique du flurbiprofène.',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5466,7 +5466,7 @@ Target::create( [
     'name'=>'Etude clinique (Caféine + Aspirine)',
     'long_name'=>'Etude sur 12 volontaires masculins sains (Caféine + Aspirine)',
     'target_type_id'=>4,
-    'notes'=>'Dans une étude réalisée chez 12 volontaires masculins sains,  le citrate de caféine (120 mg) a été administré avec une dose de 650 mg d\'aspirine. Il y a eu une augmentation des concentrations plasmatiques des salicylates.\r\nL\'étude suggère que la caféine peut augmenter la biodisponibilité de l\'aspirine chez l\'homme.\r\n\r\n',
+    'notes'=>'Dans une étude réalisée chez 12 volontaires masculins sains,  le citrate de caféine (120 mg) a été administré avec une dose de 650 mg d\'aspirine. Il y a eu une augmentation des concentrations plasmatiques des salicylates.  L\'étude suggère que la caféine peut augmenter la biodisponibilité de l\'aspirine chez l\'homme.    ',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5586,7 +5586,7 @@ Target::create( [
     'name'=>'Etude sur souris (Ginseng + Morphine)',
     'long_name'=>'EMA Etude sur souris (Ginseng + Morphine)',
     'target_type_id'=>6,
-    'notes'=>'Dans cette étude, ils ont étudié les effets de Re, Rg , et ginsénosides Rb1 , les composants bioactifs du ginseng , dans l\'Hyperalgie Induites par les Opioïdes (HIO). HIO, caractérisée par la sensibilisation nociceptive causée par la cessation d\'utilisation opioïde chronique,  a été réalisé chez la souris après administration sous-cutanée de morphine pendant 7 jours consécutifs, trois fois par jour. Au cours de retrait (jours 8 et 9), ils ont administrés Re, Rg, ou Rb1 intra-gastrique deux fois par jour. Le jour de l\'essai (10ème  jours), les souris ont été soumises à l\'essai de sensibilité à la chaleur et l\'essai de contorsions induites par l\'acide acétique. \r\nRg1 a montré une tendance à aggraver l\'Hyperalgie Induite par les Opioïdes dans le test de contorsions induites par l\'acide acétique. Par contre, les données suggèrent que la ginsénoside Re (300mg/kg), mais pas Rg1 ou Rb1, peut contribuer vers le renversement d\'HIO.\r\n\r\n',
+    'notes'=>'Dans cette étude, ils ont étudié les effets de Re, Rg , et ginsénosides Rb1 , les composants bioactifs du ginseng , dans l\'Hyperalgie Induites par les Opioïdes (HIO). HIO, caractérisée par la sensibilisation nociceptive causée par la cessation d\'utilisation opioïde chronique,  a été réalisé chez la souris après administration sous-cutanée de morphine pendant 7 jours consécutifs, trois fois par jour. Au cours de retrait (jours 8 et 9), ils ont administrés Re, Rg, ou Rb1 intra-gastrique deux fois par jour. Le jour de l\'essai (10ème  jours), les souris ont été soumises à l\'essai de sensibilité à la chaleur et l\'essai de contorsions induites par l\'acide acétique.   Rg1 a montré une tendance à aggraver l\'Hyperalgie Induite par les Opioïdes dans le test de contorsions induites par l\'acide acétique. Par contre, les données suggèrent que la ginsénoside Re (300mg/kg), mais pas Rg1 ou Rb1, peut contribuer vers le renversement d\'HIO.    ',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5622,7 +5622,7 @@ Target::create( [
     'name'=>'Etude sur rats (Sureau + Morphine)',
     'long_name'=>'Etude sur rats (Sureau + Morphine)',
     'target_type_id'=>6,
-    'notes'=>'Les rats ont reçu 2 ml/kg d\'infusion de fleurs et de baies par voie orale 2 heures avant et en même temps que la morphine (5 mg/ml). Les décoctions de sureau ont diminué de manière significative l\'action analgésique de la morphine. \r\n\r\n\r\n\r\n',
+    'notes'=>'Les rats ont reçu 2 ml/kg d\'infusion de fleurs et de baies par voie orale 2 heures avant et en même temps que la morphine (5 mg/ml). Les décoctions de sureau ont diminué de manière significative l\'action analgésique de la morphine.         ',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5634,7 +5634,7 @@ Target::create( [
     'name'=>'Etude clinique (Griffe de chat + Sulfasalazine)',
     'long_name'=>'Etude randomisée sur 40 patients (Griffe de chat + Sulfasalazine ou Hydroxychloroquine)',
     'target_type_id'=>4,
-    'notes'=>'40 patients traités par la sulfasalazine ou l\'hydroxychloroquine ont été inscrits dans une étude randomisée de 52 semaines. Au cours de la première phase (24 semaines, en double aveugle, contrôlée contre placebo). Dans la seconde phase (28 semaines) tous les patients ont reçu une gélule de 20 mg d\'extrait sec d\'Uncaria tomentosa trois fois par jour.\r\nPas d\'effets indésirables supplémentaires semblent se produire lorsque la griffe de chat est prise avec la sulfasalazine ou l\'hydroxychloroquine.',
+    'notes'=>'40 patients traités par la sulfasalazine ou l\'hydroxychloroquine ont été inscrits dans une étude randomisée de 52 semaines. Au cours de la première phase (24 semaines, en double aveugle, contrôlée contre placebo). Dans la seconde phase (28 semaines) tous les patients ont reçu une gélule de 20 mg d\'extrait sec d\'Uncaria tomentosa trois fois par jour.  Pas d\'effets indésirables supplémentaires semblent se produire lorsque la griffe de chat est prise avec la sulfasalazine ou l\'hydroxychloroquine.',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5646,7 +5646,7 @@ Target::create( [
     'name'=>'Etude clinique (Griffe de chat + Hydroxychloroquine)',
     'long_name'=>'Etude randomisée sur 40 patients (Griffe de chat + Sulfasalazine ou Hydroxychloroquine)',
     'target_type_id'=>4,
-    'notes'=>'40 patients traités par la sulfasalazine ou l\'hydroxychloroquine ont été inscrits dans une étude randomisée de 52 semaines. Au cours de la première phase (24 semaines, en double aveugle, contrôlée contre placebo). Dans la seconde phase (28 semaines) tous les patients ont reçu une gélule de 20 mg d\'extrait sec d\'Uncaria tomentosa trois fois par jour.\r\nPas d\'effets indésirables supplémentaires semblent se produire lorsque la griffe de chat est prise avec la sulfasalazine ou l\'hydroxychloroquine.',
+    'notes'=>'40 patients traités par la sulfasalazine ou l\'hydroxychloroquine ont été inscrits dans une étude randomisée de 52 semaines. Au cours de la première phase (24 semaines, en double aveugle, contrôlée contre placebo). Dans la seconde phase (28 semaines) tous les patients ont reçu une gélule de 20 mg d\'extrait sec d\'Uncaria tomentosa trois fois par jour.  Pas d\'effets indésirables supplémentaires semblent se produire lorsque la griffe de chat est prise avec la sulfasalazine ou l\'hydroxychloroquine.',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5658,7 +5658,7 @@ Target::create( [
     'name'=>'Etude clinique (Réglisse + Prednisolone)',
     'long_name'=>'Etude sur 6 volontaires sains (Réglisse + Prednisolone)',
     'target_type_id'=>4,
-    'notes'=>'6 hommes sains ont reçu de la glycirrizhine (Réglissse) par voie orale. Chaque sujet a reçu une administration intraveineuse de 0,096 mg / kg de prednisolone hémisuccinate, avec ou sans 200 mg de glycyrrhizine. L\'administration orale de glycyrrhizine a modifiée la pharmacocinétique de prednisolone totale et libre. L\'aire sous la courbe (AUC) a été significativement augmentée, la clairance plasmatique totale était significativement diminué, et le temps de demi-vie est significativement prolongée. Cependant, le volume de distribution n\'a montré aucun changement évident.\r\nL\'étude  suggère que l\'administration orale de glyccyrhizine augmente les concentrations plasmatiques de prednisolone et influence sa pharmacocinétique en inhibant son métabolisme.\r\n\r\n',
+    'notes'=>'6 hommes sains ont reçu de la glycirrizhine (Réglissse) par voie orale. Chaque sujet a reçu une administration intraveineuse de 0,096 mg / kg de prednisolone hémisuccinate, avec ou sans 200 mg de glycyrrhizine. L\'administration orale de glycyrrhizine a modifiée la pharmacocinétique de prednisolone totale et libre. L\'aire sous la courbe (AUC) a été significativement augmentée, la clairance plasmatique totale était significativement diminué, et le temps de demi-vie est significativement prolongée. Cependant, le volume de distribution n\'a montré aucun changement évident.  L\'étude  suggère que l\'administration orale de glyccyrhizine augmente les concentrations plasmatiques de prednisolone et influence sa pharmacocinétique en inhibant son métabolisme.    ',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5670,7 +5670,7 @@ Target::create( [
     'name'=>'Etude clinique (Millepertuis + Prednisone)',
     'long_name'=>'Etude réalisée sur 8 sujets sains de sexe masculins (Millepertuis +Prednisone)',
     'target_type_id'=>4,
-    'notes'=>'Huit sujets sains de sexe masculin ont reçu une dose orale unique de prednisone 20 mg avant, et à la fin d\'une période de 28 jours de millepertuis à 300 mg trois fois par jour.\r\nLa pharmacocinétique de prednisone, et de son métabolite prednisolone, n\'étaient pas significativement touchés par le millepertuis. Prednisone et la prednisolone sont des substrats de CYP3A4, mais ce n\'est pas une principale voie métabolique.\r\n\r\n',
+    'notes'=>'Huit sujets sains de sexe masculin ont reçu une dose orale unique de prednisone 20 mg avant, et à la fin d\'une période de 28 jours de millepertuis à 300 mg trois fois par jour.  La pharmacocinétique de prednisone, et de son métabolite prednisolone, n\'étaient pas significativement touchés par le millepertuis. Prednisone et la prednisolone sont des substrats de CYP3A4, mais ce n\'est pas une principale voie métabolique.    ',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5682,7 +5682,7 @@ Target::create( [
     'name'=>'Case report (Trèfle rouge + Methotrexate)',
     'long_name'=>'Case report (Trèfle rouge + Methotrexate)',
     'target_type_id'=>1,
-    'notes'=>'Une patiente de 52 ans traitée pendant deux ans par du méthotrexate injectable (injection hebdomadaire) pour son psoriasis, commence à utiliser du trèfle rouge pour sa ménopause. Au bout de 3 jours de traitement (430 mg de trèfle rouge) elle présente des vomissements et des douleurs épigastriques (des symptômes évocateurs d\'une toxicité du méthotrexate), ne présentant pas d\'anomalie au niveau hépatique. Durant ces deux ans de traitement, elle n\'avait pas présentait d\'effets indésirables. Le seul changement était la prise de trèfle rouge ; et pouvait donc être la cause probable de la toxicité. Le trèfle rouge a été retiré, la patiente présente un rétablissement complet et continue l\'injection de méthotrexate.\r\n\r\n\r\n\r\n',
+    'notes'=>'Une patiente de 52 ans traitée pendant deux ans par du méthotrexate injectable (injection hebdomadaire) pour son psoriasis, commence à utiliser du trèfle rouge pour sa ménopause. Au bout de 3 jours de traitement (430 mg de trèfle rouge) elle présente des vomissements et des douleurs épigastriques (des symptômes évocateurs d\'une toxicité du méthotrexate), ne présentant pas d\'anomalie au niveau hépatique. Durant ces deux ans de traitement, elle n\'avait pas présentait d\'effets indésirables. Le seul changement était la prise de trèfle rouge ; et pouvait donc être la cause probable de la toxicité. Le trèfle rouge a été retiré, la patiente présente un rétablissement complet et continue l\'injection de méthotrexate.        ',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5706,7 +5706,7 @@ Target::create( [
     'name'=>'Etude sur rats (Ginkgo biloba/Oignon + Ciclosporine)',
     'long_name'=>'Etude sur rats (Ginkgo biloba/Oignon + Ciclosporine)',
     'target_type_id'=>6,
-    'notes'=>'Lors d\'une étude sur rats, la co-administration par voie orale de ginkgo biloba ou de l\'oignon a diminué de manière significative la Cmax de la ciclosporine, alors qu\'aucune influence n\'a été observée lorsque la ciclosporine a été administrée par IV.\r\nCeci indique que les interactions entre la ciclosporine et le ginkgo biloba ou d\'oignon se sont produits principalement au niveau du site d\'absorption. \r\nIl a été indiqué que le ginkgo biloba et l\'oignon diminue la biodisponibilité orale de ciclosporine. \r\nLes auteurs suggèrent que la consommation concomitante de plantes ou d\'aliments riches en quercétine avec la ciclosporine sont à éviter afin de garantir l\'efficacité de la ciclosporine.\r\n\r\n',
+    'notes'=>'Lors d\'une étude sur rats, la co-administration par voie orale de ginkgo biloba ou de l\'oignon a diminué de manière significative la Cmax de la ciclosporine, alors qu\'aucune influence n\'a été observée lorsque la ciclosporine a été administrée par IV.  Ceci indique que les interactions entre la ciclosporine et le ginkgo biloba ou d\'oignon se sont produits principalement au niveau du site d\'absorption.   Il a été indiqué que le ginkgo biloba et l\'oignon diminue la biodisponibilité orale de ciclosporine.   Les auteurs suggèrent que la consommation concomitante de plantes ou d\'aliments riches en quercétine avec la ciclosporine sont à éviter afin de garantir l\'efficacité de la ciclosporine.    ',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5730,7 +5730,7 @@ Target::create( [
     'name'=>'Etude sur rats (Capsaïcine + aspirine)',
     'long_name'=>'Etude sur rats (Capsaïcine + aspirine)',
     'target_type_id'=>6,
-    'notes'=>'Les rats ont reçu une administration unique de 100 mg/kg d\'un extrait de Capsicum annuum (contenant 100 mg de capsaïcine par gramme), le taux sanguin d\'aspirine est resté inchangé, mais la biodisponibilité de l\'acide salicylique a eu une diminution de 44 % par rapport aux témoins. Lors d\'une administration de 300 mg/kg de l\'extrait, les concentrations sanguines de l\'aspirine étaient indétectables, alors que la biodisponibilité de l\'acide salicylique a diminué de 59%. Puis lors de l\'administration de 100 à 300 mg/kg de l\'extrait, une fois par jour pendant 4 semaines, les concentrations étaient indétectables, et la biodisponibilité de l\'acide salicylique a été diminué de 63% à 76%.\r\nLes résultats montrent que l\'ingestion de capsaïcine réduit la biodisponibilité de ce médicament.',
+    'notes'=>'Les rats ont reçu une administration unique de 100 mg/kg d\'un extrait de Capsicum annuum (contenant 100 mg de capsaïcine par gramme), le taux sanguin d\'aspirine est resté inchangé, mais la biodisponibilité de l\'acide salicylique a eu une diminution de 44 % par rapport aux témoins. Lors d\'une administration de 300 mg/kg de l\'extrait, les concentrations sanguines de l\'aspirine étaient indétectables, alors que la biodisponibilité de l\'acide salicylique a diminué de 59%. Puis lors de l\'administration de 100 à 300 mg/kg de l\'extrait, une fois par jour pendant 4 semaines, les concentrations étaient indétectables, et la biodisponibilité de l\'acide salicylique a été diminué de 63% à 76%.  Les résultats montrent que l\'ingestion de capsaïcine réduit la biodisponibilité de ce médicament.',
     'user_id'=>44,
     'validated'=>1
     ] );
@@ -5910,7 +5910,7 @@ Target::create( [
     'name'=>'Etude Clinique (Actée à grappes + Digoxine)',
     'long_name'=>'Etude Clinique (Actée à grappes + Digoxine) sur 16 volontaires sains',
     'target_type_id'=>4,
-    'notes'=>'Étude clinique sur 16 volontaires sains recevant un extrait d\'Actée à grappes noires (extrait standardisé à 2,5 % de glycosides triterpéniques), 20 mg 2 fois/j pdt 14 jours avec une dose orale unique de 400 mg de Digoxine (médicament substrat de la P-gp).\r\nAucun changement significatif de la pharmacocinétique de la Digoxine et aucun effet indésirable grave signalé.\r\nActée à grappes noires ne semble pas être un puissant modulateur de la P-gp in vivo.',
+    'notes'=>'Étude clinique sur 16 volontaires sains recevant un extrait d\'Actée à grappes noires (extrait standardisé à 2,5 % de glycosides triterpéniques), 20 mg 2 fois/j pdt 14 jours avec une dose orale unique de 400 mg de Digoxine (médicament substrat de la P-gp).  Aucun changement significatif de la pharmacocinétique de la Digoxine et aucun effet indésirable grave signalé.  Actée à grappes noires ne semble pas être un puissant modulateur de la P-gp in vivo.',
     'user_id'=>43,
     'validated'=>1
     ] );
@@ -6042,7 +6042,7 @@ Target::create( [
     'name'=>'Case report (Actée à grappes + Atorvastatine)',
     'long_name'=>'Case report (Actée à grappes + Atorvastatine)',
     'target_type_id'=>1,
-    'notes'=>'Femme de 53 ans  sous Atorvastatine, Aspirine,\r\nGlucosamine/Chrondoïtine et Œstradiol (par voie vaginale) a commencé un traitement par Actée à grappes noires.\r\nElle a présenté une élévation aiguë de ses enzymes hépatiques sans aucune cause étiologique plausible. Il a été recommandé qu\'elle arrête immédiatement l\'Actée à grappes noires, au bout d\'une semaine d\'arrêt les taux d\'enzymes hépatiques étaient réduits et au bout d\'un mois ils étaient retournés à la normale.\r\nLe mécanisme suspecté est une inhibition du CYP3A4 entrainant une élévation de la concentration d\'Atorvastatine (substrat du CYP3A4) et donc une augmentation de ces effets indésirables (élévation des enzymes hépatiques).\r\nLa prise concomitante de l\'Actée à grappes noires et d\'Atorvastatine semble  augmenter le risque d\'hépatotoxicité.\r\n',
+    'notes'=>'Femme de 53 ans  sous Atorvastatine, Aspirine,  Glucosamine/Chrondoïtine et Œstradiol (par voie vaginale) a commencé un traitement par Actée à grappes noires.  Elle a présenté une élévation aiguë de ses enzymes hépatiques sans aucune cause étiologique plausible. Il a été recommandé qu\'elle arrête immédiatement l\'Actée à grappes noires, au bout d\'une semaine d\'arrêt les taux d\'enzymes hépatiques étaient réduits et au bout d\'un mois ils étaient retournés à la normale.  Le mécanisme suspecté est une inhibition du CYP3A4 entrainant une élévation de la concentration d\'Atorvastatine (substrat du CYP3A4) et donc une augmentation de ces effets indésirables (élévation des enzymes hépatiques).  La prise concomitante de l\'Actée à grappes noires et d\'Atorvastatine semble  augmenter le risque d\'hépatotoxicité.  ',
     'user_id'=>43,
     'validated'=>1
     ] );
@@ -6054,7 +6054,7 @@ Target::create( [
         'name'=>'Etude in vitro (Actée à grappes + Tamoxifène)',
         'long_name'=>'Etude in vitro (Actée à grappes + Tamoxifène)',
         'target_type_id'=>7,
-        'notes'=>'Étude in vitro suggère que la co-administration de l\'Actée à grappes noires (extrait éthanolique à 75 %, standardisé à 5,6 % de glycosides triterpéniques) avec Tamoxifène pourrait interférer avec le métabolisme de ce dernier. En effet, l\'étude montre une inhibition de la formation des métabolites du Tamoxifène.\r\nMécanisme suspecté : inhibition du CYP2D6 et CYP3A4.\r\nPossible diminution de l\'efficacité clinique du Tamoxifène. \r\nCependant des études cliniques supplémentaires sont nécessaires pour déterminer la signification clinique de ces résultats in vitro.\r\n\r\nToutefois, une autre étude in vitro sur des cellules cancéreuses du sein  révèle un effet cytotoxique de l\'Actée à grappes noires ainsi qu\'une synergie d\'action avec le Tamoxifène pour l\'inhibition de la croissance des cellules cancéreuses.\r\n',
+        'notes'=>'Étude in vitro suggère que la co-administration de l\'Actée à grappes noires (extrait éthanolique à 75 %, standardisé à 5,6 % de glycosides triterpéniques) avec Tamoxifène pourrait interférer avec le métabolisme de ce dernier. En effet, l\'étude montre une inhibition de la formation des métabolites du Tamoxifène.  Mécanisme suspecté : inhibition du CYP2D6 et CYP3A4.  Possible diminution de l\'efficacité clinique du Tamoxifène.   Cependant des études cliniques supplémentaires sont nécessaires pour déterminer la signification clinique de ces résultats in vitro.    Toutefois, une autre étude in vitro sur des cellules cancéreuses du sein  révèle un effet cytotoxique de l\'Actée à grappes noires ainsi qu\'une synergie d\'action avec le Tamoxifène pour l\'inhibition de la croissance des cellules cancéreuses.  ',
         'user_id'=>43,
         'validated'=>1
         ] );
@@ -6064,7 +6064,7 @@ Target::create( [
     'name'=>'Etude clinique (Aubépine + Metformine/Gliclazide/Insuline)',
     'long_name'=>'Etude clinique randomisée (Aubépine + Metformine/Gliclazide/Insuline)',
     'target_type_id'=>4,
-    'notes'=>'Étude randomisée sur 80 patients atteints de Diabète de type 2 prenant des antidiabétiques (Metformine, Gliclazide et/ou l\'insuline à faible dose) avec ou sans antihypertenseur, ont reçu un extrait standardisé d\'Aubépine (LI 132, contenant des sommités fleuries séchées à 2,2 % de Flavonoïdes), 600 mg  2fois/jour ou un placebo pendant 16 semaines. \r\nAucune différence entre les 2 groupes dans les mesures de contrôle de la glycémie à 16 semaines.\r\nLa preuve est limitée à cette seule étude clinique. Cependant comme aucune modification du contrôle glycémique n\'a été signalée, la co-administration d\'antidiabétiques et d\'extrait d\'Aubépine semble possible.\r\n',
+    'notes'=>'Étude randomisée sur 80 patients atteints de Diabète de type 2 prenant des antidiabétiques (Metformine, Gliclazide et/ou l\'insuline à faible dose) avec ou sans antihypertenseur, ont reçu un extrait standardisé d\'Aubépine (LI 132, contenant des sommités fleuries séchées à 2,2 % de Flavonoïdes), 600 mg  2fois/jour ou un placebo pendant 16 semaines.   Aucune différence entre les 2 groupes dans les mesures de contrôle de la glycémie à 16 semaines.  La preuve est limitée à cette seule étude clinique. Cependant comme aucune modification du contrôle glycémique n\'a été signalée, la co-administration d\'antidiabétiques et d\'extrait d\'Aubépine semble possible.  ',
     'user_id'=>43,
     'validated'=>1
     ] );
@@ -6193,7 +6193,7 @@ Target::create( [
     'name'=>'Etude sur modèle animal (Actée à grappes + Cisplatine) ',
     'long_name'=>'Etude sur modèle animal (Actée à grappes + Cisplatine) ',
     'target_type_id'=>6,
-    'notes'=>'L\'Actée semble décroitre la cytotoxicité du Cisplatine sur cellules de cancer du poumon sur modèle animal.\r\n\r\nL\'Actée à grappes noires pourrait diminuer la cytotoxicité et donc l\'efficacité  du Cisplatine utilisé comme anti-cancéreux.\r\n\r\nAssociation déconseillée théoriquement.\r\n',
+    'notes'=>'L\'Actée semble décroitre la cytotoxicité du Cisplatine sur cellules de cancer du poumon sur modèle animal.    L\'Actée à grappes noires pourrait diminuer la cytotoxicité et donc l\'efficacité  du Cisplatine utilisé comme anti-cancéreux.    Association déconseillée théoriquement.  ',
     'user_id'=>43,
     'validated'=>1
     ] );
@@ -6205,7 +6205,7 @@ Target::create( [
     'name'=>'Hormonothérapie',
     'long_name'=>'Hormonothérapie (Oestrogènes/Anti-oestrogènes)',
     'target_type_id'=>3,
-    'notes'=>'Les plantes à phyto-oestrogènes  peuvent théoriquement entrainer des effets additifs ou opposés avec les oestrogènes/anti-oestrogènes.\r\nAssociation théoriquement déconseillée',
+    'notes'=>'Les plantes à phyto-oestrogènes  peuvent théoriquement entrainer des effets additifs ou opposés avec les oestrogènes/anti-oestrogènes.  Association théoriquement déconseillée',
     'user_id'=>43,
     'validated'=>1
     ] );
@@ -6239,7 +6239,7 @@ Target::create( [
     'name'=>'Case report 1 (Actée à grappes et Hépatotoxicité)',
     'long_name'=>'Case report 1 (Actée à grappes et Hépatotoxicité)',
     'target_type_id'=>1,
-    'notes'=>'Femme de 47 ans a subi en urgence une greffe de foie pour insuffisance hépatique fulminante une semaine après avoir commencé un traitement à base d\'Actée à grappes. Seule le remède à base d\'Actée à grappe noire était mis en cause.\r\nLa causalité n\'a pas été établie mais il semblerait que l\'Actée à grappes noires soit incriminée.\r\n',
+    'notes'=>'Femme de 47 ans a subi en urgence une greffe de foie pour insuffisance hépatique fulminante une semaine après avoir commencé un traitement à base d\'Actée à grappes. Seule le remède à base d\'Actée à grappe noire était mis en cause.  La causalité n\'a pas été établie mais il semblerait que l\'Actée à grappes noires soit incriminée.  ',
     'user_id'=>43,
     'validated'=>1
     ] );
@@ -6251,7 +6251,7 @@ Target::create( [
     'name'=>'Case report 2 (Actée à grappes et Hépatotoxicité)',
     'long_name'=>'Case report 2 (Actée à grappes et Hépatotoxicité)',
     'target_type_id'=>1,
-    'notes'=>'Femme de 43 ans a signalé avoir pris une préparation à bases de plantes contenant de l\'Actée à grappes noires ainsi que Scutellaire casquée, Valériane et cinq autres ingrédients à base de plantes. Elle a présenté un ictère et des troubles de la fonction hépatique avec élévation des paramètres hépatiques.\r\nLa causalité n\'a pas été établie mais il semblerait que l\'Actée à grappes noires soit incriminée.\r\n',
+    'notes'=>'Femme de 43 ans a signalé avoir pris une préparation à bases de plantes contenant de l\'Actée à grappes noires ainsi que Scutellaire casquée, Valériane et cinq autres ingrédients à base de plantes. Elle a présenté un ictère et des troubles de la fonction hépatique avec élévation des paramètres hépatiques.  La causalité n\'a pas été établie mais il semblerait que l\'Actée à grappes noires soit incriminée.  ',
     'user_id'=>43,
     'validated'=>1
     ] );
@@ -6263,7 +6263,7 @@ Target::create( [
     'name'=>'Case report 3 (Actée à grappes et Hépatotoxicité)',
     'long_name'=>'Case report 3 (Actée à grappes et Hépatotoxicité)',
     'target_type_id'=>1,
-    'notes'=>'Femme de 52 ans a présenté une fatigue et une léthargie, puis une jaunisse environ 3 mois après avoir débuté une préparation liquide à base de plantes contenant : Cimicifuga racemosa, Hydrastis canadensis, Gingko biloba et Avena sativa.\r\nLa patiente présenta des signes d\'insuffisance hépatique avec encéphalopathie hépatique progressive et une aggravation de la coagulation conduisant à une transplantation hépatique environ 4 semaines après l\'admission.  Les autres causes d\'insuffisance hépatique aiguë ont été exclues.\r\nLe foie explanté montrait une nécrose massive. \r\nCette hépatotoxicité a été fortement attribuée à la présence d\'Actée à grappes noires dans cette préparation à bases de plantes, les autres plantes n\'ayant pas été impliquées dans des cas d\'insuffisance hépatique aiguë.\r\n',
+    'notes'=>'Femme de 52 ans a présenté une fatigue et une léthargie, puis une jaunisse environ 3 mois après avoir débuté une préparation liquide à base de plantes contenant : Cimicifuga racemosa, Hydrastis canadensis, Gingko biloba et Avena sativa.  La patiente présenta des signes d\'insuffisance hépatique avec encéphalopathie hépatique progressive et une aggravation de la coagulation conduisant à une transplantation hépatique environ 4 semaines après l\'admission.  Les autres causes d\'insuffisance hépatique aiguë ont été exclues.  Le foie explanté montrait une nécrose massive.   Cette hépatotoxicité a été fortement attribuée à la présence d\'Actée à grappes noires dans cette préparation à bases de plantes, les autres plantes n\'ayant pas été impliquées dans des cas d\'insuffisance hépatique aiguë.  ',
     'user_id'=>43,
     'validated'=>1
     ] );
@@ -6285,7 +6285,7 @@ Target::create( [
     'name'=>'Case report 5 (Actée à grappes et Hépatotoxicité)',
     'long_name'=>'Case report 5 (Actée à grappes et Hépatotoxicité)',
     'target_type_id'=>1,
-    'notes'=>'Femme de 54 ans a présenté une fatigue et une perte de poids 6 à 8 mois après le début d\'une prise d\'Actée à grappes noires (1000 mg/jour) contre les symptômes de la ménopause. Elle n\'avait aucun antécédent de maladie du foie, ne consommait pas d\'alcool avec excès, n\'avait pas de facteur de risque d\'hépatite virale et prenait de la Lévothyroxine (100 µg par jour). \r\nA l\'examen, elle présentait des paramètres hépatiques élevés (ASAT/ALAT/Phosphatases alcalines/Bilirubine totale), la biopsie du foie montrait une nécrose hépatocellulaire sévère et une inflammation compatible avec une hépatite aiguë sévère nécessitant une transplantation hépatique. La patiente décéda 39 jours après l\'admission.\r\nAucune autre cause évidente n\'était présente et la patiente ne prenait aucun autre traitement qui pourrait être considéré comme hépatotoxique. L\'Actée à grappes noires a donc été incriminée.\r\n',
+    'notes'=>'Femme de 54 ans a présenté une fatigue et une perte de poids 6 à 8 mois après le début d\'une prise d\'Actée à grappes noires (1000 mg/jour) contre les symptômes de la ménopause. Elle n\'avait aucun antécédent de maladie du foie, ne consommait pas d\'alcool avec excès, n\'avait pas de facteur de risque d\'hépatite virale et prenait de la Lévothyroxine (100 µg par jour).   A l\'examen, elle présentait des paramètres hépatiques élevés (ASAT/ALAT/Phosphatases alcalines/Bilirubine totale), la biopsie du foie montrait une nécrose hépatocellulaire sévère et une inflammation compatible avec une hépatite aiguë sévère nécessitant une transplantation hépatique. La patiente décéda 39 jours après l\'admission.  Aucune autre cause évidente n\'était présente et la patiente ne prenait aucun autre traitement qui pourrait être considéré comme hépatotoxique. L\'Actée à grappes noires a donc été incriminée.  ',
     'user_id'=>43,
     'validated'=>1
     ] );
@@ -6307,7 +6307,7 @@ Target::create( [
         'name'=>'Case report 7 (Actée à grappes et Hépatotoxicité)',
         'long_name'=>'Case report 7 (Actée à grappes et Hépatotoxicité)',
         'target_type_id'=>1,
-        'notes'=>'Femme de 58 ans, présenta une fatigue et une faiblesse, à la suite de la prise d\'Actée à grappes noires (80 mg/j d\'extraits de racines), en plus de médicaments contre l\'hypertension artérielle (Irbésartan 150 mg/j), l\'hypothyroïdie (Lévothyroxine 100 µg/j), l\'hypercholestérolémie (Simvastatine 20 mg/j) et le diabète (Insuline). \r\nLa Simvastatine a été arrêtée mais aucune amélioration de son état n\'a été observée. Trois mois plus tard, l\'Actée à grappes noires a été abandonnée : dans les deux semaines qui ont suivi son arrêt les taux sériques de transaminases ont diminué, deux mois plus tard  ses symptômes étaient résolus et les tests hépatiques étaient revenus à la normale.\r\nMalgré un manque d\'information sur la durée d\'utilisation de l\'Actée à grappes noires et de données cliniques importantes, la concordance entre l\'arrêt de l\'Actée et  l\'amélioration de l\'état clinique a été favorable à l\'imputation de la plante avec le développement de l\'atteinte hépatique chronique.\r\n',
+        'notes'=>'Femme de 58 ans, présenta une fatigue et une faiblesse, à la suite de la prise d\'Actée à grappes noires (80 mg/j d\'extraits de racines), en plus de médicaments contre l\'hypertension artérielle (Irbésartan 150 mg/j), l\'hypothyroïdie (Lévothyroxine 100 µg/j), l\'hypercholestérolémie (Simvastatine 20 mg/j) et le diabète (Insuline).   La Simvastatine a été arrêtée mais aucune amélioration de son état n\'a été observée. Trois mois plus tard, l\'Actée à grappes noires a été abandonnée : dans les deux semaines qui ont suivi son arrêt les taux sériques de transaminases ont diminué, deux mois plus tard  ses symptômes étaient résolus et les tests hépatiques étaient revenus à la normale.  Malgré un manque d\'information sur la durée d\'utilisation de l\'Actée à grappes noires et de données cliniques importantes, la concordance entre l\'arrêt de l\'Actée et  l\'amélioration de l\'état clinique a été favorable à l\'imputation de la plante avec le développement de l\'atteinte hépatique chronique.  ',
         'user_id'=>43,
         'validated'=>1
         ] );
@@ -6319,7 +6319,7 @@ Target::create( [
         'name'=>'Case report (Luzerne + Insuline)',
         'long_name'=>'Case report (Luzerne + Insuline)',
         'target_type_id'=>1,
-        'notes'=>'Un cas isolé rapporté en 1962 décrit un jeune homme diabétique traité à l\'insuline, mais mal contrôlé, présentant une réduction marquée de la glycémie après la prise d\'un extrait aqueux de Luzerne (per os). Il a présenté également une réduction de son taux de glucose sanguin en réponse à du Chlorure de manganèse (per os, 5-10mg), cependant cet effet n\'a pas été observé chez d\'autres patients diabétiques qui ont également reçu du manganèse.\r\nL\'auteur de ce cas rapporté a conclu que l\'effet hypoglycémiant de la Luzerne était dû à la teneur en manganèse (45,5 mg/kg). \r\n',
+        'notes'=>'Un cas isolé rapporté en 1962 décrit un jeune homme diabétique traité à l\'insuline, mais mal contrôlé, présentant une réduction marquée de la glycémie après la prise d\'un extrait aqueux de Luzerne (per os). Il a présenté également une réduction de son taux de glucose sanguin en réponse à du Chlorure de manganèse (per os, 5-10mg), cependant cet effet n\'a pas été observé chez d\'autres patients diabétiques qui ont également reçu du manganèse.  L\'auteur de ce cas rapporté a conclu que l\'effet hypoglycémiant de la Luzerne était dû à la teneur en manganèse (45,5 mg/kg).   ',
         'user_id'=>43,
         'validated'=>1
         ] );
@@ -6425,7 +6425,7 @@ Target::create( [
             'name'=>'Etude sur modèle animal (Aubépine + Digoxine)',
             'long_name'=>'Etude sur modèle animal (Aubépine + Digoxine)',
             'target_type_id'=>6,
-            'notes'=>'Étude in vitro réalisée sur des cultures de cardiomyocytes de rat adulte isolé par mesure transitoire de calcium montre une interférence d\'Aubépine avec un dosage sérique de Digoxine et une interaction pharmacodynamique entre les deux (synergie d\'action). \r\n\r\nCes résultats suggèrent donc d\'éviter la prise concomitante d\'extraits d\'Aubépine et de Digoxine.\r\n',
+            'notes'=>'Étude in vitro réalisée sur des cultures de cardiomyocytes de rat adulte isolé par mesure transitoire de calcium montre une interférence d\'Aubépine avec un dosage sérique de Digoxine et une interaction pharmacodynamique entre les deux (synergie d\'action).     Ces résultats suggèrent donc d\'éviter la prise concomitante d\'extraits d\'Aubépine et de Digoxine.  ',
             'user_id'=>43,
             'validated'=>1
             ] );
@@ -6437,7 +6437,7 @@ Target::create( [
             'name'=>'Etude clinique (Son de blé + Digoxine)',
             'long_name'=>'Etude clinique sur 16 volontaires sains (Son de blé + Digoxine)',
             'target_type_id'=>4,
-            'notes'=>'Étude clinique sur 16 volontaires sains consommant 11 g de Son de blé avec 0,4 mg de Digoxine 2fois/j a diminué l\'ASC de la Digoxine d\'environ 7 % mais n\'a pas modifié les valeurs de la Cmax, ni Tmax. \r\nRésultats suggèrent que cette réduction ne serait pas cliniquement importante.\r\n\r\nRésultats similaires trouvés  dans étude randomisée sur 16 patients gériatriques prenant Digoxine + Fibres de Son de blé pendant 4 semaines.\r\nL\'addition de Son de blé réduit les concentrations plasmatiques de Digoxine (à 2 semaines, mais pas à 4 semaines), bien que les concentrations restent dans la zone thérapeutique. \r\nRésultats ne suggèrent aucune influence cliniquement significative sur les concentrations thérapeutiques de Digoxine chez ces patients.\r\n\r\nLe son de blé est riche en fibres. \r\nLa fibre peut théoriquement diminuer l\'absorption et  l\'efficacité de la Digoxine\r\n',
+            'notes'=>'Étude clinique sur 16 volontaires sains consommant 11 g de Son de blé avec 0,4 mg de Digoxine 2fois/j a diminué l\'ASC de la Digoxine d\'environ 7 % mais n\'a pas modifié les valeurs de la Cmax, ni Tmax.   Résultats suggèrent que cette réduction ne serait pas cliniquement importante.    Résultats similaires trouvés  dans étude randomisée sur 16 patients gériatriques prenant Digoxine + Fibres de Son de blé pendant 4 semaines.  L\'addition de Son de blé réduit les concentrations plasmatiques de Digoxine (à 2 semaines, mais pas à 4 semaines), bien que les concentrations restent dans la zone thérapeutique.   Résultats ne suggèrent aucune influence cliniquement significative sur les concentrations thérapeutiques de Digoxine chez ces patients.    Le son de blé est riche en fibres.   La fibre peut théoriquement diminuer l\'absorption et  l\'efficacité de la Digoxine  ',
             'user_id'=>43,
             'validated'=>1
             ] );
@@ -6473,7 +6473,7 @@ Target::create( [
             'name'=>'Case report (Canneberge + Warfarine)',
             'long_name'=>'Case report (Canneberge + Warfarine)',
             'target_type_id'=>1,
-            'notes'=>'Aux États-Unis, un cas de saignements majeurs et d\'INR élevée a été rapporté chez un homme, prenant des doses stables de Warfarine, peu après le début de la consommation de Canneberge (710 ml/jour de Jus). \r\nPar ailleurs, un cas d\'hémorragie interne fatale a été rapporté chez un patient de sexe masculin âgé de 70 ans  traité par Warfarine, Phénytoïne, Digoxine (traitement habituel) et Céphalexine (Antibiotique pour traitement de son infection pulmonaire) dont l\'INR avait augmenté (INR>50)  6 semaines après avoir commencé à consommer du jus de Canneberge. Il faut noter que le patient n\'a pratiquement rien manger pendant au moins 2 semaines, un facteur ayant pu contribuer à l\'augmentation de l\'anticoagulation.\r\n',
+            'notes'=>'Aux États-Unis, un cas de saignements majeurs et d\'INR élevée a été rapporté chez un homme, prenant des doses stables de Warfarine, peu après le début de la consommation de Canneberge (710 ml/jour de Jus).   Par ailleurs, un cas d\'hémorragie interne fatale a été rapporté chez un patient de sexe masculin âgé de 70 ans  traité par Warfarine, Phénytoïne, Digoxine (traitement habituel) et Céphalexine (Antibiotique pour traitement de son infection pulmonaire) dont l\'INR avait augmenté (INR>50)  6 semaines après avoir commencé à consommer du jus de Canneberge. Il faut noter que le patient n\'a pratiquement rien manger pendant au moins 2 semaines, un facteur ayant pu contribuer à l\'augmentation de l\'anticoagulation.  ',
             'user_id'=>43,
             'validated'=>1
             ] );
@@ -6521,7 +6521,7 @@ Target::create( [
             'name'=>'Etude clinique (Safran + Donépézil)',
             'long_name'=>'Etude clinique (Safran + Donépézil)',
             'target_type_id'=>4,
-            'notes'=>'Étude clinique en double aveugle sur 54 adultes atteints de la maladie d\'Alzheimer d\'intensité légère à modérée, recevant pendant 22 semaines soit une capsule de Safran 30 mg/j (15 mg 2 fois/j) soit Donépézil 10 mg/j (5 mg 2 fois/j), l\'extrait de Safran était aussi efficace que le Donépézil.\r\nDans étude in vitro : la trans-crocine-4, l\'ester oligentibiosyl de crocétine et le diméthylcrocétine ont montré leur pouvoir à inhiber la fibrillogénèse responsable de la maladie d\'Alzheimer.\r\n\r\nCes preuves suggèrent que le Safran a un effet positif sur la fonction cognitive et donc à améliorer la gestion de la PEC de la maladie d\'Alzheimer.\r\n',
+            'notes'=>'Étude clinique en double aveugle sur 54 adultes atteints de la maladie d\'Alzheimer d\'intensité légère à modérée, recevant pendant 22 semaines soit une capsule de Safran 30 mg/j (15 mg 2 fois/j) soit Donépézil 10 mg/j (5 mg 2 fois/j), l\'extrait de Safran était aussi efficace que le Donépézil.  Dans étude in vitro : la trans-crocine-4, l\'ester oligentibiosyl de crocétine et le diméthylcrocétine ont montré leur pouvoir à inhiber la fibrillogénèse responsable de la maladie d\'Alzheimer.    Ces preuves suggèrent que le Safran a un effet positif sur la fonction cognitive et donc à améliorer la gestion de la PEC de la maladie d\'Alzheimer.  ',
             'user_id'=>43,
             'validated'=>1
             ] );
@@ -6533,7 +6533,7 @@ Target::create( [
             'name'=>'Case report (Petit-houx + Metformine)',
             'long_name'=>'Case report (Petit-houx + Metformine)',
             'target_type_id'=>1,
-            'notes'=>'Un cas d\'acidocétose chez une femme diabétique de 39 ans traitée par Metformine et ayant un mauvais contrôle de la glycémie, a été rapporté. \r\nL\'acidocétose diabétique s\'est produite 5 jours après le début d\'une supplémentation par Ruscus aculeatus indiqué pour gonflement des chevilles. \r\nSon acidocétose diabétique a été compliquée par une hyperkaliémie et une acidose avec un pH de 7,02. \r\nAprès PEC par voie IV avec Insuline et Gluconate de calcium, son état s\'est stabilisé et elle a été renvoyée chez elle quelques jours plus tard.\r\n',
+            'notes'=>'Un cas d\'acidocétose chez une femme diabétique de 39 ans traitée par Metformine et ayant un mauvais contrôle de la glycémie, a été rapporté.   L\'acidocétose diabétique s\'est produite 5 jours après le début d\'une supplémentation par Ruscus aculeatus indiqué pour gonflement des chevilles.   Son acidocétose diabétique a été compliquée par une hyperkaliémie et une acidose avec un pH de 7,02.   Après PEC par voie IV avec Insuline et Gluconate de calcium, son état s\'est stabilisé et elle a été renvoyée chez elle quelques jours plus tard.  ',
             'user_id'=>43,
             'validated'=>1
             ] );
@@ -6701,7 +6701,7 @@ Target::create( [
             'name'=>'Etude sur modèle animal (Houblon + Paracétamol)',
             'long_name'=>'Etude sur modèle animal (Houblon + Paracétamol)',
             'target_type_id'=>6,
-            'notes'=>'Les souris ont reçu 0,5 % de solution aqueuse d\'extrait alcoolique de Houblon ou une solution physiologique (10 ml/kg) (souris témoins) pendant 5 jours et le 5ème jour une dose unique de Paracétamol (500mg/kg). \r\nRésultats montrent que des extraits de Houblon peuvent ralentir le métabolisme et l\'élimination du Paracétamol, prolongeant ainsi ses effets analgésiques. \r\n',
+            'notes'=>'Les souris ont reçu 0,5 % de solution aqueuse d\'extrait alcoolique de Houblon ou une solution physiologique (10 ml/kg) (souris témoins) pendant 5 jours et le 5ème jour une dose unique de Paracétamol (500mg/kg).   Résultats montrent que des extraits de Houblon peuvent ralentir le métabolisme et l\'élimination du Paracétamol, prolongeant ainsi ses effets analgésiques.   ',
             'user_id'=>43,
             'validated'=>1
             ] );
@@ -6713,7 +6713,7 @@ Target::create( [
             'name'=>'Etude sur souris (Houblon + Diazepam)',
             'long_name'=>'Etude sur souris (Houblon + Diazepam)',
             'target_type_id'=>6,
-            'notes'=>'Les souris ont reçu 3 mg/kg de Diazépam après avoir reçu 4 doses intra-péritonéales de 0,5 % de solution aqueuse d\'extrait alcoolique de Houblon.\r\nL\'étude a constaté que les extraits de Houblon supprimaient les effets du Diazépam\r\n',
+            'notes'=>'Les souris ont reçu 3 mg/kg de Diazépam après avoir reçu 4 doses intra-péritonéales de 0,5 % de solution aqueuse d\'extrait alcoolique de Houblon.  L\'étude a constaté que les extraits de Houblon supprimaient les effets du Diazépam  ',
             'user_id'=>43,
             'validated'=>1
             ] );
@@ -6725,7 +6725,7 @@ Target::create( [
             'name'=>'Etude sur souris (Houblon + Phénobarbital)',
             'long_name'=>'Etude sur souris (Houblon + Phénobarbital)',
             'target_type_id'=>6,
-            'notes'=>'Les souris ont reçu 40 mg/kg de Phénobarbital après avoir reçu 4 doses intra-péritonéales de 0,5 % de solution aqueuse d\'extrait alcoolique de Houblon.\r\nL\'étude a constaté que les extraits de Houblon supprimaient les effets hypnotiques du Phénobarbital.\r\n',
+            'notes'=>'Les souris ont reçu 40 mg/kg de Phénobarbital après avoir reçu 4 doses intra-péritonéales de 0,5 % de solution aqueuse d\'extrait alcoolique de Houblon.  L\'étude a constaté que les extraits de Houblon supprimaient les effets hypnotiques du Phénobarbital.  ',
             'user_id'=>43,
             'validated'=>1
             ] );

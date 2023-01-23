@@ -2,7 +2,9 @@
 
 use App\Herb;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ReportBugController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -49,6 +51,10 @@ Route::get('/test', function () {
 Route::get('/master', function () {
   return view("layouts/master_dashboard");
 });
+
+// dteu 
+Route::post('/reportbug', 'ReportBugController@store')->name('reportbug.send'); 
+//end dteu 
 
 //Yousef for the filter searching
 
@@ -414,8 +420,8 @@ Route::get('herb-list', 'HerbController@herbsList');
 //this guy is about one to one search ...
 Route::get('oneHerb-oneDrug/results', 'TargetController@oneToOne');
 
-
-
+// checkMail.js
+Route::post('mailCheck-Up/results', 'Auth\RegisterController@verifyMail');
 
 //UserPorofile
 Route::prefix('utilisateur')->middleware('user')->group(function () {
@@ -457,4 +463,10 @@ Route::prefix('utilisateur')->middleware('user')->group(function () {
     Route::get('donnees', 'UserProfileController@data')->name('userprofile.data');
     Route::name('userprofile.destroy')->get('herb/{herb}', 'UserProfileController@delete');
   });
+
+  
 });
+Route::get('/reference/autoCreate', 'AutoCreateController@index');
+Route::post('/reference/autoCreate', 'AutoCreateController@store');
+Route::post('/reference/autoCreate/deleteItem', 'AutoCreateController@deleteItem');
+

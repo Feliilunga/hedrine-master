@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Hedrine | ULB</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('/adminlte/plugins/fontawesome-free/css/all.min.css') }}">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>Hedrine | ULB</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="{{ asset('/adminlte/plugins/fontawesome-free/css/all.min.css') }}">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
 
@@ -181,13 +182,13 @@
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('admin.hinteractiontarget') }}" class="dropdown-item">
                             <i class="fas fa-sync mr-1" style="color: seagreen"></i> {{$noValidHinteractions->count()}}
-                            new Hinteraction Target
+                            new HT interaction
 
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('admin.dinteractiontarget') }}" class="dropdown-item">
                             <i class="fas fa-sync  mr-1" style="color:red"></i> {{$noValidDinteractions->count()}}
-                            new Dinteraction Target
+                            new DT Interaction
                         </a>
                         
                         <div class="dropdown-divider"></div>
@@ -296,7 +297,8 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
-                        <li class="nav-item has-treeview">
+                        <li class="nav-item has-treeview {{ (request()->is('hinteractions/*')) ? 'menu-open' : ''}} ">
+                            
                             <a href="#" class="nav-link active" style="background-color: #3a64a5">
                                 <i class="nav-icon fas fa-search-plus"></i>
                                 <p>
@@ -307,19 +309,19 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{ route('hinteractions.hdi')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        {!! (request()->routeIs('hinteractions.hdi')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Plantes <span><i class="fas fa-arrows-alt-h fa-lg"></i></span> DCI</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('hinteractions.hti')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        {!! (request()->routeIs('hinteractions.hti')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Plantes <span><i class="fas fa-arrows-alt-h fa-lg"></i></span> Mécanismes</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item has-treeview">
+                        <li class="nav-item has-treeview {{ ( (request()->is('herb')|| (request()->is('target')) || (request()->is('drug')) )) ? 'menu-open' : '' }} ">
                             <a href="#" class="nav-link " style="background-color: #3a64a5; color: white">
                                 <i class="nav-icon fas fa-compress-arrows-alt"></i>
                                 <p>
@@ -330,26 +332,26 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{ route('herbs.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        {!! (request()->routeIs('herbs.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Plantes</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('drugs.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        {!! (request()->routeIs('drugs.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>DCI</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('targets.index') }}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        {!! (request()->routeIs('targets.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Cas Rapporté et Mécanisme</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         @if ((auth()->user()->role_id == 1 )||(auth()->user()->role_id == 2) ||(auth()->user()->role_id == 3 ))
-                        <li class="nav-item has-treeview">
+                        <li class="nav-item has-treeview {{ (request()->is('admin/new_herb_target') || (request()->is('admin/new_drug_target') || (request()->is('admin/drug')) || (request()->is('admin/herb')) || (request()->is('admin/target')) || (request()->is('admin/reference')) || (request()->is('admin/dinteraction')) || (request()->is('admin/hinteraction/all')))) ? 'menu-open' : '' }}">
                             <a href="#" class="nav-link" style="background-color:#3a64a5; color: white">
                                 <i class="fas fa-database nav-icon"></i>
                                 <p>
@@ -360,49 +362,49 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{route('newHerbTarget')}}" class="nav-link text-dark">
-                                        <p> <i class="fas fa-seedling mr-2 text-dark"></i> New Hinteraction Target</p>
+                                        <p> <i class="fas fa-seedling mr-2 text-dark"></i> New HT Interaction</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('newDrugTarget')}}" class="nav-link text-dark">
-                                        <p> <i class="fas fa-capsules mr-2 text-dark"></i> New Dinteraction Target</p>
+                                        <p> <i class="fas fa-capsules mr-2 text-dark"></i> New DT Interaction</p>
                                     </a>
                                 </li>
                             </ul>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{route('drug.index')}}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        {!! (request()->routeIs('drug.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Drugs</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('herb.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        {!! (request()->routeIs('herb.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Herbs</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('target.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        {!! (request()->routeIs('target.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Targets</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('reference.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
+                                    <a href="{{ route('reference.index') }}"  class="nav-link">
+                                        {!! (request()->routeIs('reference.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Références</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('dinteraction.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        {!! (request()->routeIs('dinteraction.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Interaction Drugs</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('hinteraction.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        {!! (request()->routeIs('hinteraction.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Interaction Plantes</p>
                                     </a>
                                 </li>
@@ -410,7 +412,7 @@
                         </li>
                         @endif
                         @if (auth()->user()->role_id == 1)
-                        <li class="nav-item has-treeview">
+                        <li class="nav-item has-treeview {{ (request()->is('admin/post') || (request()->is('admin/effect')) || (request()->is('admin/herb_form')) || (request()->is('admin/force')) || (request()->is('admin/role')) || (request()->is('admin/target_type')) || (request()->is('admin/user')) || (request()->is('admin/pending_user')) || (request()->is('admin/user')) || (request()->is('admin/pending_user'))) ? 'menu-open' :  '' }}">
                             <a href="#" class="nav-link" style="background-color:#3a64a5; color: white">
                                 <i class="fas fa-unlock-alt nav-icon"></i>
                                 <p>
@@ -428,7 +430,7 @@
                                 <hr>
                                 <li class="nav-item">
                                     <a href="{{ route('effect.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        {!! (request()->routeIs('effect.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Actions</p>
                                     </a>
                                 </li>
@@ -440,37 +442,37 @@
                                 </li> -->
                                 <li class="nav-item">
                                     <a href="{{route('herb_form.index')}}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        {!! (request()->routeIs('herb_form.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Herbs Forms</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('force.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        {!! (request()->routeIs('force.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Forces</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('role.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        {!! (request()->routeIs('role.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Roles</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('target_type.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        {!! (request()->routeIs('target_type.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Target Types</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('user.index') }}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        {!! (request()->routeIs('user.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Users</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('pending_user.index')}}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        {!! (request()->routeIs('pending_user.index')) ? '<i class="far fa-dot-circle nav-icon"></i>' : '<i class="far fa-circle nav-icon"></i>' !!}
                                         <p>Pending Users</p>
                                     </a>
                                 </li>
@@ -498,6 +500,13 @@
                             </ul>
                         </li>
                         @endif
+                        {{-- dteu --}}
+                        <li class="nav-item">
+                            <a href="#" id="abugmodal" class="nav-link text-center text-warning" data-toggle="modal" data-target="#bugmodal">
+                                <i class="fas fa-exclamation-triangle"></i> 
+                                Reporter un bug
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -542,6 +551,68 @@
         </aside>
         <!-- /.control-sidebar -->
     </div>
+
+
+    {{-- dteu modal Report BUG  --}}
+<!-- Modal -->
+    <div class="modal fade" id="bugmodal" tabindex="-1" role="dialog" aria-labelledby="bugModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bugModalLabel">Hedrine :: Reporter un BUG</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+            <div class="modal-body">
+                <p>Un Bug? Merci de nous le faire savoir. </p>
+                <form action="#" method="POST">
+                    @csrf
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="route">Chemin:</label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" name="route" value="{{ (request()->path()) }}" class="w-100" maxlength="255" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12"><label for="email">Votre e-mail:</label></div>
+                            <div class="col-12"><input type="text" name="email" value="{{ Auth::user()->email }}" disabled class="w-100"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="subject">Sujet:</label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" name="subject" class="w-100" maxlength="255" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="desc">Description:</label>
+                            </div>
+                            <div class="col-12">
+                                <textarea name="desc" rows="15" class="w-100"></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-12 text-center" id="response"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="btnreportbug">>> Reporter le BUG</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    {{-- end dteu  --}}
+
     <!-- ./wrapper -->
     <!-- jQuery -->
     <script src="{{ asset('/adminlte/plugins/jquery/jquery.min.js') }}"></script>
@@ -604,6 +675,13 @@
     <script src="{{ asset('/js/hinteraction_targetEdit.js') }}" type="text/javascript"></script>
     <script src="{{ asset('/js/referenceEdit.js') }}" type="text/javascript"></script>
     <script src="{{ asset('/js/advancedSearchMechanism.js') }}" type="text/javascript"></script>
+
+    {{-- pour le menu active link etc --}}
+    <script src="{{asset('/js/change_link_active.js')}}" type="text/javascript"></script>
+
+    {{-- dteu reportbug Ajax script --}}
+
+    <script src="{{asset('/js/reportbug.js')}}" type="text/javascript"></script>
 
     {{-- <script src="{{ asset('/js/herbJson.js') }}" type="text/javascript"></script> --}}
     {{-- DD/Thierry 30 juin on met ce code pour appeler le script js se trouvant dans index.blade.php ==> resources/views/interaction/index.blade.php

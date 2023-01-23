@@ -193,7 +193,7 @@ class DrugController extends Controller
     {
 
         if ($request->ajax()) {
-            $query = Drug::with('atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1', 'routesDrugs.routes', 'user')->select('drugs.*');
+            $query = Drug::with('atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1', 'routesDrugs.routes', 'user')->select('drugs.*')->where('validated','1');
 
             return DataTables::eloquent($query)->toJson();
         }
@@ -235,7 +235,14 @@ class DrugController extends Controller
        
         $actTable=$drug->atcLevel4sDrugs;
         //dd($test);
-        
+
+        // dteu s'il y a une valeur dans validated, on la place (soit 1 soit 0) - sinon, 0. 
+        if($request->validated != null){
+            $drug->validated = $request->validated;
+        }else{
+            $drug->validated = 0;
+        }
+
         if (Auth::user()->role_id > 2) {
             $fields = $drug->getDirty();
 

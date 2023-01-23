@@ -49,7 +49,7 @@
                                         <br><span style="color: green"> votre mail est acitvé et accepté via l'adminstrateur.</span>
                                     </b>
                                     <br>
-                                    <strong style="color: black">Vous pourriez vous Connecter <a href="{{url('/login')}}" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: green; font-weight: bold; text-decoration: none; display: inline-block;"> en cliquant ici!</a></strong>
+                                    <strong style="color: black">Cliquez ici pour vous <a href="{{url('/login')}}" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; position: relative; color: green; font-weight: bold; text-decoration: none; display: inline-block;"> connecter</a></strong>
                                     <hr>
                                     <br>
                                     <strong>Cordialement!</strong>

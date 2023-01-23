@@ -112,19 +112,25 @@ class DinteractionController extends Controller
                 $dinteraction->target_id = $request->target;
                 $dinteraction->force_id = $request->force;
                 $dinteraction->notes = $request->note;
-                if (Auth::user()->role_id == 1) {
-                    $dinteraction->validated = 1;
+                //dteu $message: comme nous avons plusieurs IFs imbriqués, le message sera conditionnel 
+                //(Afin que les admins ou publish soient au courant que le target n'est pas validé). (Avec un message pas défaut); 
+                $message = 'Votre Dinteraction a été ajoutée avec succès !';
+                if($request->validated != null){
+                    if($request->validated == 1){
+                        $dinteraction->validated = 1;
+                    }
+                }else{
+                    $dinteraction->validated = 0;
+                    $message = $message . "Votre Dinteraction doit être validée.";
                 }
+
                 $dinteraction->save();
 
                 $dinteraction->effects()->sync($effects, false);
                 $dinteraction->references()->sync($references, false);
-                if (Auth::user()->role_id == 1) {
-                    Alert::success('Ok,', 'Votre Dinteraction a été ajoutée avec succès !');
-                } else {
-                    Alert::success('Ok,', 'Votre Dinteraction doit être validée par un admin');
-                }
 
+                Alert::success('Ok,', $message);
+                
                 return redirect()->route('dinteraction.index');
             
         

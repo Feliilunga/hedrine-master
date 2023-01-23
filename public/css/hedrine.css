@@ -1,7 +1,4 @@
-.awesome-font, label
-{
 
-}
 
 a.add_style {
 
@@ -126,9 +123,6 @@ a.style_a {
     margin-left: 5px;
 }
 
-#register .m-footer
-{
-}
 
 
 #register .scroll
@@ -166,11 +160,120 @@ a.style_a {
 
 /* dawiteu */
 
-.bginfo{
-    width:100%; 
-    background-color:rgb(243, 243, 243); 
-    border-radius:10px;
-}
+    .bginfo{
+        width:100%; 
+        background-color:rgb(243, 243, 243); 
+        border-radius:10px;
+    }
+    #colinteracttable{
+        display:none;
+    }
+
+    .underline{
+        text-decoration: underline;
+    }
+    /* Hinteraction - index // tj dawiteu */
+
+    @media (max-width: 767.98px) { 
+        .w-md-25{
+            width:100%;
+            text-align: center;
+        }
+    }
+    @media (min-width: 767.98px) { 
+        .w-md-25{
+            width:25%;
+        }
+    }
+
+    .color-lgblue{
+        color: #3a64a5;
+    }
+
+    .interactiontable tbody{
+        margin-top:10px;
+    }
+    .interactiontable th{
+        color:#2d2d2d; 
+    }
+    .interactiontable td{
+        color:white;
+        text-shadow:0px 1px 3px black;
+    }
+    .shadow-none{
+        text-shadow:none!important; 
+    }
+    .interactiontable td, .interactiontable th, .interactiontable tbody{
+        border:none!important;
+    }
+    /* .interactiontable td:hover{
+        text-shadow:0px 1px 5px orange; 
+    } */
+    .bg-redd{ /* le bg-red est deja occupe, un red plus clair. */
+        background-color: red;
+    }
+    .bg-orange{
+        background-color: orange;
+    }
+    .bg-yellow{
+        background-color: yellow;
+    }
+    .bg-greenn{/* le bg-grenn est deja occupe, un purple plus clair. */
+        background-color: green;
+    }
+    .bg-purplee{ /* le bg-red est deja occupe, un purple plus clair. */
+        background-color: purple;
+    }
+    .bg-red-opacity{
+        background-color: #FF8080;
+    }
+    .bg-orange-opacity{
+        background-color: #FEBF8A;
+    }
+    .bg-yellow-opacity{
+        background-color: #FFFF80;
+    }
+    .bg-green-opacity{
+        background-color: #80C080;
+    }
+    .bg-purple-opacity{
+        background-color: #C080C0;
+    }
 
 
+    .opacity-4{
+        opacity: 0.5;
+    }
+
+    svg{
+        overflow: visible;
+    }
+
+
+    /* End Hinteraction - index // tj dawiteu */
+
+    /*  modal 2 ( condition utilisation outline ...  */
+
+    .btnoutline-green{
+        border-bottom:1px solid green; 
+    }
+
+    .btnoutline-green:hover:not([disabled]){
+        color:white;
+        background-color: green;
+    }
+
+    .btnoutline-red{
+        border-bottom:1px solid red; 
+    }
+    .btnoutline-red:hover:not([disabled]){
+        color:white;
+        background-color: red;
+    }
+    input[disabled], button[disabled]{
+        cursor:not-allowed;
+    }
+    .input-required-red{
+        background-color: red!important;
+    }
 /* end dawiteu */

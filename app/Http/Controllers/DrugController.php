@@ -163,6 +163,9 @@ class DrugController extends Controller
     public function update(Request $request, $id)
     {
 
+        //return dd($request->validated); 
+
+
         $drug = Drug::findOrFail($id);
 
         $drug->user_id = Auth::user()->id;
@@ -174,6 +177,7 @@ class DrugController extends Controller
         if ($drug->validated == -1) {
             $drug->validated = 0;
         }
+
 
         $drug->save();
 

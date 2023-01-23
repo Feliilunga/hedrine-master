@@ -68,12 +68,24 @@ class TargetController extends Controller
         $target->notes = $request->notes;
         $target->target_type_id = $request->target_type_id;
 
-        if (Auth::user()->role_id <= 2) {
-            $target->validated = 1;
-            Alert::success('Ok !', 'Nouveau target a été validé');
-        } else {
+        if($request->validated != null){
+            if($request->validated == 1){
+                if (Auth::user()->role_id <= 2) {
+                    $target->validated = 1; 
+                    Alert::success('Ok !', 'Nouveau target a été validé');
+                }
+            }
+        }else{
+            $target->validated = 0; 
             Alert::success('Ok !', 'Nouveau target en cours de validation');
         }
+
+        // if (Auth::user()->role_id <= 2) {
+        //     $target->validated = 1;
+        //     Alert::success('Ok !', 'Nouveau target a été validé');
+        // } else {
+        //     Alert::success('Ok !', 'Nouveau target en cours de validation');
+        // }
 
         $target->save();
         //$adminusers = User::with('roles')->where('role_id', '1')->get();
@@ -121,8 +133,24 @@ class TargetController extends Controller
 
             //for Admin or publisher
             if (Auth::user()->role_id <= 2) {
+                //dteu $message: comme nous avons plusieurs IFs imbriqués, le message sera conditionnel 
+                //(Afin que les admins ou publish soient au courant que le target n'est pas validé). (Avec un message pas défaut); 
+                
+                $message = "Votre target a été mise à jour avec succès."; 
                 $target->update($request->all());
-                Alert::success('Ok !', 'Votre target a été mise à jour avec succès');
+                if($request->validated != null){
+                    if($request->validated == 1){
+                        $target->validated = 1;
+                    }else if($request->validated == 0){
+                        $target->validated = 0;
+                        $message = $message . " Il est en attente de validation par un Administrateur ou un Publisher.";
+                    }
+                }else{
+                    $target->validated = 0;
+                    $message = $message . " Il est en attente de validation par un Administrateur ou un Publisher.";
+                }
+                $target->save();
+                Alert::success('Ok !', $message);
             }
             //Editor
             else if (Auth::user()->role_id == 3) {
@@ -147,6 +175,7 @@ class TargetController extends Controller
                 }
                 Alert::success('Attention !', 'Votre target doit être validé par un admin ou un publisher avant d\'être actif.');
             }
+            //return dd($request->validated); 
             return redirect(route('target.index'));
 
         }

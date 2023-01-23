@@ -55,11 +55,20 @@ Recherche DCI
                                                         <ul class="nested">
                                                             @foreach ($atcLevel3->atc_level4s as $atcLevel4)
 
-                                                                <li><span class="caret">{{$atcLevel4->code}} - {{$atcLevel4->name}} ({{$atcLevel4->atcLevel4sDrugs->count()}}) <b><a href="{{route('drugs.details', [$atcLevel4->id, 'showAll'])}}">Détailler pour tous</a></b></span>
+                                                                <li>
+                                                                    <span class="caret">{{$atcLevel4->code}} - {{$atcLevel4->name}} ({{$atcLevel4->atcLevel4sDrugs->count()}}) 
+                                                                    {{-- <b><a href="{{route('drugs.details', [$atcLevel4->id, 'showAll'])}}">Détailler pour tous</a></b> --}}
+                                                                </span>
                                                                     <ul class="nested">
                                                                         @foreach ($atcLevel4->atcLevel4sDrugs->sortBy('code') as $drug)
 
-                                                                            <li><b><a href="{{route('drugs.details', $drug->id )}}">{{$drug->drug_code}} - {{$drug->drugs->name}}</a></b> 
+                                                                            <li>
+                                                                                <b>         {{-- dteu: 'drug' est en fait le "atc_leve4_drugs" 
+                                                                                            --> il faut aller dans la fonction drugs pour avoir le bon id/nom; --}}
+                                                                                    <a href="{{route('drugs.details', $drug->drugs->id )}}">
+                                                                                            {{$drug->drug_code}} - {{$drug->drugs->name}}
+                                                                                    </a>
+                                                                                </b> 
                                                                             </li>
                                                                         @endforeach
                                                                         

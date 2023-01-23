@@ -186,6 +186,7 @@ class HerbController extends Controller
      */
     public function update(Request $request,  $id)
     {
+        //dd($request); 
 
        $request->validate([
             'name' => 'required',
@@ -197,9 +198,14 @@ class HerbController extends Controller
         $herb->user_id = Auth::user()->id;
         $herb->name = $request->name;
         $herb->sciname = $request->sciname;
+
         if($herb->validated == -1) {
             $herb->validated = 0;
         }
+
+        // if($request->validated == 0){
+        //     $herb->validated = 0; 
+        // }
 
         $herb->save();
 

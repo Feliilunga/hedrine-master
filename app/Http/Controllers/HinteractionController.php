@@ -12,6 +12,7 @@ use App\Hinteraction;
 use App\HinteractionHasEffect;
 use App\Reference;
 use App\Target;
+use App\HerbForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -107,8 +108,9 @@ class HinteractionController extends Controller
         $effects = Effect::orderBy('name', 'asc')->get();
         $force = Force::orderBy('name', 'asc')->get();
         $references = Reference::orderBy('title')->get();
+        $formes = HerbForm::all();
 
-        return view('admin.interaction.targets.newHerbTargetForm', compact('herbs', 'targets', 'effects', 'force', 'references'));
+        return view('admin.interaction.targets.newHerbTargetForm', compact('herbs', 'targets', 'effects', 'force', 'references', 'formes'));
     }
 
     /**
@@ -123,6 +125,7 @@ class HinteractionController extends Controller
         $effects = $request->effects;
         $references = $request->references;
         $now = \Carbon\Carbon::now();
+        $formes=$request->formes;
 
         $hinteraction = new Hinteraction;
         $hinteraction->user_id = Auth::user()->id;
@@ -130,21 +133,29 @@ class HinteractionController extends Controller
         $hinteraction->target_id = $request->target;
         $hinteraction->force_id = $request->force;
         $hinteraction->notes = $request->note;
-        if (Auth::user()->role_id == 1) {
-            $hinteraction->validated = 1;
+        // if (Auth::user()->role_id == 1) {
+        //     $hinteraction->validated = 1;
+        // }
+        //dteu $message: comme nous avons plusieurs IFs imbriqués, le message sera conditionnel 
+        //(Afin que les admins ou publish soient au courant que le target n'est pas validé). (Avec un message pas défaut); 
+        $message = 'Votre Hinteraction a été ajoutée avec succès !';
+        if($request->validated != null){
+            if($request->validated == 1){
+                $hinteraction->validated = 1;
+            }
+        }else{
+            $hinteraction->validated = 0;
+            $message = $message . "Votre Hinteraction doit être validée.";
         }
+
         $hinteraction->save();
 
         $hinteraction->effects()->sync($effects, false);
         $hinteraction->references()->sync($references, false);
+        $hinteraction->herbFormz()->sync($formes, false);
 
-        if (Auth::user()->role_id == 1) {
-            Alert::success('Ok,', 'Votre Hinteraction Target a été ajoutée avec succès !');
-        }
-        else {
-            Alert::success('Ok,', 'Votre Hinteraction Target doit être validée par un admin');
-        }
-        
+
+        Alert::success('Ok,', $message);
 
         return redirect()->route('hinteraction.index');
     }

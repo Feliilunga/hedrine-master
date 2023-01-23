@@ -8,13 +8,14 @@
                     <table id="example1" class="table table-striped table-sm">
                         <thead>
                         <tr>
-                            <th> Name </th>
-                            <th> Team </th>
+                            <th> Nom et prénom </th>
+                            <th> Profession </th>
+                            <th>Lieu de travail / Entreprise</th>
                             <th> Email </th>
                             <th> Tel 1 </th>
                             <th> Tel 2 </th>
-                            <th> Email verified </th>
-                            <th> Actions</th>
+                            <th> Email vérifié </th>
+                            <th> Décisions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -25,6 +26,13 @@
                                 </td>
                                 <td>
                                     <strong>{{$user->team}}</strong>
+                                </td>
+                                <td>
+                                    @if ($user->societe)
+                                        <strong><i class="fa fa-check-circle text-success"></i> Oui</strong>  
+                                    @else
+                                        <strong><i class="fa fa-cross text-danger"></i> No</strong> 
+                                    @endif
                                 </td>
                                 <td>
                                     <strong>{{$user->email}}</strong>

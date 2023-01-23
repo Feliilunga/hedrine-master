@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use illuminate\http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -53,6 +54,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'firstname' => ['required', 'string', 'max:255'],
+            'tel1' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'g-recaptcha-response' => 'required|captcha'
@@ -67,6 +69,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+    
         return User::create([
             'name' => $data['name'],
             'firstname' => $data['firstname'],
@@ -74,7 +77,38 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'team' => $data['team'],
             'tel1' => $data['tel1'],
-            'RGPD' => $data['RGPD']
+            'RGPD' => $data['RGPD'],
+            //DD: 04/01/2023 si on ne coche pas la checkbox, la donnée n'est pas envoyée au serveur, il y a donc une erreur, d'où l'importance du isset 
+            'societe' => isset($data['societe']) ? 1 : 0 
+
         ]);
+        
+    }
+
+    protected function showRegistrationForm()
+    {
+        $users = DB::table('users')->get();
+        
+
+
+        return view("auth/register", compact('users'));
+    }
+    // Verification si il existe déjà un mail dans la DB lors de l'inscription
+    public function verifyMail(Request $request){
+        $userMail = $_POST['userMail'];
+       
+        $result = DB::table('users')->where('email', $userMail)->pluck('email');
+       
+        if (isset($result[0])) {
+            echo 1;
+            
+        }
+        else
+        {
+            echo 0;
+            // echo $result;
+        }
+
+       
     }
 }

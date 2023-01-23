@@ -7,11 +7,11 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/hedrine.css') }}">
-        <title>Page d acceuil</title>
+        <title>HEDRINE ULB</title>
         @include('cookieConsent::index')
     </head>
     <body>
-        <div class="alert alert-info">Version du 28 mars 2021 14:39</div>
+        <div class="alert alert-info">Last update :  06 janvier 2023</div>
         <div class="container-fluid" style="padding-top: 2rem;">
             <div class="row justify-content-end ">
                 <div class="col-5">
@@ -43,7 +43,7 @@
                     pharmacodynamiques ou pharmacocinétiques.
                 </h5>
                 <p>
-                    Hedrine est toujours en cours de developpement. Merci de votre patience.
+                    Hedrine est toujours en cours de développement. Merci de votre patience.
                 </p>
 
                 <div class="row">
@@ -61,9 +61,7 @@
                             Contrôles et validation
                         </h4>
                         <p>
-                            Site réalisé et maintenu par F. Souard (Maitre de Conférences en Pharmacognosie - UGA) et A.
-                            Fortuné (Ingénieur Pharmacie - UGA).
-                            Ce site est dédié à Céline Villier (Praticien Hospitalier, Centre Régional de Pharmacovigilance de Grenoble).
+                            Site créé par F. Souard et A. Fortuné. Update: F. Souard, P. Van Antwerpen, A. Cnudde et D. Dubois. Ce site est dédié à Céline Villier (Praticien Hospitalier, Centre Régional de Pharmacovigilance de Grenoble).
                         </p>
                     </article>
                 </div>
@@ -111,13 +109,13 @@
                     </div>
                     <div class="col-9 col-sm-6 col-md-6 align-middle" id="test">
                         <ul class="nav justify-content-end align-middle" id="icon">
-                            <li nav-item><img src="{{asset('images/Plant-icon_32.png')}}" alt="plantes"></li>
+                            <li nav-item><img title="Plantes" src="{{asset('images/Plant-icon_32.png')}}" alt="plantes"></li>
                             <li>{{$validatedHerb->count()}}</li>&nbsp; &nbsp;
-                            <li nav-item><img src="{{asset('images/pills-5-icon_32.png')}}" alt="drugs"></li>
+                            <li nav-item><img title="DCI" src="{{asset('images/pills-5-icon_32.png')}}" alt="drugs"></li>
                             <li>{{$drugs->count()}}</li>&nbsp; &nbsp;
-                            <li nav-item><img src="{{asset('images/Refresh-bicolor-icon_32.png')}}" alt="targets"></li>
+                            <li nav-item><img title="Intéractions" src="{{asset('images/Refresh-bicolor-icon_32.png')}}" alt="targets"></li>
                             <li>{{$targets->count()}}</li>&nbsp; &nbsp;
-                            <li nav-item><img src="{{asset('images/Document-icon_32.png')}}" alt="references"></li>
+                            <li nav-item><img title="Références" src="{{asset('images/Document-icon_32.png')}}" alt="references"></li>
                             <li>{{$references->count()}}</li>
                         </ul>
                     </div>

@@ -3,77 +3,21 @@
 <!-- @yield('content_title') créé dans la view master_dashboard.blade.php-->
 
 @section('content_dashboard')
-	<div class="row">
-		<div class="col-md-1">
+    <div class="container">
+        <div class="row">
 
+    
+
+		<div class="col-md-1">
 		</div>
        <div class="col-md-6 .offset-md-1 ">
-           <form   action="" id="myInteractionForm">
+           <form  action="" id="myInteractionForm">
             @csrf
 				<fieldset class="form-group">
 					<legend style="color: #3a64a5; font-size: 160%; font-weight: bold" >Interactions...</legend>
-                      {{-- Mohammed A.  Ajout du tableau des reference pour les couleurs --}}
-                <div class="col-md-4 ">
-                    <h3 style="color: #777;font-family: 'Gill Sans','lucida grande', helvetica, arial, sans-serif;font-size: 100%;font-weight: bold">
-                        Intensité d'interaction</h3>
-                    <div style="float:left;width:120%;" class="table-responsive-sm">
-                        <table class="table table-bordered table-hover table-sm text-center">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Etudes et cas cliniques</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                              <!-- Mohammed Chairi regle couleur plus tableau  -->
-                                <tr style="background-color: red">
-                                    <th>Forte</th>
-                                </tr>
-                                <tr style="background-color: orange">
-                                    <th>Moyenne</th>
-                                </tr>
-                                <tr style="background-color: yellow">
-                                    <th>Faible</th>
-                                </tr>
-                                <tr style="background-color: green">
-                                    <th>Aucune</th>
-                                </tr>
-                                <tr style="background-color: purple">
-                                    <th>Inconnue</th>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div style="margin-left:120%;width:120%;" class="table-responsive-sm">
-                        <table class="table table-bordered table-hover table-sm text-center">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Interactions Potentielles</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                              <!-- Mohammed Chairi regle couleur plus tableau  -->
-                                <tr style="background-color: red;opacity : 0.4">
-                                    <th style="color:white">Forte</th>
-                                </tr>
-                                <tr style="background-color: orange;opacity : 0.4">
-                                    <th style="color:white">Moyenne</th>
-                                </tr>
-                                <tr style="background-color: yellow;opacity : 0.4">
-                                    <th style="color:white">Faible</th>
-                                </tr>
-                                <tr style="background-color: green;opacity : 0.4">
-                                    <th style="color:white">Aucune</th>
-                                </tr>
-                                <tr style="background-color: purple;opacity : 0.4">
-                                    <th style="color:white">Inconnue</th>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                    {{-- Mohammed A.  Ajout du tableau des reference pour les couleurs --}}
                     <div class="alert alert-light alert-dismissible fade show text-danger">
                         <strong><i class="fas fa-asterisk text-danger" id="required-msg"></i></strong> Champs obligatoires!
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
                     </div>
                     <hr>
                     <br>
@@ -120,59 +64,70 @@
         <input type="hidden" id="herb-id">
         <input type="hidden" id="mechanism-id">
     </div>
-	<div class="row" id="mechanism-results">
-          <div class="col-md-10">
-                <hr>
-                <div class="row" id="cas-etudes" >
-                    <div class="col-md-12">
-                        <h3 style="color: #3a64a5"> Etudes et cas cliniques</h3>
-                        <!-- <p class="text-danger">
-                            Aucune étude ni cas référencé
-                        </p> -->
-                        <table class="table">
-                            <thead>
-                            </thead>
-                            <tbody>
+    <div class="container">
+        <div id="gif" style="display: none;"><img src="{{asset('images/ajax-loader.gif') }}" style="display: block; margin: 0 auto; width: 80px;"></div>
+    
+        <div class="row" id="mechanism-results">
 
-                            </tbody>
-                        </table>
-                   </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12" id="non">
-                        <h3 style="color: #3a64a5"> Interactions Potentielles</h3>
-                        <div id="result">
-                            <p class="text-danger d-none">
-                                Aucune interaction référencée
-                            </p>
-                            <table id="result-table" class="table">
+            <div class="col-12 my-5 py-5" id="colinteracttable">
+                <h3 class="text-center text-secondary h6">Intensité d'interaction</h3>
+                {{-- composant avec le tableau d'interaction (blade) au lieu de modifier 36 fichiers, ils reprendront tous le même fichier --}}
+                @include('components.interactiontable')
+            </div>
+
+            <div class="col-md-10">
+                    <hr>
+                    <div class="row" id="cas-etudes" >
+                        <div class="col-md-12">
+                            <h3 style="color: #3a64a5"> Etudes et cas cliniques</h3>
+                            <!-- <p class="text-danger">
+                                Aucune étude ni cas référencé
+                            </p> -->
+                            <table class="table">
                                 <thead>
-                                <tr>
-                                    <!-- <th class="herb-name"></th> -->
-                                    <th>Plante</th>
-                                    <th>Intensité</th>
-                                    <th class="target">Mécanisme</th>
-                                    <th class="effet">effet(s)</th>
-                                    <th>Notes</th>
-                                    <!-- <th class="mechanism-name"></th> -->
-                                    <th>Intensité DCI</th>
-                                </tr>
-                                <!-- <tr>
-                                    <th>Effets</th>
-                                    <th></th>
-                                    <th></th>
-                                    <th>Effets</th>
-                                    <th></th>
-                                </tr> -->
                                 </thead>
                                 <tbody>
 
                                 </tbody>
                             </table>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" id="non">
+                            <h3 style="color: #3a64a5"> Interactions Potentielles</h3>
+                            <div id="result">
+                                <p class="text-danger d-none">
+                                    Aucune interaction référencée
+                                </p>
+                                <table id="result-table" class="table">
+                                    <thead>
+                                    <tr>
+                                        <!-- <th class="herb-name"></th> -->
+                                        <th>Plante</th>
+                                        <th>Intensité</th>
+                                        <th class="target">Mécanisme</th>
+                                        <th class="effet">effet(s)</th>
+                                        <th>Notes</th>
+                                        <!-- <th class="mechanism-name"></th> -->
+                                        <th>Intensité DCI</th>
+                                    </tr>
+                                    <!-- <tr>
+                                        <th>Effets</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th>Effets</th>
+                                        <th></th>
+                                    </tr> -->
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
-          </div>
+            </div>
+        </div>
     </div>
 @endsection
 

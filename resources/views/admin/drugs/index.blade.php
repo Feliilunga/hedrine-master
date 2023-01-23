@@ -42,6 +42,7 @@
                 data: function(data) {
                     data.params = {
                         sac: "helo"
+                        
                     }
                 }
             },
@@ -64,7 +65,7 @@
             searching: true,
             scrollCollapse: true,
             columns: [
-
+                
                 {
                     data: "name",
                     name: 'name',
@@ -73,70 +74,86 @@
                         
                     }
                     
+                    
                 },
                 {
-                    data: "atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1.name",
-                    name: 'atcLevel4sDrugs.atc_level4.atc_level3.atc_level2.atc_level1.name',
-                    //defaultContent: ""
-                    
+                    data: "atc_level4s_drugs[0].atc_level4.atc_level3.atc_level2.atc_level1.name",
+                    name:  "atc_level4s_drugs[0].atc_level4.atc_level3.atc_level2.atc_level1.name",
+                    defaultContent: "",
                     render: function(data, type, row) {
+                        return data = data.replaceAll('0', ' - ');
                         
-                         
-                        var fami;
-                        var fami3;
-                        var fam = row.atc_level4s_drugs;
+                    }                    
+                    // render: function(data, type, row) {
+                        
+                    //     // console.log(data);
+                    //     var fami;
+                    //     var fami3;
+                    //     var fam = row.atc_level4s_drugs;
                        
                         
-                        console.log(fam);
+                    //    console.log(data);
                         
-                        if(fam){
-                            // console.log('test');
-                            for(let i=0; i<fam.length; i++){
+                    //     if(fam){
+                    //         // console.log('test');
+                    //         for(let i=0; i<fam.length; i++){
                                 
-                                    var fami = fam[i].atc_level4;
-                                    //console.log(fami);
-                                    if(fami){
-                                        var fami1 = fami.atc_level3;
-                                        if(fami1){    
-                                            var fami2 = fami1.atc_level2;
-                                            if(fami2){
-                                                var fami3 = fami2.atc_level1;
-                                                //console.log(fami3);
-                                                //console.log(fami);
-                                                    // for(let j=0; j<fami.length; j++){
-                                                if(fami3.name){
-                                                    return  fami3.name;
-                                                    // console.log(fami3);
+                    //                 var fami = fam[i].atc_level4;
+                    //                 //console.log(fami);
+                    //                 if(fami){
+                    //                     var fami1 = fami.atc_level3;
+                    //                     if(fami1){    
+                    //                         var fami2 = fami1.atc_level2;
+                    //                         if(fami2){
+                    //                             var fami3 = fami2.atc_level1;
+                    //                             //console.log(fami3);
+                    //                             //console.log(fami);
+                    //                                 // for(let j=0; j<fami.length; j++){
+                    //                             if(fami3.name){
+                    //                                 return  fami3.name;
+                    //                                 // console.log(fami3);
                      
-                                                }
-                                            }    
-                                        }    
-                                    }
+                    //                             }
+                    //                         }    
+                    //                     }    
+                    //                 }
                                 
                                 
                                 
                                    
-                            }
-                        }    
-                        //console.log(fami3);
+                    //         }
+                    //     }    
+                    //     //console.log(fami3);
                      
-                    } 
+                    // } 
                 },
                 {
-                    data: "code",
+                    data: "atc_level4s_drugs[0].drug_code",
                     name: 'code',
-                    //defaultContent: ""
+                    defaultContent: "",
                     render: function(data, type, row) {
-                        var atc = row.atc_level4s_drugs;
-                        //console.log(atc);
-                        if(atc){
-                            for(let i=0; i<atc.length; i++){
-                                return atc[i].drug_code;
-                                //console.log('test');
-                            }
-                        }
+                        
+                        let resp = data.match(/(.{1,8})/g);
+                        let result = "";
+                        console.log(resp); 
+                        if(resp != null){
+                            resp.forEach((e,i) => {
+                                // dteu 24/08/2021 : modif du 30/06 ( - entre les codes ATC pour les DCI)
+                                if(e.length > 7){
+                                    e = e.substring(0, 7);
+                                }
 
-                    }
+                                if(i != resp.length -1){
+                                    result += e + " - ";
+                                }else{
+                                    result += e;
+                                }
+                                
+                            });
+                        }
+                        return result;                   
+                    }  
+                    
 
                 },
                 {

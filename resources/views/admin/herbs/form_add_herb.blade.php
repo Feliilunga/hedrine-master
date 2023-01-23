@@ -68,9 +68,15 @@
 									</div>
 									{{-- si on est admin ou publisher --}}
                                     @if(\Illuminate\Support\Facades\Auth::user()->role_id <=2)
-                                        <div class="form-group form-check form-check-inline">
-                                            <label for="validated"> <input type="checkbox" class="form-check-input" name="validated" value="1" checked> Valider</label>
-                                        </div>
+										@if(Route::currentRouteName() === 'herb.create')
+                                        	<div class="form-group form-check form-check-inline">
+                                            	<label for="validated"> <input type="checkbox" class="form-check-input" name="validated" value="1" checked> Valider</label>
+                                        	</div>
+										@else 
+											<div class="form-group form-check form-check-inline">
+												<label for="validated"> <input type="checkbox" class="form-check-input" name="validated" value="{{ $herb->validated == 1 ? 1 : 0 }}" {{ $herb->validated == 1 ? 'checked' : '' }}> Valider</label>
+											</div>
+										@endif
                                     @endif
 								</div>
 								<!-- /.card-body -->

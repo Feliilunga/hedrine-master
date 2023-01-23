@@ -77,7 +77,13 @@ class DinteractionController extends Controller
         $drug->name = $request->name;
         $drug->drug_families_id = $request->drug_families_id;
         $drug->route_id = $request->route_id;
-        $request->validated ? $drug->validated = 1 : $drug->validated = 0;
+        if($request->validated != null){
+            if($request->validated == 1){
+                $drug->validated = 1;
+            }
+        }else{
+            $drug->validated = 0;
+        }
         $drug->atc_level_4s_id = $request->atc_level_4s_id;
 
         $drug->save();
@@ -121,7 +127,7 @@ class DinteractionController extends Controller
         ->select('route_drugs.*', 'drugs.name')
         ->orderBy('drugs.name')-> get();
         
-        // dd($dinteractions);
+        //dd($dinteractions);
         return view('admin.dinteractions.form_add_dinteraction', ['dinteraction' => $dinteraction], compact('dinteractions', 'effects', 'forces', 'references', 'routesDrugs'));
     }
 
@@ -214,7 +220,20 @@ class DinteractionController extends Controller
                     }
                 }
             }
-            Alert::success('Ok !', 'Votre Interaction Drug a été mise à jour avec succès');
+
+            //dteu validated ? 
+            $message = "Votre Interaction Drug a été mise à jour avec succès.";
+            if($request->validated != null){
+                if($request->validated == 1){
+                    $dinteraction2->validated = 1;
+                }
+            }else{
+                $dinteraction2->validated = 0; 
+                $message = $message . " Votre Interaction Drug doit être validé par un admin ou un publisher.";
+            }
+            $dinteraction2->save(); 
+
+            Alert::success('Ok !', $message);
         }
             //Editor
             else if (Auth::user()->role_id == 3) {

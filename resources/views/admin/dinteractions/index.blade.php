@@ -29,7 +29,7 @@
 					
 					<td>{{$dinteraction->routesDrugs->drugs->name}} ({{$dinteraction->routesDrugs->routes->name}})</td>
 					<td>{{optional($dinteraction->targets)->name }}</td>
-					<td>{{$dinteraction->notes }}</td>
+					<td>{{ nl2br($dinteraction->notes) }}</td>
 					<td>{{optional($dinteraction->user)->name }}</td>
 					<td style="width: 10rem">
 						<div class="btn-group float-right">&nbsp; &nbsp; &nbsp;

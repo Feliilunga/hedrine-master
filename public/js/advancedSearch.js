@@ -2,7 +2,7 @@
 $(document).ready(function () {
 
 
-
+    // var $loading = $('#gif').hide();
     $('#both-results').hide();
     $('#one-result').hide();
     $('#result .result').hide();
@@ -29,6 +29,7 @@ $(document).ready(function () {
     });
 
     $('#go-search').on('click', function () {
+        
 
         //Evenor. S getter sur les valeur des plantes et drugs
         let oneDrug1 = $('#drug_div1 #drug').val();
@@ -78,7 +79,15 @@ $(document).ready(function () {
                     'atcSelectedIds': selectedDci
                     
                 },
+                beforeSend: function(){
+                    $("#gif").show();
+                  },
+                  complete: function(){
+                    $("#gif").hide();
+                  },
                 success: function (data) {
+                    $("#colinteracttable").show(); 
+
                     console.log(data);
 
                     console.log("ICIIIIIIIIIIIIIIIIIIIIIIIII");

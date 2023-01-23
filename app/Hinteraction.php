@@ -50,4 +50,12 @@ class Hinteraction extends Model
 
     }
 
+    public function herbFormz()
+    {
+        // return $this->belongsToMany(HerbForm::class, 'hinteraction_has_herb_forms','herb_forms_id','hinteraction_id')->withTimestamps();
+        return $this->belongsToMany(HerbForm::class, 'hinteraction_has_herb_forms')->withTimestamps();
+
+    }
+
+
 }

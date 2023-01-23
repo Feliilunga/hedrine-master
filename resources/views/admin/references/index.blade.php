@@ -1,11 +1,18 @@
 @extends('dashboard.layout')
 
 @section('content_dashboard')
+
 <div class="row justify-content-end" style="padding-bottom: 0.75rem">
-	@if(Route::currentRouteName() === 'reference.index')
-		<a class="btn btn-light" href="{{ route('reference.create') }}" role="button">Créer une nouvelle référence</a>
+    @if(Route::currentRouteName() === 'reference.index')
+    <div class='d-flex justify-content-between w-100'>
+        <a class="btn btn-light" href="{{ route('reference.create') }}" role="button">Créer une nouvelle référence via un formulaire</a>
+        @if (Auth::user()->role_id==1)
+        <a class="btn btn-light" href="/reference/autoCreate" role="button">Créer une nouvelle référence via Zotero</a> 
+        @endif
 	@endif
-</div>
+	
+    </div>
+
 
 <div class="col-12">
 	<div class="card-body " style="background-color: #fff">
@@ -25,7 +32,7 @@
 				@foreach ($referencesWithRelations as $reference)
 				<tr class="text-center">
 					<td>
-						<a href="" class="add_style" ><strong class="text-dark">{{$reference->title}}</strong></a>
+						<a href="{{$reference->url}} " target="_blank" class="add_style" ><strong class="text-dark">{{$reference->title}}</strong></a>
 					</td>
 					<td>{{ $reference->authors }}</td>
 					<td>{{ $reference->year }}</td>

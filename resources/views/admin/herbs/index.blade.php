@@ -36,10 +36,10 @@
 
 					<tr class="text-center">
 						<td>
-							<a href="" class="add_style" ><strong class="text-dark">{{$herb->name}}</strong></a>
+							<a href="{{route('herbs.details', $herb->id)}} " class="add_style" ><strong class="text-dark">{{$herb->name}}</strong></a>
 						</td>
 						<td>
-							<a href="" class="add_style" ><strong>{{$herb->sciname}}</strong></a>
+							<a href="{{route('herbs.details', $herb->id)}} " class="add_style" ><strong>{{$herb->sciname}}</strong></a>
 						</td>
 						<td>
                             @php

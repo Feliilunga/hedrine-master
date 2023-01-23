@@ -28,8 +28,8 @@
 									</h3>
 								</div>
 								<!-- /.card-header -->
-								<!-- form start -->
-								<form class=" justify-content-center" role="form" method="POST"  onsubmit="return leSubmit();" action="@isset($dinteraction) {{ route('dinteraction.update', $dinteraction->id) }} @else {{
+								<!-- form start -->										 <!-- onsubmit="return leSubmit();"  // dteu c'etait plus bas, je ne sais pas c'est quoi.-->
+								<form class=" justify-content-center" role="form" method="POST"   action="@isset($dinteraction) {{ route('dinteraction.update', $dinteraction->id) }} @else {{
 								route('dinteraction.store')}} @endisset">
 									<div class="card-body">
 										<div class="form-group">
@@ -94,6 +94,22 @@
 								            		</option>
 								            	@endforeach
 								            </select>
+										</div>
+										<div class="form-group">
+											@if(\Illuminate\Support\Facades\Auth::user()->role_id <=2)
+												@if(Route::currentRouteName() === 'dinteraction.create')
+													<div class="form-group form-check form-check-inline">
+														<input type="checkbox" class="form-check-input" name="validated" value="1" checked="checked"> {{--  --}}
+														<label class="form-check-label"> Validé ? </label>
+													</div>
+												@else
+													<div class="form-group form-check form-check-inline">
+														{{-- <input type="hidden" class="form-check-input" name="validated" value="0"> --}}
+														<!-- <label class="form-check-label"> Validé ? </label> -->
+														<label for="validated"> <input type="checkbox" class="form-check-input" name="validated" value="{{ $dinteraction->validated == 1 ? 1 : 0 }}" {{ $dinteraction->validated == 1 ? 'checked' : '' }}> Valider 1</label>
+													</div>
+												@endif
+											@endif
 										</div>
 									</div>
 									<!-- /.card-body -->

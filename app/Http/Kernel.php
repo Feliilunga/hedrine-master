@@ -70,5 +70,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'checkuserisactive' => \App\Http\Middleware\CheckUserIsActive::class,
+        'adminZotero' => \App\Http\Middleware\AdminZotero::class,
     ];
 }

@@ -37,7 +37,14 @@ $(document).ready(function () {
                 'herbId4': oneHerb4,
                 'herbId5': oneHerb5
             },
+            beforeSend: function(){
+                $("#gif").show();
+            },
+              complete: function(){
+                $("#gif").hide();
+            },
             success: function (data) {
+                $("#colinteracttable").show(); 
                 console.log(data);
                 //Evenor S. fonction pour faire l'interaction entre plusieurs plantes et 1 DCI
                 if ((oneHerb1 != null && oneMechanism1 != null) && (oneHerb1 != 0 && oneMechanism1 != 0)) {

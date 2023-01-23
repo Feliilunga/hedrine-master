@@ -12,68 +12,9 @@
             @csrf
             <fieldset class="form-group">
                 <legend style="color: #3a64a5; font-size: 160%; font-weight: bold">Interactions...</legend>
-                {{-- Mohammed A.  Ajout du tableau des reference pour les couleurs --}}
-                <div class="col-md-4 ">
-                    <h3 style="color: #777;font-family: 'Gill Sans','lucida grande', helvetica, arial, sans-serif;font-size: 100%;font-weight: bold">
-                        Intensité d'interaction</h3>
-                    <div style="float:left;width:120%;" class="table-responsive-sm">
-                        <table class="table table-bordered table-hover table-sm text-center">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Etudes et cas cliniques</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                              <!-- Mohammed Chairi regle couleur plus tableau  -->
-                                <tr style="background-color: red">
-                                    <th>Forte</th>
-                                </tr>
-                                <tr style="background-color: orange">
-                                    <th>Moyenne</th>
-                                </tr>
-                                <tr style="background-color: yellow">
-                                    <th>Faible</th>
-                                </tr>
-                                <tr style="background-color: green">
-                                    <th>Aucune</th>
-                                </tr>
-                                <tr style="background-color: purple">
-                                    <th>Inconnue</th>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div style="margin-left:120%;width:120%;" class="table-responsive-sm">
-                        <table class="table table-bordered table-hover table-sm text-center">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Interactions Potentielles</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                              <!-- Mohammed Chairi regle couleur plus tableau  -->
-                                <tr style="background-color: red;opacity : 0.4">
-                                    <th style="color:white">Forte</th>
-                                </tr>
-                                <tr style="background-color: orange;opacity : 0.4">
-                                    <th style="color:white">Moyenne</th>
-                                </tr>
-                                <tr style="background-color: yellow;opacity : 0.4">
-                                    <th style="color:white">Faible</th>
-                                </tr>
-                                <tr style="background-color: green;opacity : 0.4">
-                                    <th style="color:white">Aucune</th>
-                                </tr>
-                                <tr style="background-color: purple;opacity : 0.4">
-                                    <th style="color:white">Inconnue</th>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="alert alert-light alert-dismissible fade show text-danger">
+
+                <div class="alert alert-light fade show text-danger">
                     <strong><i class="fas fa-asterisk text-danger" id="required-msg"></i></strong> Champs obligatoires!
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
                 </div>
                 <hr>
                 <br>
@@ -132,12 +73,21 @@
                 <button type="button" id="go-search" class="btn btn-outline-success" style="border: 0; border-bottom: 1px solid green">Chercher <i class="fas fa-chevron-right"></i></button>
             </fieldset>
         </form>
+        
     </div>
 
+    <div class="col-12 my-5 py-5" id="colinteracttable">
+        <h3 class="text-center text-secondary h6">Intensité d'interaction</h3>
+        {{-- composant avec le tableau d'interaction (blade) au lieu de modifier 36 fichiers, ils reprendront tous le même fichier --}}
+        @include('components.interactiontable')
+    </div>
     <div  class="container" style="margin-bottom:100px">
+    <div id="gif" style="display: none;"><img src="{{asset('images/ajax-loader.gif') }}" style="display: block; margin: 0 auto; width: 80px;"></div>
+    
     <div class="" id="chart"></div>
     </div>
-<br/>
+    
+    <br/>
         <div>
         <input type="checkbox" id="casClinique" name="casClinique">
         <label for="casClinique">afficher uniquement les études et cas cliniques</label>
@@ -304,7 +254,9 @@
 @section('getherbs')
 
 <script>
+
     $(document).ready(function() {
+        
         $('#btnModalFusionChart').hide();
         $('#modalFusionChart').hide();
         $("#modalFusionChart").on("hidden.bs.modal", function(){
@@ -314,6 +266,7 @@
         $('#both-results').hide();
         $('#one-result').hide();
         $('#result .result').hide();
+
 
         // customiza select
         //$('#herb-select').formSelect();
@@ -803,5 +756,23 @@
             $('#results').show();
         });
     });
+</script>
+
+<script>
+    // var $loading = $('#gif').hide();
+    // $(document)
+	// 	.ajaxStart(function () {
+    //         $('#gif').append('<img src="{{asset('images/ajax-loader.gif') }}" style="display: block; margin: 0 auto; width: 80px;">')
+    //         // setTimeout( 1000);
+    //         // $loading.hide();
+	// 	});
+
+    //     $("#loading").ajaxComplete(function(){
+    //         $('#gif').append(' ');
+    //     })
+       
+		// .ajaxStop(function () {
+		// 	$loading.hide();
+		// });
 </script>
 @endsection

@@ -70,7 +70,8 @@ class UserController extends Controller
         $user->password = $request->password;
         $user->remember_token = $request->remember_token;
         $user->role_id = $request->role_id;
-        $user->is_active = $request->has('is_active');       
+        $user->is_active = $request->has('is_active');
+        $user->RGPD = 1;
         $user->save();
         Alert::success('Ok !', 'Nouveau user ajouté avec succès');
 

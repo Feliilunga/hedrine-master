@@ -99,18 +99,21 @@
                     <ul id="atc-dynamic-tree" style="display: none;">
                         @foreach($pivotAtc as $piAtc)
                             @if( $piAtc->atc_level4_id !== 0)
-                                <li id="atc4{{$k}}"><span class="btn btn-outline-success">{{ $piAtc->atc_level4->code }} - {{ $piAtc->atc_level4->name }}</span>
+                                <li id="atc4{{$k}}">
+                                    <span> {{-- class="btn btn-outline-success"  --}}
+                                        {{ $piAtc->atc_level4->code }} - {{ $piAtc->atc_level4->name }}
+                                    </span>
                                     <ul class="nested"><br>
-                                        <li  id="atc3{{$k}}"><span class="btn btn-outline-success">
+                                        <li  id="atc3{{$k}}"><span> {{-- class="btn btn-outline-success"  --}}
                                             {{ $piAtc->atc_level4->atc_level3->code }} - {{ $piAtc->atc_level4->atc_level3->name }}
                                             </span>
                                             <ul class="nested"><br>
-                                                <li id="atc2{{$k}}"><span class="btn btn-outline-success" >
+                                                <li id="atc2{{$k}}"><span> {{-- class="btn btn-outline-success"  --}}
                                                     {{ $piAtc->atc_level4->atc_level3->atc_level2->code }} - {{ $piAtc->atc_level4->atc_level3->atc_level2->name }}
                                                     </span>
                                                     <ul class="nested">
                                                         <li id="atc1{{$k}}">
-                                                            <span class="btn btn-outline-success" >
+                                                            <span> {{-- class="btn btn-outline-success"  --}}
                                                             {{ $piAtc->atc_level4->atc_level3->atc_level2->atc_level1->code }} - {{ $piAtc->atc_level4->atc_level3->atc_level2->atc_level1->name }}
                                                             </span>
                                                         </li>
@@ -133,64 +136,9 @@
         </dd>
         </dl>
         <div class="row">
-            <div class="col-md-4 ">
-                <h3 style="color: #777;font-family: 'Gill Sans','lucida grande', helvetica, arial, sans-serif;font-size: 160%;font-weight: bold">Intensité d interaction</h3>
-                <div style="float:left;width:60%;" class="table-responsive-sm">
-                    <table class="table table-bordered table-hover table-sm text-center">
-                        <thead>
-                            <tr>
-                                <th scope="col">Etudes et cas cliniques</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                          <!-- Mohammed Chairi regle couleur plus tableau  -->
-                            <tr style="background-color: red">
-                                <th>Forte</th>
-                            </tr>
-                            <tr style="background-color: orange">
-                                <th>Moyenne</th>
-                            </tr>
-                            <tr style="background-color: yellow">
-                                <th>Faible</th>
-                            </tr>
-                            <tr style="background-color: green">
-                                <th>Aucune</th>
-                            </tr>
-                            <tr style="background-color: purple">
-                                <th>Inconnue</th>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div style="margin-left:60%;width:60%;" class="table-responsive-sm">
-                    <table class="table table-bordered table-hover table-sm text-center">
-                        <thead>
-                            <tr>
-                                <th scope="col">Interactions Potentielles</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                          <!-- Mohammed Chairi regle couleur plus tableau  -->
-                            <tr style="background-color: red;opacity : 0.4">
-                                <th style="color:white">Forte</th>
-                            </tr>
-                            <tr style="background-color: orange;opacity : 0.4">
-                                <th style="color:white">Moyenne</th>
-                            </tr>
-                            <tr style="background-color: yellow;opacity : 0.4">
-                                <th style="color:white">Faible</th>
-                            </tr>
-                            <tr style="background-color: green;opacity : 0.4">
-                                <th style="color:white">Aucune</th>
-                            </tr>
-                            <tr style="background-color: purple;opacity : 0.4">
-                                <th style="color:white">Inconnue</th>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="col-12">
+                @include('components.interactiontable')
             </div>
-        </div>
         <br>
         <br>
 
@@ -209,13 +157,13 @@
                 @foreach($tabPRoute as $tRoute)
                 @php
                    
-                    //dd($tRoute->routes);
+                    $lesIds = $tRoute->id;
                            
                 @endphp  
                     <thead>
                          
                         <tr style="background-color:#226AB2">
-                        <th>{{$tRoute->routes->name}} </th>
+                        <th id= "mecaaa{{$lesIds}}">{{$tRoute->routes->name}} </th>
                         </tr>
                         <tr>
                             <th></th>
@@ -263,13 +211,40 @@
                                 @endforeach
                             </td>
                             {{-- adaption des couleur pour les interactions potencielles se referer  au css pour les couleurs --}}
-                            <td class="	@if(isset($dinteraction->targets->name))@if($dinteraction->forces->color == 'rouge')
-                                @if(str_contains (strtoupper($dinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($dinteraction->targets->name) , "CASE REPORT" ) ) force @else forceP @endif
-                                @elseif($dinteraction->forces->color == 'orange')@if(str_contains (strtoupper($dinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($dinteraction->targets->name) , "CASE REPORT" ) ) moyenne @else moyenneP @endif
-                                @elseif($dinteraction->forces->color == 'jaune')@if(str_contains (strtoupper($dinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($dinteraction->targets->name) , "CASE REPORT" ) )  faible @else faibleP @endif
-                                @elseif($dinteraction->forces->color == 'vert') @if(str_contains (strtoupper($dinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($dinteraction->targets->name) , "CASE REPORT" ) )  aucune @else aucuneP @endif
-                                @elseif($dinteraction->forces->color == 'mauve') @if(str_contains (strtoupper($dinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($dinteraction->targets->name) , "CASE REPORT" ) )  inconnue @else inconnueP @endif @endif @endif">
-
+                            <td class="	
+                                @if(isset($dinteraction->targets->name))
+                                    @if($dinteraction->forces->color == 'rouge')
+                                        @if(str_contains (strtoupper($dinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($dinteraction->targets->name) , "CASE REPORT" ) ) 
+                                            bg-redd 
+                                        @else 
+                                            bg-red-opacity
+                                        @endif
+                                @elseif($dinteraction->forces->color == 'orange')
+                                    @if(str_contains (strtoupper($dinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($dinteraction->targets->name) , "CASE REPORT" ) ) 
+                                        bg-orange  
+                                    @else 
+                                        bg-orange-opacity 
+                                    @endif
+                                @elseif($dinteraction->forces->color == 'jaune')
+                                    @if(str_contains (strtoupper($dinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($dinteraction->targets->name) , "CASE REPORT" ) )
+                                        bg-yellow 
+                                    @else 
+                                        bg-yellow-opacity
+                                    @endif
+                                @elseif($dinteraction->forces->color == 'vert')
+                                    @if(str_contains (strtoupper($dinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($dinteraction->targets->name) , "CASE REPORT" ) )  
+                                        bg-greenn 
+                                    @else 
+                                        bg-green-opacity 
+                                    @endif
+                                @elseif($dinteraction->forces->color == 'mauve') 
+                                    @if(str_contains (strtoupper($dinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($dinteraction->targets->name) , "CASE REPORT" ) )  
+                                        bg-purplee 
+                                        @else 
+                                        bg-purple-opacity 
+                                    @endif 
+                                @endif 
+                            @endif">
                                 {{$dinteraction->forces->name}}
                             </td>
                             <td >
@@ -295,7 +270,7 @@
                                 inconnue
                                 @endif"> --}}
                                 @foreach($dinteraction->references as $reference)
-                                <a href="">{{$reference->year}} , {{$reference->edition}};</a>
+                                <a href=" {{$reference->url}}">{{$reference->year}} , {{$reference->edition}};</a>
                                 <a href=" {{$reference->url}} ">
                                     <i class="fas fa-globe-europe"></i>
                                 </a><br>

@@ -18,62 +18,8 @@
 	<br>
 
 	<div class="row">
-		<div class="col-md-4 ">
-			<h3 style="color: #777;font-family: 'Gill Sans','lucida grande', helvetica, arial, sans-serif;font-size: 160%;font-weight: bold">Intensité d interaction</h3>
-			<div style="float:left;width:60%;" class="table-responsive-sm">
-				<table class="table table-bordered table-hover table-sm text-center">
-                    <thead>
-                        <tr>
-                            <th scope="col">Etudes et cas cliniques</th>
-                        </tr>
-                    </thead>
-					<tbody>
-                      <!-- Mohammed Chairi regle couleur plus tableau  -->
-						<tr style="background-color: red">
-							<th>Forte</th>
-						</tr>
-						<tr style="background-color: orange">
-							<th>Moyenne</th>
-						</tr>
-						<tr style="background-color: yellow">
-							<th>Faible</th>
-						</tr>
-						<tr style="background-color: green">
-							<th>Aucune</th>
-						</tr>
-						<tr style="background-color: purple">
-							<th>Inconnue</th>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-            <div style="margin-left:60%;width:60%;" class="table-responsive-sm">
-				<table class="table table-bordered table-hover table-sm text-center">
-                    <thead>
-                        <tr>
-                            <th scope="col">Interactions Potentielles</th>
-                        </tr>
-                    </thead>
-					<tbody>
-                      <!-- Mohammed Chairi regle couleur plus tableau  -->
-						<tr style="background-color: red;opacity : 0.4">
-							<th style="color:white">Forte</th>
-						</tr>
-						<tr style="background-color: orange;opacity : 0.4">
-							<th style="color:white">Moyenne</th>
-						</tr>
-						<tr style="background-color: yellow;opacity : 0.4">
-							<th style="color:white">Faible</th>
-						</tr>
-						<tr style="background-color: green;opacity : 0.4">
-							<th style="color:white">Aucune</th>
-						</tr>
-						<tr style="background-color: purple;opacity : 0.4">
-							<th style="color:white">Inconnue</th>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+		<div class="col-12 ">
+			@include('components.interactiontable')
 		</div>
 	</div>
 	<br>
@@ -115,17 +61,50 @@
 
 						</td>
                         <!--Mohammed Chairi Ajout if pour mettre en opacité 0.4 pour les interactions potentielles-->
-						<td class="	@if(isset($hinteraction->targets->name))@if($hinteraction->forces->color == 'rouge')
-                             @if(str_contains (strtoupper($hinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($hinteraction->targets->name) , "CASE REPORT" ) ) force @else forceP @endif
-                             @elseif($hinteraction->forces->color == 'orange')@if(str_contains (strtoupper($hinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($hinteraction->targets->name) , "CASE REPORT" ) ) moyenne @else moyenneP @endif
-                             @elseif($hinteraction->forces->color == 'jaune')@if(str_contains (strtoupper($hinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($hinteraction->targets->name) , "CASE REPORT" ) )  faible @else faibleP @endif
-                             @elseif($hinteraction->forces->color == 'vert') @if(str_contains (strtoupper($hinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($hinteraction->targets->name) , "CASE REPORT" ) )  aucune @else aucuneP @endif
-                             @elseif($hinteraction->forces->color == 'mauve') @if(str_contains (strtoupper($hinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($hinteraction->targets->name) , "CASE REPORT" ) )  inconnue @else inconnueP @endif @endif @endif">
-
-                             @if(isset($hinteraction->targets->name))@if(str_contains (strtoupper($hinteraction->targets->name) , "ETUDE CLINIQUE" )){{$hinteraction->forces->name}}
-                            @else <p style="color:rgb(0, 0, 0)">{{$hinteraction->forces->name}}</p>
-                            @endif @endif
-
+						{{-- dteu repare les couleurs de Mohammed (avec les classes CSS). --}}
+						<td class="	
+							@if(isset($hinteraction->targets->name))
+								@if($hinteraction->forces->color == 'rouge')
+                            		@if(str_contains (strtoupper($hinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($hinteraction->targets->name) , "CASE REPORT" ) ) 
+										bg-redd 
+									@else 
+										bg-red-opacity
+									@endif
+								@elseif($hinteraction->forces->color == 'orange')
+									@if(str_contains (strtoupper($hinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($hinteraction->targets->name) , "CASE REPORT" ) ) 
+										bg-orange  
+                                    @else 
+                                        bg-orange-opacity 
+									@endif
+                            	@elseif($hinteraction->forces->color == 'jaune')
+									@if(str_contains (strtoupper($hinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($hinteraction->targets->name) , "CASE REPORT" ) )  
+										bg-yellow 
+                                    @else 
+                                        bg-yellow-opacity
+									@endif
+                            	@elseif($hinteraction->forces->color == 'vert') 
+									@if(str_contains (strtoupper($hinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($hinteraction->targets->name) , "CASE REPORT" ) )  
+										bg-greenn 
+                                    @else 
+                                        bg-green-opacity 
+                                    @endif
+                            	@elseif($hinteraction->forces->color == 'mauve') 
+									@if(str_contains (strtoupper($hinteraction->targets->name) , "ETUDE CLINIQUE" )|| str_contains (strtoupper($hinteraction->targets->name) , "CASE REPORT" ) )  
+										bg-purplee 
+									@else 
+										bg-purple-opacity 
+									@endif 
+								@endif 
+							@endif
+						">{{-- end td="class" --}}
+						
+						@if(isset($hinteraction->targets->name))
+							@if(str_contains (strtoupper($hinteraction->targets->name) , "ETUDE CLINIQUE" ))
+								{{$hinteraction->forces->name}}
+							@else 
+								<p style="color:rgb(0, 0, 0)">{{$hinteraction->forces->name}}</p>
+							@endif
+						@endif
 						</td>
 
 						<td class="ajusted-text-with-line-breaks">
@@ -137,7 +116,7 @@
 						<td>
 
 							@foreach($hinteraction->references as $reference)
-							<a href="">{{$reference->year}} , {{$reference->edition}};</a>
+							<a href="{{$reference->url}}">{{$reference->year}} , {{$reference->edition}};</a>
 							<a href=" {{$reference->url}} ">
 								<i class="fas fa-globe-europe"></i>
 							</a><br>

@@ -1,6 +1,12 @@
 @extends('dashboard.layout')
 <!-- @yield('content_title') créé dans la view master_dashboard.blade.php-->
 @section('content_dashboard')
+
+<script src="{{ asset('/adminlte/plugins/jquery/jquery.min.js') }}"></script>
+<!-- chosen pugin to filter-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js" integrity="sha512-rMGGF4wg1R73ehtnxXBt5mbUfN9JUJwbk21KMlnLZDJh7BkPmeovBuddZCENJddHYYMkCh9hPFnPmS9sspki8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css" integrity="sha512-0nkKORjFgcyxv3HbE4rzFUlENUMNqic/EzDIeYCgsKa/nwqr2B91Vu/tNAu4Q0cBuG4Xe/D1f/freEci/7GDRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <div class="row" id="new-x-target">
         <div class="col-12">
             <section class="content">
@@ -33,7 +39,7 @@
                                         @csrf
                                         <div class="form-group">
                                             <label for="drug">Drugs : <i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
-                                            <select class="form-control" id = "drug" name="drug" required id="forms" >
+                                            <select class="form-control" id = "drug" name="drug" required >
                                                 <option>== Choix ==</option>
                                                 
                                                 @foreach ($routesDrugs as $routeDrug)
@@ -53,7 +59,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="force">Force : <i class="fa fa-info-circle info text-danger" id="required-msg"></i></label>
-                                            <select class="form-control" required name="force" id="forms" >
+                                            <select class="form-control" required name="force" id="force" >
                                                 <option>== Choix ==</option>
                                                 @foreach ($force as $f)
                                                     <option value="{{ $f->id }}">{{ $f->name }}</option>
@@ -65,7 +71,7 @@
                                             <br>
                                             <b class="text-info"><i class="fa fa-info-circle info text-info" id="required-msg"></i>  Choisissez un ou plusieurs effets</b>
                                             <hr>
-                                            <select class="form-control selectpicker" id="effectForm" required id="forms" name="effects[]" multiple>
+                                            <select class="form-control selectpicker"  required id="forms" name="effects[]" multiple>
                                                 @foreach ($effects as $effect)
                                                     <option value="{{ $effect->id }}">{{ $effect->name }}</option>
                                                 @endforeach
@@ -76,9 +82,9 @@
                                             <br>
                                             <b class="text-info"><i class="fa fa-info-circle info text-info" id="required-msg"></i> Choisissez une ou plusieurs références</b>
                                             <hr>
-                                            <select class="form-control" id="referencesForm" style="height: 7rem" required name="references[]" multiple>
+                                            <select class="form-control" id="references" style="height: 7rem" required name="references[]" multiple>
                                                 @foreach ($references as $reference)
-                                                    <option value="{{ $reference->id }}" class="text-dark" >{{ $reference->title }}</option>
+                                                    <option value="{{ $reference->id }}" class="text-dark" >{{ $reference->title }} <span style="display:none;">{{$reference->authors}}</span> </option> 
                                                 @endforeach
                                             </select>
                                         </div>
@@ -88,7 +94,16 @@
                                                 <textarea name="note" class="w-100" required  placeholder="Note ..."></textarea>
                                             </div>
                                         </div>
-                                        
+
+                                        {{-- dt validation --}}
+                                        <div class="form-group row">
+                                            @if(\Illuminate\Support\Facades\Auth::user()->role_id <=2)
+                                                <div class="form-group form-check form-check-inline">
+                                                    <input type="checkbox" class="form-check-input" name="validated" value="1" checked="checked"> {{--  --}}
+                                                    <label class="form-check-label"> Validé ? </label>
+                                                </div>
+                                            @endif
+                                        </div>
 
                                         <!-- /.card-body -->
                                         <div class="card-footer">
@@ -112,33 +127,43 @@
     </div>
 
 
+    <script>
+        // Filter by searching in Target Options
+    
+        $("#target").chosen();
+        $("#drug").chosen();
+        $("#force").chosen();
+        $("#references").chosen();
+    </script>
 @endsection
 
+
 @section('dashboard-js')
-<script >
 
-$dintera = <?php echo json_encode($leDinteraction); ?>;
+<script>
 
-$test = $("[name='drug']").val();
-
-$('#test').click(function(){
-    console.log($("[name='drug']").val());
-});
-
-
-function leSubmit() {
-    $i=0;
-    while( $i<$dintera.length) {
-        if($("[name='drug']").val() == $dintera[$i].route_drug_id && $("[name='target']").val() == $dintera[$i].target_id){
-            return confirm('Il existe déjà une une dinteraction similaire. Voulez vous quand même l\'ajouter?');
-            $i=$dintera.length;
-        }    
-        $i++;
+    $dintera = <?php echo json_encode($leDinteraction); ?>;
+    
+    $test = $("[name='drug']").val();
+    
+    $('#test').click(function(){
+        console.log($("[name='drug']").val());
+    });
+    
+    
+    function leSubmit() {
+        $i=0;
+        while( $i<$dintera.length) {
+            if($("[name='drug']").val() == $dintera[$i].route_drug_id && $("[name='target']").val() == $dintera[$i].target_id){
+                return confirm('Il existe déjà une une dinteraction similaire. Voulez vous quand même l\'ajouter?');
+                $i=$dintera.length;
+            }    
+            $i++;
+        }
+    
     }
-  
-}
-
-
-
+    
 </script>
+
+
 @endsection
